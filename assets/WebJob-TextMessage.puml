@@ -1,0 +1,29 @@
+@startuml WebJob TextMessage
+
+Interface INotificationHandler
+Interface IMessagingClient
+Interface ITextMessageRecipientValidator
+Class Module
+Class TextMessageWebJobModule
+Class SendTextMessageQueueMessageHandler
+SendTextMessageQueueMessageHandler : Handle()
+Class SendTextMessageQueueMessage
+note "Twilio Interface" as n1
+Class MessagingClient
+MessagingClient : SendMessage()
+n1 .. MessagingClient
+
+Class TextMessageRecipientValidator
+
+Module <-- TextMessageWebJobModule
+TextMessageWebJobModule -up-> TextMessageRecipientValidator
+TextMessageWebJobModule -up-> MessagingClient
+
+IMessagingClient <|-- MessagingClient
+ITextMessageRecipientValidator <|-- TextMessageRecipientValidator
+INotificationHandler <|-- SendTextMessageQueueMessageHandler
+SendTextMessageQueueMessage -up-> SendTextMessageQueueMessageHandler
+SendTextMessageQueueMessageHandler -up-> MessagingClient
+SendTextMessageQueueMessageHandler -up-> TextMessageRecipientValidator
+
+@enduml

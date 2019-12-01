@@ -1,0 +1,39 @@
+@startuml PublicallyAccessibleEndpoint 
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Networking/AzureFrontDoorService.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureFunction.puml
+
+title Publically Accessible Endpoint 
+
+System_Boundary(off, "Office 365") {
+    Component(out, "", "Outlook", "Contact")
+}
+
+System_Boundary(Az, "Azure") {
+
+    AzureActiveDirectory(ad,"App Register","","")
+    AzureFrontDoorService(fd, "Front Door", "", "")
+    
+    System_Boundary(rg, "Resource Group") {
+        AzureVirtualNetwork(vpn, "Vpn","","")
+        AzureFunction(af, "Label", "Technology", "")
+    }
+    System_Boundary(hub, "Hub") {
+        Container(api, "Hub Api", "", "")
+        ContainerDb(db, "Hub Database", "", "")
+    }
+}
+
+api -up-> ad : App  Registration
+af -up-> ad : App Registration
+out -left-> fd
+fd --> af
+af -left-> vpn
+vpn -> api
+api --> db
+
+@enduml

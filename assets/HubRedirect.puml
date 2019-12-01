@@ -1,0 +1,56 @@
+@startuml Hub Redirect
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Compute/AzureFunction.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Storage/AzureStorage.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+
+title Hub Redriect
+
+!includeurl AzurePuml/AzureSimplified.puml
+LAYOUT_LEFT_RIGHT
+
+
+System_Boundary(off, "Office 365") {
+    Component(out, "", "Outlook", "Contact")
+}
+
+System_Boundary(Az, "Azure") {
+    AzureTrafficManager(tm, "Hub-Redirect-tm-env-ne", "Global")
+    System_Boundary(rgNe, "Northern Europe") {
+        AzureFunction(afNe, "Hub-Redirect-fn-env-ne", "Northern Europe")
+        AzureStorage(stNe, "Hub-Redirect-st-env-ne", "Northern Europe")
+        AzureApplicationInsights( aiNe, "Hub-Redirect-ai-env-ne", "Northern Europe")
+    }
+
+    System_Boundary(rgWe, "Western Europe") {
+        AzureFunction(afWe, "Hub-Redirect-fn-env-we", "Western Europe")
+        AzureStorage( stWe, "Hub-Redirect-st-env-we", "Western Europe")
+        AzureApplicationInsights( aiWe, "Hub-Redirect-ai-env-we", "Western Europe")
+    }
+    System_Boundary(kf, "Private Knight frank ") {
+        AzureVirtualMachine(vm, "https://env.hub.knightfrank.com/", "Env")
+    }
+}
+
+
+tm ..> afNe: Health
+out --> afNe : Https Request
+afNe --> stNe
+afNe --> aiNe
+vm <-- afNe
+
+tm ..> afWe: Health
+out --> afWe : Https Request
+afWe --> stWe
+afWe --> aiWe
+vm <-- afWe
+
+out --> tm: Discovery
+
+
+@enduml

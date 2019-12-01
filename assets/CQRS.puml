@@ -1,0 +1,32 @@
+@startuml CQRS
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Storage/all.puml
+
+LAYOUT_TOP_DOWN
+
+frame "CQRS" as v1dc1 {
+    Container( qh, "Query Handler", "")
+    Container( qp, "Query Processing", "")
+    Container( qs, "Query Store", "Elastic Search")
+
+    AzureQueueStorage( mq, "Message Queue", "")
+
+    Container( ch, "Command Handler", "")
+    Container( cp, "Command Processing", "")
+    Container( cs, "Command Store", "SQL")
+
+    qh -right-> qp 
+    qp -right-> qs
+
+    mq -up-> qp
+    cp -up-> mq
+
+    ch -right-> cp
+    cp -right-> cs
+
+}
+
+
+@enduml
