@@ -12,4 +12,4 @@ A place to include any other types of information that you'd like to include abo
 
 ### Contact me
 
-[Gary.Newport@KnightFrank.com](mailto:Gary.Newport@KnightFrank.com)
+[Gary.Newport@Zoomalong.co.uk](mailto:Gary.Newport@Zoomalong.co.uk)
