@@ -1,0 +1,31 @@
+@startuml Upsert Container
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+Person(sched, "Scheduler")
+
+System_Boundary(c1, "LottoDraws"){
+    Container(web_app, "Azure Function", "C#", "Api Interface")
+    Container(func, "Business Logic", "C#", "Updates internal storage")
+
+    ContainerDb(sttb, "Table Storage", "Azure Storage", "Stores Entities")
+    Container(svc, "Service", "C#", "Interfaces with lottery services")
+    ContainerDb(stqu, "Error Queue", "Azure Storage", "Adds errors to the\nerror queue")
+}
+
+' External Systems
+System_Ext(ExternalSystem, "External Systems")
+
+' Relationships
+Rel(sched, web_app, "Uses", "HTTPS")
+Rel(web_app, func, "Uses", "HTTPS")
+Rel(func, svc, "Uses", "HTTPS")
+
+Rel_L(func, sttb, "Reads from\nand writes to")
+Rel_R(func, stqu, "Reads from\nand writes to")
+Rel(svc, ExternalSystem, "ExternalSystem", "HTTPS")
+
+
+@enduml
