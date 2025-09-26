@@ -3,10 +3,10 @@ layout: post
 title: GOF Mediator Pattern
 ---
 
-![GOF Mediator Class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/newportg.github.io/master/assets/MediatorPatternCl.puml)
+![GOF Mediator Class](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/newportg.github.io/master/assets/Mediatr/MediatorPatternCl.puml)
 
 
-![GOF Mediator Sequence](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/newportg.github.io/master/assets/MediatorPatternSq.puml)
+![GOF Mediator Sequence](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/newportg.github.io/master/assets/Mediatr/MediatorPatternSq.puml)
 
 
 # Mediator Pattern

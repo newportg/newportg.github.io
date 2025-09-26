@@ -14,7 +14,7 @@ For us to write a Anti Virus scanning tool is out of the question, even employin
 A solution would be to send any prospective file to a external third party who specialises in file scanning and verification. A possible solution is descibed below.
 
 
-<img src="https://raw.github.com/newportg/newportg.github.io/master/assets//File AV Scanning.png" alt="File AV Scanning" width="400"/>
+<img src="https://raw.github.com/newportg/newportg.github.io/master/assets//File-AV-Scanning.png" alt="File AV Scanning" width="400"/>
 
 
 # A Solution
