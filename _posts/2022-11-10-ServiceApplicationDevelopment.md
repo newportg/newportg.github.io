@@ -16,7 +16,8 @@ Packaging up functionality has been common practice for several years as it prom
 *   Ease of upgrade
 
 
-<img src="../images/ServiceApplicationMonolith.png" alt="Service Application Monolith" width="400"/>
+<img src="https://raw.github.com/newportg/newportg.github.io/master/assets//ServiceApplicationMonolith.png" alt="Service Application Monolith" width="400"/>
+
 
 # Consequences
 

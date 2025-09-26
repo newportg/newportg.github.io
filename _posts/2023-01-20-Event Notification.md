@@ -14,7 +14,7 @@ What id does however offer in a normal operating environment is a fast, low late
 The following description shows a particular implementation of event grid messaging, which is used in conjunction with Azure SignalR so that a web GUI can receive notifications.
 
 
-<img src="https://happy-desert-090eddc03.1.azurestaticapps.net/images/EventGridSignalR.png" alt="Web Notifications" width="400"/>
+<img src="https://raw.github.com/newportg/newportg.github.io/master/assets/EventGridSignalR.png" alt="Web Notifications" width="400"/>
 
 * The Web page gets the SignalR connection from the Azure Function.
 * The Event Source publishes a message to a Event Grid Topic.

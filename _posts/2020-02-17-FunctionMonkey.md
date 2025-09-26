@@ -6,7 +6,7 @@ Tags: Azure Functions
 
 # Function Monkey Hello World
 
-![FMHelloWorld](../images/FMHelloWorld.png)
+![Puml](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/newportg.github.io/master/assets/functionmonkey/fmHellowWorld.puml)
 
 # References
 

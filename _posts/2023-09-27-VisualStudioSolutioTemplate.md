@@ -73,5 +73,5 @@ Tags: C#
 * Select all the files and save as a compressed ZIP
 * Copy the file Zip file to C:\Users\{user}\OneDrive - Knight Frank\Documents\Visual Studio {version}\Templates\ProjectTemplates
 * 
-<img src="https://happy-desert-090eddc03.1.azurestaticapps.net/images/VSNewProject.png" alt="VSNewProject" width="400"/>
+<img src="https://raw.github.com/newportg/newportg.github.io/master/assets/VSNewProject.png" alt="VSNewProject" width="400"/>
 
