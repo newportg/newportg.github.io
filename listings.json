@@ -1,14 +1,23 @@
 [
   {
+    "listing": "/Projects/index.html",
+    "items": [
+      "/Projects/posts/Frontify.html"
+    ]
+  },
+  {
     "listing": "/Current/index.html",
     "items": [
       "/Current/todo.html",
-      "/Current/posts/2025-10-08.html"
+      "/Current/posts/2025-10-10/index.html",
+      "/Current/posts/2025-10-09/index.html",
+      "/Current/posts/2025-10-08/index.html"
     ]
   },
   {
     "listing": "/Journal/index.html",
     "items": [
+      "/Journal/posts/2025-10-09-changes.html",
       "/Journal/posts/2025-09-26-Diabetes.html",
       "/Journal/posts/2025-05-01-TestingAzureFunctions.html",
       "/Journal/posts/2024-06-14-DataAnnotationVsFluentValidation.html",
@@ -50,12 +59,6 @@
       "/Journal/posts/2018-10-15-AzureFunctionManagedServiceIdentities.html",
       "/Journal/posts/2018-08-14-AzureApplicationHosting.html",
       "/Journal/posts/2018-08-14-Hosting AzureStaticWebsites.html"
-    ]
-  },
-  {
-    "listing": "/Projects/index.html",
-    "items": [
-      "/Projects/posts/Frontify.html"
     ]
   }
 ]
