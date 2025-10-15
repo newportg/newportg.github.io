@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newportg.github.io/index.html</loc>
-    <lastmod>2025-10-15T14:13:19.164Z</lastmod>
+    <lastmod>2025-10-15T15:05:47.372Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Projects/index.html</loc>
@@ -41,8 +41,8 @@
     <lastmod>2025-10-15T14:11:43.086Z</lastmod>
   </url>
   <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/2020-02-17-FunctionMonkey.html</loc>
-    <lastmod>2025-10-15T14:11:43.085Z</lastmod>
+    <loc>https://newportg.github.io/Content/Journal/posts/2020-02-17-FunctionMonkey/index.html</loc>
+    <lastmod>2025-10-15T14:51:38.245Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/2019-12-01-Item.html</loc>
@@ -57,7 +57,7 @@
     <lastmod>2025-10-15T14:11:43.081Z</lastmod>
   </url>
   <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/2019-07-22-MediatR.html</loc>
+    <loc>https://newportg.github.io/Content/Journal/posts/2019-07-22-MediatR/index.html</loc>
     <lastmod>2025-10-15T14:11:43.079Z</lastmod>
   </url>
   <url>
@@ -110,11 +110,11 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.045Z</lastmod>
+    <lastmod>2025-10-15T14:36:48.820Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/posts/2025-10-09/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.047Z</lastmod>
+    <lastmod>2025-10-15T14:40:56.156Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/posts/2025-10-13/index.html</loc>
@@ -165,8 +165,8 @@
     <lastmod>2025-10-15T14:11:43.080Z</lastmod>
   </url>
   <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/2019-08-08-EIP-ContentBasedRouting.html</loc>
-    <lastmod>2025-10-15T14:11:43.081Z</lastmod>
+    <loc>https://newportg.github.io/Content/Journal/posts/2019-08-08-EIP-ContentBasedRouting/index.html</loc>
+    <lastmod>2025-10-15T15:05:29.047Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/2019-10-16-gRPC.html</loc>
