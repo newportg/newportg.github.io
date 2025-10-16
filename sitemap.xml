@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newportg.github.io/index.html</loc>
-    <lastmod>2025-10-15T15:05:47.372Z</lastmod>
+    <lastmod>2025-10-16T13:58:51.026Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Projects/index.html</loc>
     <lastmod>2025-10-15T14:11:43.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/2025-10-16/index.html</loc>
+    <lastmod>2025-10-16T10:59:47.926Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/2025-09-26-Diabetes.html</loc>
@@ -97,32 +101,36 @@
     <lastmod>2025-10-15T14:11:43.067Z</lastmod>
   </url>
   <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-14/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.066Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-10/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-08/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.047Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/index.html</loc>
-    <lastmod>2025-10-15T14:36:48.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-09/index.html</loc>
-    <lastmod>2025-10-15T14:40:56.156Z</lastmod>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-15/index.html</loc>
+    <lastmod>2025-10-16T09:12:09.387Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/posts/2025-10-13/index.html</loc>
     <lastmod>2025-10-15T14:11:43.048Z</lastmod>
   </url>
   <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-15/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.067Z</lastmod>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-09/index.html</loc>
+    <lastmod>2025-10-15T14:40:56.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/index.html</loc>
+    <lastmod>2025-10-15T14:36:48.820Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-08/index.html</loc>
+    <lastmod>2025-10-15T14:11:43.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-10/index.html</loc>
+    <lastmod>2025-10-16T12:04:30.887Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-14/index.html</loc>
+    <lastmod>2025-10-15T14:11:43.066Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-16/index.html</loc>
+    <lastmod>2025-10-16T15:07:08.627Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/index.html</loc>
@@ -211,6 +219,10 @@
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/2025-10-09-changes.html</loc>
     <lastmod>2025-10-15T14:11:43.098Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/2025-10-16/TypeSpec.html</loc>
+    <lastmod>2025-10-16T12:09:20.195Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Projects/posts/Frontify.html</loc>

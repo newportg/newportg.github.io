@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Daily Note – Zoomalong</title>
+<title>Emitter usage – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,30 +21,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../../../../../">
+<script src="../../../../../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../../../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -89,9 +124,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../../../../../../../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../../../../../../../index.html">
     <span class="navbar-title">Zoomalong</span>
     </a>
   </div>
@@ -102,15 +137,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Current/index.html"> 
+    <a class="nav-link" href="../../../../../../../../../Content/Current/index.html"> 
 <span class="menu-text">Current</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Journal/index.html"> 
+    <a class="nav-link" href="../../../../../../../../../Content/Journal/index.html"> 
 <span class="menu-text">Journal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Projects/index.html"> 
+    <a class="nav-link" href="../../../../../../../../../Content/Projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -138,11 +173,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Daily Note</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Daily Note</div>
-              </div>
-                  </div>
+      <h1 class="title">Emitter usage</h1>
+                      </div>
   </div>
     
   
@@ -151,16 +183,10 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Gary Newport </p>
+               <p><a href="https://www.zoomalong.co.uk">Gary Newport</a> </p>
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">Wednesday, October 15, 2025</p>
-      </div>
-    </div>
     
       
     </div>
@@ -173,7 +199,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025-10-15</a></li>
+  <li><a href="#emitter-usage" id="toc-emitter-usage" class="nav-link active" data-scroll-target="#emitter-usage">Emitter Usage</a>
+  <ul class="collapse">
+  <li><a href="#emitter-options" id="toc-emitter-options" class="nav-link" data-scroll-target="#emitter-options">Emitter options</a>
+  <ul class="collapse">
+  <li><a href="#skip-format" id="toc-skip-format" class="nav-link" data-scroll-target="#skip-format"><code>skip-format</code></a></li>
+  <li><a href="#output-type" id="toc-output-type" class="nav-link" data-scroll-target="#output-type"><code>output-type</code></a></li>
+  <li><a href="#emit-mocks" id="toc-emit-mocks" class="nav-link" data-scroll-target="#emit-mocks"><code>emit-mocks</code></a></li>
+  <li><a href="#use-swaggerui" id="toc-use-swaggerui" class="nav-link" data-scroll-target="#use-swaggerui"><code>use-swaggerui</code></a></li>
+  <li><a href="#openapi-path" id="toc-openapi-path" class="nav-link" data-scroll-target="#openapi-path"><code>openapi-path</code></a></li>
+  <li><a href="#overwrite" id="toc-overwrite" class="nav-link" data-scroll-target="#overwrite"><code>overwrite</code></a></li>
+  <li><a href="#project-name" id="toc-project-name" class="nav-link" data-scroll-target="#project-name"><code>project-name</code></a></li>
+  <li><a href="#http-port" id="toc-http-port" class="nav-link" data-scroll-target="#http-port"><code>http-port</code></a></li>
+  <li><a href="#https-port" id="toc-https-port" class="nav-link" data-scroll-target="#https-port"><code>https-port</code></a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -188,25 +228,73 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="section" class="level1">
-<h1>2025-10-15</h1>
-<ul>
-<li>Diabetes
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">NHS Online Course https://app.changinghealth.com</label></li>
-</ul></li>
-<li><label><input type="checkbox">Quarto PlantUML filter</label>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">Create a GitHub repo for the filte</label></li>
-<li><label><input type="checkbox" checked="">Publish to Quarto extensions</label></li>
-<li><label><input type="checkbox" checked="">Document the filter as a journal entry</label></li>
-<li><label><input type="checkbox">Place all output files in a particular subdirectory<br>
-Quarto and LUA processing executes relative to the location of the .qmd file. So we will need a method to identify which directory we are in so we can then redirect the output files to a specified subdirectory.</label></li>
-<li><label><input type="checkbox">Echo script rather than create puml file. Executing a ‘Echo’ command terminates when it reaches a line break. So we will need to replace all line breaks with a special character sequence, e.g.&nbsp;‘’ and then use a script to replace the special character sequence with a line break. Currently the directory is littered with intermediate .puml files which are not needed once the diagram has been created.</label></li>
-</ul></li>
-</ul>
+<section id="emitter-usage" class="level1">
+<h1>Emitter Usage</h1>
+<ol type="1">
+<li>Via the command line</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tsp</span> compile . <span class="at">--emit</span><span class="op">=</span>@typespec/http-server-csharp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Via the config</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emit</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"@typespec/http-server-csharp"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The config can be extended with options as follows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emit</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"@typespec/http-server-csharp"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">"@typespec/http-server-csharp"</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">option</span><span class="kw">:</span><span class="at"> value</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="emitter-options" class="level2">
+<h2 class="anchored" data-anchor-id="emitter-options">Emitter options</h2>
+<section id="skip-format" class="level3">
+<h3 class="anchored" data-anchor-id="skip-format"><code>skip-format</code></h3>
+<p><strong>Type:</strong> <code>boolean</code></p>
+<p>Skips formatting of generated C# Types. By default, C# files are formatted using ‘dotnet format’.</p>
+</section>
+<section id="output-type" class="level3">
+<h3 class="anchored" data-anchor-id="output-type"><code>output-type</code></h3>
+<p><strong>Type:</strong> <code>"models" | "all"</code></p>
+<p>Chooses which service artifacts to emit. choices include ‘models’ or ‘all’ artifacts.</p>
+</section>
+<section id="emit-mocks" class="level3">
+<h3 class="anchored" data-anchor-id="emit-mocks"><code>emit-mocks</code></h3>
+<p><strong>Type:</strong> <code>"mocks-and-project-files" | "mocks-only" | "none"</code></p>
+<p>Emits mock implementations of business logic, setup code, and project files enabling the service to respond to requests before a real implementation is provided</p>
+</section>
+<section id="use-swaggerui" class="level3">
+<h3 class="anchored" data-anchor-id="use-swaggerui"><code>use-swaggerui</code></h3>
+<p><strong>Type:</strong> <code>boolean</code></p>
+<p>Configure a Swagger UI endpoint in the development configuration</p>
+</section>
+<section id="openapi-path" class="level3">
+<h3 class="anchored" data-anchor-id="openapi-path"><code>openapi-path</code></h3>
+<p><strong>Type:</strong> <code>string</code></p>
+<p>Use openapi at the given path for generating SwaggerUI endpoints. By default, this will be ‘openapi/openapi.yaml’ if the ‘use-swaggerui’ option is enabled.</p>
+</section>
+<section id="overwrite" class="level3">
+<h3 class="anchored" data-anchor-id="overwrite"><code>overwrite</code></h3>
+<p><strong>Type:</strong> <code>boolean</code></p>
+<p>When generating mock files, setup code, and project files overwrite any existing files with the same name.</p>
+</section>
+<section id="project-name" class="level3">
+<h3 class="anchored" data-anchor-id="project-name"><code>project-name</code></h3>
+<p><strong>Type:</strong> <code>string</code></p>
+<p>The name of the generated project.</p>
+</section>
+<section id="http-port" class="level3">
+<h3 class="anchored" data-anchor-id="http-port"><code>http-port</code></h3>
+<p><strong>Type:</strong> <code>number</code></p>
+<p>The service http port when hosting the project locally.</p>
+</section>
+<section id="https-port" class="level3">
+<h3 class="anchored" data-anchor-id="https-port"><code>https-port</code></h3>
+<p><strong>Type:</strong> <code>number</code></p>
+<p>The service https port when hosting the project locally.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -283,7 +371,7 @@ Quarto and LUA processing executes relative to the location of the .qmd file. So
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
