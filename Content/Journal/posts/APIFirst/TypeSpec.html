@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Function Monkey – Zoomalong</title>
+<title>TypeSpec – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,10 +138,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Function Monkey</h1>
+      <h1 class="title">TypeSpec</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">C#</div>
-                <div class="quarto-category">Azure Functions</div>
+                <div class="quarto-category">API First</div>
+                <div class="quarto-category">TypeSpec</div>
               </div>
                   </div>
   </div>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Monday, February 17, 2020</p>
+        <p class="date">Thursday, October 16, 2025</p>
       </div>
     </div>
     
@@ -170,14 +170,7 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#function-monkey-hello-world" id="toc-function-monkey-hello-world" class="nav-link active" data-scroll-target="#function-monkey-hello-world">Function Monkey Hello World</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -190,19 +183,34 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="function-monkey-hello-world" class="level1">
-<h1>Function Monkey Hello World</h1>
-<p><img src="FMHelloWorld.svg" class="img-fluid" alt="PlantUML Diagram"></p>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
 <ul>
-<li><a href="https://functionmonkey.azurefromthetrenches.com/">Function Monkey</a></li>
-<li><a href="http://dontcodetired.com/blog/post/Creating-Azure-Functions-with-Function-Monkey-First-Look">Jason Roberts</a></li>
+<li>Defining endpoints and routes<br>
+</li>
+<li>Specifying request and response formats</li>
+<li>Adding authentication and authorization</li>
+<li>Generating client and server code in multiple programming languages</li>
+<li>Creating interactive documentation for APIs</li>
+<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
+<li>Extending TypeSpec with custom plugins and extensions</li>
+</ul>
+<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
+<p>TypeSpec can be used in a variety of scenarios, including:</p>
+<ul>
+<li>Building RESTful APIs for web and mobile applications</li>
+<li>Creating microservices and serverless functions</li>
+<li>Designing APIs for data analytics and machine learning applications</li>
+<li>Generating SDKs and client libraries for third-party developers</li>
+<li>Automating API documentation and testing processes</li>
+<li>Prototyping and iterating on API designs quickly and efficiently</li>
+<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
+<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
+<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
+<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
+<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -278,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

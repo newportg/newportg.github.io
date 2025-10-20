@@ -1,0 +1,18 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/Test Note/index.qmd"
+  description: Test Note
+layout: post
+title: Test Note
+categories: Test Note
+author: "Gary Newport"
+date: "2025-10-20"
+
+output:
+  html_document:
+    toc: true
+---
+
+
+
+Hello World! This is a test note.

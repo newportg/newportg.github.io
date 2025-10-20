@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Function Monkey – Zoomalong</title>
+<title>MediatR – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,10 +138,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Function Monkey</h1>
+      <h1 class="title">MediatR</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">C#</div>
-                <div class="quarto-category">Azure Functions</div>
+                <div class="quarto-category">Patterns</div>
               </div>
                   </div>
   </div>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Monday, February 17, 2020</p>
+        <p class="date">Monday, July 22, 2019</p>
       </div>
     </div>
     
@@ -174,8 +174,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#function-monkey-hello-world" id="toc-function-monkey-hello-world" class="nav-link active" data-scroll-target="#function-monkey-hello-world">Function Monkey Hello World</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a>
+  <ul class="collapse">
+  <li><a href="#hows-this-work" id="toc-hows-this-work" class="nav-link" data-scroll-target="#hows-this-work">How’s this work?</a></li>
+  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -190,18 +194,48 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="function-monkey-hello-world" class="level1">
-<h1>Function Monkey Hello World</h1>
-<p><img src="FMHelloWorld.svg" class="img-fluid" alt="PlantUML Diagram"></p>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<p><img src="d7302eb2a52f0a40cf8cedff92ac1fddc8930b0a.svg" class="img-fluid" alt="PlantUML Diagram"></p>
+<section id="definition" class="level1">
+<h1>Definition</h1>
+<p>Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.</p>
+<section id="hows-this-work" class="level2">
+<h2 class="anchored" data-anchor-id="hows-this-work">How’s this work?</h2>
 <ul>
-<li><a href="https://functionmonkey.azurefromthetrenches.com/">Function Monkey</a></li>
-<li><a href="http://dontcodetired.com/blog/post/Creating-Azure-Functions-with-Function-Monkey-First-Look">Jason Roberts</a></li>
+<li>INotification (Mediator)
+<ul>
+<li>Defines an interface for communicating with Colleague objects</li>
+</ul></li>
+<li>Notifier1, Notifier2 are
+<ul>
+<li>Each Colleague class knows its Mediator object</li>
+<li>Each colleague communicates with its mediator whenever it would have otherwise communicated with another colleague</li>
+<li>Concrete implementations of the task to be performed,</li>
+<li>They need to implement the Handler method defined by the INotificationHandler interface.</li>
+</ul></li>
+<li>NotificationMessage
+<ul>
+<li>Implements cooperative behavior by coordinating Colleague objects knows and maintains its colleagues</li>
+<li>Instantiates the Notifier classes</li>
+</ul></li>
+</ul>
+</section>
+<section id="install" class="level2">
+<h2 class="anchored" data-anchor-id="install">Install</h2>
+<p>Install-Package MediatR</p>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/jbogard/MediatR">Mediatr Framework</a></li>
+<li><a href="https://www.dofactory.com/net/mediator-design-pattern">Dot Factory Pattern</a></li>
+<li><a href="https://exceptionnotfound.net/mediator-the-daily-design-pattern/">Medium Article</a></li>
+<li><a href="https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-in-net-core-part-1-whats-a-mediator/">Mediator Tutorial 1</a></li>
+<li><a href="https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-2-roll-your-own/">Mediator Tutorial 2</a></li>
+<li><a href="https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-3-mediatr-library/">Mediator Tutorial 3</a></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -278,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

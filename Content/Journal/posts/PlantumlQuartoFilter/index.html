@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Function Monkey – Zoomalong</title>
+<title>Plantuml Quarto Filter – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -138,10 +173,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Function Monkey</h1>
+      <h1 class="title">Plantuml Quarto Filter</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">C#</div>
-                <div class="quarto-category">Azure Functions</div>
+                <div class="quarto-category">Plantuml</div>
+                <div class="quarto-category">Quarto Filter</div>
               </div>
                   </div>
   </div>
@@ -159,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Monday, February 17, 2020</p>
+        <p class="date">Monday, October 20, 2025</p>
       </div>
     </div>
     
@@ -174,8 +209,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#function-monkey-hello-world" id="toc-function-monkey-hello-world" class="nav-link active" data-scroll-target="#function-monkey-hello-world">Function Monkey Hello World</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#file-source" id="toc-file-source" class="nav-link" data-scroll-target="#file-source">File Source</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul>
 </nav>
 </nav>
@@ -190,16 +231,71 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="function-monkey-hello-world" class="level1">
-<h1>Function Monkey Hello World</h1>
-<p><img src="FMHelloWorld.svg" class="img-fluid" alt="PlantUML Diagram"></p>
+<section id="description" class="level1">
+<h1>Description</h1>
+<p>For many tasks a diagram is required to illustrate a concept or process. This Quarto filter allows PlantUML diagrams to be created directly within Quarto documents. The filter supports both inline PlantUML code and loading PlantUML code from external <code>.puml</code> files.</p>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="features" class="level1">
+<h1>Features</h1>
 <ul>
-<li><a href="https://functionmonkey.azurefromthetrenches.com/">Function Monkey</a></li>
-<li><a href="http://dontcodetired.com/blog/post/Creating-Azure-Functions-with-Function-Monkey-First-Look">Jason Roberts</a></li>
+<li>Diagrams can be loaded from a file source.</li>
+<li>Diagrams can be created from inline PlantUML code.</li>
+<li>Renders the PlantUML diagram as SVG</li>
+<li>Renders puml files in the current directory.</li>
 </ul>
+</section>
+<section id="usage" class="level1">
+<h1>Usage</h1>
+<p>To use the filter, include the following code block in your Quarto document:</p>
+<section id="file-source" class="level2">
+<h2 class="anchored" data-anchor-id="file-source">File Source</h2>
+<p><strong>N.B.</strong> The path to the puml file is relative to the location of the .qmd file being processed.</p>
+<p><strong>N.B.</strong> The plantuml script mush be stored in a file with a ‘.puml’ extension.</p>
+<p><strong>N.B.</strong> The pumlfile attribute must <strong>not</strong> include a file extension.</p>
+<pre><code>```{.plantuml pumlfile="diagram1"}
+```</code></pre>
+<p>Or for inline PlantUML code:</p>
+<pre><code>```{.plantuml}
+@startuml   
+    Alice -&gt; Bob: Hello
+@enduml
+```</code></pre>
+</section>
+</section>
+<section id="installation" class="level1">
+<h1>Installation</h1>
+<p>To install the PlantUML Quarto filter, follow these steps:</p>
+<ol type="1">
+<li>Have a working PlantUML installation. Instructions for installing PlantUML can be found at <a href="https://plantuml.com/starting">PlantUML Installation Guide</a>.</li>
+<li>PlantUML must be accessible from the command line. Ensure that the PlantUML executable is in your system’s PATH.
+<ol type="1">
+<li>Ideally you should create a batch file to run plantuml, for example <code>plantuml.bat</code>:</li>
+</ol></li>
+</ol>
+<pre class="batch"><code> @echo off
+ java -jar "%~dp0plantuml-1.2025.7.jar" %*</code></pre>
+<ol start="3" type="1">
+<li>Install the filter by using the Quarto add command:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add newportg/plantuml-diagram</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Add <code>diagram</code> to the <code>filters</code> entry in the YAML header or <em>quarto.yml</em> file:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filters</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> plantuml-diagram</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example" class="level1">
+<h1>Example</h1>
+<p>If enverything is setup correctly, the following code block:</p>
+<pre><code>```{.plantuml}
+@startuml   
+    Alice -&gt; Bob: Hello
+@enduml
+```</code></pre>
+<p>will render the following diagram:</p>
+<p><img src="18d28d52229254609bd0ac4c221f81b0b2492aae.svg" class="img-fluid" alt="PlantUML Diagram"></p>
 
 
 </section>
@@ -278,7 +374,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

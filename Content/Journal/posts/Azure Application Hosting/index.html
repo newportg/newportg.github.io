@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Function Monkey – Zoomalong</title>
+<title>Azure Application Hosting – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,10 +138,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Function Monkey</h1>
+      <h1 class="title">Azure Application Hosting</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">C#</div>
-                <div class="quarto-category">Azure Functions</div>
+                <div class="quarto-category">Azure</div>
+                <div class="quarto-category">Hosting</div>
               </div>
                   </div>
   </div>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Monday, February 17, 2020</p>
+        <p class="date">Tuesday, August 14, 2018</p>
       </div>
     </div>
     
@@ -170,39 +170,108 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#function-monkey-hello-world" id="toc-function-monkey-hello-world" class="nav-link active" data-scroll-target="#function-monkey-hello-world">Function Monkey Hello World</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<section id="function-monkey-hello-world" class="level1">
-<h1>Function Monkey Hello World</h1>
-<p><img src="FMHelloWorld.svg" class="img-fluid" alt="PlantUML Diagram"></p>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+<p>Each component is a separately deploy-able artefact, but we need a coherent single URL to link them all. The normal method would be to deploy out each individual component to Azure and each would get its own ‘aurewebsites.com’ URL. This approach would lead to confusion, as it would mean you would need to keep lists of URL’s By using the proxy feature of Azure Functions we can define routes to each of the installed artefacts while preserving a single URL for the application. So:-</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Route</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>zoomalong.co.uk</td>
+<td>Website</td>
+</tr>
+<tr class="even">
+<td>zoomalong.co.uk/api</td>
+<td>Azure functions</td>
+</tr>
+<tr class="odd">
+<td>zoomalong.co.uk/static</td>
+<td>Azure Storage Account</td>
+</tr>
+</tbody>
+</table>
+<p>Used to store any files or images etc. Because both the API and Web Application exist on the same URL then we won’t run into any CORS issues. Remember to bind the DNS Cname to the Azure function proxy and not the website.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="../../../..\images/aah1.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">aah1</figcaption>
+</figure>
+</div>
+<p>How ? In your Azure Functions Project Create a files called proxies.json and insert the following code</p>
+<pre><code>proxies.json
+{
+  "$schema": "http://json.schemastore.org/proxies",
+    "proxies": {
+      "api": {
+        "matchCondition": {
+          "route": "/api/{*url}"
+        },
+        "backendUri": "Set With Build Variable/{url}"
+      },
+      "app": {
+        "matchCondition": {
+          "route": "{*url}",
+          "methods": [ "GET", "HEAD", "OPTIONS" ]
+        },
+        "backendUri": "Set With Build Variable/{url}"
+      },
+      "appResources": {
+        "matchCondition": {
+          "route": "/static/{*url}",
+          "methods": [ "GET", "HEAD", "OPTIONS" ]
+        },
+        "backendUri": "Set With Build Variable/{url}"
+      }
+    }
+  }</code></pre>
+<p>Change in the build. * Build should include Azure App Service Deploy V3 or greater * Update this section with the file to be changed. * <img src="../../../..\images/aah2.png" class="img-fluid" alt="aah2"> * Add your substitutions to the Variables section * As Path to variable to be replace element.element.element * Value to be replaced. * as below</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Proxy</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>proxies.api.backendUri</td>
+<td>https://azure website url</td>
+</tr>
+<tr class="even">
+<td>proxies.app.backendUri</td>
+<td>https://azure function url</td>
+</tr>
+<tr class="odd">
+<td>proxies.appResources.backendUri</td>
+<td>https:// azure storage account blob strorage</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><a href="https://functionmonkey.azurefromthetrenches.com/">Function Monkey</a></li>
-<li><a href="http://dontcodetired.com/blog/post/Creating-Azure-Functions-with-Function-Monkey-First-Look">Jason Roberts</a></li>
+<li>Repeat in the release.</li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
