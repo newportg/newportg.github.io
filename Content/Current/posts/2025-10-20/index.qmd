@@ -1,0 +1,26 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-10-20/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-10-20"
+---
+
+# 2025-10-20
+
+- Diabetes
+  - Continued the Diabetes online course.
+- Quarto
+  - Created a example SAD Website - Quarto-Frontify
+- Journal
+  - Changed the Journal template to create named directories for each post rather than date based directories. This makes it easier to manage posts with similar dates.
+  - One thing to note is that the directory created includes spaces, which should be removed otherwise you have to replace them with '%20' in any WikiLink :(
+    - Looking for a method to camelcase the '${FOAM-TITLE}' variable.
+  
+  
+  
+
+  

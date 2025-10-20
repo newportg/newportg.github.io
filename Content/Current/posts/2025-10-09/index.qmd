@@ -9,6 +9,9 @@ author: "Gary Newport"
 date: "2025-10-09"
 ---
 
+- Quarto PlantUML diagram support
+  - Trying the published plantuml filters
+  
 # inline script
 
 ```{.plantuml}

@@ -12,15 +12,12 @@ date: "2025-10-16"
 # 2025-10-16
 
 - Diabetes
-  - [ ] NHS Online Course https://app.changinghealth.com
-- [ ] API Pipeline 
-  - [X] Create a Journal page to document the process
-  - [ ] Investigate the TypeSpec process
-  - [ ] Investigate the AutoRest process
-  - [ ] Create a End to End example
-    - [ ] Create a GitHub repo to hold the example
-    - [ ] Publish the example to GitHub
-  - [ ] Create a Quarto filter to automate the process
-    - [ ] Create a GitHub repo to hold the filter
-    - [ ] Publish the filter to Quarto extensions
-    - [ ] Document the filter as a journal entry
+  - Continued the Diabetes online course.
+-  API First Quarto Integration
+   -  Created a Journal page to document the process
+   -  Investigate the TypeSpec process
+    - Installed the TypeSpec CLI
+    - Created a sample TypeSpec file
+    - Generated the OpenAPI file
+    - ISSUE: No scripting options seem to be acailable to automate the process
+  

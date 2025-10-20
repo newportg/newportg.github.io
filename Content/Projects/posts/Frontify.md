@@ -9,4 +9,4 @@ date: "2025-02-01"
 
 This project was integration between a internal system and the Frontify Marketing platform.
 
-[Frontify](https://newportg.github.io/Frontify/)
+[Frontify](https://newportg.github.io/Quarto-Frontify/)

@@ -24,7 +24,7 @@ website:
         href: Content/Journal/index.qmd
       - text: "Projects"
         href: Content/Projects/index.qmd      
-        
+     
     right:
       - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}}"
         href: "mailto:Gary.newport@zoomalong.co.uk"
@@ -60,10 +60,10 @@ format:
     footnotes-hover: true
     highlight-style: monokai
 
-diagram:
-  engine:
-    plantuml:
-      execpath: "C:/Plantuml/plantuml.bat"
+# diagram:
+#   engine:
+#     plantuml:
+#       execpath: "C:/Plantuml/plantuml.bat"
 
 filters:
   - plantuml-diagram

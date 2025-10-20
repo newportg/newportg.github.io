@@ -12,16 +12,11 @@ date: "2025-10-14"
 # 2025-10-14
 
 - Diabetes
-  - [ ] NHS Online Course https://app.changinghealth.com
-- Quarto
-  - [X] Created a LUA PlantUML filter for Quarto 
-  - [X] Accepts a Puml file as a attribute
-  - [X] Accepts inline PlantUML code
-    - [X] Creates a local puml file if inline code is used
-  - [X] Renders the PlantUML diagram as SVG
-  - [X] Renders puml files in the current directory. 
-  - [ ] Works with subdirectories
-  - [ ] Cannot direct where to store the generated SVG files
-  - [ ] Create a GitHub repo for the filter
-  - [ ] Publish to Quarto extensions
-  - [ ] Document the filter as a journal entry
+  - Continued the Diabetes online course.
+- Quarto PlantUML filter
+  - Created a Quarto filter to process PlantUML diagrams within Quarto documents.
+  - Published it as a Quarto extension.
+  - Documented the filter as a journal entry.
+  - Not able to direct the output files to a subdirectory yet.
+  - Need to find a way to echo the script rather than create a puml file.
+  - Created a GitHub repo to hold the filter:
