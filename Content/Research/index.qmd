@@ -1,0 +1,23 @@
+---
+title: "Research"
+listing:
+  - id: articles
+    contents: "articles/*/index.qmd"
+    sort: "date desc"
+    template: ../../html/research/listing.ejs
+    categories: true
+page-layout: full
+include-back-link: false
+toc-location: right
+---
+
+My research  {{< ai blank-just-to-add-ai-dependency-to-this-page >}}
+
+
+## Journal articles
+
+:::{#articles}
+:::
+
+
+
