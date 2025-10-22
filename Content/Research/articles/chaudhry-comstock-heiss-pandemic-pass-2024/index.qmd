@@ -1,6 +1,6 @@
 ---
 title: "Pandemic Pass? Treaty Derogations and Human Rights Practices During COVID-19"
-date: 2025-10-22
+date: "2025-10-10"
 author:
   - name: Suparna Chaudhry
     url: http://www.suparnachaudhry.com/

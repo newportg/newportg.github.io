@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "How to Interpret Statistical Models Using {marginaleffects} in R and Python"
-date: 2025-10-01
+date: 2025-10-20
 author:
   - name: Vincent Arel-Bundock
     url: https://arelbundock.com/

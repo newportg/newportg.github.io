@@ -1,0 +1,100 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-10-22/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-10-22"
+---
+
+# 2025-10-22
+
+- Diabetes
+  - [ ] NHS Online Course https://app.changinghealth.com
+- Calendar Template Fustrating....
+  - Solved the issue.
+    - Used EJS to create a JSON object and save it to a div.
+    - Have the Javascript get the JSON object from the DOM and then process it, Simples.
+  - The frustrating part is that I origianily got the jsCalendar update code from AI, maybe AI can help the author out, as no such method or concept exists.
+  - It seems that the author of jsCalendar has a beta extension that allows the logging of events.
+    - not go this to work :(
+    - [Event Demo](https://gramthanos.github.io/jsCalendar/demos.html#load-demo)
+    - I created a stripped down version of the code below.
+
+```javascript
+<% const dates = []; %>
+<%     items.forEach( item => { %>
+        <div class="listing-item">
+<%         if (item.date) { %>
+<%             const d = new Date(item.date); %>
+<%             const year = d.getFullYear(); %>
+<%             const month = d.getMonth() + 1; // getMonth() is 0-indexed %>
+<%             const day = d.getDate(); %>
+<%             dates.push(day+"-"+month+"-"+year); %>
+               <p><%= item.date  %>****<%= d.toString() %>--<%= day %>-<%= month %>-<%= year %></p>
+<%         } %>
+        </div>
+<%     }); %>
+<%     const serverData = { dates: dates }; %>
+
+
+<div id="data-container" data-config="<%- JSON.stringify(serverData) %>"></div>
+
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
+<div id="calendar"></div>
+
+<script>
+    var calendar = jsCalendar.new("#calendar", "now", {	"monthFormat": "month YYYY"	});
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById("data-container");
+        const jsonString = container.getAttribute("data-config");
+        // Parse the JSON string retrieved from the attribute
+        const data = JSON.parse(jsonString);
+        data.dates.forEach( item => {
+            const d = new Date(item);
+            const year = d.getFullYear();
+            const month = d.getMonth() + 1; // getMonth() is 0-indexed
+            const day = d.getDate();     
+            calendar.setHighlightedDate(new Date(year, month, day));
+        });
+   
+  });
+</script>
+``` 
+
+```{=html}
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/extensions/jsCalendar.eventmarks.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/extensions/jsCalendar.eventmarks.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
+
+		<!-- My calendar element -->
+		<div id="my-calendar" class="jsCalendar classic-theme"></div>
+
+		<!-- Create the calendar -->
+		<script type="text/javascript">
+			// Create the calendar
+			var calendar = jsCalendar.new("#my-calendar");
+
+			// Colors for my event marks
+			var colors = [
+				'#52c9ff', // Blue
+				'#ffe31b', // Yellow
+				'#ffb400', // Orange
+				'#f6511d', // Red
+				'#7fb800', // Green
+				'#9c27b0'  // Purple
+			];
+
+		calendar.addEventMarks("2025/10/17", "#f6511d");
+    calendar.showEvents();
+
+		</script>
+
+```

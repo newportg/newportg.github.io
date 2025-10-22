@@ -1,41 +1,67 @@
-```{=html}
+````{=html}
 
 <script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/extensions/jsCalendar.eventmarks.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/extensions/jsCalendar.eventmarks.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
 
 <div id="calendar"></div>
 
-<script type="text/javascript">
-	var calendar = jsCalendar.new("#calendar", "now", {	"monthFormat": "month YYYY"	});
 
-    for (const item of items) { 
-        if (item.date) { 
-            const d = new Date(item.date);
-            const year = d.getFullYear();
-            const month = d.getMonth() + 1;
-            const day = d.getDate();
 
-            calendar.setHighlightedDate(new Date(year, month, day));
-        }
-    }
+<% const dates = []; %>
+<%     items.forEach( item => { %>
+        <div class="listing-item">
+<%         if (item.date) { %>
+<%             const d = new Date(item.date); %>
+<%             const year = d.getFullYear(); %>
+<%             const month = d.getMonth() + 1; // getMonth() is 0-indexed %>
+<%             const day = d.getDate(); %>
+<%             dates.push(day+"-"+month+"-"+year); %>
+               <p><%= item.date  %>****<%= d.toString() %>--<%= day %>-<%= month %>-<%= year %></p>
+<%         } %>
+        </div>
+<%     }); %>
+<%     const serverData = { dates: dates }; %>
+
+
+<div id="data-container" data-config="<%- JSON.stringify(serverData) %>"></div>
+
+<script>
+    //var calendar = jsCalendar.new("#calendar", "now", {	"monthFormat": "month YYYY"	});
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById("data-container");
+        const jsonString = container.getAttribute("data-config");
+        // Parse the JSON string retrieved from the attribute
+        const data = JSON.parse(jsonString);
+
+        const calendarElement = document.getElementById("calendar");
+        const calendar = new jsCalendar(calendarElement, new Date(), {
+            // Use the "date" option to set the dates you want to highlight
+            date: "2025/10/17",
+            // Other options as needed
+            });
+
+        // data.dates.forEach( item => {
+        //     const d = new Date(item);
+        //     const year = d.getFullYear();
+        //     const month = d.getMonth() + 1; // getMonth() is 0-indexed
+        //     const day = d.getDate();     
+        //     document.getElementById("output").textContent = item;
+        //     //calendar.setHighlightedDate(new Date(year, month, day));
+        //     calendar.addEventMarks("2025/10/17", '#f6511d');
+        // });
+  });
+
 
 </script>
 
-    <% for (const item of items) { %>
-        <div class="listing-item">
+<div><B>HELLO WORLD</B></div>
+<div id="output"></div>
+<div><B>HELLO WORLD</B></div>
 
-        <% if (item.date) { %>
-            <%
-                const d = new Date(item.date);
-                const year = d.getFullYear();
-                const month = d.getMonth() + 1; // getMonth() is 0-indexed
-                const day = d.getDate();
-            %>
+````
 
-            <p><%= day %>-<%= month %>-<%= year %></p>
-        <% } %>
 
-        </div>
-    <% } %>
-
-```
