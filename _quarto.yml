@@ -22,11 +22,11 @@ website:
         href: Content/Current/index.qmd      
       - text: "Journal"
         href: Content/Journal/index.qmd
-      - text: "Projects"
-        href: Content/Projects/index.qmd   
-      # - text: "Research"
-      #   href: Content/Research/index.qmd    
-     
+      - text: "Research"
+        href: Content/Research/index.qmd    
+      - text: "Books"
+        href: Content/Books/index.qmd    
+  
     right:
       - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}}"
         href: "mailto:Gary.newport@zoomalong.co.uk"

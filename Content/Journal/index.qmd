@@ -4,13 +4,13 @@ author: "Gary Newport"
 description: ""
 listing:
   - id: posts
-    # contents: "*.md"
+    # contents: "posts/*.qmd"
     sort: "date desc"
     template: ../../html/Journal/listing.ejs
     categories: true
 page-layout: full
-# toc-title: Year
-# toc-location: right
+
+toc-location: right
 date-format: "MMMM D, YYYY"
 code-tools: false
 comments: false

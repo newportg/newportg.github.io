@@ -15,7 +15,7 @@ about:
           icon: linkedin
           href: https://uk.linkedin.com/in/garynewport
 id: ppc
----
+--- 
 
 
 :::{#ppc}
