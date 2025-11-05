@@ -50,20 +50,10 @@
     ]
   },
   {
-    "listing": "/Content/Books/index.html",
-    "items": [
-      "/Content/Books/Books/Book1/Page1.html",
-      "/Content/Books/Books/Book1/Page2.html",
-      "/Content/Books/Books/Book2/Page1.html",
-      "/Content/Books/Books/Book2/Page2.html",
-      "/Content/Books/Books/Book1/index.html",
-      "/Content/Books/Books/Book2/index.html"
-    ]
-  },
-  {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
+      "/Content/Current/posts/2025-11-05/index.html",
       "/Content/Current/posts/2025-11-04/index.html",
       "/Content/Current/posts/2025-10-22/index.html",
       "/Content/Current/posts/2025-10-21/index.html",
@@ -75,6 +65,17 @@
       "/Content/Current/posts/2025-10-10/index.html",
       "/Content/Current/posts/2025-10-09/index.html",
       "/Content/Current/posts/2025-10-08/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Books/index.html",
+    "items": [
+      "/Content/Books/Books/Book1/Page1.html",
+      "/Content/Books/Books/Book1/Page2.html",
+      "/Content/Books/Books/Book2/Page1.html",
+      "/Content/Books/Books/Book2/Page2.html",
+      "/Content/Books/Books/Book1/index.html",
+      "/Content/Books/Books/Book2/index.html"
     ]
   },
   {

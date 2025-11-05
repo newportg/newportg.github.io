@@ -162,7 +162,7 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../Content/Current/index.html"> 
-<span class="menu-text">Current</span></a>
+<span class="menu-text">Now!</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../Content/Journal/index.html"> 
@@ -170,11 +170,7 @@ window.Quarto = {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../../Content/Research/index.html" aria-current="page"> 
-<span class="menu-text">Research</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../Content/Books/index.html"> 
-<span class="menu-text">Books</span></a>
+<span class="menu-text">Calendar Template</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -237,20 +233,14 @@ window.Quarto = {
 <script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
 
-<style type="text/css">
-#wrapper {
-    background-color: blue;
-}
-</style>
+    <div id="calendar"></div>
+    <div id="data-container" data-config="{&quot;events&quot;:[{&quot;date&quot;:&quot;11-16-2025&quot;,&quot;link&quot;:&quot;/Content\\Research\\articles\\APIFirst\\index.qmd&quot;},{&quot;date&quot;:&quot;11-14-2025&quot;,&quot;link&quot;:&quot;/Content\\Research\\articles\\AzureApplicationHosting\\index.qmd&quot;}]}"></div>
 
-<div id="wrapper">
-<div id="calendar"></div>
-<div id="data-container" data-config="{&quot;events&quot;:[{&quot;date&quot;:&quot;11-16-2025&quot;,&quot;link&quot;:&quot;/Content\\Research\\articles\\APIFirst\\index.qmd&quot;},{&quot;date&quot;:&quot;11-14-2025&quot;,&quot;link&quot;:&quot;/Content\\Research\\articles\\AzureApplicationHosting\\index.qmd&quot;}]}"></div>
+    <b>Day  : </b><input id="my-input-a"><br>
+    <b>Link : </b><a id="anchor">link</a><br>  
 
-<b>Day  : </b><input id="my-input-a"><br>
-<b>Link : </b><a id="anchor">link</a><br>
-<div id="post">Dummy</div>
-</div>
+    <div id="post"></div>
+      
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
