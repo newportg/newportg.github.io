@@ -18,14 +18,14 @@ website:
     left:
       # - href: index.qmd
       #   text: Home
-      - text: "Current"
+      - text: "Now!"
         href: Content/Current/index.qmd      
       - text: "Journal"
         href: Content/Journal/index.qmd
-      - text: "Research"
+      - text: "Calendar Template"
         href: Content/Research/index.qmd    
-      - text: "Books"
-        href: Content/Books/index.qmd    
+      # - text: "Books"
+      #   href: Content/Books/index.qmd    
   
     right:
       - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}}"

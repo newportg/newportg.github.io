@@ -11,7 +11,7 @@ date: "2025-11-04"
 
 # 2025-11-04
 
-- Quarto Calendar is nearly done
+- Quarto Calendar Template is nearly done
   - [X] Load a calendar with dates from blog posts
   - [X] Indicate on the calendar days when a posting has occured.
   - [X] Click on a date and a link is populated with the required page.

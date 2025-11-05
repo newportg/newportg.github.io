@@ -1,0 +1,40 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-11-05/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-11-05"
+---
+
+# 2025-11-05
+
+- Happy Guy Fawkes Night :-) 
+- Calendar template
+  - Tried rather unsucessfully to display the calendar and the content divs side by side.
+    - Tried flexbox
+      - Seems the Quarto css is interfering with the flexbox css.
+      - Tried Article and Aside html tags :-(
+  - I'll have another go, but I think its time to move on.
+    - Look at Quarto's inbuilt formatting
+- Changing the title of the Current Blog to Now!
+- Quarto
+  - There seems to be an anoying limitation where you have to maintain the same page format across the website.
+    - For instance
+      - Now!/Diary Page
+        - On the Now!/Diary page ideally the todo section would be collapsible once all the tasks are complete.
+        - I dont need a list of the dated progress pages. Having a calendar in the sidebar indicating which days has a post would suffice.
+        - Click on a date would collapse the todo list and reveal the blog post.
+      - Blog 
+        - Single Page
+          - No issues
+        - Multi-Page
+          - Multi-page documents
+            - The index page should be included in the Blog list.
+            - The index page should be able to link to pages and sub pages.
+              - So longer POC can be investigated and the results grouped.
+      - Projects
+        - (Current Behaviour) Projects should be separtate GitHub websites that contains Quarto Book structured documents. Done
+  

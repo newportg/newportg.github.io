@@ -57,5 +57,11 @@ date: "2025-10-08"
     - [Book ppublished as a website at https://newportg.github.io/Quarto-Frontify/](/Content/Current/posts/2025-10-14/index.qmd)
    - [ ] Remove any references to KF
 
-
+- Quarto Calendar Template
+  - [X] [Load a calendar with dates from blog posts](/Content/Current/posts/2025-11-04/index.qmd)
+  - [X] [Indicate on the calendar days when a posting has occured.](/Content/Current/posts/2025-11-04/index.qmd)
+  - [X] [Click on a date and a link is populated with the required page](/Content/Current/posts/2025-11-04/index.qmd)
+  - [X] [A div on the page is populated with the blog post.](/Content/Current/posts/2025-11-04/index.qmd)
+    - [ ] Stop Quarto formating the content page with headers and footers
+    - [ ] Sort out the page structure.
 
