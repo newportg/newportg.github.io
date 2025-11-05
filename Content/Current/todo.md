@@ -6,7 +6,10 @@ author: "Gary Newport"
 date: "2025-10-08"
 ---
 
-# To Do's
+# Tasks
+<details>
+<summary>Land Registry Titles</summary>
+
 - [ ] Title Service (Land Registry or Nimbus)
   - Still not heard anything from Al concerning Nimbus
     - [ ] If we go with Nimbus, which sounds likely as the cost is lower, we will have to rename the project.
@@ -16,7 +19,9 @@ date: "2025-10-08"
     - [ ] Investigate what MyKf will save in the database
     - [X] Talk to Katy to find out who is the developer
       - Rams Solaiappan
-
+</details>
+<details>
+<summary>Quarto</summary>
 
 - [ ] Quarto
   - [ ] Plantuml plugin
@@ -37,6 +42,9 @@ date: "2025-10-08"
     - [ ] Echo script rather than create puml file.
         - Executing a 'Echo' command terminates when it reaches a line break. So we will need to replace all line breaks with a special character sequence, e.g. '\n' and then use a script to replace the special character sequence with a line break.
         Currently the directory is littered with intermediate .puml files which are not needed once the diagram has been created.
+</details>
+<details>
+<summary>API First Quarto Integration</summary>
 
 -  API First Quarto Integration
    - [X] [Create a Journal page to document the process](/Content/Journal/posts/APIFirst/index.qmd)
@@ -49,13 +57,19 @@ date: "2025-10-08"
      - [ ] Create a GitHub repo to hold the filter
      - [ ] Publish the filter to Quarto extensions
      - [ ] Document the filter as a journal entry
-  
+</details>
+<details>
+<summary>SAD Website</summary>
+
 - [ ] SAD Website
   - [X] [Created a Frontify Quarto Book](/Content/Current/posts/2025-10-20/index.qmd)
   - [X] [Book loaded into GitHub](/Content/Current/posts/2025-10-14/index.qmd)
   - [X] [Book published to GitHub Pages](/Content/Current/posts/2025-10-14/index.qmd)
     - [Book ppublished as a website at https://newportg.github.io/Quarto-Frontify/](/Content/Current/posts/2025-10-14/index.qmd)
    - [ ] Remove any references to KF
+</details>
+<details>
+<summary>Quarto Calendar Template</summary>
 
 - Quarto Calendar Template
   - [X] [Load a calendar with dates from blog posts](/Content/Current/posts/2025-11-04/index.qmd)
@@ -64,4 +78,5 @@ date: "2025-10-08"
   - [X] [A div on the page is populated with the blog post.](/Content/Current/posts/2025-11-04/index.qmd)
     - [ ] Stop Quarto formating the content page with headers and footers
     - [ ] Sort out the page structure.
+</details>
 
