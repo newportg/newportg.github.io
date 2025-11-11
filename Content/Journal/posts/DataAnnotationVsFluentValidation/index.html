@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>Data Annotation Vs FluentValidation – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,11 +138,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">Data Annotation Vs FluentValidation</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">C#</div>
+                <div class="quarto-category">Rules</div>
+                <div class="quarto-category">Patterns</div>
               </div>
                   </div>
   </div>
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Friday, September 20, 2024</p>
       </div>
     </div>
     
@@ -175,7 +175,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#data-annotation" id="toc-data-annotation" class="nav-link active" data-scroll-target="#data-annotation">Data Annotation</a></li>
+  <li><a href="#fluent-validation" id="toc-fluent-validation" class="nav-link" data-scroll-target="#fluent-validation">Fluent Validation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#ref" id="toc-ref" class="nav-link" data-scroll-target="#ref">Ref</a></li>
   </ul>
 </nav>
 </nav>
@@ -190,39 +193,50 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
+<section id="data-annotation" class="level1">
+<h1>Data Annotation</h1>
 <ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
-</ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
+<li>For
 <ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
+<li>Is SOLID
 <ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
+<li>Validations are placed in the model, next to the defintions</li>
+</ul></li>
+<li>Part of standard library</li>
+</ul></li>
+<li>Against
+<ul>
+<li>Validations are not Rules, and cannot span members</li>
+<li>Only represents simple validations in the openapi schema</li>
+</ul></li>
 </ul>
+</section>
+<section id="fluent-validation" class="level1">
+<h1>Fluent Validation</h1>
+<ul>
+<li>For
+<ul>
+<li>Rules can span multiple methods</li>
+</ul></li>
+<li>Against
+<ul>
+<li>Not SOLID
+<ul>
+<li>Validations and Rules are specified in a separate file</li>
+</ul></li>
+<li>Only represents simple validations in the openapi schema</li>
+<li>Additonal setup</li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I’ve changed my mind, which is not uncommon. Where your class is interfacing with a different system such as being used in a API interface, then you need to convey to the user the maximum amount of information, about what is or isnt valid, so the validation details have to be encoded in the model. Where Data Annotations is lacking, E.g. OneOf, AnyOf, then you should build a custom validator to fill the gap.</p>
+<p>Fluent Validation should be used internally, as it not only can apply general validations, it can also encode groups of validations into rules and apply them under different conditions.</p>
+</section>
+<section id="ref" class="level1">
+<h1>Ref</h1>
+<p>This is a interesting read on validators, and also the implementation of custom validators. https://weblogs.asp.net/ricardoperes/net-8-data-annotations-validation</p>
 
 
 </section>

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>KeyVault – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,11 +138,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">KeyVault</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Azure</div>
+                <div class="quarto-category">Key Vault</div>
               </div>
                   </div>
   </div>
@@ -160,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Monday, February 11, 2019</p>
       </div>
     </div>
     
@@ -175,7 +174,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link active" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#load-secrets" id="toc-load-secrets" class="nav-link" data-scroll-target="#load-secrets">Load Secrets</a></li>
+  <li><a href="#accessing-the-key-vault" id="toc-accessing-the-key-vault" class="nav-link" data-scroll-target="#accessing-the-key-vault">Accessing the Key Vault</a></li>
   </ul>
 </nav>
 </nav>
@@ -190,39 +191,52 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
-<ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
-</ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
-<ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
-</ul>
+<p>I’m always looking for ways to simply automate deployments, so I don’t have to hard code, or repeat myself. This blog is looking at Key Vault deployments, and its use.</p>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>For Key Vaults I don’t like to specify the normal key/value pairs, as it would mean that I have to specify the name of the secret within the deployment script. The obvious draw back here is, as the code evolves and the secret changes then you would need to update both the parameters plus the deployment script. So first off in the parameters file put the secrets into an array.</p>
+<pre><code>    "para_kvSecretsObject": {
+      "value": {
+        "secrets": [
+          {
+            "secretName": "applicationuser",
+            "secretValue": "OVERWRITTEN BY VSTS"
+          },
+          {
+            "secretName": "AnotherSecret",
+            "secretValue": "OVERWRITTEN BY VSTS"
+          }
+        ]
+      }</code></pre>
+<p>Straight away you can see that the actual secret is injected from the CI tool, this is so you can inject a different secret depending on the environment. Putting the secrets into an array in this way means that we can cycle through the array in the deployment script without actually referring to the secret itself, only using the array index.</p>
+</section>
+<section id="load-secrets" class="level2">
+<h2 class="anchored" data-anchor-id="load-secrets">Load Secrets</h2>
+<p>Loading of secrets is normally achieved via the actual KeyVault deployment specifying each secret in turn, but as our secrets are specified as part of an array, we will need to apply them in a slightly different way. At the resource level we create a new feature which has a type of Microsoft.KeyVault/vaults/secrets. In the following code block the lines to look out for are the Copy/Name and Value properties. * The Copy property looks at the array and determines the number of items we need to process. * The Name property set the secret name to the ‘secrectName’ value in the array and it is indexed by the copyIndex() parameter * The Value is specified in the same way as the Name just using the secretValue array name.</p>
+<p>One important line which is often overlooked is the DependsOn property. Each resource in the deployment file can be applied by Azure in parallel so by specifying the DependsOn property stops the deployment until the dependant resource exists.</p>
+<pre><code>    {
+      "apiVersion": "2015-06-01",
+      "copy": {
+        "name": "secretsCopy",
+        "count": "[length(parameters('para_kvSecretsObject').secrets)]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.KeyVault/vaults/', variables('var_kv_name'))]"
+      ],
+      "name": "[concat(variables('var_kv_name'), '/', parameters('para_kvSecretsObject').secrets[copyIndex()].secretName)]",
+      "properties": {
+        "value": "[parameters('para_kvSecretsObject').secrets[copyIndex()].secretValue]"
+      },
+      "tags": {
+        "displayName": "Key Vault Secrets"
+      },
+      "type": "Microsoft.KeyVault/vaults/secrets"
+    }</code></pre>
+</section>
+<section id="accessing-the-key-vault" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-the-key-vault">Accessing the Key Vault</h2>
+<p>A Key Vault cannot exist on its own, when it is deployed it needs the service principal, at the moment the service principal can only be obtained from an AD associated application, such as a web app/api app or function.</p>
+<p><img src="keyvault.svg" class="img-fluid" alt="PlantUML Diagram"></p>
 
 
 </section>

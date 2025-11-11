@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>Quarto Web Book – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,11 +138,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">Quarto Web Book</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Quarto</div>
               </div>
                   </div>
   </div>
@@ -160,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Monday, November 10, 2025</p>
       </div>
     </div>
     
@@ -175,7 +173,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#method-1" id="toc-method-1" class="nav-link active" data-scroll-target="#method-1">Method 1</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  </ul></li>
+  <li><a href="#chapter-1-title" id="toc-chapter-1-title" class="nav-link" data-scroll-target="#chapter-1-title">Chapter 1 Title</a></li>
+  <li><a href="#chapter-1-subpage" id="toc-chapter-1-subpage" class="nav-link" data-scroll-target="#chapter-1-subpage">Chapter 1 SubPage</a></li>
+  <li><a href="#chapter-2-title" id="toc-chapter-2-title" class="nav-link" data-scroll-target="#chapter-2-title">Chapter 2 Title</a>
+  <ul class="collapse">
+  <li><a href="#pros" id="toc-pros" class="nav-link" data-scroll-target="#pros">Pros</a></li>
+  <li><a href="#cons" id="toc-cons" class="nav-link" data-scroll-target="#cons">Cons</a></li>
+  </ul></li>
+  <li><a href="#method-2" id="toc-method-2" class="nav-link" data-scroll-target="#method-2">Method 2</a>
+  <ul class="collapse">
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -190,41 +202,56 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
+<section id="method-1" class="level1">
+<h1>Method 1</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is the introduction to my long blog post.</p>
+</section>
+</section>
+<section id="chapter-1-title" class="level1">
+<h1>Chapter 1 Title</h1>
+<p>Content for chapter 1 goes here. This can include code, images, etc.</p>
+</section>
+<section id="chapter-1-subpage" class="level1">
+<h1>Chapter 1 SubPage</h1>
+<p>Content for chapter 1 Sub Page</p>
+</section>
+<section id="chapter-2-title" class="level1">
+<h1>Chapter 2 Title</h1>
+<p>Content for chapter 2 goes here. This can include code, images, etc.</p>
+<p>… and so on for other chapters.</p>
+<section id="pros" class="level3">
+<h3 class="anchored" data-anchor-id="pros">Pros</h3>
 <ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
+<li>All documents appear in the Table of Contents</li>
 </ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
+</section>
+<section id="cons" class="level3">
+<h3 class="anchored" data-anchor-id="cons">Cons</h3>
 <ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
+<li>Forward and backward navigation of Books is lost.</li>
+<li>Doesn’t handle sub pages. everything is one level.</li>
+<li>All the documents appear as a single document.</li>
 </ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
-</ul>
+</section>
+</section>
+<section id="method-2" class="level1">
+<h1>Method 2</h1>
+<ol type="1">
+<li>Create a separate Quarto Book project
+<ol type="1">
+<li>Store it in GitHub</li>
+<li>Publish it.</li>
+</ol></li>
+<li>Reference the Book project from your blog page.</li>
+</ol>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Neither of these solutions is very satisfactory, as Quarto seems to forget the basic tenants of Wiki’s. Method 1 is useful if you only have simple documents. Method 2 is useful but you will have issues with duplication of the home page of the book, or do you make the website blog post just a link ?</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

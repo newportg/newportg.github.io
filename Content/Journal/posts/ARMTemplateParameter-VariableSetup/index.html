@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>ARM Template Parameter Variable Setup – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -138,11 +173,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">ARM Template Parameter Variable Setup</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Azure</div>
+                <div class="quarto-category">Arm Templates</div>
               </div>
                   </div>
   </div>
@@ -160,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Monday, October 15, 2018</p>
       </div>
     </div>
     
@@ -175,7 +209,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link active" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a></li>
   </ul>
 </nav>
 </nav>
@@ -190,39 +225,71 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
+<p>For something so simple, arm templates can become complex things, so I prefer to try to set some ground rules before I go to deep. N.B this works for me, and may not suit everyone 😉</p>
 <ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
+<li>You should employee a naming convention for your artefacts.</li>
+<li>Every Resource should be tagged.</li>
+<li>There should be a clear naming convention between the parameters and variables.</li>
+<li>Parameters should be either primitives or unique values</li>
+<li>Variables should build up your resource names from the parameter primitives.</li>
 </ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
-<ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
-</ul>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>I prefer to inject any unique values via a VSTS/VSO or if your prefer Azure DevOps deployment process.</p>
+<p>In the first part of the file I spell out the acronyms which form part of the naming convention for the resources, you could use nested templates for this, but I feel they add unnecessary complications, as the nested template must be available via a URL. The second part involves parameters that are specific to this application, such as the tenant id, application name etc.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"$schema"</span><span class="fu">:</span> <span class="st">"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"contentVersion"</span><span class="fu">:</span> <span class="st">"1.0.0.0"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"parameters"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_region"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"we"</span> <span class="fu">},</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_resgrp"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"resgrp"</span> <span class="fu">},</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_appsvc"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"appsvc"</span> <span class="fu">},</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_svcpln"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"svcpln"</span> <span class="fu">},</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_stract"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"str"</span> <span class="fu">},</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_kv"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"kv"</span> <span class="fu">},</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_azfunc"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"fn"</span> <span class="fu">},</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_appin"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"appins"</span> <span class="fu">},</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_acronym_webapp"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"webapp"</span> <span class="fu">},</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_ad_tenantid"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">" OVERWRITTEN BY VSTS "</span> <span class="fu">},</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_application_name"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">" OVERWRITTEN BY VSTS "</span> <span class="fu">},</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_vanity_name"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">" OVERWRITTEN BY VSTS "</span> <span class="fu">},</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_target_env"</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">"value"</span><span class="fu">:</span> <span class="st">"dev"</span> <span class="fu">},</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"para_kvSecretsObject"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"value"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"secrets"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">{</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"secretName"</span><span class="fu">:</span> <span class="st">"applicationuser"</span><span class="fu">,</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"secretValue"</span><span class="fu">:</span> <span class="st">"OVERWRITTEN BY VSTS"</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">{</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                            <span class="dt">"secretName"</span><span class="fu">:</span> <span class="st">"AnotherSecrect"</span><span class="fu">,</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                            <span class="dt">"secretValue"</span><span class="fu">:</span> <span class="st">"OVERWRITTEN BY VSTS"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">}</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                    <span class="ot">]</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                <span class="fu">}</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="variables" class="level2">
+<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<p>As you can see from the variables, I build up my resource names from the parameters. I also pull in values for the hostingplan and component identities, so they can be used easily with the resource definitions.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="er">"variables":</span> <span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_env_region"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_target_env'), '-', parameters('para_acronym_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_public_url"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_target_env'), '.', parameters('para_application_name'), '.', parameters('para_vanity_name'))]"</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_str_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), parameters('para_acronym_stract'), parameters('para_target_env'), parameters('para_acronym_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_str_resId"</span><span class="fu">:</span> <span class="st">"[resourceId(resourceGroup().Name,'Microsoft.Storage/storageAccounts', variables('var_str_name'))]"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_kv_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_kv'), '-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_azf_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_azfunc'),'-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_appin_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_appin'),'-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_hstpln_group"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_resgrp'), '-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_hstpln_env"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_appsvc'), '-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_hstpln_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-', parameters('para_acronym_svcpln'), '-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_webapp_name"</span><span class="fu">:</span> <span class="st">"[concat(parameters('para_application_name'), '-' ,parameters('para_acronym_webapp'),'-', variables('var_env_region'))]"</span><span class="fu">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_webapp_hstpln"</span><span class="fu">:</span> <span class="st">"[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', variables('var_hstpln_group'), '/providers/Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]"</span><span class="fu">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"var_msi_azf"</span><span class="fu">:</span> <span class="st">"[concat(resourceId('Microsoft.Web/sites', variables('var_azf_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

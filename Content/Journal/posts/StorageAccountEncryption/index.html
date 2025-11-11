@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>Storage Account Encryption – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,11 +138,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">Storage Account Encryption</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Azure</div>
+                <div class="quarto-category">Storage Accounts</div>
               </div>
                   </div>
   </div>
@@ -160,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Monday, March 4, 2019</p>
       </div>
     </div>
     
@@ -175,7 +174,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#data-encryption" id="toc-data-encryption" class="nav-link active" data-scroll-target="#data-encryption">Data Encryption</a></li>
+  <li><a href="#key-rotation" id="toc-key-rotation" class="nav-link" data-scroll-target="#key-rotation">Key Rotation</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
 </nav>
@@ -190,38 +191,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
+<p>By default storage accounts are encrypted, and Microsoft holds the keys. The encryption that is used is AES 256 bit, as it is one of the strongest ciphers currently available.</p>
 <ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
+<li>Azure storage services:
+<ul>
+<li>Azure Managed Disks</li>
+<li>Azure Blob storage</li>
+<li>Azure Files</li>
+<li>Azure Queue storage</li>
+<li>Azure Table storage.</li>
+<li>Both performance tiers (Standard and Premium).</li>
+<li>Both deployment models (Azure Resource Manager and classic).</li>
+</ul></li>
 </ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
+<p>The one big issue with this is that Microsoft owns the encryption key and potentially has unrestricted access to the users data. They have included the facility for the user to specify an encryption key, so you can meet your individual company security or regulatory compliance needs. To use your own key, you will need. * A Key Vault * Needs to be in the same region as the storage * Does not need to be in the same subscription * Storage needs permissions to access your Key Vault. * Need to grant wrapKey, unwrapKey privileges</p>
+<section id="data-encryption" class="level2">
+<h2 class="anchored" data-anchor-id="data-encryption">Data Encryption</h2>
+<p>A key point to understand, the data itself is not encrypted with the key. Microsoft employs a two stage encryption process which involves a DEK (Data Encryption Key) and a KEK (Key Encryption Key). The DEK is generated when the storage account is created, and is used to encrypt the data. The DEK is it self is encrypted with a key that Microsoft holds (KEK), Its this Microsoft key that can be replaced with the users own key.</p>
+</section>
+<section id="key-rotation" class="level2">
+<h2 class="anchored" data-anchor-id="key-rotation">Key Rotation</h2>
+<p>This is currently under development by Microsoft. Key rotation is a process where the KEK (see Data Encryption above) is rotated every 90 days, this involves decrypting the existing key and re-encrypting it with a newly generated key.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
+<li>https://docs.microsoft.com/en-us/azure/storage/common/storage-service-encryption</li>
 </ul>
 
 

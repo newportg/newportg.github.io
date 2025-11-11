@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>How to build Cloud components without any Azure Experience – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="floating nav-fixed slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -138,11 +138,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">How to build Cloud components without any Azure Experience</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Architecture</div>
               </div>
                   </div>
   </div>
@@ -160,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Monday, May 1, 2023</p>
       </div>
     </div>
     
@@ -175,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#how-to-build-cloud-components-without-any-azure-experience" id="toc-how-to-build-cloud-components-without-any-azure-experience" class="nav-link active" data-scroll-target="#how-to-build-cloud-components-without-any-azure-experience">How to build Cloud components without any Azure Experience</a></li>
   </ul>
 </nav>
 </nav>
@@ -184,45 +182,50 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
-<ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
-</ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
-<ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
-</ul>
+<section id="how-to-build-cloud-components-without-any-azure-experience" class="level1 page-columns page-full">
+<h1>How to build Cloud components without any Azure Experience</h1>
+<p>It is a bit of a misnomer; you need people with cloud experience.</p>
+<p>Sorry I am not going to say anything new here, but it just might be new here.</p>
+<p>In typical application code is the same no matter what platform you develop on, you have an interface to the world, domain/business rules, and a data interface. Only the interface to the world needs to be managed by someone with more specialised knowledge. You could divide up the code and create two projects, one for the API, specialised to the environment it will be deployed, and one for the domain/business logic. This would enable you to simply wrap the domain/business rules in its own NuGet package and use normal developers to create them and allow them to use tradition tools to build and evaluate them.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./package1.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">package1</figcaption>
+</figure>
+</div>
+<p>The previous solution would be fine, but it still leaves scope for organically grown code, which encapsulates complex business rules. The build test burden could be reduced further by making the projects even smaller. Reducing their complexity and increasing their automatic testability. In this case the Domain logic could be reduced to encoding process flow only, and business rules evaluation could be managed by a more suitable tool. Also if the data store interface is not specific to this application but a general interface used by many applications, then it also could make use of package management.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./package2.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">package2</figcaption>
+</figure>
+</div>
+<p>The questions, I keep hearing when there is a proposed change in development strategy, such as • How do we keep up with package versioning • How do we make sure all applications are using the same package versions</p>
+<p>The simple answer is developers should use good development practices.</p>
+<ol type="1">
+<li>At the start of any new development, they should
+<ol type="1">
+<li>Run the unit tests</li>
+<li>Get the latest packages</li>
+<li>Run the unit tests</li>
+<li>Fix any issues caused by the updated packages</li>
+<li>Run the unit tests</li>
+</ol></li>
+<li>Create new code</li>
+<li>Create new tests
+<ol type="1">
+<li>Run the unit tests</li>
+</ol></li>
+<li>Create a check in note</li>
+<li>Check in</li>
+</ol>
+<p>The only project where package version matters is the API project, as that what is presented to the user.</p>
 
 
 </section>

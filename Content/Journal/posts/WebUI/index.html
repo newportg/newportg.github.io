@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>TypeSpec – Zoomalong</title>
+<title>Web UI – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="floating nav-fixed slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -138,11 +138,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">TypeSpec</h1>
+      <h1 class="title">Web UI</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">API First</div>
-                <div class="quarto-category">TypeSpec</div>
-                <div class="quarto-category">GraphQL</div>
+                <div class="quarto-category">Architecture</div>
               </div>
                   </div>
   </div>
@@ -160,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Thursday, October 16, 2025</p>
+        <p class="date">Thursday, June 22, 2023</p>
       </div>
     </div>
     
@@ -175,7 +173,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#web-ui-architectures" id="toc-web-ui-architectures" class="nav-link" data-scroll-target="#web-ui-architectures">Web UI Architectures</a>
+  <ul class="collapse">
+  <li><a href="#server-side-rendering-ssr" id="toc-server-side-rendering-ssr" class="nav-link" data-scroll-target="#server-side-rendering-ssr">Server-Side Rendering (SSR):</a></li>
+  <li><a href="#static-site-generation-ssg" id="toc-static-site-generation-ssg" class="nav-link" data-scroll-target="#static-site-generation-ssg">Static Site Generation (SSG):</a></li>
+  <li><a href="#single-page-application-spa" id="toc-single-page-application-spa" class="nav-link" data-scroll-target="#single-page-application-spa">Single-Page Application (SPA):</a></li>
+  <li><a href="#progressive-web-application-pwa" id="toc-progressive-web-application-pwa" class="nav-link" data-scroll-target="#progressive-web-application-pwa">Progressive Web Application (PWA):</a></li>
+  <li><a href="#isomorphic-universal-applications" id="toc-isomorphic-universal-applications" class="nav-link" data-scroll-target="#isomorphic-universal-applications">Isomorphic (Universal) Applications:</a></li>
+  <li><a href="#micro-frontend" id="toc-micro-frontend" class="nav-link" data-scroll-target="#micro-frontend">Micro Frontend:</a></li>
+  </ul></li>
+  <li><a href="#people" id="toc-people" class="nav-link" data-scroll-target="#people">People</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -184,47 +194,103 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:</p>
-<ul>
-<li>Defining endpoints and routes<br>
-</li>
-<li>Specifying request and response formats</li>
-<li>Adding authentication and authorization</li>
-<li>Generating client and server code in multiple programming languages</li>
-<li>Creating interactive documentation for APIs</li>
-<li>Validating API definitions against industry standards such as OpenAPI and Swagger</li>
-<li>Extending TypeSpec with custom plugins and extensions</li>
-</ul>
-<p>TypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.</p>
-<p>TypeSpec can be used in a variety of scenarios, including:</p>
-<ul>
-<li>Building RESTful APIs for web and mobile applications</li>
-<li>Creating microservices and serverless functions</li>
-<li>Designing APIs for data analytics and machine learning applications</li>
-<li>Generating SDKs and client libraries for third-party developers</li>
-<li>Automating API documentation and testing processes</li>
-<li>Prototyping and iterating on API designs quickly and efficiently</li>
-<li>Integrating with CI/CD pipelines for continuous delivery of APIs</li>
-<li>Ensuring compliance with industry regulations and standards for API security and privacy</li>
-<li>Facilitating API versioning and backward compatibility for long-term maintenance</li>
-<li>Supporting multiple API styles, including REST, GraphQL, and gRPC</li>
-<li>Enabling rapid development and deployment of APIs in cloud-native environments</li>
-</ul>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=AGVEV53fVEo">One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec</a></li>
-<li><a href="https://github.com/microsoft/typespec/issues/4933">Typespec Graphql Emitter</a></li>
-<li><a href="https://github.com/fionabronwen">FionaBronwen Github</a></li>
-</ul>
+<section id="introduction" class="level1 page-columns page-full">
+<h1>Introduction</h1>
+<p>A web application, also known as a web app, is a software application that runs on web browsers and is accessed over the internet. It is designed to provide interactive and dynamic functionality to users, like traditional desktop applications, but with the advantage of being platform-independent and accessible from any device with a web browser.</p>
+<p>Web applications are typically built using web technologies such as HTML (Hypertext Markup Language), CSS (Cascading Style Sheets), and JavaScript, which enable the creation of interactive user interfaces and the manipulation of data. The application’s logic is executed on the server and/or client side, depending on the architecture employed.</p>
+<p>Web applications can vary widely in their complexity and functionality, ranging from simple websites with basic forms and interactivity to more advanced applications that involve complex data processing, real-time communication, and collaboration. Examples of web applications include online banking systems, social media platforms, e-commerce websites, project management tools, and web-based email clients.</p>
+<p>One of the key advantages of web applications is their ability to deliver updates and improvements seamlessly, as they are centrally hosted and accessed over the internet. This eliminates the need for users to manually install software updates, resulting in a more efficient and user-friendly experience.</p>
+<section id="web-ui-architectures" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="web-ui-architectures">Web UI Architectures</h2>
+<p>SSR (Server-Side Rendering), SSG (Static Site Generation), SPA (Single-Page Application), PWA (Progressive Web Application), Isomorphic, and Micro Frontend architectures are different approaches to building web applications, each with its own characteristics and benefits.</p>
+<section id="server-side-rendering-ssr" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="server-side-rendering-ssr">Server-Side Rendering (SSR):</h3>
+<p>SSR is an approach where the server generates the complete HTML for each request and sends it to the client. The client receives a fully rendered page, including content and data. SSR is beneficial for improving initial page load time and search engine optimization (SEO) since search engines can easily crawl and index the content.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\ssr.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">SSR</figcaption>
+</figure>
+</div>
+</section>
+<section id="static-site-generation-ssg" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="static-site-generation-ssg">Static Site Generation (SSG):</h3>
+<p>SSG is a method of generating static HTML files during the build process based on predefined templates and data. These static files can then be served to clients without the need for server-side processing. SSG provides fast page loads, reduces server load, and enables caching benefits. It is well-suited for content-based websites and blogs with less dynamic content.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\ssg.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">SSG</figcaption>
+</figure>
+</div>
+</section>
+<section id="single-page-application-spa" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="single-page-application-spa">Single-Page Application (SPA):</h3>
+<p>SPA is an application that loads a single HTML page initially and then dynamically updates its content using JavaScript, typically through API calls. The client-side JavaScript handles the rendering of views and the manipulation of data. SPAs provide a smooth and responsive user experience, as they avoid full page reloads. Examples include Gmail and Trello.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\spa.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">SPA</figcaption>
+</figure>
+</div>
+</section>
+<section id="progressive-web-application-pwa" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="progressive-web-application-pwa">Progressive Web Application (PWA):</h3>
+<p>PWA is an application that combines the features of web and mobile apps. PWAs are built using web technologies and provide an app-like experience to users, including offline capabilities, push notifications, and access to device features. PWAs can be installed on the user’s device and are accessible through the home screen, bridging the gap between web and native apps.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\pwa.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">PWA</figcaption>
+</figure>
+</div>
+</section>
+<section id="isomorphic-universal-applications" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="isomorphic-universal-applications">Isomorphic (Universal) Applications:</h3>
+<p>Isomorphic applications aim to create a consistent codebase that can run both on the server and the client. The goal is to share as much code as possible between the server and the client, enabling server-side rendering for improved initial load times and search engine friendliness while still providing interactive client-side functionality.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\iso.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">ISO</figcaption>
+</figure>
+</div>
+</section>
+<section id="micro-frontend" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="micro-frontend">Micro Frontend:</h3>
+<p>Micro Frontend is an architectural approach that focuses on breaking down a web application into smaller, self-contained frontend modules. Each module can be developed, tested, and deployed independently, often by different teams. Micro Frontend allows for better scalability, flexibility, and autonomy in the frontend development process.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src=".\microfrontend.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">microfrontend</figcaption>
+</figure>
+</div>
+<p>It’s important to note that these architectures are not mutually exclusive, and elements of each can be combined to suit specific project requirements. The choice of architecture depends on factors such as application complexity, performance needs, SEO requirements, development team structure, and user experience goals.</p>
+</section>
+</section>
+<section id="people" class="level2">
+<h2 class="anchored" data-anchor-id="people">People</h2>
+<p>The web has got more complicated, having a development team that can keep pace with the development and testing approaches, code structures and framework evolutions is difficult and probably very expensive. Multiple teams, different focuses Having one team develop a web application where everyone uses one JavaScript framework for the GUI and .NET for the APIs can have several benefits:</p>
+<ol type="1">
+<li><p>Consistency: Using a single JavaScript framework for the GUI ensures consistent code style, architecture, and patterns across the frontend components. This simplifies collaboration, code reviews, and maintenance tasks within the development team.</p></li>
+<li><p>Efficient Communication: When the GUI and APIs are developed by the same team, communication between frontend and backend developers becomes more seamless. Developers can coordinate closely, align requirements, and address issues promptly.</p></li>
+<li><p>Shared Expertise: By focusing on a single JavaScript framework, team members can deepen their expertise in that particular framework. This can result in faster development, efficient problem-solving, and improved overall quality of the frontend code.</p></li>
+<li><p>Seamless Integration: .NET is a versatile framework that offers excellent integration capabilities with various APIs and services. When the same team handles both the frontend and backend, they can ensure smooth communication and data flow between the GUI and the APIs, leading to a better overall user experience.</p></li>
+<li><p>Faster Development Iterations: With a unified team and shared knowledge, development iterations can be accelerated. Developers can iterate and deploy changes more quickly, as they have a deep understanding of both the frontend and backend components. This agility can be beneficial for meeting project deadlines and adapting to evolving requirements.</p></li>
+</ol>
+<p>However, there are some considerations to keep in mind:</p>
+<ol type="1">
+<li><p>Expertise Balance: It’s important to ensure that the team has a balanced skill set, with expertise in both the chosen JavaScript framework and .NET for APIs. If the team members are primarily skilled in one area and lack proficiency in the other, it could lead to inefficiencies or a compromise in the quality of either the frontend or backend development.</p></li>
+<li><p>Scalability: As the application grows and becomes more complex, a single team may face challenges in managing both the frontend and backend aspects simultaneously. In such cases, it may be necessary to divide the team or consider specialized roles to ensure efficient development and maintenance.</p></li>
+<li><p>Flexibility and Adaptability: Relying on a single JavaScript framework and .NET for APIs may limit the team’s flexibility when it comes to incorporating new technologies or frameworks that may better suit specific requirements. It’s important to periodically evaluate and adapt the technology stack to stay up-to-date with industry trends and evolving project needs. Ultimately, the decision to have one team develop both the GUI and APIs using specific technologies depends on factors such as the team’s expertise, project requirements, timelines, and scalability considerations.</p></li>
+</ol>
+<p><strong>In Hub 1.0 we have encountered all the negative considerations detailed above, so I’d advise against having multi-disciplinary developers, rather we should have Web GUI and API developers who specialise in their areas.</strong></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
