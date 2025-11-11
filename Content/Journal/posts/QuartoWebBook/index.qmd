@@ -1,0 +1,47 @@
+---
+layout: post
+title: Quarto Web Book
+categories: [Quarto]
+author: "Gary Newport"
+date: "2025-11-10"
+
+output:
+  html_document:
+    toc: true
+---
+
+# Method 1
+
+## Introduction
+
+This is the introduction to my long blog post.
+
+{{< include chapter1.md >}}
+
+{{< include chapter2.md >}}
+
+... and so on for other chapters.
+
+### Pros
+- All documents appear in the Table of Contents
+
+### Cons 
+- Forward and backward navigation of Books is lost.
+- Doesn't handle sub pages. everything is one level.
+- All the documents appear as a single document.
+
+# Method 2
+
+1. Create a separate Quarto Book project
+   1. Store it in GitHub
+   2. Publish it.
+2. Reference the Book project from your blog page.
+
+## Conclusion
+Neither of these solutions is very satisfactory, as Quarto seems to forget the basic tenants of Wiki's.
+Method 1 is useful if you only have simple documents.
+Method 2 is useful but you will have issues with duplication of the home page of the book, or do you make the website blog post just a link ?
+
+
+
+

@@ -1,0 +1,18 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-11-11/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-11-11"
+---
+
+# 2025-11-11
+
+- Nimbus, reached out to nimbus, looking for somw online resources concerning there API
+- Journal
+    - Updating the Journal posts so they are in there own folder.
+        - If the main page for each post is index.qmd, then the index screen can ignore all other qmd/md files.
+  

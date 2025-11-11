@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TypeSpec
-categories: [API First, TypeSpec]
+categories: [API First, TypeSpec, GraphQL]
 author: "Gary Newport"
 date: "2025-10-16"
 
@@ -36,3 +36,7 @@ TypeSpec can be used in a variety of scenarios, including:
 - Supporting multiple API styles, including REST, GraphQL, and gRPC
 - Enabling rapid development and deployment of APIs in cloud-native environments
 
+# References
+- [One API Definition To Rule Them All: Generating GraphQL Schemas From Typespec](https://www.youtube.com/watch?v=AGVEV53fVEo)
+- [Typespec Graphql Emitter](https://github.com/microsoft/typespec/issues/4933)
+- [FionaBronwen Github](https://github.com/fionabronwen)
