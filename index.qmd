@@ -8,7 +8,7 @@ about:
     links:
         - text: Email
           icon: envelope
-          href: mailto:gary.newport@zoomalong.co.ukcccc
+          href: mailto:gary.newport@zoomalong.co.uk
         - text: GitHub
           href: https://github.com/newportg
         - text: LinkedIn
