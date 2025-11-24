@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newportg.github.io/index.html</loc>
-    <lastmod>2025-11-11T15:38:24.034Z</lastmod>
+    <lastmod>2025-11-24T16:39:29.876Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/articles/AzureApplicationHosting/index.html</loc>
@@ -70,7 +70,7 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/Frontify/index.html</loc>
-    <lastmod>2025-11-03T11:19:03.388Z</lastmod>
+    <lastmod>2025-11-12T11:37:55.751Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/EventNotification/index.html</loc>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/index.html</loc>
-    <lastmod>2025-10-20T14:30:12.618Z</lastmod>
+    <lastmod>2025-11-12T11:42:09.248Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html</loc>
@@ -110,7 +110,11 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/todo.html</loc>
-    <lastmod>2025-11-05T16:01:37.328Z</lastmod>
+    <lastmod>2025-11-12T14:07:45.455Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-14/index.html</loc>
+    <lastmod>2025-11-14T10:00:39.225Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/posts/2025-11-05/index.html</loc>
@@ -154,7 +158,7 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Books/Books/Book1/index.html</loc>
-    <lastmod>2025-11-02T13:50:43.954Z</lastmod>
+    <lastmod>2025-11-12T14:04:50.172Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Books/Books/Book1/Page2.html</loc>
@@ -166,7 +170,7 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Books/index.html</loc>
-    <lastmod>2025-11-02T13:49:10.823Z</lastmod>
+    <lastmod>2025-11-12T14:05:08.235Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Current/posts/2025-10-08/index.html</loc>
@@ -197,8 +201,12 @@
     <lastmod>2025-11-11T15:41:41.437Z</lastmod>
   </url>
   <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-24/index.html</loc>
+    <lastmod>2025-11-24T16:39:08.773Z</lastmod>
+  </url>
+  <url>
     <loc>https://newportg.github.io/Content/Journal/index.html</loc>
-    <lastmod>2025-11-11T14:08:07.286Z</lastmod>
+    <lastmod>2025-11-12T10:21:13.275Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/AdaptiveCard/index.html</loc>
@@ -206,7 +214,7 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/TypeSpec.html</loc>
-    <lastmod>2025-11-07T11:24:37.287Z</lastmod>
+    <lastmod>2025-11-12T10:13:42.713Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/AzureApplicationHosting/index.html</loc>
@@ -302,6 +310,6 @@
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/index.html</loc>
-    <lastmod>2025-11-05T12:23:19.688Z</lastmod>
+    <lastmod>2025-11-12T15:55:19.766Z</lastmod>
   </url>
 </urlset>
