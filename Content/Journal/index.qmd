@@ -7,7 +7,7 @@ listing:
     contents: "posts/*/index.qmd"
     sort: "date desc"
     template: ../../html/Journal/listing.ejs
-    categories: true
+    categories: false
 page-layout: full
 
 toc-location: right

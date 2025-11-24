@@ -76,7 +76,8 @@ date: "2025-10-08"
   - [X] [Indicate on the calendar days when a posting has occured.](/Content/Current/posts/2025-11-04/index.qmd)
   - [X] [Click on a date and a link is populated with the required page](/Content/Current/posts/2025-11-04/index.qmd)
   - [X] [A div on the page is populated with the blog post.](/Content/Current/posts/2025-11-04/index.qmd)
-    - [ ] Stop Quarto formating the content page with headers and footers
+    - [X] Stop Quarto formating the content page with headers and footers
+      - Loads the html and only extracts the content div
     - [ ] Sort out the page structure.
 </details>
 

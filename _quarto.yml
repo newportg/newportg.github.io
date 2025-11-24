@@ -62,11 +62,6 @@ format:
     footnotes-hover: true
     highlight-style: monokai
 
-# diagram:
-#   engine:
-#     plantuml:
-#       execpath: "C:/Plantuml/plantuml.bat"
-
 filters:
   - plantuml-diagram
 

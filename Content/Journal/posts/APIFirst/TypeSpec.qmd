@@ -10,6 +10,8 @@ output:
     toc: true
 ---
 
+# TypeSpec
+
 TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:  
 
 - Defining endpoints and routes  

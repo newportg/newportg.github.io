@@ -17,3 +17,4 @@ output:
 This project was integration between a internal system and the Frontify Marketing platform.
 
 [Frontify](https://newportg.github.io/Quarto-Frontify/)
+

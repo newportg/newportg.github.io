@@ -406,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>WOPI Headers: Many operations rely heavily on custom HTTP headers starting with X-WOPI- (e.g., X-WOPI-Override, X-WOPI-Lock). You’ll need to read and respond to these headers in your Azure Functions.</p></li>
 <li><p>File Locking: For edit operations, you must implement the Lock, Unlock, and RefreshLock operations using the X-WOPI-Lock header to prevent concurrent edits.</p></li>
 <li><p>WOPI Validator: Microsoft provides a WOPI Validator tool that you can use to test your implementation during development. Deployment: Your Azure Functions app must be publicly accessible on the internet for Microsoft 365 for the web to reach it.</p></li>
+<li><p>PnP-WOPI Sample: The Microsoft OfficeDev/PnP-WOPI repository on GitHub provides a solid ASP.NET MVC sample which can be used as a reference for the logic needed, even if the hosting model is different.</p></li>
 </ul>
-<p>-PnP-WOPI Sample: The Microsoft OfficeDev/PnP-WOPI repository on GitHub provides a solid ASP.NET MVC sample which can be used as a reference for the logic needed, even if the hosting model is different.</p>
 
 
 </section>
