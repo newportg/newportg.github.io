@@ -247,8 +247,9 @@ window.Quarto = {
     <b>Day  : </b><input id="my-input-a"><br>
     <b>Link : </b><a id="anchor">link</a><br>  
 
-      
-<div id="calendar2">
+  <div id="calendar1"></div>
+  <div id="calendar2"></div>
+
 <pre id="calclick"><pre id="calmatch">    <div id="post"></div>
 
 <style>
@@ -447,178 +448,267 @@ body {
     });
 
 // ---------------------------------
-(function drawCalendar(document, thisYear, weekStartsOnMonday = true, crossOutPastDays = false) {
-  
-  const time = {
-    constants: {
-      days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    },
-  }
-  
-  // create data structure
-  
-  thisYear = thisYear || (new Date()).getFullYear();
-  const year = [];
 
-  time.constants.months.forEach((month, i) => {
-    const firstDate = new Date(thisYear, i, 1);
-    const lastDate = new Date(thisYear, i + 1, 0);
-    const totalDays = lastDate.getDate();
-    const weekends = [];
-    const offset = firstDate.getDay() - 1;
-    for (let date = 1; date <= totalDays; date++) {
-      if ((date + offset) % 7 === 0 || (date + offset) % 7 === 6) {
-        weekends.push(date);
-      }
+    const time = {
+        constants: {
+            days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
     }
-    year.push({
-      name: time.constants.months[i],
-      number: i,
-      firstDay: firstDate.getDay(),
-      totalDays: totalDays,
-      weekends: weekends,
-    });
-  });
 
-  const firstColumnWeekDay = year.reduce((result, current) => {
-    if (weekStartsOnMonday && current.firstDay === 0) {
-      return result;
-    }
-    return current.firstDay < result ? current.firstDay : result;
-  }, 6);
+    // create data structure
+    const thisYear = (new Date()).getFullYear();
+    const year = [];
+    var maxDays = 0;
 
-  const longestRow = year.reduce((result, current) => {
-    const cellsBeforeFirstDay = weekStartsOnMonday &&  current.firstDay === 0 ? 
-          6 :
-          current.firstDay - firstColumnWeekDay;
-    const rowTotal = cellsBeforeFirstDay + current.totalDays;
-    return rowTotal > result ? rowTotal : result;
-  }, 0);
+    const events = [
+        { month: 0, day: 1, name: "New Year's Day" },
+        { month: 6, day: 4, name: "Independence Day" },
+        { month: 11, day: 25, name: "Christmas Day" },
+        { month: 11, day: 25, name: "Christmas Day2" },
+    ];
 
-  for (let month of year) {
-    month.startCell = ((month.firstDay - firstColumnWeekDay) + 7) % 7;
-    month.endCell = month.startCell + month.totalDays - 1;
-  }
-
-  // Draw the calendar
-
-  const calDiv = document.createElement('table');
-  calDiv.className = 'calendar2';
-  
-  function drawDaysOfWeek(totalCellsInEachRow, weekStartsOnMonday) {
-    const startDay = weekStartsOnMonday ? 1 : 0;
-    const endDay = weekStartsOnMonday ? totalCellsInEachRow + 1 : totalCellsInEachRow;
-    const row = document.createElement('tr');
-    row.className = 'row';
-    for (let i = startDay; i < endDay; i++) {
-      const cell = document.createElement('th');
-      cell.className = 'cell header';
-      cell.appendChild(document.createTextNode(time.constants.days[i % 7]));
-      row.appendChild(cell);
-    }
-    calDiv.appendChild(row);
-  }
-
-  function drawRow(month, totalCellsInEachRow, crossOutPastDays) {
-    const row = document.createElement('tr');
-    row.className = 'row';
-    let currentDay = 1;
-
-    for (let i = 0; i < totalCellsInEachRow; i++) {
-      const cell = document.createElement('td');
-      cell.className = 'cell';
-
-    //   if ( i == 0) {
-    //     const monthLabel = document.createElement('span');
-    //     monthLabel.className = 'month';
-    //     monthLabel.appendChild(document.createTextNode(month.name));
-    //     cell.appendChild(monthLabel);
-    //   }
-      if (i >= month.startCell && i <= month.endCell) {
-        cell.classList.add('day');
-        month.weekends.includes(currentDay) && cell.classList.add('weekend');
-        cell.appendChild(document.createTextNode(currentDay));
-        if (currentDay === 1) {
-          const monthLabel = document.createElement('span');
-          monthLabel.className = 'month';
-          monthLabel.appendChild(document.createTextNode(month.name));
-          cell.appendChild(monthLabel);
+    time.constants.months.forEach((month, i) => {
+        const firstDate = new Date(thisYear, i, 1);
+        const lastDate = new Date(thisYear, i + 1, 0);
+        const totalDays = lastDate.getDate();
+        const weekends = [];
+        const offset = firstDate.getDay() - 1;
+        for (let date = 1; date <= totalDays; date++) {
+            if ((date + offset) % 7 === 0 || (date + offset) % 7 === 6) {
+                weekends.push(date);
+            }
         }
-        const today = new Date();
-        today.setHours(0,0,0,0);
-        const currentDayAsDate = new Date(thisYear, month.number, currentDay);
-        if (currentDayAsDate.getTime() == today.getTime()) {
-          cell.classList.add('today');
-        }
-        if (crossOutPastDays && currentDayAsDate < today) {
-          cell.classList.add('crossed');
-        }
+        const monthEvents = events.filter(event => event.month === i);
 
-        cell.date = currentDayAsDate;
-
-        c
-            const pre = document.getElementById('calclick');
-            pre.appendChild(document.createTextNode(event.currentTarget.date.toString()));
-
-            const container = document.getElementById("data-container");
-            const jsonString = container.getAttribute("data-config");
-            const data = JSON.parse(jsonString);  
-
-            data.events.forEach( item => {
-                var d = new Date(item.date);
-                var e = new Date(event.currentTarget.date);
-              
-                const match = document.getElementById('calmatch');
-
-                if( d.getTime() === e.getTime()) {
- //                   match.append(document.createTextNode(d.getTime().toString() + " : "+ e.getTime().toString() + " "));
-                    var link = item.link.replace("qmd", "html");
- //                   match.append(document.createTextNode(d.getTime().toString() + " : "+ e.getTime().toString() + " "));
-                    loadSpecificHtml(link);
-                }
-            })
+        year.push({
+            name: time.constants.months[i],
+            number: i,
+            firstDay: firstDate.getDay(),
+            totalDays: totalDays,
+            weekends: weekends,
+            events: monthEvents
         });
 
-        currentDay++;
-      }
-      row.appendChild(cell);
+        if( totalDays > maxDays) {
+            maxDays = totalDays;
+        } 
+    });
+
+    function isToday(year, month, day) {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const currentDayAsDate = new Date( year, month, day);
+        if (currentDayAsDate.getTime() == today.getTime()) {
+            return true;
+        }
+        return false;
     }
-    calDiv.appendChild(row);
-  }
 
-  drawDaysOfWeek(longestRow, weekStartsOnMonday);
-  for (let month of year) {
-    drawRow(month, longestRow, crossOutPastDays);
-  }
-  
-  const titleDiv = document.createElement('div');
-  titleDiv.className = 'calendartitle';
-  titleDiv.appendChild(document.createTextNode(thisYear));
-  
-  document.getElementById('calendar2').className = 'container';
-  document.getElementById('calendar2').appendChild(titleDiv);
-  document.getElementById('calendar2').appendChild(calDiv);
-  
-  // ======================= DEBUG ===========================
+    function isWeekend(month, day) {
+        if ( month.weekends.includes(day)) {
+            return true;
+        }
+        return false;
+    }
 
-  //const pre = document.createElement('pre');
-  //pre.appendChild(document.createTextNode(JSON.stringify(year, null, 2)));
-  //document.body.appendChild(pre);
-  
-})(document);
+    function createDayHeadings(maxDays) {
+        // print days
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
 
-</script>
+        const noOfDays =  time.constants.days.length -1;
+
+        for( let i = 1; i < maxDays+noOfDays; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(time.constants.days[i % 7]));                
+            row.appendChild(cell);
+        }                
+        return row;
+    }
+
+    function createWeekNoHeading(maxWeeks) {
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
+
+        for( let i = 1; i <= maxWeeks; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(i));                
+            row.appendChild(cell);
+        }                
+
+        return row;
+    }
+
+    function createMonthRow(month) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+        cell.appendChild(document.createTextNode(month.name));
+        row.appendChild(cell);
+
+        // Add Dates
+        const offset = month.firstDay-1;
+
+        for( let i = 1; i <= month.totalDays+offset ; i++) {
+            const cell = document.createElement('td');
+
+            if( i >= month.firstDay) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(i-offset));
+            }
+
+            if( isToday(thisYear, month.number, i-offset)) {
+                cell.classList.add('today');
+            }
+
+            if( isWeekend(month, i-offset)) {
+                cell.classList.add('weekend');
+            }
+
+            // Add Events
+            const dayEvents =  month.events.filter(event => event.day === i-offset) ;
+            if( dayEvents.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                dayEvents.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+            }
+
+            row.appendChild(cell);
+        }
+        return row;
+    }
+
+    function createDayRow(day) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+
+        cell.appendChild(document.createTextNode(day));               
+        row.appendChild(cell);
+        
+        return row;
+    }
+
+    function monthDays( month) {
+        return new Date( new Date().getFullYear(), month+1, 0)
+    }
+    // =================================
+
+    const calDiv = document.createElement('table');
+    calDiv.className = 'calendar';
+
+    // Day Headings
+    calDiv.appendChild(createDayHeadings(maxDays));
+
+    // Print Month Days
+    year.forEach( month => {
+        calDiv.appendChild(createMonthRow(month));
+    })
+
+    document.getElementById('calendar1').appendChild(calDiv);
+
+    // =================================
+
+    const calDiv2 = document.createElement('table');
+    calDiv2.className = 'calendar';
+
+    // X = week
+    // Y = day 
+
+    // Week Heading
+    calDiv2.appendChild(createWeekNoHeading(53));
+
+    let days = [[], [], [], [], [], [], []];
+    year.forEach( month => {
+        for( let i = 1;  i <= month.totalDays ; i++) {
+
+            const date = new Date( thisYear, month.number, i);
+            const dayOfWeek = date.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+
+            if( dayOfWeek > 0 && i == 1 && month.number == 0) {
+                for( let j = 0; j <= dayOfWeek; j++) {
+                    if( j == dayOfWeek)
+                        days[j].push({number:1, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === 1)});
+                    else 
+                        days[j].push({number:0, dayofweek: 0, month: 0, events: []});
+                }
+            }
+            else {
+                days[dayOfWeek].push({number: i, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === i)});
+            }
+        }
+    });
+
+    var today = new Date();
+
+    for( let idx = 0; idx < days.length; idx++) {
+
+        // Day row
+        const row = createDayRow( time.constants.days[idx % 7]);
+
+        // day values
+        var lastno = 0;
+        days[idx].forEach( day => {
+            const cell = document.createElement('td');
+
+            if( day.number != 0) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(day.number));
+            }
+            
+            // Set Todays date.
+            if( day.number == today.getDate() && day.month == today.getMonth())
+            {
+                cell.classList.add('today');
+            }
+
+            // Set month Background
+            if( day.month % 2 == 0)
+            {
+                cell.classList.add('weekend');
+            }
+
+            if( day.events.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                day.events.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+
+                cell.addEventListener("click", function (event) {
+                    alert( tooltip);
+                });
+            }
+
+            row.appendChild(cell);
+        });
+        calDiv2.appendChild(row);
+    };
+
+    document.getElementById('calendar2').appendChild(calDiv2);
+
+</script>        
 
 <div class="listing-no-matching d-none">No matching items</div>
 </pre></pre></div>
-</div>
 <div class="outer">
 <pre><code>&lt;div class="row"&gt;
     &lt;div class="left"&gt; Left &lt;/div&gt;
     &lt;div class="right"&gt; Right &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
+
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
