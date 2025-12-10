@@ -515,7 +515,7 @@
     "href": "Content/Current/index.html",
     "title": "Current Backlog",
     "section": "",
-    "text": "Order By\nDefault\n\n        Date - Oldest\n      \n\n        Date - Newest\n      \n\n        Title\n      \n\n        Author\n      \n\n    \n      \n      \n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\nOctober 8, 2025\n\n\nTo Do\n\n\nGary Newport\n\n\n\n\nNo matching items\n\n\n\n   \n    \n    Order By\nDefault\n\n        Date - Oldest\n      \n\n        Date - Newest\n      \n\n        Title\n      \n\n    \n      \n      \n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\nNovember 24, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 14, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 11, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 5, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 4, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 22, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 21, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 20, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 16, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 15, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 14, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 13, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 10, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 9, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 8, 2025\n\n\nDaily Note\n\n\n\n\n\nNo matching items"
+    "text": "Order By\nDefault\n\n        Date - Oldest\n      \n\n        Date - Newest\n      \n\n        Title\n      \n\n        Author\n      \n\n    \n      \n      \n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\nOctober 8, 2025\n\n\nTo Do\n\n\nGary Newport\n\n\n\n\nNo matching items\n\n\n\n   \n    \n    Order By\nDefault\n\n        Date - Oldest\n      \n\n        Date - Newest\n      \n\n        Title\n      \n\n    \n      \n      \n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\n\n\n\nDecember 9, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 24, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 14, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 11, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 5, 2025\n\n\nDaily Note\n\n\n\n\n\nNovember 4, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 22, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 21, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 20, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 16, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 15, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 14, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 13, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 10, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 9, 2025\n\n\nDaily Note\n\n\n\n\n\nOctober 8, 2025\n\n\nDaily Note\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Content/Books/index.html",
@@ -928,6 +928,13 @@
     "href": "Content/Research/index.html",
     "title": "Research",
     "section": "",
-    "text": "Day  : \n    Link : link  \n\n  \n  \n\n    \n\n\n        \n\nNo matching items\n\n\n&lt;div class=\"row\"&gt;\n    &lt;div class=\"left\"&gt; Left &lt;/div&gt;\n    &lt;div class=\"right\"&gt; Right &lt;/div&gt;\n&lt;/div&gt;"
+    "text": "Day  : \n    Link : link  \n\n    \n    \n\n            \n\n\n        \n\nNo matching items\n\n\n&lt;div class=\"row\"&gt;\n    &lt;div class=\"left\"&gt; Left &lt;/div&gt;\n    &lt;div class=\"right\"&gt; Right &lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "Content/Current/posts/2025-12-09/index.html",
+    "href": "Content/Current/posts/2025-12-09/index.html",
+    "title": "Daily Note",
+    "section": "",
+    "text": "2025-12-09\n\nLand Registry documentation.\nfleshing out the service handler documentation\nAsked AI to see if it could make surgestions on how to improve the service handler design."
   }
 ]

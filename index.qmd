@@ -10,7 +10,6 @@ about:
           icon: envelope
           href: mailto:gary.newport@zoomalong.co.uk
         - text: GitHub
-          href: https://github.com/newportg
         - text: LinkedIn
           icon: linkedin
           href: https://uk.linkedin.com/in/garynewport

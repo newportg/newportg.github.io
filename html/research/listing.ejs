@@ -10,7 +10,7 @@
 
 <%             var date = month+"-"+day+"-"+year; %>
 <%             var link = item.path; %>
-<%             var event = { "date": date, "link": link } %>
+<%             var event = { "date": date, "month": month-1, "day": day, "name": item.title, "link": link }; %>
 
 <%             events.push(event); %>
 <%         } %>
@@ -26,11 +26,11 @@
     <b>Day  : </b><input id="my-input-a"><br>
     <b>Link : </b><a id="anchor">link</a><br>  
 
-  <div id="calendar1" ></div>
-  <div id="calendar2" ></div>
+    <div id="calendar1" ></div>
+    <div id="calendar2" ></div>
 
-<pre id="calclick" />
-<pre id="calmatch" />
+    <pre id="calclick" />
+    <pre id="calmatch" />
 
     <div id="post"></div>
 
@@ -50,6 +50,8 @@
   --today-text-color: white;
   --blog-bg-color: red;
   --blog-text-color: white;
+  --event-bg-color: blue;
+  --event-text-color: white;         
 }
 
 /* html {
@@ -143,6 +145,10 @@ body {
   color: var(--blog-text-color);
 }
 
+.cell.event {
+    background-color: var(--event-bg-color);
+    color: var(--event-text-color);
+}
 /*
 @media not print {
   .cell.day {
@@ -227,7 +233,7 @@ body {
 
         // Refresh layout
 	    calendar.refresh();
-    });
+    }); 
 
 // ---------------------------------
 
@@ -243,12 +249,21 @@ body {
     const year = [];
     var maxDays = 0;
 
+    const container = document.getElementById("data-container");
+    const jsonString = container.getAttribute("data-config");
+    const data = JSON.parse(jsonString);
     const events = [
-        { month: 0, day: 1, name: "New Year's Day" },
-        { month: 6, day: 4, name: "Independence Day" },
-        { month: 11, day: 25, name: "Christmas Day" },
-        { month: 11, day: 25, name: "Christmas Day2" },
+        { month: 0, day: 1, name: "New Year's Day", link: "https://www.timeanddate.com/holidays/new-year-day" },
+        { month: 4, day: 27, name: "Memorial Day", link: "https://www.memorialday.org" },
+        { month: 6, day: 4, name: "Independence Day", link: "https://www.independence.com" },
+        { month: 11, day: 25, name: "Christmas Day", link: "https://www.xmasclock.com" },
+        { month: 11, day: 25, name: "Christmas Day2", link: "https://www.xmasclock.com" }
     ];
+    data.events.forEach( item => {
+        var event = { "date": item.date, "month": item.month, "day": item.day, "name": item.name, "link": item.link };
+        events.push(event);        
+    });
+
 
     time.constants.months.forEach((month, i) => {
         const firstDate = new Date(thisYear, i, 1);
@@ -395,7 +410,7 @@ body {
         calDiv.appendChild(createMonthRow(month));
     })
 
-    document.getElementById('calendar1').appendChild(calDiv);
+    document.getElementById('calendar1').appendChild(calDiv); 
 
     // =================================
 
@@ -450,6 +465,7 @@ body {
             if( day.number == today.getDate() && day.month == today.getMonth())
             {
                 cell.classList.add('today');
+                cell.title = "Today";
             }
 
             // Set month Background
@@ -467,6 +483,16 @@ body {
                 cell.title = tooltip;
 
                 cell.addEventListener("click", function (event) {
+                    const inputA = document.getElementById("my-input-a");
+                    const anchor = document.getElementById("anchor");
+
+                    inputA.value = new Date(thisYear, month, day).toString();
+
+                    var link = event.link.replace("qmd", "html");
+                    anchor.href = link;
+
+                    loadSpecificHtml(link);
+
                     alert( tooltip);
                 });
             }
@@ -478,6 +504,43 @@ body {
 
     document.getElementById('calendar2').appendChild(calDiv2);
 
+
+        const inputA = document.getElementById("my-input-a");
+        const anchor = document.getElementById("anchor");
+
+        // Add events
+        calDiv2.addEventListener("click", function(event){  
+            const target = event.target;
+
+            if( target.classList.contains('event')) {
+                const day = parseInt( target.textContent);
+                const monthCells = target.parentElement.children;
+                let month = -1;
+
+                // find month
+                for( let i = 0; i < monthCells.length; i++) {
+                    const cell = monthCells[i];
+                    if( cell.classList.contains('header')) {
+                        const monthName = cell.textContent;
+                        month = time.constants.months.indexOf(monthName);
+                        break;
+                    }
+                }
+
+                // find event
+                data.events.forEach( event => {
+                    if( event.month == month && event.day == day) {
+                        inputA.value = new Date(thisYear, month, day).toString();
+
+                        var link = event.link.replace("qmd", "html");
+                        anchor.href = link;
+
+                        loadSpecificHtml(link);
+                    }
+                });
+            }
+        });
+//    });
 </script>        
 
 ````
