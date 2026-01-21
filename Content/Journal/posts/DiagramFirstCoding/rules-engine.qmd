@@ -11,6 +11,7 @@ Business Rules (Logic Engine)
 
 ## Rule Execution Workflow (DMN)
 Input: Order and Customer objects.
+
 *  Evaluation: Execute "Blacklist Check" first (Priority 1).
 *  Calculation: If not rejected, calculate discounts.
 *  Output: Return modified Order object to API Service.
