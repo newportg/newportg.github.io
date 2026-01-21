@@ -167,6 +167,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#component-rules-engine-rules-engine.md" id="toc-component-rules-engine-rules-engine.md" class="nav-link active" data-scroll-target="#component-rules-engine-rules-engine.md">Component: Rules Engine (rules-engine.md)</a>
   <ul class="collapse">
   <li><a href="#rule-execution-workflow-dmn" id="toc-rule-execution-workflow-dmn" class="nav-link" data-scroll-target="#rule-execution-workflow-dmn">Rule Execution Workflow (DMN)</a></li>
+  <li><a href="#implementation-tools" id="toc-implementation-tools" class="nav-link" data-scroll-target="#implementation-tools">Implementation Tools</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -223,7 +224,15 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="rule-execution-workflow-dmn" class="level2">
 <h2 class="anchored" data-anchor-id="rule-execution-workflow-dmn">Rule Execution Workflow (DMN)</h2>
-<p>Input: Order and Customer objects. Evaluation: Execute “Blacklist Check” first (Priority 1). Calculation: If not rejected, calculate discounts. Output: Return modified Order object to API Service. Implementation Tools Architecture Rendering: Use the Structurizr Visualizer to paste the script from index.md. API Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler. Logic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution.</p>
+<p>Input: Order and Customer objects. * Evaluation: Execute “Blacklist Check” first (Priority 1). * Calculation: If not rejected, calculate discounts. * Output: Return modified Order object to API Service.</p>
+</section>
+<section id="implementation-tools" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-tools">Implementation Tools</h2>
+<ul>
+<li>Architecture Rendering: Use the Structurizr Visualizer to paste the script from index.md.</li>
+<li>API Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler.</li>
+<li>Logic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution.</li>
+</ul>
 
 
 </section>
@@ -303,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
