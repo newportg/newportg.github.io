@@ -3,6 +3,7 @@
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
+      "/Content/Current/posts/2025-12-10/index.html",
       "/Content/Current/posts/2025-12-09/index.html",
       "/Content/Current/posts/2025-11-24/index.html",
       "/Content/Current/posts/2025-11-14/index.html",
@@ -35,6 +36,7 @@
   {
     "listing": "/Content/Journal/index.html",
     "items": [
+      "/Content/Journal/posts/DiagramFirstCoding/index.html",
       "/Content/Journal/posts/QuartoWebBook/index.html",
       "/Content/Journal/posts/PlantumlQuartoFilter/index.html",
       "/Content/Journal/posts/APIFirst/index.html",

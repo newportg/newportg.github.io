@@ -64,6 +64,7 @@ format:
 
 filters:
   - plantuml-diagram
+  - quarto-kroki
 
 
 

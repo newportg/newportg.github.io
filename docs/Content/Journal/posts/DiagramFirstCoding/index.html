@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-11-14">
 
-<title>Azure Application Hosting – Zoomalong</title>
+<title>Diagram first coding – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,14 +72,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #170C3A;
+      }
+</style>
 
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -130,138 +135,83 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Diagram first coding</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Diagram first coding</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Gary Newport </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Wednesday, January 21, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#so-what-is-business-logic" id="toc-so-what-is-business-logic" class="nav-link active" data-scroll-target="#so-what-is-business-logic">So what is Business Logic?</a></li>
+  <li><a href="#challenges-of-diagram-first-coding" id="toc-challenges-of-diagram-first-coding" class="nav-link" data-scroll-target="#challenges-of-diagram-first-coding">Challenges of Diagram First Coding</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Azure Application Hosting</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Azure</div>
-    <div class="quarto-category">Hosting</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gary Newport </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<p>Each component is a separately deploy-able artefact, but we need a coherent single URL to link them all. The normal method would be to deploy out each individual component to Azure and each would get its own ‘aurewebsites.com’ URL. This approach would lead to confusion, as it would mean you would need to keep lists of URL’s By using the proxy feature of Azure Functions we can define routes to each of the installed artefacts while preserving a single URL for the application. So:-</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Route</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>zoomalong.co.uk</td>
-<td>Website</td>
-</tr>
-<tr class="even">
-<td>zoomalong.co.uk/api</td>
-<td>Azure functions</td>
-</tr>
-<tr class="odd">
-<td>zoomalong.co.uk/static</td>
-<td>Azure Storage Account</td>
-</tr>
-</tbody>
-</table>
-<p>Used to store any files or images etc. Because both the API and Web Application exist on the same URL then we won’t run into any CORS issues. Remember to bind the DNS Cname to the Azure function proxy and not the website.</p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../../../..\images/aah1.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">aah1</figcaption>
-</figure>
-</div>
-<p>How ? In your Azure Functions Project Create a files called proxies.json and insert the following code</p>
-<pre><code>proxies.json
-{
-  "$schema": "http://json.schemastore.org/proxies",
-    "proxies": {
-      "api": {
-        "matchCondition": {
-          "route": "/api/{*url}"
-        },
-        "backendUri": "Set With Build Variable/{url}"
-      },
-      "app": {
-        "matchCondition": {
-          "route": "{*url}",
-          "methods": [ "GET", "HEAD", "OPTIONS" ]
-        },
-        "backendUri": "Set With Build Variable/{url}"
-      },
-      "appResources": {
-        "matchCondition": {
-          "route": "/static/{*url}",
-          "methods": [ "GET", "HEAD", "OPTIONS" ]
-        },
-        "backendUri": "Set With Build Variable/{url}"
-      }
-    }
-  }</code></pre>
-<p>Change in the build. * Build should include Azure App Service Deploy V3 or greater * Update this section with the file to be changed. * <img src="../../../..\images/aah2.png" class="img-fluid" alt="aah2"> * Add your substitutions to the Variables section * As Path to variable to be replace element.element.element * Value to be replaced. * as below</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 62%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Proxy</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>proxies.api.backendUri</td>
-<td>https://azure website url</td>
-</tr>
-<tr class="even">
-<td>proxies.app.backendUri</td>
-<td>https://azure function url</td>
-</tr>
-<tr class="odd">
-<td>proxies.appResources.backendUri</td>
-<td>https:// azure storage account blob strorage</td>
-</tr>
-</tbody>
-</table>
+<p>What if you could create diagrams first, and then generate code from them? This is the idea behind diagram first coding, a software development approach that emphasizes visual representation of system architecture before writing any code.</p>
+<p>This isnt so far fetched. Look at tools like C4, where the system is modeled using a series of heirarchical diagrams, which denote the strucutre of the system at different levels of abstraction. These diagrams can then be used to generate code stubs, which can be filled in with business logic later.</p>
+<p>Thats the rub, systems like this always push to one side complexity to other systems when it gets too difficult to model. For example, you might model the high level architecture of a web application using C4 diagrams, but then have to resort to traditional coding for the detailed implementation of the business logic. However, with advances in model-driven development and code generation tools, its becoming increasingly feasible to adopt a diagram first coding approach. By leveraging these tools, developers can create more maintainable and scalable systems, as the visual representation of the architecture provides a clear understanding of the system’s structure and behavior.</p>
+<p>So for example you might create a C4 diagram that models the high level architecture, and then APIFirst tools to generate the API endpoints and data models. This way, you can ensure that the code is aligned with the architecture, while still allowing for flexibility in the implementation of the business logic.</p>
+<section id="so-what-is-business-logic" class="level2">
+<h2 class="anchored" data-anchor-id="so-what-is-business-logic">So what is Business Logic?</h2>
+<p>Business logic refers to the rules and processes that govern how a system operates and interacts with its users. It encompasses the core functionality of the application, including data processing, decision-making, and workflow management. In a diagram first coding approach, business logic can be represented visually through flowcharts, state diagrams, or other modeling techniques, allowing developers to better understand and communicate the system’s behavior before writing any code.</p>
+<p>So its the logic inside a C4 Component that makes it do what it does. The code part of C4 provides the class hirarchy, but the business logic is what makes those classes actually do something useful. The business logic could be described in a variety of ways, such as pseudocode, flowcharts, or even natural language descriptions.</p>
+<p>This is beginning to sound more like lego than coding. You have a set of pre-defined blocks (the C4 components) that you can snap together to create a system. Having a business logic engineer define the behavior of each block, and using a locode tool to generate the code for each block based on its defined behavior.</p>
+<p>A software developer would glue the blocks together, and ensure that they work together as intended. This approach could potentially lead to faster development times, as well as more maintainable and scalable systems.</p>
+</section>
+<section id="challenges-of-diagram-first-coding" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-of-diagram-first-coding">Challenges of Diagram First Coding</h2>
+<p>While diagram first coding offers many benefits, it also presents several challenges. One of the main challenges is the need for specialized tools and expertise to create and interpret the diagrams. Additionally, there may be resistance from developers who are accustomed to traditional coding practices and may be hesitant to adopt a new approach. Another challenge is ensuring that the diagrams accurately represent the system’s architecture and behavior. Many of the concepts would disrupt the established software development lifecycle, requiring changes to existing processes and workflows.</p>
+<p>or just leave it to AI….</p>
 <ul>
-<li>Repeat in the release.</li>
+<li><a href="../../../../Content/Journal/posts/DiagramFirstCoding/MainArchitecture.html">mainArchitecture</a></li>
+<li><a href="../../../../Content/Journal/posts/DiagramFirstCoding/api-service.html">apiService</a></li>
+<li><a href="rules-engine.qmd">rulesEngine</a></li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -337,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
