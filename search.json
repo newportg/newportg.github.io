@@ -774,14 +774,14 @@
     "href": "Content/Journal/posts/DiagramFirstCoding/rules-engine.html",
     "title": "Component: Rules Engine (rules-engine.md)",
     "section": "",
-    "text": "This sub-page defines the logic used by the business engine (e.g., Drools or NRule). Business Rules (Logic Engine)\n\n\n\n\n\n\n\n\n\nRule ID\nName\nCondition\nAction\n\n\n\n\nBR-001\nHigh Value Review\norder.amount &gt; 10000\nSet status = “manual_review”\n\n\nBR-002\nNew Customer Discount\ncustomer.isNew == true\nApply discount = 0.10\n\n\nBR-003\nBlacklist Check\ncustomer.id in blacklist\nSet status = “rejected”\n\n\n\n\n\nInput: Order and Customer objects. * Evaluation: Execute “Blacklist Check” first (Priority 1). * Calculation: If not rejected, calculate discounts. * Output: Return modified Order object to API Service.\n\n\n\n\nArchitecture Rendering: Use the Structurizr Visualizer to paste the script from index.md.\nAPI Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler.\nLogic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution."
+    "text": "This sub-page defines the logic used by the business engine (e.g., Drools or NRule). Business Rules (Logic Engine)\n\n\n\n\n\n\n\n\n\nRule ID\nName\nCondition\nAction\n\n\n\n\nBR-001\nHigh Value Review\norder.amount &gt; 10000\nSet status = “manual_review”\n\n\nBR-002\nNew Customer Discount\ncustomer.isNew == true\nApply discount = 0.10\n\n\nBR-003\nBlacklist Check\ncustomer.id in blacklist\nSet status = “rejected”\n\n\n\n\n\nInput: Order and Customer objects.\n\nEvaluation: Execute “Blacklist Check” first (Priority 1).\nCalculation: If not rejected, calculate discounts.\nOutput: Return modified Order object to API Service.\n\n\n\n\n\nArchitecture Rendering: Use the Structurizr Visualizer to paste the script from index.md.\nAPI Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler.\nLogic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution."
   },
   {
     "objectID": "Content/Journal/posts/DiagramFirstCoding/rules-engine.html#rule-execution-workflow-dmn",
     "href": "Content/Journal/posts/DiagramFirstCoding/rules-engine.html#rule-execution-workflow-dmn",
     "title": "Component: Rules Engine (rules-engine.md)",
     "section": "",
-    "text": "Input: Order and Customer objects. * Evaluation: Execute “Blacklist Check” first (Priority 1). * Calculation: If not rejected, calculate discounts. * Output: Return modified Order object to API Service."
+    "text": "Input: Order and Customer objects.\n\nEvaluation: Execute “Blacklist Check” first (Priority 1).\nCalculation: If not rejected, calculate discounts.\nOutput: Return modified Order object to API Service."
   },
   {
     "objectID": "Content/Journal/posts/DiagramFirstCoding/rules-engine.html#implementation-tools",
