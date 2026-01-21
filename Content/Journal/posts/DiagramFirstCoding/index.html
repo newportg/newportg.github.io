@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Daily Note – Zoomalong</title>
+<title>Diagram first coding – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,9 +138,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Daily Note</h1>
+      <h1 class="title">Diagram first coding</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Daily Note</div>
+                <div class="quarto-category">Diagram first coding</div>
               </div>
                   </div>
   </div>
@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Wednesday, December 10, 2025</p>
+        <p class="date">Wednesday, January 21, 2026</p>
       </div>
     </div>
     
@@ -173,7 +173,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025-12-10</a></li>
+  <li><a href="#so-what-is-business-logic" id="toc-so-what-is-business-logic" class="nav-link active" data-scroll-target="#so-what-is-business-logic">So what is Business Logic?</a></li>
+  <li><a href="#challenges-of-diagram-first-coding" id="toc-challenges-of-diagram-first-coding" class="nav-link" data-scroll-target="#challenges-of-diagram-first-coding">Challenges of Diagram First Coding</a></li>
   </ul>
 </nav>
 </nav>
@@ -188,12 +189,25 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="section" class="level1">
-<h1>2025-12-10</h1>
+<p>What if you could create diagrams first, and then generate code from them? This is the idea behind diagram first coding, a software development approach that emphasizes visual representation of system architecture before writing any code.</p>
+<p>This isnt so far fetched. Look at tools like C4, where the system is modeled using a series of heirarchical diagrams, which denote the strucutre of the system at different levels of abstraction. These diagrams can then be used to generate code stubs, which can be filled in with business logic later.</p>
+<p>Thats the rub, systems like this always push to one side complexity to other systems when it gets too difficult to model. For example, you might model the high level architecture of a web application using C4 diagrams, but then have to resort to traditional coding for the detailed implementation of the business logic. However, with advances in model-driven development and code generation tools, its becoming increasingly feasible to adopt a diagram first coding approach. By leveraging these tools, developers can create more maintainable and scalable systems, as the visual representation of the architecture provides a clear understanding of the system’s structure and behavior.</p>
+<p>So for example you might create a C4 diagram that models the high level architecture, and then APIFirst tools to generate the API endpoints and data models. This way, you can ensure that the code is aligned with the architecture, while still allowing for flexibility in the implementation of the business logic.</p>
+<section id="so-what-is-business-logic" class="level2">
+<h2 class="anchored" data-anchor-id="so-what-is-business-logic">So what is Business Logic?</h2>
+<p>Business logic refers to the rules and processes that govern how a system operates and interacts with its users. It encompasses the core functionality of the application, including data processing, decision-making, and workflow management. In a diagram first coding approach, business logic can be represented visually through flowcharts, state diagrams, or other modeling techniques, allowing developers to better understand and communicate the system’s behavior before writing any code.</p>
+<p>So its the logic inside a C4 Component that makes it do what it does. The code part of C4 provides the class hirarchy, but the business logic is what makes those classes actually do something useful. The business logic could be described in a variety of ways, such as pseudocode, flowcharts, or even natural language descriptions.</p>
+<p>This is beginning to sound more like lego than coding. You have a set of pre-defined blocks (the C4 components) that you can snap together to create a system. Having a business logic engineer define the behavior of each block, and using a locode tool to generate the code for each block based on its defined behavior.</p>
+<p>A software developer would glue the blocks together, and ensure that they work together as intended. This approach could potentially lead to faster development times, as well as more maintainable and scalable systems.</p>
+</section>
+<section id="challenges-of-diagram-first-coding" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-of-diagram-first-coding">Challenges of Diagram First Coding</h2>
+<p>While diagram first coding offers many benefits, it also presents several challenges. One of the main challenges is the need for specialized tools and expertise to create and interpret the diagrams. Additionally, there may be resistance from developers who are accustomed to traditional coding practices and may be hesitant to adopt a new approach. Another challenge is ensuring that the diagrams accurately represent the system’s architecture and behavior. Many of the concepts would disrupt the established software development lifecycle, requiring changes to existing processes and workflows.</p>
+<p>or just leave it to AI….</p>
 <ul>
-<li>Added events to Calendar</li>
-<li>Still need to add on click handler.</li>
-<li></li>
+<li><a href="../../../../Content/Journal/posts/DiagramFirstCoding/MainArchitecture.html">mainArchitecture</a></li>
+<li><a href="../../../../Content/Journal/posts/DiagramFirstCoding/api-service.html">apiService</a></li>
+<li><a href="rules-engine.qmd">rulesEngine</a></li>
 </ul>
 
 

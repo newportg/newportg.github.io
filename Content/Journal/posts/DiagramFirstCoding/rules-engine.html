@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Daily Note – Zoomalong</title>
+<title>rules-engine – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,11 +138,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Daily Note</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Daily Note</div>
-              </div>
-                  </div>
+      
+                      </div>
   </div>
     
   
@@ -151,16 +148,10 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Gary Newport </p>
+               <p><a href="https://www.zoomalong.co.uk">Gary Newport</a> </p>
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">Wednesday, December 10, 2025</p>
-      </div>
-    </div>
     
       
     </div>
@@ -173,7 +164,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2025-12-10</a></li>
+  <li><a href="#component-rules-engine-rules-engine.md" id="toc-component-rules-engine-rules-engine.md" class="nav-link active" data-scroll-target="#component-rules-engine-rules-engine.md">Component: Rules Engine (rules-engine.md)</a>
+  <ul class="collapse">
+  <li><a href="#rule-execution-workflow-dmn" id="toc-rule-execution-workflow-dmn" class="nav-link" data-scroll-target="#rule-execution-workflow-dmn">Rule Execution Workflow (DMN)</a></li>
+  <li><a href="#implementation-tools" id="toc-implementation-tools" class="nav-link" data-scroll-target="#implementation-tools">Implementation Tools</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -188,15 +183,59 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="section" class="level1">
-<h1>2025-12-10</h1>
+<section id="component-rules-engine-rules-engine.md" class="level1">
+<h1>Component: Rules Engine (rules-engine.md)</h1>
+<p>This sub-page defines the logic used by the business engine (e.g., Drools or NRule). Business Rules (Logic Engine)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule ID</th>
+<th>Name</th>
+<th>Condition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BR-001</td>
+<td>High Value Review</td>
+<td>order.amount &gt; 10000</td>
+<td>Set status = “manual_review”</td>
+</tr>
+<tr class="even">
+<td>BR-002</td>
+<td>New Customer Discount</td>
+<td>customer.isNew == true</td>
+<td>Apply discount = 0.10</td>
+</tr>
+<tr class="odd">
+<td>BR-003</td>
+<td>Blacklist Check</td>
+<td>customer.id in blacklist</td>
+<td>Set status = “rejected”</td>
+</tr>
+</tbody>
+</table>
+<section id="rule-execution-workflow-dmn" class="level2">
+<h2 class="anchored" data-anchor-id="rule-execution-workflow-dmn">Rule Execution Workflow (DMN)</h2>
+<p>Input: Order and Customer objects. * Evaluation: Execute “Blacklist Check” first (Priority 1). * Calculation: If not rejected, calculate discounts. * Output: Return modified Order object to API Service.</p>
+</section>
+<section id="implementation-tools" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-tools">Implementation Tools</h2>
 <ul>
-<li>Added events to Calendar</li>
-<li>Still need to add on click handler.</li>
-<li></li>
+<li>Architecture Rendering: Use the Structurizr Visualizer to paste the script from index.md.</li>
+<li>API Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler.</li>
+<li>Logic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution.</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
