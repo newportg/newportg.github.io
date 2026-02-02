@@ -275,77 +275,27 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Acceptance Criteria</td>
-<td>1. Lock account for 10 mins after 3 failed attempts. 2. Terminate session after 30 mins of inactivity. 3. Return generic error messages to prevent user enumeration.</td>
+<td>1. Lock account for 10 mins after 3 failed attempts.</td>
 </tr>
 <tr class="odd">
-<td>Edge Cases Handle null inputs</td>
-<td>empty strings, and SQL injection patterns in name fields.</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Section AI-Ready Specification<br>
-</li>
-<li>User Story As a user, I want to log in securely using my email and password.</li>
-<li>Technical Context Implement using JWT tokens with bcrypt password hashing.</li>
-<li>Inputs/Data email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.</li>
-<li>Acceptance Criteria
-<ul>
-<li>Lock account for 10 mins after 3 failed attempts.</li>
-<li>Terminate session after 30 mins of inactivity.</li>
-<li>Return generic error messages to prevent user enumeration.</li>
-</ul></li>
-<li>Edge Cases Handle null inputs| empty strings, and SQL injection patterns in name fields.</li>
-<li>Success Examples
-<ul>
-<li>login(‘user@test.com’, ‘ValidPass123!’) → Returns 200 OK + JWT.</li>
-<li>login(‘wrong@test.com’, ‘pass’) → Returns 401 Unauthorized.</li>
-</ul></li>
-</ul>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 82%">
-<col style="width: 1%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td rowspan="2"><h1 id="section">Section</h1>
-<p>User Story</p></td>
-<td rowspan="2"><h1 id="ai-ready-specification">AI-Ready Specification</h1>
-<p>As a user, I want to log in securely using my email and password.</p></td>
 <td></td>
+<td>2. Terminate session after 30 mins of inactivity.</td>
 </tr>
 <tr class="even">
 <td></td>
+<td>3. Return generic error messages to prevent user enumeration.</td>
 </tr>
 <tr class="odd">
-<td>Technical Context</td>
-<td>Implement using JWT tokens with bcrypt password hashing.</td>
-<td></td>
+<td>Edge Cases</td>
+<td>Handle null inputs empty strings, and SQL injection patterns in name fields.</td>
 </tr>
 <tr class="even">
-<td colspan="3">Inputs/Data | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.</td>
-</tr>
-<tr class="odd">
-<td>Acceptance Criteria</td>
-<td><ul>
-<li>Lock account for 10 mins after 3 failed attempts.</li>
-<li>Terminate session after 30 mins of inactivity.</li>
-<li>Return generic error messages to prevent user enumeration.</li>
-</ul></td>
-<td></td>
-</tr>
-<tr class="even">
-<td colspan="3">Edge Cases | Handle null inputs| empty strings, and SQL injection patterns in name fields.</td>
-</tr>
-<tr class="odd">
 <td>Success Examples</td>
-<td><ul>
-<li>login(‘user@test.com’, ‘ValidPass123!’) → Returns 200 OK + JWT.</li>
-<li>login(‘wrong@test.com’, ‘pass’) → Returns 401 Unauthorized.</li>
-</ul></td>
+<td>1. login(‘user@test.com’, ‘ValidPass123!’) → Returns 200 OK + JWT.</td>
+</tr>
+<tr class="odd">
 <td></td>
+<td>2. login(‘wrong@test.com’, ‘pass’) → Returns 401 Unauthorized.</td>
 </tr>
 </tbody>
 </table>
