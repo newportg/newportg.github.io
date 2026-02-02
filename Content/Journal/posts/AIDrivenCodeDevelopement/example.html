@@ -208,6 +208,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#azure-function-orderprocessor" id="toc-azure-function-orderprocessor" class="nav-link" data-scroll-target="#azure-function-orderprocessor">Azure Function : OrderProcessor</a></li>
   <li><a href="#local.settings.json" id="toc-local.settings.json" class="nav-link" data-scroll-target="#local.settings.json">local.settings.json</a></li>
   </ul></li>
+  <li><a href="#unit-test-stub-orderprocessortests" id="toc-unit-test-stub-orderprocessortests" class="nav-link" data-scroll-target="#unit-test-stub-orderprocessortests">Unit Test Stub: OrderProcessorTests</a>
+  <ul class="collapse">
+  <li><a href="#mockhelpers.cs" id="toc-mockhelpers.cs" class="nav-link" data-scroll-target="#mockhelpers.cs">MockHelpers.cs</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -383,6 +387,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"TableStorageConnection__tableServiceUri"</span><span class="fu">:</span> <span class="st">"https://&lt;your-account-name&gt;.table.core.windows.net"</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="unit-test-stub-orderprocessortests" class="level2">
+<h2 class="anchored" data-anchor-id="unit-test-stub-orderprocessortests">Unit Test Stub: OrderProcessorTests</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode csharp code-with-copy"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Azure</span><span class="op">.</span><span class="fu">Functions</span><span class="op">.</span><span class="fu">Worker</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Azure</span><span class="op">.</span><span class="fu">Functions</span><span class="op">.</span><span class="fu">Worker</span><span class="op">.</span><span class="fu">Http</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Extensions</span><span class="op">.</span><span class="fu">Logging</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Moq<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Net</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Text</span><span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Xunit<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> OrderProcessorTests</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">readonly</span> Mock<span class="op">&lt;</span>ILoggerFactory<span class="op">&gt;</span> _mockLoggerFactory<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">readonly</span> Mock<span class="op">&lt;</span>ILogger<span class="op">&lt;</span>OrderProcessor<span class="op">&gt;&gt;</span> _mockLogger<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">readonly</span> OrderProcessor _sut<span class="op">;</span> <span class="co">// System Under Test</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">OrderProcessorTests</span><span class="op">()</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        _mockLoggerFactory <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>ILoggerFactory<span class="op">&gt;();</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        _mockLogger <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>ILogger<span class="op">&lt;</span>OrderProcessor<span class="op">&gt;&gt;();</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        _mockLoggerFactory</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>x <span class="op">=&gt;</span> x<span class="op">.</span><span class="fu">CreateLogger</span><span class="op">(</span>It<span class="op">.</span><span class="fu">IsAny</span><span class="op">&lt;</span><span class="dt">string</span><span class="op">&gt;()))</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">Returns</span><span class="op">(</span>_mockLogger<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        _sut <span class="op">=</span> <span class="kw">new</span> <span class="fu">OrderProcessor</span><span class="op">(</span>_mockLoggerFactory<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> async Task <span class="fu">Run_ShouldReturnBadRequest_WhenTotalAmountIsNegative</span><span class="op">()</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Arrange</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> context <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>FunctionContext<span class="op">&gt;();</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> request <span class="op">=</span> MockHelpers<span class="op">.</span><span class="fu">CreateMockRequest</span><span class="op">(</span><span class="st">"{</span><span class="sc">\"</span><span class="st">OrderId</span><span class="sc">\"</span><span class="st">: </span><span class="sc">\"</span><span class="st">123</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">TotalAmount</span><span class="sc">\"</span><span class="st">: -10.0}"</span><span class="op">);</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Act</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> result <span class="op">=</span> await _sut<span class="op">.</span><span class="fu">Run</span><span class="op">(</span>request<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Assert</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>        Assert<span class="op">.</span><span class="fu">Equal</span><span class="op">(</span>HttpStatusCode<span class="op">.</span><span class="fu">BadRequest</span><span class="op">,</span> result<span class="op">.</span><span class="fu">HttpResponse</span><span class="op">.</span><span class="fu">StatusCode</span><span class="op">);</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>        _mockLogger<span class="op">.</span><span class="fu">VerifyLog</span><span class="op">(</span>LogLevel<span class="op">.</span><span class="fu">Warning</span><span class="op">,</span> <span class="st">"Invalid order received"</span><span class="op">);</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> async Task <span class="fu">Run_ShouldReturnCreated_WhenOrderIsValid</span><span class="op">()</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Arrange</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> request <span class="op">=</span> MockHelpers<span class="op">.</span><span class="fu">CreateMockRequest</span><span class="op">(</span><span class="st">"{</span><span class="sc">\"</span><span class="st">OrderId</span><span class="sc">\"</span><span class="st">: </span><span class="sc">\"</span><span class="st">ORD-99</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">CustomerEmail</span><span class="sc">\"</span><span class="st">: </span><span class="sc">\"</span><span class="st">test@test.com</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">TotalAmount</span><span class="sc">\"</span><span class="st">: 50.0}"</span><span class="op">);</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Act</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> result <span class="op">=</span> await _sut<span class="op">.</span><span class="fu">Run</span><span class="op">(</span>request<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Assert</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>        Assert<span class="op">.</span><span class="fu">Equal</span><span class="op">(</span>HttpStatusCode<span class="op">.</span><span class="fu">Created</span><span class="op">,</span> result<span class="op">.</span><span class="fu">HttpResponse</span><span class="op">.</span><span class="fu">StatusCode</span><span class="op">);</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>        Assert<span class="op">.</span><span class="fu">NotNull</span><span class="op">(</span>result<span class="op">.</span><span class="fu">NewOrder</span><span class="op">);</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>        Assert<span class="op">.</span><span class="fu">Equal</span><span class="op">(</span><span class="st">"ORD-99"</span><span class="op">,</span> result<span class="op">.</span><span class="fu">NewOrder</span><span class="op">.</span><span class="fu">RowKey</span><span class="op">);</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="mockhelpers.cs" class="level3">
+<h3 class="anchored" data-anchor-id="mockhelpers.cs">MockHelpers.cs</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode csharp code-with-copy"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">static</span> <span class="kw">class</span> MockHelpers</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="kw">static</span> Mock<span class="op">&lt;</span>HttpRequestData<span class="op">&gt;</span> <span class="fu">CreateMockRequest</span><span class="op">(</span><span class="dt">string</span> jsonBody<span class="op">)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> context <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>FunctionContext<span class="op">&gt;();</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> request <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>HttpRequestData<span class="op">&gt;(</span>context<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> stream <span class="op">=</span> <span class="kw">new</span> <span class="fu">MemoryStream</span><span class="op">(</span>Encoding<span class="op">.</span><span class="fu">UTF8</span><span class="op">.</span><span class="fu">GetBytes</span><span class="op">(</span>jsonBody<span class="op">));</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        request<span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>r <span class="op">=&gt;</span> r<span class="op">.</span><span class="fu">Body</span><span class="op">).</span><span class="fu">Returns</span><span class="op">(</span>stream<span class="op">);</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Mock CreateResponse to return a real HttpResponseData implementation</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        request<span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>r <span class="op">=&gt;</span> r<span class="op">.</span><span class="fu">CreateResponse</span><span class="op">()).</span><span class="fu">Returns</span><span class="op">(()</span> <span class="op">=&gt;</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="dt">var</span> response <span class="op">=</span> <span class="kw">new</span> Mock<span class="op">&lt;</span>HttpResponseData<span class="op">&gt;(</span>context<span class="op">.</span><span class="fu">Object</span><span class="op">);</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            response<span class="op">.</span><span class="fu">SetupProperty</span><span class="op">(</span>r <span class="op">=&gt;</span> r<span class="op">.</span><span class="fu">StatusCode</span><span class="op">);</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            response<span class="op">.</span><span class="fu">Setup</span><span class="op">(</span>r <span class="op">=&gt;</span> r<span class="op">.</span><span class="fu">Headers</span><span class="op">).</span><span class="fu">Returns</span><span class="op">(</span><span class="kw">new</span> <span class="fu">HttpHeadersCollection</span><span class="op">());</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> response<span class="op">.</span><span class="fu">Object</span><span class="op">;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">});</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> request<span class="op">;</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
