@@ -36,6 +36,7 @@
   {
     "listing": "/Content/Journal/index.html",
     "items": [
+      "/Content/Journal/posts/AIDrivenCodeDevelopement/index.html",
       "/Content/Journal/posts/DiagramFirstCoding/index.html",
       "/Content/Journal/posts/QuartoWebBook/index.html",
       "/Content/Journal/posts/PlantumlQuartoFilter/index.html",
