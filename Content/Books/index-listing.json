@@ -1,0 +1,11 @@
+{
+  "listing": "/Content/Books/index.html",
+  "items": [
+    "/Content/Books/Books/Book1/Page1.html",
+    "/Content/Books/Books/Book1/Page2.html",
+    "/Content/Books/Books/Book2/Page1.html",
+    "/Content/Books/Books/Book2/Page2.html",
+    "/Content/Books/Books/Book1/index.html",
+    "/Content/Books/Books/Book2/index.html"
+  ]
+}

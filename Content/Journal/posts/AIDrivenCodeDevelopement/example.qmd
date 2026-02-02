@@ -119,3 +119,90 @@ public class OrderResponse
 }
 
 ```
+
+## Unit Test Stub: OrderProcessorTests
+
+```csharp
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using Moq;
+using System.Net;
+using System.Text;
+using Xunit;
+
+public class OrderProcessorTests
+{
+    private readonly Mock<ILoggerFactory> _mockLoggerFactory;
+    private readonly Mock<ILogger<OrderProcessor>> _mockLogger;
+    private readonly OrderProcessor _sut; // System Under Test
+
+    public OrderProcessorTests()
+    {
+        _mockLoggerFactory = new Mock<ILoggerFactory>();
+        _mockLogger = new Mock<ILogger<OrderProcessor>>();
+        
+        _mockLoggerFactory
+            .Setup(x => x.CreateLogger(It.IsAny<string>()))
+            .Returns(_mockLogger.Object);
+
+        _sut = new OrderProcessor(_mockLoggerFactory.Object);
+    }
+
+    [Fact]
+    public async Task Run_ShouldReturnBadRequest_WhenTotalAmountIsNegative()
+    {
+        // Arrange
+        var context = new Mock<FunctionContext>();
+        var request = MockHelpers.CreateMockRequest("{\"OrderId\": \"123\", \"TotalAmount\": -10.0}");
+
+        // Act
+        var result = await _sut.Run(request.Object);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.BadRequest, result.HttpResponse.StatusCode);
+        _mockLogger.VerifyLog(LogLevel.Warning, "Invalid order received");
+    }
+
+    [Fact]
+    public async Task Run_ShouldReturnCreated_WhenOrderIsValid()
+    {
+        // Arrange
+        var request = MockHelpers.CreateMockRequest("{\"OrderId\": \"ORD-99\", \"CustomerEmail\": \"test@test.com\", \"TotalAmount\": 50.0}");
+
+        // Act
+        var result = await _sut.Run(request.Object);
+
+        // Assert
+        Assert.Equal(HttpStatusCode.Created, result.HttpResponse.StatusCode);
+        Assert.NotNull(result.NewOrder);
+        Assert.Equal("ORD-99", result.NewOrder.RowKey);
+    }
+}
+```
+### MockHelpers.cs
+
+```csharp
+public static class MockHelpers
+{
+    public static Mock<HttpRequestData> CreateMockRequest(string jsonBody)
+    {
+        var context = new Mock<FunctionContext>();
+        var request = new Mock<HttpRequestData>(context.Object);
+        
+        var stream = new MemoryStream(Encoding.UTF8.GetBytes(jsonBody));
+        request.Setup(r => r.Body).Returns(stream);
+        
+        // Mock CreateResponse to return a real HttpResponseData implementation
+        request.Setup(r => r.CreateResponse()).Returns(() => 
+        {
+            var response = new Mock<HttpResponseData>(context.Object);
+            response.SetupProperty(r => r.StatusCode);
+            response.Setup(r => r.Headers).Returns(new HttpHeadersCollection());
+            return response.Object;
+        });
+
+        return request;
+    }
+}
+```
