@@ -65,44 +65,15 @@ A typical vague requirement like "Handle user authentication" often leads to sec
 
 |Section| 	AI-Ready Specification|
 |-------|-----------------------|
-|User Story           | As a user, I want to log in securely using my email and password.|
-|Technical Context	  | Implement using JWT tokens with bcrypt password hashing.|
-|Inputs/Data	        | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.|
-|Acceptance Criteria  | 1. Lock account for 10 mins after 3 failed attempts. 2. Terminate session after 30 mins of inactivity. 3. Return generic error messages to prevent user enumeration.|
-|Edge Cases	Handle null inputs| empty strings, and SQL injection patterns in name fields.|
-
-
-* Section                AI-Ready Specification                                                                                       
-* User Story             As a user, I want to log in securely using my email and password.
-* Technical Context	     Implement using JWT tokens with bcrypt password hashing.
-* Inputs/Data	           email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.
-* Acceptance Criteria   
-  * Lock account for 10 mins after 3 failed attempts. 
-  * Terminate session after 30 mins of inactivity.
-  * Return generic error messages to prevent user enumeration. 
-* Edge Cases	Handle null inputs| empty strings, and SQL injection patterns in name fields.
-* Success Examples	
-  * login('user@test.com', 'ValidPass123!') → Returns 200 OK + JWT. 
-  * login('wrong@test.com', 'pass') → Returns 401 Unauthorized.
-
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Section            | AI-Ready Specification                                                                                      |
-+====================+=============================================================================================================+
-| User Story         | As a user, I want to log in securely using my email and password.                                           |
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Technical Context	 | Implement using JWT tokens with bcrypt password hashing.                                                    |
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Inputs/Data	       | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.|
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Acceptance Criteria| - Lock account for 10 mins after 3 failed attempts.                                                         |
-|                    | - Terminate session after 30 mins of inactivity.                                                            | 
-|                    | - Return generic error messages to prevent user enumeration.                                                |
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Edge Cases	       | Handle null inputs| empty strings, and SQL injection patterns in name fields.                               |
-+--------------------+-------------------------------------------------------------------------------------------------------------+
-| Success Examples   | * login('user@test.com', 'ValidPass123!') → Returns 200 OK + JWT.                                           |
-|                    | * login('wrong@test.com', 'pass') → Returns 401 Unauthorized.                                               |
-+--------------------+-------------------------------------------------------------------------------------------------------------+
+| User Story          | As a user, I want to log in securely using my email and password.|
+| Technical Context	  | Implement using JWT tokens with bcrypt password hashing.|
+| Inputs/Data	        | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.|
+| Acceptance Criteria | 1. Lock account for 10 mins after 3 failed attempts. |
+|                     | 2. Terminate session after 30 mins of inactivity. |
+|                     | 3. Return generic error messages to prevent user enumeration.|
+| Edge Cases	        | Handle null inputs empty strings, and SQL injection patterns in name fields.|
+| Success Examples    | 1. login('user@test.com', 'ValidPass123!') → Returns 200 OK + JWT. |
+|                     | 2. login('wrong@test.com', 'pass') → Returns 401 Unauthorized.      |
 
 
 ## For Better Outcomes
