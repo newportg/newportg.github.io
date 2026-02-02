@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>Adaptive Cards – Zoomalong</title>
+<title>example – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="floating nav-fixed slimcontent quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -173,12 +173,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Adaptive Cards</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Json</div>
-                <div class="quarto-category">Adaptive Card</div>
-              </div>
-                  </div>
+      
+                      </div>
   </div>
     
   
@@ -187,16 +183,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Gary Newport </p>
+               <p><a href="https://www.zoomalong.co.uk">Gary Newport</a> </p>
             </div>
     </div>
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">Saturday, November 14, 2020</p>
-      </div>
-    </div>
     
       
     </div>
@@ -209,12 +199,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#microsoft-teams-webhooks" id="toc-microsoft-teams-webhooks" class="nav-link active" data-scroll-target="#microsoft-teams-webhooks">Microsoft Teams Webhooks</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  <li><a href="#useful-example" id="toc-useful-example" class="nav-link" data-scroll-target="#useful-example">Useful Example</a>
+  <li><a href="#example-requirement-using-the-care-framework" id="toc-example-requirement-using-the-care-framework" class="nav-link active" data-scroll-target="#example-requirement-using-the-care-framework">Example Requirement using the CARE Framework</a>
   <ul class="collapse">
-  <li><a href="#result" id="toc-result" class="nav-link" data-scroll-target="#result">Result</a></li>
-  <li><a href="#json" id="toc-json" class="nav-link" data-scroll-target="#json">Json</a></li>
+  <li><a href="#example-order-processor-microservice-requirement" id="toc-example-order-processor-microservice-requirement" class="nav-link" data-scroll-target="#example-order-processor-microservice-requirement">Example: “Order Processor” Microservice Requirement</a>
+  <ul class="collapse">
+  <li><a href="#model-orderentity" id="toc-model-orderentity" class="nav-link" data-scroll-target="#model-orderentity">Model : OrderEntity</a></li>
+  <li><a href="#azure-function-orderprocessor" id="toc-azure-function-orderprocessor" class="nav-link" data-scroll-target="#azure-function-orderprocessor">Azure Function : OrderProcessor</a></li>
+  <li><a href="#local.settings.json" id="toc-local.settings.json" class="nav-link" data-scroll-target="#local.settings.json">local.settings.json</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -224,157 +216,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>Adaptive Cards is a Json structure which describes how to display information in various Microsoft Applications. Currently the standard is at version 1.2, and the definition can be seen here https://AdaptiveCards.io</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"$schema"</span><span class="fu">:</span><span class="st">"http://adaptivecards.io/schemas/adaptive-card.json"</span><span class="fu">,</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"type"</span><span class="fu">:</span><span class="st">"AdaptiveCard"</span><span class="fu">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"version"</span><span class="fu">:</span><span class="st">"1.2"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"body"</span><span class="fu">:</span><span class="ot">[</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"TextBlock"</span><span class="fu">,</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"For Samples and Templates, see https://adaptivecards.io/samples](https://adaptivecards.io/samples)"</span><span class="fu">,</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="microsoft-teams-webhooks" class="level1">
-<h1>Microsoft Teams Webhooks</h1>
-<p>In order to send Adaptive Card structures to Teams webhooks, you need to surround the json with MessageCard structure.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">"type"</span><span class="fu">:</span><span class="st">"message"</span><span class="fu">,</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">"attachments"</span><span class="fu">:</span><span class="ot">[</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="dt">"contentType"</span><span class="fu">:</span><span class="st">"application/vnd.microsoft.card.adaptive"</span><span class="fu">,</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="dt">"contentUrl"</span><span class="fu">:</span><span class="kw">null</span><span class="fu">,</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="dt">"content"</span><span class="fu">:{</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="er">```Adaptive</span> <span class="er">Card</span> <span class="er">goes</span> <span class="er">here</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">}</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   <span class="ot">]</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="example-requirement-using-the-care-framework" class="level1">
+<h1>Example Requirement using the CARE Framework</h1>
+<section id="example-order-processor-microservice-requirement" class="level2">
+<h2 class="anchored" data-anchor-id="example-order-processor-microservice-requirement">Example: “Order Processor” Microservice Requirement</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>AI-Ready Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Context</td>
+<td>You are a Senior Azure Developer. I need an Azure Function (v4, .NET 8 Isolated) that acts as an “Order Processor” microservice. It is part of a serverless e-commerce architecture and must be stateless and defensive.</td>
+</tr>
+<tr class="even">
+<td>Action</td>
+<td>Create an HTTP-triggered function (POST only) that:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>1. Validates a JSON body against an Order model (fields: OrderId, CustomerEmail, TotalAmount).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>2. Persists the data to Azure Table Storage using Output Bindings to avoid SDK boilerplate.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>3. Logs successful executions to Application Insights with structured logging.</td>
+</tr>
+<tr class="even">
+<td>Result Code</td>
+<td>must include:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>• Proper try-catch blocks with specific error codes (e.g., 400 for validation, 500 for storage errors).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>• Asynchronous/await patterns for all I/O operations.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>• Managed Identity support (no hardcoded connection strings).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>• Unit test stubs using xUnit and Moq.</td>
+</tr>
+<tr class="odd">
+<td>Example Input JSON</td>
+<td>{“OrderId”: “123”, “CustomerEmail”: “user@test.com”, “TotalAmount”: 99.99}</td>
+</tr>
+<tr class="even">
+<td>Success Response</td>
+<td>201 Created with a location header.</td>
+</tr>
+<tr class="odd">
+<td>Failure Example</td>
+<td>If TotalAmount is negative, return 400 Bad Request with message “Total cannot be less than zero”.</td>
+</tr>
+</tbody>
+</table>
+<p>Fed the requirement into an AI coding assistant (e.g., GPT-4, Claude Code) and received the following code output:</p>
+<section id="model-orderentity" class="level3">
+<h3 class="anchored" data-anchor-id="model-orderentity">Model : OrderEntity</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode csharp code-with-copy"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Azure<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Azure<span class="op">.</span><span class="fu">Data</span><span class="op">.</span><span class="fu">Tables</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> OrderEntity <span class="op">:</span> ITableEntity</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> OrderId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> CustomerEmail <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">double</span> TotalAmount <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Required for Azure Table Storage</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> PartitionKey <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span> <span class="co">// e.g., "Orders"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> RowKey <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span>       <span class="co">// OrderId</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> DateTimeOffset<span class="op">?</span> Timestamp <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> ETag ETag <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="reference" class="level1">
-<h1>Reference</h1>
-<ul>
-<li><a href="https://adaptivecards.io/">Adaptive Cards</a></li>
-<li><a href="https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using#send-adaptive-cards-using-an-incoming-webhook">Microsoft Teams WebHook</a></li>
-<li><a href="https://www.adaptivecardsblazor.com/gettingstarted.html">Adative Cards for Blazor</a></li>
-</ul>
+<section id="azure-function-orderprocessor" class="level3">
+<h3 class="anchored" data-anchor-id="azure-function-orderprocessor">Azure Function : OrderProcessor</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode csharp code-with-copy"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> System<span class="op">.</span><span class="fu">Net</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Azure</span><span class="op">.</span><span class="fu">Functions</span><span class="op">.</span><span class="fu">Worker</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Azure</span><span class="op">.</span><span class="fu">Functions</span><span class="op">.</span><span class="fu">Worker</span><span class="op">.</span><span class="fu">Http</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> Microsoft<span class="op">.</span><span class="fu">Extensions</span><span class="op">.</span><span class="fu">Logging</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> OrderProcessor</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="kw">readonly</span> ILogger _logger<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">OrderProcessor</span><span class="op">(</span>ILoggerFactory loggerFactory<span class="op">)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        _logger <span class="op">=</span> loggerFactory<span class="op">.</span><span class="fu">CreateLogger</span><span class="op">&lt;</span>OrderProcessor<span class="op">&gt;();</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span><span class="fu">Function</span><span class="op">(</span><span class="st">"ProcessOrder"</span><span class="op">)]</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> async Task<span class="op">&lt;</span>OrderResponse<span class="op">&gt;</span> <span class="fu">Run</span><span class="op">(</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="op">[</span><span class="fu">HttpTrigger</span><span class="op">(</span>AuthorizationLevel<span class="op">.</span><span class="fu">Function</span><span class="op">,</span> <span class="st">"post"</span><span class="op">)]</span> HttpRequestData req<span class="op">)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        _logger<span class="op">.</span><span class="fu">LogInformation</span><span class="op">(</span><span class="st">"Processing new order request."</span><span class="op">);</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> order <span class="op">=</span> await req<span class="op">.</span><span class="fu">ReadFromJsonAsync</span><span class="op">&lt;</span>OrderEntity<span class="op">&gt;();</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Validation Logic</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>order <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="dt">string</span><span class="op">.</span><span class="fu">IsNullOrEmpty</span><span class="op">(</span>order<span class="op">.</span><span class="fu">OrderId</span><span class="op">)</span> <span class="op">||</span> order<span class="op">.</span><span class="fu">TotalAmount</span> <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            _logger<span class="op">.</span><span class="fu">LogWarning</span><span class="op">(</span><span class="st">"Invalid order received: {OrderId}"</span><span class="op">,</span> order<span class="op">?.</span><span class="fu">OrderId</span> <span class="op">??</span> <span class="st">"NULL"</span><span class="op">);</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span> <span class="kw">new</span> OrderResponse </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span> </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>                HttpResponse <span class="op">=</span> req<span class="op">.</span><span class="fu">CreateResponse</span><span class="op">(</span>HttpStatusCode<span class="op">.</span><span class="fu">BadRequest</span><span class="op">)</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            <span class="op">};</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Prepare data for Table Storage</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        order<span class="op">.</span><span class="fu">PartitionKey</span> <span class="op">=</span> <span class="st">"Orders"</span><span class="op">;</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        order<span class="op">.</span><span class="fu">RowKey</span> <span class="op">=</span> order<span class="op">.</span><span class="fu">OrderId</span><span class="op">;</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> response <span class="op">=</span> req<span class="op">.</span><span class="fu">CreateResponse</span><span class="op">(</span>HttpStatusCode<span class="op">.</span><span class="fu">Created</span><span class="op">);</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        response<span class="op">.</span><span class="fu">Headers</span><span class="op">.</span><span class="fu">Add</span><span class="op">(</span><span class="st">"Location"</span><span class="op">,</span> $<span class="st">"/api/orders/{order.OrderId}"</span><span class="op">);</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span> <span class="kw">new</span> OrderResponse</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>            NewOrder <span class="op">=</span> order<span class="op">,</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>            HttpResponse <span class="op">=</span> response</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        <span class="op">};</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> OrderResponse</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Write to "OrdersTable" using the connection "TableStorageConnection"</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span><span class="fu">TableOutput</span><span class="op">(</span><span class="st">"OrdersTable"</span><span class="op">,</span> Connection <span class="op">=</span> <span class="st">"TableStorageConnection"</span><span class="op">)]</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> OrderEntity NewOrder <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> HttpResponseData HttpResponse <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="useful-example" class="level1 page-columns page-full">
-<h1>Useful Example</h1>
-<section id="result" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="result">Result</h2>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="../../../..\images/teamsadaptivecard.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Teams-AdaptiveCard</figcaption>
-</figure>
-</div>
-</section>
-<section id="json" class="level2">
-<h2 class="anchored" data-anchor-id="json">Json</h2>
+<section id="local.settings.json" class="level3">
+<h3 class="anchored" data-anchor-id="local.settings.json">local.settings.json</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"message"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"attachments"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"contentType"</span><span class="fu">:</span> <span class="st">"application/vnd.microsoft.card.adaptive"</span><span class="fu">,</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"contentUrl"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"content"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"$schema"</span><span class="fu">:</span> <span class="st">"http://adaptivecards.io/schemas/adaptive-card.json"</span><span class="fu">,</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"AdaptiveCard"</span><span class="fu">,</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"1.2"</span><span class="fu">,</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"body"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">{</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"TextBlock"</span><span class="fu">,</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"size"</span><span class="fu">:</span> <span class="st">"Medium"</span><span class="fu">,</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"weight"</span><span class="fu">:</span> <span class="st">"Bolder"</span><span class="fu">,</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Image WaterMark Exception"</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">{</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"ColumnSet"</span><span class="fu">,</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"columns"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">{</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Column"</span><span class="fu">,</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"items"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">{</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Image"</span><span class="fu">,</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"style"</span><span class="fu">:</span> <span class="st">"Default"</span><span class="fu">,</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://www.knightfrank.com/library/v3.0/images/knightfranklogo.png"</span><span class="fu">,</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"size"</span><span class="fu">:</span> <span class="st">"Large"</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">}</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>                                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"width"</span><span class="fu">:</span> <span class="st">"auto"</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">{</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Column"</span><span class="fu">,</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"items"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">{</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"TextBlock"</span><span class="fu">,</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"weight"</span><span class="fu">:</span> <span class="st">"Bolder"</span><span class="fu">,</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"WaterMark Validator"</span><span class="fu">,</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"wrap"</span><span class="fu">:</span> <span class="kw">true</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">{</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"TextBlock"</span><span class="fu">,</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"spacing"</span><span class="fu">:</span> <span class="st">"None"</span><span class="fu">,</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"Created {{DATE(2017-02-14T06:08:39Z,SHORT)}}"</span><span class="fu">,</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"isSubtle"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"wrap"</span><span class="fu">:</span> <span class="kw">true</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">}</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>                                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"width"</span><span class="fu">:</span> <span class="st">"stretch"</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">}</span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>                        <span class="ot">]</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">{</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"ColumnSet"</span><span class="fu">,</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"columns"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">{</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Column"</span><span class="fu">,</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"items"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">{</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Image"</span><span class="fu">,</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"style"</span><span class="fu">:</span> <span class="st">"Default"</span><span class="fu">,</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://content.knightfrank.com/property/cbm190150/images/b2bee1c5-3dfa-4bbd-9d13-94cde2044822-0.jpg?cio=true&amp;w=730"</span><span class="fu">,</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"size"</span><span class="fu">:</span> <span class="st">"Large"</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">}</span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>                                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"width"</span><span class="fu">:</span> <span class="st">"auto"</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">{</span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Column"</span><span class="fu">,</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"items"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">{</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"TextBlock"</span><span class="fu">,</span></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"text"</span><span class="fu">:</span> <span class="st">"A Watermark has been detected in this image"</span><span class="fu">,</span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>                                        <span class="dt">"wrap"</span><span class="fu">:</span> <span class="kw">true</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">}</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>                                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>                                <span class="dt">"width"</span><span class="fu">:</span> <span class="st">"stretch"</span></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">}</span></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>                        <span class="ot">]</span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">}</span></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>                <span class="dt">"actions"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">{</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"Action.OpenUrl"</span><span class="fu">,</span></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"View"</span><span class="fu">,</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>                        <span class="dt">"url"</span><span class="fu">:</span> <span class="st">"https://hub.knightfrank.com/#/app/activity/view/60c1d8fb-1bd7-ea11-a95a-000d3ab2efee?tabname=Marketing"</span></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">}</span></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>                <span class="ot">]</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>            <span class="fu">}</span></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"IsEncrypted"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"Values"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"AzureWebJobsStorage"</span><span class="fu">:</span> <span class="st">"UseDevelopmentStorage=true"</span><span class="fu">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"FUNCTIONS_WORKER_RUNTIME"</span><span class="fu">:</span> <span class="st">"dotnet-isolated"</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"TableStorageConnection__tableServiceUri"</span><span class="fu">:</span> <span class="st">"https://&lt;your-account-name&gt;.table.core.windows.net"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 </section>
 

@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/Content/Research/index.html",
+    "items": [
+      "/Content/Research/articles/APIFirst/index.html",
+      "/Content/Research/articles/AzureApplicationHosting/index.html"
+    ]
+  },
+  {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
@@ -81,13 +88,6 @@
       "/Content/Journal/posts/AzureFunctionManagedServiceIdentities/index.html",
       "/Content/Journal/posts/AzureApplicationHosting/index.html",
       "/Content/Journal/posts/AzureStaticWebsites/index.html"
-    ]
-  },
-  {
-    "listing": "/Content/Research/index.html",
-    "items": [
-      "/Content/Research/articles/APIFirst/index.html",
-      "/Content/Research/articles/AzureApplicationHosting/index.html"
     ]
   }
 ]
