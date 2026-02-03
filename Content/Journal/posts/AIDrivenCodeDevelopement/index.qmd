@@ -51,34 +51,13 @@ By staying abreast of these trends, developers and organizations can harness the
 # Conclusion
 AI-driven code development holds immense promise for transforming the software development landscape. By adhering to  best practices, addressing ethical considerations, and staying informed about emerging trends, developers can effectively leverage AI to enhance productivity and innovation in code creation. As the technology continues to evolve, a collaborative approach that combines human expertise with AI capabilities will be key to unlocking its full potential.  
 
-# The Best Outcome Framework: CARE
-
-The [SoftwareSeni Specification Template](https://www.softwareseni.com/specification-templates-for-ai-code-generation-from-first-draft-to-production/) suggests using the CARE framework to prevent AI from making arbitrary architectural choices: 
-
-*  Context: Why this exists and where it fits in the architecture.
-*  Action: Detailed functional steps with few-shot examples.
-*  Result: Measurable acceptance criteria (e.g., "response < 200ms").
-*  Evaluation: Non-functional constraints like security and error handling. 
-
-## Example: AI-Ready Requirement
-A typical vague requirement like "Handle user authentication" often leads to security vulnerabilities. Below is an example of an AI-Ready Requirement that produces high-quality code on the first try: 
-
-|Section| 	AI-Ready Specification|
-|-------|-----------------------|
-| User Story          | As a user, I want to log in securely using my email and password.|
-| Technical Context	  | Implement using JWT tokens with bcrypt password hashing.|
-| Inputs/Data	        | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.|
-| Acceptance Criteria | 1. Lock account for 10 mins after 3 failed attempts. |
-|                     | 2. Terminate session after 30 mins of inactivity. |
-|                     | 3. Return generic error messages to prevent user enumeration.|
-| Edge Cases	        | Handle null inputs empty strings, and SQL injection patterns in name fields.|
-| Success Examples    | 1. login('user@test.com', 'ValidPass123!') → Returns 200 OK + JWT. |
-|                     | 2. login('wrong@test.com', 'pass') → Returns 401 Unauthorized.      |
-
-
 ## For Better Outcomes
 * Provide Stubs: Give the AI the function signature or interface you expect so it doesn't "hallucinate" its own.
 * Modularize: Break features into "tiny pieces" rather than one giant prompt to avoid overwhelming the model's "attention budget".
-* Spec-First Development: Use tools like Claude Code in "Plan Mode" to let the AI draft a detailed SPEC.md based on your high-level goal before any code is written. 
+* Spec-Driven Development: 
+  * [CARE Framework for AI-Driven Code Development](CARE.qmd) 
+  * Use tools like Claude Code in "Plan Mode" to let the AI draft a detailed SPEC.md based on your high-level goal before any code is written.
+  * [Spec-Kit](Spec-kit.qmd) - A collection of AI-Ready Specification Templates for various common features.
+  
 
-# [Example](example.qmd)
+
