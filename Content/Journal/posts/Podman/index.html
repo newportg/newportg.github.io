@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gary Newport">
 
-<title>AI driven code developement – Zoomalong</title>
+<title>Podman – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-4c7b890cc350be7067044af900615741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-055fd78a1f2e91fb81f3167217565c50.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
@@ -138,9 +173,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">AI driven code developement</h1>
+      <h1 class="title">Podman</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">AI Driven Code Developement</div>
+                <div class="quarto-category">Podman</div>
               </div>
                   </div>
   </div>
@@ -158,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Monday, February 2, 2026</p>
+        <p class="date">Thursday, February 12, 2026</p>
       </div>
     </div>
     
@@ -173,13 +208,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#garbage-in-garbage-out" id="toc-garbage-in-garbage-out" class="nav-link active" data-scroll-target="#garbage-in-garbage-out">Garbage In Garbage OUT</a></li>
-  <li><a href="#ethical-considerations-in-ai-driven-code-development" id="toc-ethical-considerations-in-ai-driven-code-development" class="nav-link" data-scroll-target="#ethical-considerations-in-ai-driven-code-development">Ethical Considerations in AI-Driven Code Development</a></li>
-  <li><a href="#future-trends-in-ai-driven-code-development" id="toc-future-trends-in-ai-driven-code-development" class="nav-link" data-scroll-target="#future-trends-in-ai-driven-code-development">Future Trends in AI-Driven Code Development</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
-  <ul class="collapse">
-  <li><a href="#for-better-outcomes" id="toc-for-better-outcomes" class="nav-link" data-scroll-target="#for-better-outcomes">For Better Outcomes</a></li>
-  </ul></li>
+  <li><a href="#podman-install-on-a-company-laptop" id="toc-podman-install-on-a-company-laptop" class="nav-link active" data-scroll-target="#podman-install-on-a-company-laptop">Podman install on a Company Laptop</a></li>
+  <li><a href="#windows-features-to-install-podman-on-a-company-laptop-i-first-had-to-enable-the-following-windows-features" id="toc-windows-features-to-install-podman-on-a-company-laptop-i-first-had-to-enable-the-following-windows-features" class="nav-link" data-scroll-target="#windows-features-to-install-podman-on-a-company-laptop-i-first-had-to-enable-the-following-windows-features">Windows Features To install Podman on a company laptop, I first had to enable the following Windows features:</a></li>
+  <li><a href="#install-wsl2-and-unbuntu-without-using-the-microsoft-store." id="toc-install-wsl2-and-unbuntu-without-using-the-microsoft-store." class="nav-link" data-scroll-target="#install-wsl2-and-unbuntu-without-using-the-microsoft-store.">Install WSL2 and Unbuntu without using the Microsoft store.</a></li>
+  <li><a href="#install-wsl2-and-ubuntu-from-the-microsoft-store-next" id="toc-install-wsl2-and-ubuntu-from-the-microsoft-store-next" class="nav-link" data-scroll-target="#install-wsl2-and-ubuntu-from-the-microsoft-store-next">Install WSL2 and Ubuntu from the Microsoft Store Next,</a></li>
+  <li><a href="#install-podman-on-ubuntu-once-i-had-ubuntu-set-up-i-installed-podman-by-running-the-following-commands-in-the-terminal" id="toc-install-podman-on-ubuntu-once-i-had-ubuntu-set-up-i-installed-podman-by-running-the-following-commands-in-the-terminal" class="nav-link" data-scroll-target="#install-podman-on-ubuntu-once-i-had-ubuntu-set-up-i-installed-podman-by-running-the-following-commands-in-the-terminal">Install Podman on Ubuntu Once I had Ubuntu set up, I installed Podman by running the following commands in the terminal:</a></li>
+  <li><a href="#configurepodman-to-run-without-sudo" id="toc-configurepodman-to-run-without-sudo" class="nav-link" data-scroll-target="#configurepodman-to-run-without-sudo">ConfigurePodman to run without sudo</a></li>
+  <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors">Errors</a></li>
   </ul>
 </nav>
 </nav>
@@ -194,60 +229,72 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="garbage-in-garbage-out" class="level1">
-<h1>Garbage In Garbage OUT</h1>
-<p>AI driven code development is a powerful tool, but it is only as good as the data and instructions it receives. If the input is flawed or incomplete, the output will likely be unreliable. This principle, often summarized as “Garbage In, Garbage Out” (GIGO), highlights the importance of providing high-quality data and clear requirements when leveraging AI for code generation. To ensure the effectiveness of AI-driven code development, it is crucial to:</p>
-<ol type="1">
-<li><strong>Define Clear Requirements</strong>: Clearly articulate the desired functionality, performance criteria, and constraints of the code to be generated. This helps the AI understand the context and objectives.</li>
-<li><strong>Provide Quality Data</strong>: Use accurate, relevant, and well-structured data to train and guide the AI models. Poor-quality data can lead to incorrect or suboptimal code generation.</li>
-<li><strong>Iterative Refinement</strong>: Continuously review and refine the generated code. Human oversight is essential to identify and correct any issues, ensuring that the final output meets the required standards.</li>
-<li><strong>Testing and Validation</strong>: Rigorously test the generated code to verify its functionality, performance, and security. Automated testing frameworks can be employed to streamline this process.</li>
-</ol>
-<p>By adhering to these principles, developers can maximize the benefits of AI-driven code development while minimizing the risks associated with flawed inputs.</p>
-</section>
-<section id="ethical-considerations-in-ai-driven-code-development" class="level1">
-<h1>Ethical Considerations in AI-Driven Code Development</h1>
-<p>As AI-driven code development becomes more prevalent, it is essential to address the ethical implications associated with its use. Developers and organizations must consider the following ethical aspects:</p>
-<ol type="1">
-<li><strong>Bias and Fairness</strong>: AI models can inadvertently perpetuate biases present in the training data. It is crucial to ensure that the data used is diverse and representative to avoid discriminatory outcomes in the generated code.</li>
-<li><strong>Transparency</strong>: Maintain transparency about the use of AI in code development. Stakeholders should be informed about the extent to which AI has contributed to the codebase and any limitations associated with it.</li>
-<li><strong>Accountability</strong>: Establish clear accountability for the code generated by AI. Developers should take responsibility for reviewing and validating the AI-generated code to ensure it meets ethical standards.</li>
-<li><strong>Privacy and Security</strong>: Safeguard sensitive data used in AI training and code generation. Implement robust security measures to protect against data breaches and unauthorized access.</li>
-<li><strong>Impact on Employment</strong>: Consider the potential impact of AI-driven code development on employment within the software industry. Organizations should strive to balance automation with opportunities for human developers to contribute meaningfully.</li>
-</ol>
-<p>By proactively addressing these ethical considerations, developers and organizations can foster responsible AI practices that promote fairness, transparency, and accountability in AI-driven code development.</p>
-</section>
-<section id="future-trends-in-ai-driven-code-development" class="level1">
-<h1>Future Trends in AI-Driven Code Development</h1>
-<p>The landscape of AI-driven code development is rapidly evolving, with several emerging trends poised to shape its future:</p>
-<ol type="1">
-<li><strong>Advanced Natural Language Processing (NLP)</strong>: Improvements in NLP will enable AI models to better understand and interpret complex programming requirements expressed in natural language, leading to more accurate code generation.</li>
-<li><strong>Integration with DevOps</strong>: AI-driven code development tools will increasingly integrate with DevOps pipelines, automating not only code generation but also testing, deployment, and monitoring processes.</li>
-<li><strong>Collaborative AI Systems</strong>: Future AI systems will facilitate collaboration between human developers and AI, allowing for a more interactive and iterative code development process.</li>
-<li><strong>Domain-Specific AI Models</strong>: The development of AI models tailored to specific industries or programming languages will enhance the relevance and quality of generated code for specialized applications.</li>
-<li><strong>Ethical AI Frameworks</strong>: As ethical considerations gain prominence, frameworks and guidelines for responsible AI use in code development will become more established, guiding developers in best practices.</li>
-<li><strong>Increased Adoption of Low-Code/No-Code Platforms</strong>: AI-driven code generation will further empower low-code and no-code platforms, enabling non-developers to create applications with minimal coding knowledge.</li>
-</ol>
-<p>By staying abreast of these trends, developers and organizations can harness the full potential of AI-driven code development, driving innovation and efficiency in software creation.</p>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>AI-driven code development holds immense promise for transforming the software development landscape. By adhering to best practices, addressing ethical considerations, and staying informed about emerging trends, developers can effectively leverage AI to enhance productivity and innovation in code creation. As the technology continues to evolve, a collaborative approach that combines human expertise with AI capabilities will be key to unlocking its full potential.</p>
-<section id="for-better-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="for-better-outcomes">For Better Outcomes</h2>
+<section id="podman-install-on-a-company-laptop" class="level1">
+<h1>Podman install on a Company Laptop</h1>
 <ul>
-<li>Provide Stubs: Give the AI the function signature or interface you expect so it doesn’t “hallucinate” its own.</li>
-<li>Modularize: Break features into “tiny pieces” rather than one giant prompt to avoid overwhelming the model’s “attention budget”.</li>
-<li>Spec-Driven Development:
+<li>Windows Features: Windows Subsystem for Linux, Virtual Machine Platform, Windows Hypervisor Platform</li>
+<li>Install WSL2 and Ubuntu from the Microsoft Store</li>
+<li>Install Podman on Ubuntu</li>
+<li>Configure Podman to run without sudo</li>
+</ul>
+</section>
+<section id="windows-features-to-install-podman-on-a-company-laptop-i-first-had-to-enable-the-following-windows-features" class="level1">
+<h1>Windows Features To install Podman on a company laptop, I first had to enable the following Windows features:</h1>
 <ul>
-<li><a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html">CARE Framework for AI-Driven Code Development</a></li>
-<li>Use tools like Claude Code in “Plan Mode” to let the AI draft a detailed SPEC.md based on your high-level goal before any code is written.</li>
-<li><a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/Spec-kit.html">Spec-Kit</a> - A collection of AI-Ready Specification Templates for various common features.</li>
+<li><p>Windows Subsystem for Linux</p></li>
+<li><p>Virtual Machine Platform</p></li>
+<li><p>Windows Hypervisor Platform To do this, I opened PowerShell as an administrator and ran the following command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Enable-WindowsOptionalFeature <span class="op">-</span>Online <span class="op">-</span>FeatureName Microsoft-Windows-Subsystem-Linux<span class="op">,</span> VirtualMachinePlatform<span class="op">,</span> HypervisorPlatform <span class="op">-</span>All </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>After running the command, I restarted my computer to apply the changes.</p></li>
+</ul>
+</section>
+<section id="install-wsl2-and-unbuntu-without-using-the-microsoft-store." class="level1">
+<h1>Install WSL2 and Unbuntu without using the Microsoft store.</h1>
+<ul>
+<li>To install WSL2 and Ubuntu without using the Microsoft Store, I followed these steps:</li>
+</ul>
+<ol type="1">
+<li>I downloaded the WSL2 Linux kernel update package from the official Microsoft website: https://aka.ms/wsl2kernel.</li>
+<li>I ran the downloaded installer to update the WSL2 kernel on my system.</li>
+<li>Next, I downloaded the Ubuntu distribution for WSL from the official Microsoft Store website: https://aka.ms/wslstore.</li>
+<li>I selected the latest version of Ubuntu and downloaded the .appx file to my computer.</li>
+<li>I then installed Ubuntu by running the following command in PowerShell (replace “path.appx” with the actual path to the downloaded .appx file): <code>powershell Add-AppxPackage -Path "path\to\ubuntu.appx"</code></li>
+<li>After the installation was complete, I launched Ubuntu from the Start menu and followed the prompts to set up my user account.</li>
+</ol>
+</section>
+<section id="install-wsl2-and-ubuntu-from-the-microsoft-store-next" class="level1">
+<h1>Install WSL2 and Ubuntu from the Microsoft Store Next,</h1>
+<ul>
+<li>I installed WSL2 and Ubuntu from the Microsoft Store.</li>
+<li>I opened the Microsoft Store and searched for “Ubuntu”.</li>
+<li>I selected the latest version of Ubuntu and clicked “Get” to install it.</li>
+<li>After the installation was complete,
+<ul>
+<li>I launched Ubuntu from the Start menu and followed the prompts to set up my user account.</li>
 </ul></li>
+</ul>
+</section>
+<section id="install-podman-on-ubuntu-once-i-had-ubuntu-set-up-i-installed-podman-by-running-the-following-commands-in-the-terminal" class="level1">
+<h1>Install Podman on Ubuntu Once I had Ubuntu set up, I installed Podman by running the following commands in the terminal:</h1>
+<p><code>bash sudo apt update sudo apt install -y podman</code></p>
+</section>
+<section id="configurepodman-to-run-without-sudo" class="level1">
+<h1>ConfigurePodman to run without sudo</h1>
+<p>Finally, I configured Podman to run without sudo by adding my userto the “podman” group. I ran the following command in the terminal: <code>bash sudousermod -aG podman $USER</code> After running this command, I logged out and loggedback in to apply the changes. Now I can run Podman commands without needing to use sudo.</p>
+<ul>
+<li>Overall, the process of installing Podman on a company laptop was straightforward, but it did require some additional steps to enable the necessary Windows features and set up WSL2. However, once everything was set up, I was able to use Podman without any issues.</li>
+</ul>
+</section>
+<section id="errors" class="level1">
+<h1>Errors</h1>
+<ol type="1">
+<li>An error occurred during installation. Distribution Name: ‘Ubuntu’ Error Code: 0x80070520</li>
+</ol>
+<ul>
+<li>This error typically appears if there is a outsanding windows update that needs to be installed. To resolve this issue, I ran Windows Update and installed any pending updates. After installing the updates, I restarted my computer and tried installing Ubuntu again from the Microsoft Store. This resolved the error and allowed me to successfully install Ubuntu on WSL2.</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
