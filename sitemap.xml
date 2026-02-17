@@ -2,358 +2,354 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newportg.github.io/index.html</loc>
-    <lastmod>2026-02-16T09:17:56.716Z</lastmod>
+    <lastmod>2026-02-17T17:37:42.640Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/articles/AzureApplicationHosting/index.html</loc>
-    <lastmod>2025-11-04T16:03:20.268Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.924Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/articles/APIFirst/index.html</loc>
-    <lastmod>2025-11-04T16:03:00.889Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/WebUI/index.html</loc>
-    <lastmod>2025-11-11T14:34:21.655Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/UserAssignManagedIdentities/index.html</loc>
-    <lastmod>2025-11-11T10:36:29.183Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/TestingAzureFunctions/index.html</loc>
-    <lastmod>2025-11-11T14:05:14.036Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/StorageAccountEncryption/index.html</loc>
-    <lastmod>2025-11-11T10:03:15.302Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/SOLID/index.html</loc>
-    <lastmod>2025-11-11T14:03:40.148Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/SAS-StorageAccountAccess/index.html</loc>
-    <lastmod>2025-11-11T10:11:47.359Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/QuartoWebBook/index.html</loc>
-    <lastmod>2025-11-10T14:44:05.008Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/QuartoWebBook/chapter1SubPage.html</loc>
-    <lastmod>2025-11-10T14:34:25.591Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/Podman/index.html</loc>
-    <lastmod>2026-02-16T09:11:59.011Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/PlantUml/index.html</loc>
-    <lastmod>2025-11-10T15:10:51.686Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/PackageDevelopment/index.html</loc>
-    <lastmod>2025-11-11T14:49:16.309Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/MediatR/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.079Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/Loqate/index.html</loc>
-    <lastmod>2025-11-11T15:09:46.824Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/IFrames/index.html</loc>
-    <lastmod>2025-11-11T10:09:27.800Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/FunctionMonkey/index.html</loc>
-    <lastmod>2025-10-15T14:51:38.245Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/FluentAsserts/index.html</loc>
-    <lastmod>2025-11-11T10:08:44.091Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/EIP-ContentBasedRouting/index.html</loc>
-    <lastmod>2025-10-15T15:05:29.047Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/rules-engine.html</loc>
-    <lastmod>2026-01-21T14:12:48.825Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/index.html</loc>
-    <lastmod>2026-01-21T13:47:00.143Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/DataAnnotationVsFluentValidation/index.html</loc>
-    <lastmod>2025-11-11T14:02:45.218Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureStaticWebsites/index.html</loc>
-    <lastmod>2025-10-20T13:52:11.666Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionsLogging/index.html</loc>
-    <lastmod>2025-11-11T10:33:32.875Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionDI/index.html</loc>
-    <lastmod>2025-11-11T10:07:50.494Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureApplicationHosting/index.html</loc>
-    <lastmod>2025-10-20T13:53:35.038Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/TypeSpec.html</loc>
-    <lastmod>2025-11-12T10:13:42.713Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/Spec-kit.html</loc>
-    <lastmod>2026-02-03T11:38:41.716Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html</loc>
-    <lastmod>2026-02-03T10:25:10.240Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AdaptiveCard/index.html</loc>
-    <lastmod>2025-11-11T10:34:28.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/index.html</loc>
-    <lastmod>2025-11-12T10:21:13.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-12-10/index.html</loc>
-    <lastmod>2025-12-10T14:28:23.098Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-11-24/index.html</loc>
-    <lastmod>2025-11-24T16:39:08.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-11-11/index.html</loc>
-    <lastmod>2025-11-11T15:41:41.437Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-11-04/index.html</loc>
-    <lastmod>2025-11-05T15:08:26.603Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-21/index.html</loc>
-    <lastmod>2025-10-21T15:23:05.935Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-16/index.html</loc>
-    <lastmod>2025-10-20T08:55:36.277Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-14/index.html</loc>
-    <lastmod>2025-10-20T09:05:19.642Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-10/index.html</loc>
-    <lastmod>2025-10-16T12:04:30.887Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-08/index.html</loc>
-    <lastmod>2025-10-15T14:11:43.047Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/index.html</loc>
-    <lastmod>2025-11-12T14:05:08.235Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book2/Page1.html</loc>
-    <lastmod>2025-11-02T13:41:05.013Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book1/Page2.html</loc>
-    <lastmod>2025-11-02T13:41:14.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book1/index.html</loc>
-    <lastmod>2025-11-12T14:04:50.172Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book1/Page1.html</loc>
-    <lastmod>2025-11-02T13:41:05.013Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book2/index.html</loc>
-    <lastmod>2025-11-02T13:46:29.081Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Books/Books/Book2/Page2.html</loc>
-    <lastmod>2025-11-02T13:41:14.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/index.html</loc>
-    <lastmod>2025-10-15T14:36:48.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-09/index.html</loc>
-    <lastmod>2025-10-20T08:49:54.128Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-13/index.html</loc>
-    <lastmod>2025-10-20T08:48:31.093Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-15/index.html</loc>
-    <lastmod>2025-10-20T08:58:35.134Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-20/index.html</loc>
-    <lastmod>2025-10-20T14:49:04.472Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-10-22/index.html</loc>
-    <lastmod>2025-10-22T15:22:03.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-11-05/index.html</loc>
-    <lastmod>2025-11-05T15:34:20.981Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-11-14/index.html</loc>
-    <lastmod>2025-11-14T10:00:39.225Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/posts/2025-12-09/index.html</loc>
-    <lastmod>2025-12-09T16:12:08.782Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Current/todo.html</loc>
-    <lastmod>2025-11-12T14:07:45.455Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html</loc>
-    <lastmod>2025-11-11T10:05:42.113Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html</loc>
-    <lastmod>2026-02-03T11:05:42.300Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/index.html</loc>
-    <lastmod>2026-02-16T09:20:36.863Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/index.html</loc>
-    <lastmod>2025-11-12T11:42:09.248Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/ARMTemplateParameter-VariableSetup/index.html</loc>
-    <lastmod>2025-11-10T14:47:33.202Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureC4/index.html</loc>
-    <lastmod>2025-11-11T15:25:43.385Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionManagedServiceIdentities/index.html</loc>
-    <lastmod>2025-11-10T14:49:40.901Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/AzurePipelineGitCommit/index.html</loc>
-    <lastmod>2025-11-11T15:01:31.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/CastToReflectedType/index.html</loc>
-    <lastmod>2025-11-11T14:00:43.102Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/api-service.html</loc>
-    <lastmod>2026-01-21T13:36:54.493Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/MainArchitecture.html</loc>
-    <lastmod>2026-01-21T13:49:45.767Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/Documentation/index.html</loc>
-    <lastmod>2025-11-11T15:17:37.808Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/EventNotification/index.html</loc>
-    <lastmod>2025-11-11T14:52:28.598Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/Frontify/index.html</loc>
-    <lastmod>2025-11-12T11:37:55.751Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/gRPC/index.html</loc>
-    <lastmod>2025-11-11T10:13:21.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/KeyVault/index.html</loc>
-    <lastmod>2025-11-11T15:31:57.645Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/MediatorPattern/index.html</loc>
-    <lastmod>2025-11-11T15:20:06.394Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/OnlineSpreadsheetDatabase/index.html</loc>
-    <lastmod>2025-11-11T10:31:56.792Z</lastmod>
-  </url>
-  <url>
-    <loc>https://newportg.github.io/Content/Journal/posts/PfxBase64/index.html</loc>
-    <lastmod>2025-11-10T15:13:34.266Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/PlantumlQuartoFilter/index.html</loc>
-    <lastmod>2025-10-20T12:10:39.663Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/PfxBase64/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/OnlineSpreadsheetDatabase/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/MediatorPattern/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.876Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/KeyVault/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/gRPC/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/Frontify/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/EventNotification/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/Documentation/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/MainArchitecture.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/api-service.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/CastToReflectedType/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzurePipelineGitCommit/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionManagedServiceIdentities/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureC4/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/ARMTemplateParameter-VariableSetup/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/index.html</loc>
+    <lastmod>2026-02-17T16:39:53.456Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html</loc>
+    <lastmod>2026-02-17T17:13:50.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/todo.html</loc>
+    <lastmod>2026-02-17T09:54:44.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-12-09/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-14/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-05/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-22/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-20/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-15/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-13/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-09/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book2/Page2.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book2/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book1/Page1.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book1/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book1/Page2.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/Books/Book2/Page1.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Books/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-08/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-10/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.806Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-14/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-16/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-10-21/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-04/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-11/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-11-24/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.822Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Current/posts/2025-12-10/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AdaptiveCard/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html</loc>
+    <lastmod>2026-02-17T17:13:50.428Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AIDrivenCodeDevelopement/Spec-kit.html</loc>
+    <lastmod>2026-02-17T17:23:12.010Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/APIFirst/TypeSpec.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureApplicationHosting/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionDI/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureFunctionsLogging/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/AzureStaticWebsites/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/DataAnnotationVsFluentValidation/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/DiagramFirstCoding/rules-engine.html</loc>
+    <lastmod>2026-02-17T09:54:44.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/EIP-ContentBasedRouting/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/FluentAsserts/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.856Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/FunctionMonkey/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/IFrames/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/Loqate/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.872Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/MediatR/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.872Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/PackageDevelopment/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://newportg.github.io/Content/Journal/posts/PlantUml/index.html</loc>
+    <lastmod>2026-02-17T09:54:44.877Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/QuartoWebBook/chapter1.html</loc>
-    <lastmod>2025-11-10T14:34:25.591Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/QuartoWebBook/chapter2.html</loc>
-    <lastmod>2025-11-10T14:30:50.946Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/Rules/index.html</loc>
-    <lastmod>2025-11-11T15:05:58.094Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.892Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/ServiceApplicationDevelopment/index.html</loc>
-    <lastmod>2025-11-11T14:56:36.164Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/SQLChangeTracking/index.html</loc>
-    <lastmod>2025-11-11T10:41:14.655Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/StorageAccounts/index.html</loc>
-    <lastmod>2025-11-11T10:02:02.205Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.907Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/UploadAVFileScanning/index.html</loc>
-    <lastmod>2025-11-11T14:55:13.044Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/VisualStudioSolutioTemplate/index.html</loc>
-    <lastmod>2025-11-11T14:19:04.595Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Journal/posts/WOPI/index.html</loc>
-    <lastmod>2025-11-11T15:39:49.288Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/articles/APIFirst/TypeSpec.html</loc>
-    <lastmod>2025-10-20T11:23:56.748Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.911Z</lastmod>
   </url>
   <url>
     <loc>https://newportg.github.io/Content/Research/index.html</loc>
-    <lastmod>2025-11-12T15:55:19.766Z</lastmod>
+    <lastmod>2026-02-17T09:54:44.924Z</lastmod>
   </url>
 </urlset>
