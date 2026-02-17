@@ -1,0 +1,41 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AIDrivenCodeDvelopement/CARE.qmd"
+  description: CARE Framework for AI-Driven Code Development
+layout: post
+title: CARE Framework for AI-Driven Code Development
+categories: AI Driven Code Developement
+author: "Gary Newport"
+date: "2026-02-02"
+
+output:
+  html_document:
+    toc: true
+---
+
+# CARE Framework for AI-Driven Code Development
+
+The [SoftwareSeni Specification Template](https://www.softwareseni.com/specification-templates-for-ai-code-generation-from-first-draft-to-production/) suggests using the CARE framework to prevent AI from making arbitrary architectural choices: 
+
+*  Context: Why this exists and where it fits in the architecture.
+*  Action: Detailed functional steps with few-shot examples.
+*  Result: Measurable acceptance criteria (e.g., "response < 200ms").
+*  Evaluation: Non-functional constraints like security and error handling. 
+
+## Example: AI-Ready Requirement
+A typical vague requirement like "Handle user authentication" often leads to security vulnerabilities. Below is an example of an AI-Ready Requirement that produces high-quality code on the first try: 
+
+|Section| 	AI-Ready Specification|
+|-------|-----------------------|
+| User Story          | As a user, I want to log in securely using my email and password.|
+| Technical Context	  | Implement using JWT tokens with bcrypt password hashing.|
+| Inputs/Data	        | email: String, max 255 chars, unique. password: String, min 8 chars, must include upper/lower/number/symbol.|
+| Acceptance Criteria | 1. Lock account for 10 mins after 3 failed attempts. |
+|                     | 2. Terminate session after 30 mins of inactivity. |
+|                     | 3. Return generic error messages to prevent user enumeration.|
+| Edge Cases	        | Handle null inputs empty strings, and SQL injection patterns in name fields.|
+| Success Examples    | 1. login('user@test.com', 'ValidPass123!') → Returns 200 OK + JWT. |
+|                     | 2. login('wrong@test.com', 'pass') → Returns 401 Unauthorized.      |
+
+
+# [Example](CAREexample.qmd)

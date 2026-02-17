@@ -1,0 +1,51 @@
+---
+title: "Research"
+listing:
+  - id: articles
+    contents: "articles/*/index.qmd"
+    sort: "date desc"
+    template: ../../html/research/listing.ejs
+    categories: false
+
+page-layout: full
+# include-back-link: false
+# toc-location: right
+
+# sidebar:
+#   search: true
+---
+
+<style>
+
+.outer {
+  width: 100%; 
+  display: table;
+}
+
+.row {
+  display: table-row
+}
+
+.left{
+  width: 600px; 
+  display: table-cell; 
+  background: yellow;
+}
+
+.right{
+  display: table-cell; 
+  background: deepskyblue;
+}
+</style>
+
+
+:::{#articles}
+:::
+
+
+<div class="outer">
+    <div class="row">
+        <div class="left"> Left </div>
+        <div class="right"> Right </div>
+    </div>
+</div>

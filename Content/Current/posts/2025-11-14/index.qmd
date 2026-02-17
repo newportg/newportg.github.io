@@ -1,0 +1,56 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-11-14/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-11-14"
+---
+
+# 2025-11-14
+
+- Calendar Widget.
+  - Pure Javascript
+  - Hava a single div, to provide the reference in html
+  - Highlight
+    - Current day
+    - Days with a blog post
+      - Stretch
+        - On hover show the title/s of the post.
+        - Able to select a post.
+  - On click load the post
+  - Flexible calendar table
+    - Month 
+    - This Year
+    - Year to this month
+      - ala Github
+    - Should have < and > to move to the previous and next period.
+  
+
+  - ejs 
+    - Load the blog posts into a json array and store it on the page.
+```ejs
+const events = []; 
+    items.forEach( item => { 
+        if (item.date) { 
+            const d = new Date(item.date); 
+            const year = d.getFullYear(); 
+            const month = d.getMonth() + 1; 
+            const day = d.getDate(); 
+
+            var date = month+"-"+day+"-"+year; 
+            var link = item.path; 
+            var event = { "date": date, "link": link } 
+ 
+            events.push(event); 
+        } 
+    }); 
+const serverData = { events: events }; 
+```
+  - Js
+    - Calendar table function
+    - Add event function 
+    - On Click function
+  - Css keyed to the calendar 

@@ -1,0 +1,11 @@
+---
+layout: post
+title: Book2
+categories: [C#, Azure Functions, API First, TypeSpec, AutoRest, Quarto, LUA, PowerShell]
+author: "Gary Newport"
+date: "2025-10-16"
+
+output:
+  html_document:
+    toc: true
+---

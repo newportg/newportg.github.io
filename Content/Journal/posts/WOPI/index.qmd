@@ -1,0 +1,207 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/WOPI/index.qmd"
+  description: WOPI
+layout: post
+title: WOPI
+categories: [Office, WOPI]
+image: /images/WOPI.png
+author: "Gary Newport"
+date: "2019-02-11"
+
+output:
+  html_document:
+    toc: true
+---
+
+For a full description of WOPI, please follow the link to the project.
+[WOPI Project](https://github.com/newportg/Wopi/blob/master/README.md)
+
+![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/newportg/Wopi/master/puml/WopiBalanced2.puml)
+
+Implementing a WOPI host in Azure Functions involves creating a series of HTTP-triggered functions that adhere to the specific REST endpoints and operations defined by the WOPI protocol. This service acts as the intermediary between your file storage (e.g., Azure Blob Storage) and WOPI clients (like Microsoft 365 for the web). 
+Here are the key steps and code examples for setting up the primary WOPI endpoints using C# Azure Functions (Isolated Worker Model, which is recommended). 
+
+## Prerequisites
+- .NET 8.0+
+- Azure Functions Core Tools
+- Visual Studio 2022 (or VS Code)
+
+## The WOPI Discovery Endpoint
+The client first calls this endpoint to discover the supported actions and capabilities of your service. This is typically a static response. 
+csharp
+
+```c#
+// Discovery.cs: Example of a static discovery XML function
+using System.Net;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+
+public class WopiDiscovery
+{
+    private readonly ILogger _logger;
+
+    public WopiDiscovery(ILoggerFactory loggerFactory)
+    {
+        _logger = loggerFactory.CreateLogger<WopiDiscovery>();
+    }
+
+    [Function("WopiDiscovery")]
+    public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "hosting/discovery")] HttpRequestData req)
+    {
+        _logger.LogInformation("WOPI Discovery endpoint hit.");
+
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "application/xml");
+        
+        // This XML is a static string in a real implementation, defining supported actions
+        // (view, edit, etc.) for various file types. 
+        // You'll need to generate a valid WOPI discovery XML based on your service's capabilities.
+        string discoveryXml = @"<wopi-discovery>...</wopi-discovery>"; 
+        
+        response.WriteString(discoveryXml);
+        return response;
+    }
+}
+```
+Use code with caution.
+
+## The CheckFileInfo Endpoint
+This endpoint is crucial for every WOPI action. The client sends a GET request to your service for a specific file ID. Your function must return a JSON payload with file metadata and user permissions. 
+The URL structure is .../wopi/files/{file_id}.
+csharp
+
+```C#
+// CheckFileInfo.cs: Handles the CheckFileInfo operation
+using System.Net;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+public class CheckFileInfo
+{
+    [Function("CheckFileInfo")]
+    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "wopi/files/{fileId}")] HttpRequestData req,
+        string fileId,
+        ILogger log)
+    {
+        log.LogInformation($"CheckFileInfo request for file ID: {fileId}");
+
+        // 1. Validate the 'access_token' (passed as a query parameter in the initial request)
+        string accessToken = req.Query["access_token"];
+        if (!IsValidAccessToken(accessToken))
+        {
+            return req.CreateResponse(HttpStatusCode.Unauthorized);
+        }
+
+        // 2. Fetch file info from your storage (e.g., Azure Blob metadata)
+        // This is a placeholder; replace with actual logic.
+        var fileInfo = GetFileInfoFromStorage(fileId); 
+
+        if (fileInfo == null)
+        {
+            return req.CreateResponse(HttpStatusCode.NotFound);
+        }
+
+        // 3. Construct the WOPI CheckFileInfo JSON response
+        var responseData = new 
+        {
+            BaseFileName = fileInfo.Name,
+            OwnerId = fileInfo.OwnerId,
+            Size = fileInfo.Size,
+            Sha256 = fileInfo.Sha256, // Hash of the file contents
+            Version = fileInfo.Version,
+            // Permissions (UserCanWrite, UserCanPrint, etc.) are critical
+            UserCanWrite = true,
+            // Add other required properties as needed per WOPI specs
+        };
+
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "application/json");
+        await response.WriteStringAsync(JsonConvert.SerializeObject(responseData));
+        return response;
+    }
+
+    // Placeholder methods for your business logic
+    private bool IsValidAccessToken(string token) { /* Logic to validate your custom token */ return true; }
+    private FileMetadata GetFileInfoFromStorage(string fileId) { /* Logic to get file metadata */ return new FileMetadata(); }
+}
+
+public class FileMetadata 
+{
+    public string Name { get; set; }
+    public long Size { get; set; }
+    public string OwnerId { get; set; }
+    public string Sha256 { get; set; }
+    public string Version { get; set; }
+}
+```
+Use code with caution.
+
+## The GetFile Endpoint
+This endpoint is used by the client to download the actual file content. The URL structure is the same as CheckFileInfo, but it uses a GET request without the WOPI override header. 
+csharp
+
+```c#
+// GetFile.cs: Handles the GetFile operation
+using System.Net;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using System.IO;
+using System.Threading.Tasks;
+
+public class GetFile
+{
+    [Function("GetFile")]
+    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "wopi/files/{fileId}/contents")] HttpRequestData req,
+        string fileId,
+        ILogger log)
+    {
+        log.LogInformation($"GetFile request for file ID: {fileId}");
+
+        // 1. Validate the 'access_token' (again, in the query string)
+        string accessToken = req.Query["access_token"];
+        if (!IsValidAccessToken(accessToken))
+        {
+            return req.CreateResponse(HttpStatusCode.Unauthorized);
+        }
+
+        // 2. Retrieve the file stream from your storage (e.g., Azure Blob Storage)
+        Stream fileStream = GetFileStreamFromStorage(fileId);
+
+        if (fileStream == null)
+        {
+            return req.CreateResponse(HttpStatusCode.NotFound);
+        }
+
+        // 3. Return the file stream as the response body
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "application/octet-stream"); // Adjust content type as necessary
+        await response.WriteAsync(fileStream); // Write the stream directly
+        return response;
+    }
+
+    // Placeholder methods
+    private bool IsValidAccessToken(string token) { return true; }
+    private Stream GetFileStreamFromStorage(string fileId) { /* Logic to return file stream */ return Stream.Null; }
+}
+```
+
+Use code with caution.
+
+## Key Considerations
+
+- Authentication: The WOPI protocol uses an access_token query parameter for authentication on initial requests. For subsequent operations (like PutFile), tokens might be passed in HTTP headers (Authorization or X-WOPI-Token). Your functions must validate this token on every single request.
+
+- WOPI Headers: Many operations rely heavily on custom HTTP headers starting with X-WOPI- (e.g., X-WOPI-Override, X-WOPI-Lock). You'll need to read and respond to these headers in your Azure Functions.
+
+- File Locking: For edit operations, you must implement the Lock, Unlock, and RefreshLock operations using the X-WOPI-Lock header to prevent concurrent edits.
+
+- WOPI Validator: Microsoft provides a WOPI Validator tool that you can use to test your implementation during development.
+Deployment: Your Azure Functions app must be publicly accessible on the internet for Microsoft 365 for the web to reach it.
+
+- PnP-WOPI Sample: The Microsoft OfficeDev/PnP-WOPI repository on GitHub provides a solid ASP.NET MVC sample which can be used as a reference for the logic needed, even if the hosting model is different. 

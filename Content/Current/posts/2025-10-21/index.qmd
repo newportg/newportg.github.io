@@ -1,0 +1,76 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-10-21/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-10-21"
+---
+
+# 2025-10-21
+
+- Diabetes
+  - [ ] NHS Online Course https://app.changinghealth.com
+  - Calendar Template
+    - Been trying to get a javascript calendar to show on a EJS page.
+    - Can show the [JSCalendar](https://github.com/GramThanos/jsCalendar)
+    - Can itterate through the pages extracting the date elements
+    - ISSUE: Seems to lie in getting them both to work together.
+      - Seems JSCalendar is being processed on the client side
+      - EJS is processed on the server side.
+      - The Javascript calendar and loop appears in the processed HTML code on the client side, and so has nothing to process.
+      - EJS is prepocessed on the server side, and does not load the JS calendar library, so cannot reference it.
+        - May have to include JS code functions inline.
+    - Conclusion
+      - To make this work you are going to need a server side generated calendar,
+      - Which will only show the period from the earliest to the latest months activity.
+  
+   
+![output](Calendar.png)
+
+
+```
+
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
+<div id="calendar"></div>
+
+<script type="text/javascript">
+	var calendar = jsCalendar.new("#calendar", "now", {	"monthFormat": "month YYYY"	});
+
+    for (const item of items) { 
+        if (item.date) { 
+            const d = new Date(item.date);
+            const year = d.getFullYear();
+            const month = d.getMonth() + 1;
+            const day = d.getDate();
+
+            calendar.setHighlightedDate(new Date(year, month, day));
+        }
+    }
+
+</script>
+```
+
+```
+    <% for (const item of items) { %>
+        <div class="listing-item">
+
+        <% if (item.date) { %>
+            <%
+                const d = new Date(item.date);
+                const year = d.getFullYear();
+                const month = d.getMonth() + 1; // getMonth() is 0-indexed
+                const day = d.getDate();
+            %>
+
+            <p><%= day %>-<%= month %>-<%= year %></p>
+        <% } %>
+
+        </div>
+    <% } %>
+
+```

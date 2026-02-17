@@ -1,0 +1,25 @@
+---
+foam_template:
+  filepath: "/content/current/posts/2025-10-15/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-10-15"
+---
+
+# 2025-10-15
+
+- Diabetes
+  - Continued the Diabetes online course.
+  
+- Quarto PlantUML filter
+  - Continued with the Quarto filter to process PlantUML diagrams within Quarto documents.
+  - Worked on placing all output files in a particular subdirectory. 
+  - Need to find a way to echo the script rather than create a puml file.
+  
+
+
+
+    

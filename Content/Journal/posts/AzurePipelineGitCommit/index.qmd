@@ -1,0 +1,23 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AzurePipelineGitCommit/index.qmd"
+  description: Azure Pipeline Git Commit
+layout: post
+title : Azure Pipeline Git Commit
+categories: [DevOps]
+image: /images/devops.png
+author: "Gary Newport"
+date: "2020-07-20"
+
+output:
+  html_document:
+    toc: true
+---
+
+If you are trying to use git within a devops pipeline then you will need to enable the pipeline the bility to commit.
+
+You need to grant the permissions to Project Collection Build Service (account name):
+
+![PipelineGit](.\PipelineGit.png)
+
+

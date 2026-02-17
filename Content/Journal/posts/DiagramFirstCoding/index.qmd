@@ -1,0 +1,42 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/DiagramFirstCoding/index.qmd"
+  description: Diagram first coding
+layout: post
+title: Diagram first coding
+categories: Diagram first coding
+author: "Gary Newport"
+date: "2026-01-21"
+
+output:
+  html_document:
+    toc: true
+---
+
+What if you could create diagrams first, and then generate code from them? This is the idea behind diagram first coding, a software development approach that emphasizes visual representation of system architecture before writing any code.
+
+This isnt so far fetched. Look at tools like C4, where the system is modeled using a series of heirarchical diagrams, which denote the strucutre of the system at different levels of abstraction. These diagrams can then be used to generate code stubs, which can be filled in with business logic later.
+
+Thats the rub, systems like this always push to one side complexity to other systems when it gets too difficult to model. For example, you might model the high level architecture of a web application using C4 diagrams, but then have to resort to traditional coding for the detailed implementation of the business logic.
+However, with advances in model-driven development and code generation tools, its becoming increasingly feasible to adopt a diagram first coding approach. By leveraging these tools, developers can create more maintainable and scalable systems, as the visual representation of the architecture provides a clear understanding of the system's structure and behavior.
+
+So for example you might create a C4 diagram that models the high level architecture, and then APIFirst tools to generate the API endpoints and data models. This way, you can ensure that the code is aligned with the architecture, while still allowing for flexibility in the implementation of the business logic.
+
+## So what is Business Logic?
+Business logic refers to the rules and processes that govern how a system operates and interacts with its users. It encompasses the core functionality of the application, including data processing, decision-making, and workflow management. In a diagram first coding approach, business logic can be represented visually through flowcharts, state diagrams, or other modeling techniques, allowing developers to better understand and communicate the system's behavior before writing any code.
+
+So its the logic inside a C4 Component that makes it do what it does. The code part of C4 provides the class hirarchy, but the business logic is what makes those classes actually do something useful. The business logic could be described in a variety of ways, such as pseudocode, flowcharts, or even natural language descriptions.
+
+This is beginning to sound more like lego than coding. You have a set of pre-defined blocks (the C4 components) that you can snap together to create a system. Having a business logic engineer define the behavior of each block, and using a locode tool to generate the code for each block based on its defined behavior.
+
+A software developer would glue the blocks together, and ensure that they work together as intended. This approach could potentially lead to faster development times, as well as more maintainable and scalable systems.
+
+## Challenges of Diagram First Coding
+While diagram first coding offers many benefits, it also presents several challenges. One of the main challenges is the need for specialized tools and expertise to create and interpret the diagrams. Additionally, there may be resistance from developers who are accustomed to traditional coding practices and may be hesitant to adopt a new approach.
+Another challenge is ensuring that the diagrams accurately represent the system's architecture and behavior. Many of the concepts would disrupt the established software development lifecycle, requiring changes to existing processes and workflows.
+
+or just leave it to AI....
+
+* [mainArchitecture](MainArchitecture.qmd)
+* [apiService](api-service.qmd) 
+* [rulesEngine](rules-engine.qmd) 

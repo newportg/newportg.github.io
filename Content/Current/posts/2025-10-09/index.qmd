@@ -1,0 +1,28 @@
+---
+foam_template:
+  filepath: "/current/posts/2025-10-09/index.qmd"
+  description: "Daily note"
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2025-10-09"
+---
+
+- Quarto PlantUML diagram support
+  - Trying the published plantuml filters
+  
+# inline script
+
+```{.plantuml}
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Bob --> Alice: Another Response
+@enduml
+```
+
+```{.plantuml pumlfile="FMHelloWorld"}
+```
+

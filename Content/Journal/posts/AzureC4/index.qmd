@@ -1,0 +1,27 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AzureC4/index.qmd"
+  description: Azure/C4
+layout: post
+title: Azure/C4
+categories: [Azure, C4]
+image: /images/C4.png
+author: "Gary Newport"
+date: "2019-02-11"
+
+output:
+  html_document:
+    toc: true
+---
+
+I found a good resource, so I can include bot C4 diagrams and Azure icons within a PlantUML diagram.
+I've done C4 within PlantUml before but it was a bit crude.
+
+```{.plantuml pumlfile="c4"}
+```
+
+```{.plantuml pumlfile="azure"}
+```
+
+https://github.com/RicardoNiepel/Azure-PlantUML
+

@@ -1,0 +1,95 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/2025-10-20/index.qmd"
+  description: Plantuml Quarto Filter
+layout: post
+title: Plantuml Quarto Filter
+categories: [ Plantuml, Quarto Filter]
+author: "Gary Newport"
+date: "2025-10-20"
+---
+
+
+# Description
+For many tasks a diagram is required to illustrate a concept or process. This Quarto filter allows PlantUML diagrams to be created directly within Quarto documents. The filter supports both inline PlantUML code and loading PlantUML code from external `.puml` files.
+
+# Features
+
+- Diagrams can be loaded from a file source.
+- Diagrams can be created from inline PlantUML code. 
+- Renders the PlantUML diagram as SVG
+- Renders puml files in the current directory.
+  
+# Usage
+To use the filter, include the following code block in your Quarto document:    
+
+## File Source 
+
+**N.B.** The path to the puml file is relative to the location of the .qmd file being processed.
+
+**N.B.** The plantuml script mush be stored in a file with a '.puml' extension.
+
+**N.B.** The pumlfile attribute must **not** include a file extension.
+
+````
+```{.plantuml pumlfile="diagram1"}
+```
+````
+
+Or for inline PlantUML code:  
+
+````
+```{.plantuml}
+@startuml   
+    Alice -> Bob: Hello
+@enduml
+```
+````
+
+# Installation
+
+To install the PlantUML Quarto filter, follow these steps:
+
+1. Have a working PlantUML installation. Instructions for installing PlantUML can be found at [PlantUML Installation Guide](https://plantuml.com/starting).
+2. PlantUML must be accessible from the command line. Ensure that the PlantUML executable is in your system's PATH.
+   1. Ideally you should create a batch file to run plantuml, for example `plantuml.bat`:
+
+```batch
+ @echo off
+ java -jar "%~dp0plantuml-1.2025.7.jar" %*
+ ```
+
+3. Install the filter by using the Quarto add command:
+
+```bash
+quarto add newportg/plantuml-diagram
+```
+
+4. Add `diagram` to the `filters` entry in the YAML header or _quarto.yml_ file:
+
+``` yaml
+---
+filters:
+  - plantuml-diagram
+---
+```
+
+# Example
+
+If enverything is setup correctly, the following code block:
+
+````
+```{.plantuml}
+@startuml   
+    Alice -> Bob: Hello
+@enduml
+```
+````
+
+will render the following diagram:
+
+```{.plantuml}
+@startuml   
+    Alice -> Bob: Hello
+@enduml
+```

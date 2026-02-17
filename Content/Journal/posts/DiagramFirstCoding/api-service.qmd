@@ -1,0 +1,27 @@
+# Component: API Service (api-service.md)
+This sub-page defines the interface contract using TypeSpec.
+API Specification (TypeSpec)
+
+
+```typespec
+import "@typespec/http";
+import "@typespec/rest";
+
+using Http;
+
+@service({ title: "Order Service" })
+namespace OrderSystem;
+
+model Order {
+  @key id: string;
+  customerName: string;
+  amount: float64;
+  status: "pending" | "approved" | "rejected";
+}
+
+@route("/orders")
+interface Orders {
+  @post create(@body order: Order): Order | Error;
+  @get read(@path id: string): Order | Error;
+}
+```
