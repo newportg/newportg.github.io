@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/Content/Research/index.html",
-    "items": [
-      "/Content/Research/articles/APIFirst/index.html",
-      "/Content/Research/articles/AzureApplicationHosting/index.html"
-    ]
-  },
-  {
     "listing": "/Content/Journal/index.html",
     "items": [
       "/Content/Journal/posts/AIDrivenCodeDevelopement/index.html",
@@ -88,6 +81,13 @@
       "/Content/Current/posts/2025-10-10/index.html",
       "/Content/Current/posts/2025-10-09/index.html",
       "/Content/Current/posts/2025-10-08/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Research/index.html",
+    "items": [
+      "/Content/Research/articles/APIFirst/index.html",
+      "/Content/Research/articles/AzureApplicationHosting/index.html"
     ]
   }
 ]

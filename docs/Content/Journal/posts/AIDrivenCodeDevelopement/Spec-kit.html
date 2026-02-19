@@ -181,6 +181,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI Driven Code Developement Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CARE Framework</span></a>
   </div>
@@ -188,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CARE Framework Example</span></a>
+ <span class="menu-text">CARE Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,6 +203,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Spec-kit</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/VSCode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">VSCode</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/Podman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Podman</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../Content/Journal/posts/AIDrivenCodeDevelopement/DevContainers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dev Containers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -329,7 +358,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
