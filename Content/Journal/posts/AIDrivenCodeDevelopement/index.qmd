@@ -8,6 +8,8 @@ categories: AI Driven Code Developement
 author: "Gary Newport"
 date: "2026-02-02"
 
+sidebar: id-AIDrivenCodeDevelopement
+
 output:
   html_document:
     toc: true

@@ -1,0 +1,27 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AIDrivenCodeDevelopement/Podman.qmd"
+  description: Podman
+layout: post
+title: Podman
+categories: ["AI Driven Code Developement", "Podman"]
+author: "Gary Newport"
+date: "2026-02-18"
+
+sidebar: id-AIDrivenCodeDevelopement
+
+output:
+  html_document:
+    toc: true
+---
+# Introduction
+I was about to dive into the difficulty of installing Podman on Windows, But fortuately due to a convientent system rebuild I had a clean Windows 11 install and I was able to install Podman without any issues.
+
+1. Install Podman Desktop from the [Podman Windows Desktop](https://github.com/containers/podman-desktop/releases/download/v1.25.1/podman-desktop-1.25.1-setup.exe) page.
+1. Install Podman CLI from the [Podman Windows CLI](https://github.com/containers/podman/releases/download/v5.8.0/podman-5.8.0-setup.exe) page.
+1. Install WSL2 from the [Podman Windows](https://podman.io/getting-started/installation#podman-on-windows) page.
+
+# References
+* [Podman](https://podman.io/)
+* [Podman Windows](https://github.com/containers/podman/blob/main/docs/tutorials/podman-for-windows.md)
+

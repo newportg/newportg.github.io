@@ -46,7 +46,36 @@ website:
     right: |
       <span class="faux-block">Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)</span>
       <span class="faux-block">[View the source at {{< fa brands github >}} GitHub]({{< var github-url >}})</span>
-
+  
+  sidebar:
+    - id: id-QuartoWebBook
+      title: "Quarto Web Book"
+      contents:
+        - text: "Quarto Web Book Introduction"
+          href: Content/Journal/posts/QuartoWebBook/index.html
+        - text: "Chapter 1"
+          href: Content/Journal/posts/QuartoWebBook/chapter1.html
+        - text: "Chapter 2"
+          href: Content/Journal/posts/QuartoWebBook/chapter2.html
+          
+    - id: id-AIDrivenCodeDevelopement
+      title: "AI Driven Code Developement"
+      contents:
+        - text: "AI Driven Code Developement Introduction"
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/index.html
+        - text: "CARE Framework"
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html
+        - text: "CARE Example"
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html
+        - text: "Spec-kit"
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/spec-kit.html
+        - section: "VSCode"
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/VSCode.html
+          contents:
+            - text: "Podman"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/Podman.html
+            - text: "Dev Containers"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/DevContainers.html
 
 format:
   html:

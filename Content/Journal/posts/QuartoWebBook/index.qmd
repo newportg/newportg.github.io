@@ -1,9 +1,14 @@
 ---
+foam_template:
+  filepath: "/content/Journal/posts/QuartoWebBook/index.qmd"
+  description: Quarto Web Book Introduction
 layout: post
-title: Quarto Web Book
-categories: [Quarto]
+title: Quarto Web Book Introduction
+categories: "Quarto WebBook"
 author: "Gary Newport"
 date: "2025-11-10"
+
+sidebar: id-QuartoWebBook
 
 output:
   html_document:
@@ -16,9 +21,9 @@ output:
 
 This is the introduction to my long blog post.
 
-{{< include chapter1.md >}}
+{{< include chapter1.qmd >}}
 
-{{< include chapter2.md >}}
+{{< include chapter2.qmd >}}
 
 ... and so on for other chapters.
 

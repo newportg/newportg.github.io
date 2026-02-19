@@ -1,0 +1,34 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AIDrivenCodeDevelopement/DevContainers.qmd"
+  description: Dev Containers
+layout: post
+title: Dev Containers
+categories: ["AI Driven Code Developement", "Dev Containers"]
+author: "Gary Newport"
+date: "2026-02-18"
+
+sidebar: id-AIDrivenCodeDevelopement
+
+output:
+  html_document:
+    toc: true
+---
+
+# Introduction
+
+# Spec-kit Dev Container
+
+The github Spec-kit Dev Container Template provides a dev container for AI driven code development. It includes a pre-configured environment with all the necessary tools and libraries for AI development, including Python, Jupyter, and popular AI frameworks like TensorFlow and PyTorch.
+
+[Spec-kit Dev Container Template](https://github.com/paulwu/SpecKitDevContainerTemplate)
+
+![github-template](github-template.png)
+If you naviagte to the github repository you can click the "Use this template" button to create a new repository with the dev container template. Once you have created your repository, you can open it in VSCode and it will prompt you to open the dev container. This will create a new development environment that is isolated from your local machine and has all the necessary tools and libraries for AI development.
+
+**N.B.** I have tried this, but the script errors out when it tries the line 'sudo apt-get update -y'. You can comment out this line and the script will run successfully.
+
+* RUN **specify check** to verify that spec-kit is installed correctly.
+
+# References
+* [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers)
