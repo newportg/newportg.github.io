@@ -68,7 +68,7 @@ website:
         - text: "CARE Example"
           href: Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html
         - text: "Spec-kit"
-          href: Content/Journal/posts/AIDrivenCodeDevelopement/spec-kit.html
+          href: Content/Journal/posts/AIDrivenCodeDevelopement/Spec-kit.html
         - section: "VSCode"
           href: Content/Journal/posts/AIDrivenCodeDevelopement/VSCode.html
           contents:
