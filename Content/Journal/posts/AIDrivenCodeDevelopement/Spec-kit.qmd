@@ -30,7 +30,7 @@ Spec-kit works with most AI code generation tools, including OpenAI's Codex, Git
 Spec-kit has a CLI that is installed and run locally from VS Code.
 or alternatively, you can download the templates directly from the GitHub release repository. Pick either the sh or ps1 script depending on your operating system. and unpack the zip into your project root. This will create a .specify folder with the templates and scripts, and a .codex directory. 
 
-![release](github-release.png)
+![github-release](github-release.png)
 
 
 Spec-kit sets up a .specify folder in your project root with markdown templates for common features.
