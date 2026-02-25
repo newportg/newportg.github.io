@@ -67,8 +67,21 @@ website:
           href: Content/Journal/posts/AIDrivenCodeDevelopement/CARE.html
         - text: "CARE Example"
           href: Content/Journal/posts/AIDrivenCodeDevelopement/CAREexample.html
-        - text: "Spec-kit"
+        - section: "Spec-kit"
           href: Content/Journal/posts/AIDrivenCodeDevelopement/Spec-kit.html
+          contents:
+            - text: "tasks-template"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/tasks-template.html
+            - text: "agent-file-template"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/agent-file-template.html
+            - text: "checklist-template"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/checklist-template.html
+            - text: constitution-template
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/constitution-template.html
+            - text: "plan-template"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/plan-template.html
+            - text: "spec-template"
+              href: Content/Journal/posts/AIDrivenCodeDevelopement/spec-template.html
         - section: "VSCode"
           href: Content/Journal/posts/AIDrivenCodeDevelopement/VSCode.html
           contents:
