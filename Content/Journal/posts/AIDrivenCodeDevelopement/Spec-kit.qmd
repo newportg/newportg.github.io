@@ -53,6 +53,11 @@ The .specify/Templates folder includes the following AI-Ready Specification Temp
 * spec-template.md - General template for creating AI-Ready Specifications for any feature.
 * tasks-template.md - Template for defining specific tasks and actions for AI agents to perform.
 
+```kroki-plantuml
+@startebnf
+binaryDigit = "0" | "1";
+@endebnf
+```
 
 
 # References
