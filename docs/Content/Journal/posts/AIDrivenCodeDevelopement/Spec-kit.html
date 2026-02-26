@@ -278,6 +278,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#spec-kit" id="toc-spec-kit" class="nav-link active" data-scroll-target="#spec-kit">Spec-kit</a></li>
+  <li><a href="#prompts" id="toc-prompts" class="nav-link" data-scroll-target="#prompts">Prompts</a>
+  <ul class="collapse">
+  <li><a href="#sample-constitution." id="toc-sample-constitution." class="nav-link" data-scroll-target="#sample-constitution.">Sample Constitution.</a>
+  <ul class="collapse">
+  <li><a href="#example." id="toc-example." class="nav-link" data-scroll-target="#example.">Example.</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -318,7 +325,77 @@ ul.task-list li input[type="checkbox"] {
 <li>spec-template.md - General template for creating AI-Ready Specifications for any feature.</li>
 <li>tasks-template.md - Template for defining specific tasks and actions for AI agents to perform.</li>
 </ul>
-<p><img src="48555e3f0804c947eab3ff930c4c0fe1006ffb59.svg" class="img-fluid" alt="PlantUML Diagram"></p>
+</section>
+<section id="prompts" class="level1">
+<h1>Prompts</h1>
+<p>In order to use the Spec-kit templates effectively, you can use the following prompts to guide your AI agents in generating code based on the specifications you create:</p>
+<p><img src="process.svg" class="img-fluid" alt="PlantUML Diagram"></p>
+<p>Constitution is used to define the guiding principals of the AI agents. So once defined you would rarely need to update this, unless you want to change the guiding principles of your AI agents.</p>
+<section id="sample-constitution." class="level2">
+<h2 class="anchored" data-anchor-id="sample-constitution.">Sample Constitution.</h2>
+<p>A constitutuion should set out the pricipals that the AI agent should follow when generating the code. The Principals shouldn’t be too specific and drop into technical details, but should be high level and set out the values and goals that the AI agent should follow when generating code. The constitution will be defferent defpending on the project and the goals of the project, but it should set out the guiding principles that the AI agent should follow when generating code.</p>
+<p>So below I’ve tried to set out what I would want a API that interfaces to a third-party service todo.</p>
+<ul>
+<li>Have a responsive interface for user interaction, with OpenAPI documentation for easy integration and testing.</li>
+<li>Have a Bus interface for service integration.</li>
+<li>Use a structured logging format for easy monitoring and troubleshooting.</li>
+<li>Defined Interface for health status reporting to support tools for monitoring and quick issue resolution.</li>
+<li>Testing should be a priority to ensure reliability and robustness in production environments.</li>
+</ul>
+<section id="example." class="level3">
+<h3 class="anchored" data-anchor-id="example.">Example.</h3>
+<p>Create a web api with the following principles:</p>
+<ul>
+<li>Security
+<ul>
+<li>The API should follow security best practices, including input validation, authentication, and authorization to protect against common vulnerabilities and ensure the safety of user data.</li>
+</ul></li>
+<li>Interface
+<ul>
+<li>Usability
+<ul>
+<li>The API should have a Restful design and provide clear documentation for developers to ensure ease of use and integration.</li>
+</ul></li>
+<li>Service Integration
+<ul>
+<li>The API should be designed to support integration with service buses, allowing for seamless communication and data exchange between different services and components within the system.</li>
+</ul></li>
+</ul></li>
+<li>Code
+<ul>
+<li>The API should be designed with maintainability and scalability in mind, following best practices in software development to ensure that it can evolve and adapt to changing requirements over time.</li>
+</ul></li>
+<li>Performance
+<ul>
+<li>The API should be designed to be efficient and performant, with a focus on minimizing latency and maximizing throughput to ensure a smooth user experience.</li>
+</ul></li>
+<li>Testing
+<ul>
+<li>Unit Testing
+<ul>
+<li>Code will be tested with unit tests to ensure that individual components function correctly and to catch any issues early in the development process.</li>
+<li>Code coverage will be measured to ensure that a high percentage of the codebase is tested, which helps to improve the overall quality and reliability of the API.</li>
+</ul></li>
+<li>End to End Testing
+<ul>
+<li>The API will undergo end-to-end testing to validate that all components work together as expected and to identify any issues that may arise in a production environment.</li>
+</ul></li>
+<li>Mock Testing
+<ul>
+<li>In development environments, the API will employ mock testing to simulate various scenarios and edge cases, ensuring that it can handle unexpected inputs and conditions gracefully.</li>
+</ul></li>
+</ul></li>
+<li>Logging
+<ul>
+<li>The API will produce logs in a structured format that can be easily consumed by log management tools for monitoring and troubleshooting purposes.</li>
+</ul></li>
+<li>Monitoring and Health Reporting
+<ul>
+<li>The API will report health status through an interface with support tools so its current status can be easily monitored and any issues can be quickly addressed.</li>
+</ul></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>

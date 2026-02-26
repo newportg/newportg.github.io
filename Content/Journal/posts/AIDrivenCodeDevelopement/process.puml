@@ -1,0 +1,5 @@
+@startebnf
+
+specification = "/constitution" ,{ "/specify" ,{"/clarify"}, "/plan" , "/tasks", {"/analyse"} , "/implement" }-;
+
+@endebnf
