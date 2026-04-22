@@ -24,8 +24,8 @@ website:
         href: Content/Journal/index.qmd
       - text: "Calendar Template"
         href: Content/Research/index.qmd    
-      # - text: "Books"
-      #   href: Content/Books/index.qmd    
+      - text: "POC's"
+        href: Content/POCs/index.qmd    
   
     right:
       - text: "{{< iconify bi envelope size=1.1em title='E-mail' >}}"

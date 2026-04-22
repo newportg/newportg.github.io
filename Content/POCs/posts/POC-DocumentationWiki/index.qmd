@@ -1,0 +1,17 @@
+---
+layout: post
+title: Documentation System Evaluation for Software Architecture
+categories: [Wiki]
+author: "Gary Newport"
+date: "2025-11-24"
+
+---
+
+This POC was all about evaluating different documentation systems for software architecture. The three systems evaluated were Github Pages, Quarto, and Docusaurus. Each system was evaluated based on its features, ease of use, and suitability for documenting software architecture.
+
+* [Github Pages](https://newportg.github.io/POC-DocumentationWiki)
+* [Quarto](https://newportg.github.io/POC-DocumentationWiki-Quarto)
+* [Docusaurus](https://newportg.github.io/POC-DocumentationWiki-Docusaurus)
+
+
+

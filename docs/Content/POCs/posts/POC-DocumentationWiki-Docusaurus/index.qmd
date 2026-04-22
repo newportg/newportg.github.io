@@ -1,0 +1,18 @@
+---
+layout: post
+title: Documentation System Evaluation for Software Architecture -  Docusaurus
+categories: [Wiki]
+author: "Gary Newport"
+date: "2025-11-24"
+
+---
+
+```{=html}
+<script type="text/javascript">
+  window.location.replace("https://newportg.github.io/POC-DocumentationWiki-Docusaurus");
+</script>
+```
+
+Redirect...
+
+
