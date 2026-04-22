@@ -1,12 +1,5 @@
 [
   {
-    "listing": "/Content/Research/index.html",
-    "items": [
-      "/Content/Research/articles/APIFirst/index.html",
-      "/Content/Research/articles/AzureApplicationHosting/index.html"
-    ]
-  },
-  {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
@@ -93,7 +86,15 @@
   {
     "listing": "/Content/POCs/index.html",
     "items": [
-      "/Content/POCs/posts/POC-DocumentationWiki/index.html"
+      "/Content/POCs/posts/POC-DocumentationWiki/index.html",
+      "/Content/POCs/posts/POC-HubDecouple/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Research/index.html",
+    "items": [
+      "/Content/Research/articles/APIFirst/index.html",
+      "/Content/Research/articles/AzureApplicationHosting/index.html"
     ]
   }
 ]

@@ -7,18 +7,53 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "Content/Research/index.html",
-    "href": "Content/Research/index.html",
-    "title": "Research",
+    "objectID": "Content/Research/articles/AzureApplicationHosting/index.html",
+    "href": "Content/Research/articles/AzureApplicationHosting/index.html",
+    "title": "Azure Application Hosting",
     "section": "",
-    "text": "Day  : \n    Link : link  \n\n    \n    \n\n            \n\n\n        \n\nNo matching items\n\n\n&lt;div class=\"row\"&gt;\n    &lt;div class=\"left\"&gt; Left &lt;/div&gt;\n    &lt;div class=\"right\"&gt; Right &lt;/div&gt;\n&lt;/div&gt;"
+    "text": "Each component is a separately deploy-able artefact, but we need a coherent single URL to link them all. The normal method would be to deploy out each individual component to Azure and each would get its own ‘aurewebsites.com’ URL. This approach would lead to confusion, as it would mean you would need to keep lists of URL’s By using the proxy feature of Azure Functions we can define routes to each of the installed artefacts while preserving a single URL for the application. So:-\n\n\n\nRoute\nResult\n\n\n\n\nzoomalong.co.uk\nWebsite\n\n\nzoomalong.co.uk/api\nAzure functions\n\n\nzoomalong.co.uk/static\nAzure Storage Account\n\n\n\nUsed to store any files or images etc. Because both the API and Web Application exist on the same URL then we won’t run into any CORS issues. Remember to bind the DNS Cname to the Azure function proxy and not the website.\n\n\n\naah1\n\n\nHow ? In your Azure Functions Project Create a files called proxies.json and insert the following code\nproxies.json\n{\n  \"$schema\": \"http://json.schemastore.org/proxies\",\n    \"proxies\": {\n      \"api\": {\n        \"matchCondition\": {\n          \"route\": \"/api/{*url}\"\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      },\n      \"app\": {\n        \"matchCondition\": {\n          \"route\": \"{*url}\",\n          \"methods\": [ \"GET\", \"HEAD\", \"OPTIONS\" ]\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      },\n      \"appResources\": {\n        \"matchCondition\": {\n          \"route\": \"/static/{*url}\",\n          \"methods\": [ \"GET\", \"HEAD\", \"OPTIONS\" ]\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      }\n    }\n  }\nChange in the build. * Build should include Azure App Service Deploy V3 or greater * Update this section with the file to be changed. *  * Add your substitutions to the Variables section * As Path to variable to be replace element.element.element * Value to be replaced. * as below\n\n\n\n\n\n\n\nProxy\nURL\n\n\n\n\nproxies.api.backendUri\nhttps://azure website url\n\n\nproxies.app.backendUri\nhttps://azure function url\n\n\nproxies.appResources.backendUri\nhttps:// azure storage account blob strorage\n\n\n\n\nRepeat in the release."
   },
   {
-    "objectID": "Content/Research/articles/APIFirst/TypeSpec.html",
-    "href": "Content/Research/articles/APIFirst/TypeSpec.html",
-    "title": "TypeSpec",
+    "objectID": "Content/Research/articles/APIFirst/index.html",
+    "href": "Content/Research/articles/APIFirst/index.html",
+    "title": "API First",
     "section": "",
-    "text": "TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:\n\nDefining endpoints and routes\n\nSpecifying request and response formats\nAdding authentication and authorization\nGenerating client and server code in multiple programming languages\nCreating interactive documentation for APIs\nValidating API definitions against industry standards such as OpenAPI and Swagger\nExtending TypeSpec with custom plugins and extensions\n\nTypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.\nTypeSpec can be used in a variety of scenarios, including:\n\nBuilding RESTful APIs for web and mobile applications\nCreating microservices and serverless functions\nDesigning APIs for data analytics and machine learning applications\nGenerating SDKs and client libraries for third-party developers\nAutomating API documentation and testing processes\nPrototyping and iterating on API designs quickly and efficiently\nIntegrating with CI/CD pipelines for continuous delivery of APIs\nEnsuring compliance with industry regulations and standards for API security and privacy\nFacilitating API versioning and backward compatibility for long-term maintenance\nSupporting multiple API styles, including REST, GraphQL, and gRPC\nEnabling rapid development and deployment of APIs in cloud-native environments"
+    "text": "API First Process"
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/index.html#description",
+    "href": "Content/Research/articles/APIFirst/index.html#description",
+    "title": "API First",
+    "section": "Description",
+    "text": "Description\nAPI First is an approach to software development that prioritizes the design and implementation of APIs before building the underlying application or service. This approach emphasizes the importance of APIs as the primary means of communication between different components of a system, as well as between different systems.\nBy designing APIs first, developers can ensure that the APIs are well-defined, consistent, and easy to use. This can lead to better collaboration between teams, faster development cycles, and more efficient integration with third-party services.\nThe approach detailed here takes the responsibility for creating the API definition away from the developer and places it in the hands of a specialist tool. This ensures that the API definition is created in a consistent manner and adheres to best practices. The API definition is then used to generate the client and server code, which can be integrated into the application or service. This approach can help to reduce errors and inconsistencies in the code, as well as improve the overall quality of the API. The API First approach can be particularly beneficial in complex systems where multiple teams are working on different components. By defining the APIs first, teams can work independently while still ensuring that their components will integrate seamlessly with the rest of the system. The API First approach can also help to improve the overall user experience of the application or service. By designing APIs that are easy to use and understand, developers can create applications that are more intuitive and user-friendly. Overall, the API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs."
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/index.html#tools",
+    "href": "Content/Research/articles/APIFirst/index.html#tools",
+    "title": "API First",
+    "section": "Tools",
+    "text": "Tools\nThe tools used in this process are:\n\nTypeSpec - A tool for designing and generating APIs\nAutoRest - A tool for generating client and server code from API definitions\nQuarto - A tool for creating and publishing documents\nLUA - A lightweight scripting language used for automation\nPowerShell - A task automation and configuration management framework\nC# - A programming language used for building applications and services\nAzure Functions - A serverless compute service used for building and deploying applications and services"
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/index.html#process",
+    "href": "Content/Research/articles/APIFirst/index.html#process",
+    "title": "API First",
+    "section": "Process",
+    "text": "Process\nThe process for creating an API using the API First approach is as follows:\n\nDesign the API - Use TypeSpec to design the API, including the endpoints, request and response formats, and any authentication or authorization requirements.\nGenerate the API definition - Use TypeSpec to generate the API definition in a standard format, such as OpenAPI or Swagger.\nGenerate the client and server code - Use AutoRest to generate the client and server code from the API definition.\nIntegrate the code - Integrate the generated code into the application or service.\nTest the API - Test the API to ensure that it works as expected and meets the requirements.\n\nDocument the API - Use Quarto to create documentation for the API, including usage examples and any relevant information for developers.\nAutomate the process - Use LUA and PowerShell to automate the process of generating the API definition, client and server code, and documentation."
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/index.html#benefits",
+    "href": "Content/Research/articles/APIFirst/index.html#benefits",
+    "title": "API First",
+    "section": "Benefits",
+    "text": "Benefits\nThe benefits of using the API First approach include:\n\n\n\n\n\n\n\nCategory\nQualities\n\n\n\n\n🧑‍💻 Developer Experience & Productivity\n- Improved developer productivity and satisfaction  - Easier onboarding of new developers and teams  - Reduced errors and inconsistencies in the code  - Easier maintenance and updates to the API  - Improved versioning and backward compatibility of the API  - Better integration with DevOps and CI/CD processes\n\n\n🚀 Development Efficiency & Technical Excellence\n- Faster development cycles  - More efficient integration with third-party services  - Consistent and well-defined APIs  - Better quality APIs  - Better support for multiple platforms and devices  - More effective monitoring and analytics of API usage  - More effective management of API lifecycle and governance\n\n\n🌐 Business Alignment & Strategic Impact\n- Better alignment with business goals and requirements  - Increased flexibility and scalability of the application or service  - Enhanced ability to adapt to changing market and customer needs  - Greater overall success and impact of the application or service in the market  - Increased revenue and business opportunities through the API  - Better alignment with industry trends and best practices in API development\n\n\n🤝 Collaboration & Communication\n- Improved collaboration between teams  - Improved communication and transparency with stakeholders and customers\n\n\n🎨 Innovation & Design\n- Greater innovation and creativity in API design  - Improved user experience\n\n\n🔒 Trust, Security & Adoption\n- Enhanced security and compliance with industry standards  - Greater adoption and usage of the API by developers and users  - Enhanced reputation and credibility of the organization providing the API"
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/index.html#summary",
+    "href": "Content/Research/articles/APIFirst/index.html#summary",
+    "title": "API First",
+    "section": "Summary",
+    "text": "Summary\nThe API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs. By prioritizing the design and implementation of APIs, developers can ensure that their applications are more efficient, flexible, and user-friendly. The tools and processes outlined in this document can help to streamline the API First approach and make it easier for developers to create and maintain high-quality APIs."
   },
   {
     "objectID": "Content/POCs/posts/POC-DocumentationWiki/index.html",
@@ -1603,62 +1638,27 @@
     "href": "Content/POCs/index.html",
     "title": "POC",
     "section": "",
-    "text": "November 24, 2025\n        \n        \n            Documentation System Evaluation for Software Architecture\n\n            \n            \n                \n                \n                    Wiki\n                \n                \n            \n            \n\n            \n            \n        \n        \n    \n    \n\nNo matching items"
+    "text": "November 24, 2025\n        \n        \n            Documentation System Evaluation for Software Architecture\n\n            \n            \n                \n                \n                    Wiki\n                \n                \n            \n            \n\n            \n            \n        \n        \n    \n    \n    \n                  \n            November 24, 2025\n        \n        \n            POC-HubDecouple\n\n            \n            \n                \n                \n                    Wiki\n                \n                \n            \n            \n\n            \n            \n        \n        \n    \n    \n\nNo matching items"
   },
   {
-    "objectID": "Content/Research/articles/APIFirst/index.html",
-    "href": "Content/Research/articles/APIFirst/index.html",
-    "title": "API First",
-    "section": "",
-    "text": "API First Process"
-  },
-  {
-    "objectID": "Content/Research/articles/APIFirst/index.html#description",
-    "href": "Content/Research/articles/APIFirst/index.html#description",
-    "title": "API First",
-    "section": "Description",
-    "text": "Description\nAPI First is an approach to software development that prioritizes the design and implementation of APIs before building the underlying application or service. This approach emphasizes the importance of APIs as the primary means of communication between different components of a system, as well as between different systems.\nBy designing APIs first, developers can ensure that the APIs are well-defined, consistent, and easy to use. This can lead to better collaboration between teams, faster development cycles, and more efficient integration with third-party services.\nThe approach detailed here takes the responsibility for creating the API definition away from the developer and places it in the hands of a specialist tool. This ensures that the API definition is created in a consistent manner and adheres to best practices. The API definition is then used to generate the client and server code, which can be integrated into the application or service. This approach can help to reduce errors and inconsistencies in the code, as well as improve the overall quality of the API. The API First approach can be particularly beneficial in complex systems where multiple teams are working on different components. By defining the APIs first, teams can work independently while still ensuring that their components will integrate seamlessly with the rest of the system. The API First approach can also help to improve the overall user experience of the application or service. By designing APIs that are easy to use and understand, developers can create applications that are more intuitive and user-friendly. Overall, the API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs."
-  },
-  {
-    "objectID": "Content/Research/articles/APIFirst/index.html#tools",
-    "href": "Content/Research/articles/APIFirst/index.html#tools",
-    "title": "API First",
-    "section": "Tools",
-    "text": "Tools\nThe tools used in this process are:\n\nTypeSpec - A tool for designing and generating APIs\nAutoRest - A tool for generating client and server code from API definitions\nQuarto - A tool for creating and publishing documents\nLUA - A lightweight scripting language used for automation\nPowerShell - A task automation and configuration management framework\nC# - A programming language used for building applications and services\nAzure Functions - A serverless compute service used for building and deploying applications and services"
-  },
-  {
-    "objectID": "Content/Research/articles/APIFirst/index.html#process",
-    "href": "Content/Research/articles/APIFirst/index.html#process",
-    "title": "API First",
-    "section": "Process",
-    "text": "Process\nThe process for creating an API using the API First approach is as follows:\n\nDesign the API - Use TypeSpec to design the API, including the endpoints, request and response formats, and any authentication or authorization requirements.\nGenerate the API definition - Use TypeSpec to generate the API definition in a standard format, such as OpenAPI or Swagger.\nGenerate the client and server code - Use AutoRest to generate the client and server code from the API definition.\nIntegrate the code - Integrate the generated code into the application or service.\nTest the API - Test the API to ensure that it works as expected and meets the requirements.\n\nDocument the API - Use Quarto to create documentation for the API, including usage examples and any relevant information for developers.\nAutomate the process - Use LUA and PowerShell to automate the process of generating the API definition, client and server code, and documentation."
-  },
-  {
-    "objectID": "Content/Research/articles/APIFirst/index.html#benefits",
-    "href": "Content/Research/articles/APIFirst/index.html#benefits",
-    "title": "API First",
-    "section": "Benefits",
-    "text": "Benefits\nThe benefits of using the API First approach include:\n\n\n\n\n\n\n\nCategory\nQualities\n\n\n\n\n🧑‍💻 Developer Experience & Productivity\n- Improved developer productivity and satisfaction  - Easier onboarding of new developers and teams  - Reduced errors and inconsistencies in the code  - Easier maintenance and updates to the API  - Improved versioning and backward compatibility of the API  - Better integration with DevOps and CI/CD processes\n\n\n🚀 Development Efficiency & Technical Excellence\n- Faster development cycles  - More efficient integration with third-party services  - Consistent and well-defined APIs  - Better quality APIs  - Better support for multiple platforms and devices  - More effective monitoring and analytics of API usage  - More effective management of API lifecycle and governance\n\n\n🌐 Business Alignment & Strategic Impact\n- Better alignment with business goals and requirements  - Increased flexibility and scalability of the application or service  - Enhanced ability to adapt to changing market and customer needs  - Greater overall success and impact of the application or service in the market  - Increased revenue and business opportunities through the API  - Better alignment with industry trends and best practices in API development\n\n\n🤝 Collaboration & Communication\n- Improved collaboration between teams  - Improved communication and transparency with stakeholders and customers\n\n\n🎨 Innovation & Design\n- Greater innovation and creativity in API design  - Improved user experience\n\n\n🔒 Trust, Security & Adoption\n- Enhanced security and compliance with industry standards  - Greater adoption and usage of the API by developers and users  - Enhanced reputation and credibility of the organization providing the API"
-  },
-  {
-    "objectID": "Content/Research/articles/APIFirst/index.html#summary",
-    "href": "Content/Research/articles/APIFirst/index.html#summary",
-    "title": "API First",
-    "section": "Summary",
-    "text": "Summary\nThe API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs. By prioritizing the design and implementation of APIs, developers can ensure that their applications are more efficient, flexible, and user-friendly. The tools and processes outlined in this document can help to streamline the API First approach and make it easier for developers to create and maintain high-quality APIs."
-  },
-  {
-    "objectID": "Content/Research/articles/AzureApplicationHosting/index.html",
-    "href": "Content/Research/articles/AzureApplicationHosting/index.html",
-    "title": "Azure Application Hosting",
-    "section": "",
-    "text": "Each component is a separately deploy-able artefact, but we need a coherent single URL to link them all. The normal method would be to deploy out each individual component to Azure and each would get its own ‘aurewebsites.com’ URL. This approach would lead to confusion, as it would mean you would need to keep lists of URL’s By using the proxy feature of Azure Functions we can define routes to each of the installed artefacts while preserving a single URL for the application. So:-\n\n\n\nRoute\nResult\n\n\n\n\nzoomalong.co.uk\nWebsite\n\n\nzoomalong.co.uk/api\nAzure functions\n\n\nzoomalong.co.uk/static\nAzure Storage Account\n\n\n\nUsed to store any files or images etc. Because both the API and Web Application exist on the same URL then we won’t run into any CORS issues. Remember to bind the DNS Cname to the Azure function proxy and not the website.\n\n\n\naah1\n\n\nHow ? In your Azure Functions Project Create a files called proxies.json and insert the following code\nproxies.json\n{\n  \"$schema\": \"http://json.schemastore.org/proxies\",\n    \"proxies\": {\n      \"api\": {\n        \"matchCondition\": {\n          \"route\": \"/api/{*url}\"\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      },\n      \"app\": {\n        \"matchCondition\": {\n          \"route\": \"{*url}\",\n          \"methods\": [ \"GET\", \"HEAD\", \"OPTIONS\" ]\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      },\n      \"appResources\": {\n        \"matchCondition\": {\n          \"route\": \"/static/{*url}\",\n          \"methods\": [ \"GET\", \"HEAD\", \"OPTIONS\" ]\n        },\n        \"backendUri\": \"Set With Build Variable/{url}\"\n      }\n    }\n  }\nChange in the build. * Build should include Azure App Service Deploy V3 or greater * Update this section with the file to be changed. *  * Add your substitutions to the Variables section * As Path to variable to be replace element.element.element * Value to be replaced. * as below\n\n\n\n\n\n\n\nProxy\nURL\n\n\n\n\nproxies.api.backendUri\nhttps://azure website url\n\n\nproxies.app.backendUri\nhttps://azure function url\n\n\nproxies.appResources.backendUri\nhttps:// azure storage account blob strorage\n\n\n\n\nRepeat in the release."
-  },
-  {
-    "objectID": "docs/Content/POCs/posts/POC-DocumentationWiki-Docusaurus/index.html",
-    "href": "docs/Content/POCs/posts/POC-DocumentationWiki-Docusaurus/index.html",
-    "title": "Documentation System Evaluation for Software Architecture - Docusaurus",
+    "objectID": "Content/POCs/posts/POC-HubDecouple/index.html",
+    "href": "Content/POCs/posts/POC-HubDecouple/index.html",
+    "title": "POC-HubDecouple",
     "section": "",
     "text": "Redirect…"
+  },
+  {
+    "objectID": "Content/Research/articles/APIFirst/TypeSpec.html",
+    "href": "Content/Research/articles/APIFirst/TypeSpec.html",
+    "title": "TypeSpec",
+    "section": "",
+    "text": "TypeSpec is a powerful tool for designing and generating APIs. It allows developers to define the structure and behavior of their APIs using a simple and intuitive syntax. TypeSpec supports a wide range of features, including:\n\nDefining endpoints and routes\n\nSpecifying request and response formats\nAdding authentication and authorization\nGenerating client and server code in multiple programming languages\nCreating interactive documentation for APIs\nValidating API definitions against industry standards such as OpenAPI and Swagger\nExtending TypeSpec with custom plugins and extensions\n\nTypeSpec is designed to be easy to use and understand, making it accessible to developers of all skill levels. It also integrates seamlessly with other tools and frameworks, such as AutoRest, making it a versatile choice for API development.\nTypeSpec can be used in a variety of scenarios, including:\n\nBuilding RESTful APIs for web and mobile applications\nCreating microservices and serverless functions\nDesigning APIs for data analytics and machine learning applications\nGenerating SDKs and client libraries for third-party developers\nAutomating API documentation and testing processes\nPrototyping and iterating on API designs quickly and efficiently\nIntegrating with CI/CD pipelines for continuous delivery of APIs\nEnsuring compliance with industry regulations and standards for API security and privacy\nFacilitating API versioning and backward compatibility for long-term maintenance\nSupporting multiple API styles, including REST, GraphQL, and gRPC\nEnabling rapid development and deployment of APIs in cloud-native environments"
+  },
+  {
+    "objectID": "Content/Research/index.html",
+    "href": "Content/Research/index.html",
+    "title": "Research",
+    "section": "",
+    "text": "Day  : \n    Link : link  \n\n    \n    \n\n            \n\n\n        \n\nNo matching items\n\n\n&lt;div class=\"row\"&gt;\n    &lt;div class=\"left\"&gt; Left &lt;/div&gt;\n    &lt;div class=\"right\"&gt; Right &lt;/div&gt;\n&lt;/div&gt;"
   }
 ]
