@@ -1,5 +1,55 @@
 [
   {
+    "listing": "/Content/Resource/index.html",
+    "items": [
+      "/Content/Resource/posts/AIDrivenCodeDevelopement/index.html",
+      "/Content/Resource/posts/DiagramFirstCoding/index.html",
+      "/Content/Resource/posts/QuartoWebBook/index.html",
+      "/Content/Resource/posts/PlantumlQuartoFilter/index.html",
+      "/Content/Resource/posts/APIFirst/index.html",
+      "/Content/Resource/posts/TestingAzureFunctions/index.html",
+      "/Content/Resource/posts/Frontify/index.html",
+      "/Content/Resource/posts/DataAnnotationVsFluentValidation/index.html",
+      "/Content/Resource/posts/SOLID/index.html",
+      "/Content/Resource/posts/VisualStudioSolutioTemplate/index.html",
+      "/Content/Resource/posts/CastToReflectedType/index.html",
+      "/Content/Resource/posts/WebUI/index.html",
+      "/Content/Resource/posts/PackageDevelopment/index.html",
+      "/Content/Resource/posts/EventNotification/index.html",
+      "/Content/Resource/posts/SQLChangeTracking/index.html",
+      "/Content/Resource/posts/UploadAVFileScanning/index.html",
+      "/Content/Resource/posts/ServiceApplicationDevelopment/index.html",
+      "/Content/Resource/posts/UserAssignManagedIdentities/index.html",
+      "/Content/Resource/posts/AdaptiveCard/index.html",
+      "/Content/Resource/posts/AzurePipelineGitCommit/index.html",
+      "/Content/Resource/posts/AzureFunctionsLogging/index.html",
+      "/Content/Resource/posts/FunctionMonkey/index.html",
+      "/Content/Resource/posts/Rules/index.html",
+      "/Content/Resource/posts/OnlineSpreadsheetDatabase/index.html",
+      "/Content/Resource/posts/gRPC/index.html",
+      "/Content/Resource/posts/EIP-ContentBasedRouting/index.html",
+      "/Content/Resource/posts/Loqate/index.html",
+      "/Content/Resource/posts/SAS-StorageAccountAccess/index.html",
+      "/Content/Resource/posts/Documentation/index.html",
+      "/Content/Resource/posts/AzureFunctionDI/index.html",
+      "/Content/Resource/posts/FluentAsserts/index.html",
+      "/Content/Resource/posts/IFrames/index.html",
+      "/Content/Resource/posts/MediatorPattern/index.html",
+      "/Content/Resource/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html",
+      "/Content/Resource/posts/StorageAccountEncryption/index.html",
+      "/Content/Resource/posts/StorageAccounts/index.html",
+      "/Content/Resource/posts/PfxBase64/index.html",
+      "/Content/Resource/posts/AzureC4/index.html",
+      "/Content/Resource/posts/KeyVault/index.html",
+      "/Content/Resource/posts/WOPI/index.html",
+      "/Content/Resource/posts/PlantUml/index.html",
+      "/Content/Resource/posts/ARMTemplateParameter-VariableSetup/index.html",
+      "/Content/Resource/posts/AzureFunctionManagedServiceIdentities/index.html",
+      "/Content/Resource/posts/AzureApplicationHosting/index.html",
+      "/Content/Resource/posts/AzureStaticWebsites/index.html"
+    ]
+  },
+  {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
@@ -21,6 +71,14 @@
       "/Content/Current/posts/2025-10-09/index.html",
       "/Content/Current/posts/2025-10-08/index.html"
     ]
+  },
+  {
+    "listing": "/Content/Area/index.html",
+    "items": []
+  },
+  {
+    "listing": "/Content/Archive/index.html",
+    "items": []
   },
   {
     "listing": "/Content/Books/index.html",
@@ -84,10 +142,18 @@
     ]
   },
   {
-    "listing": "/Content/POCs/index.html",
+    "listing": "/Content/Projects/index.html",
     "items": [
-      "/Content/POCs/posts/POC-DocumentationWiki/index.html",
-      "/Content/POCs/posts/POC-HubDecouple/index.html"
+      "/Content/Projects/posts/CalendarTemplate/index.html",
+      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
+      "/Content/Projects/posts/POC-HubDecouple/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
+    "items": [
+      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
+      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
     ]
   },
   {
