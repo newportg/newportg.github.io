@@ -1,0 +1,24 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/Loqate/index.qmd"
+  description: EIP Loqate
+layout: post
+title: EIP Loqate
+categories: [Patterns]
+image: /images/patterns.jpg
+author: "Gary Newport"
+date: "2019-08-08"
+
+output:
+  html_document:
+    toc: true
+---
+
+# Loqate
+Loqate is a service which supplies addresses and geocoding for a given search string.
+The Loqate service employs a iterative id base system where by, if you supply the id to subsequent calls then you will get narrower results. When you receive a result of type 'Address' then you can call Loqate's Retrieve api call to get that items address details.
+
+```{.plantuml pumlfile="EIP-Loqate"}
+```
+
+![LA Pattern](./LA-Loqate.PNG)

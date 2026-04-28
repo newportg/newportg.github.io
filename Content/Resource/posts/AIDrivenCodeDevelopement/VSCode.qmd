@@ -1,0 +1,32 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/AIDrivenCodeDevelopement/VSCode.qmd"
+  description: VSCode
+layout: post
+title: VSCode
+categories: ["AI Driven Code Developement", "VSCode"]
+author: "Gary Newport"
+date: "2026-02-18"
+
+sidebar: id-AIDrivenCodeDevelopement
+
+output:
+  html_document:
+    toc: true
+---
+
+# Introduction
+I have been using Visual Studio Code (VSCode) for a while now and I have found it to be a great code editor. It has a lot of features that make it easy to use and it is also very customizable. I have been using it for both personal and professional projects and I have found it to be a great tool for both.
+
+# Dev-Containers
+One of the features that I have found to be particularly useful is the ability to use dev-containers. This allows me to create a development environment that is isolated from my local machine. This is great for testing and debugging code without having to worry about breaking my local environment.
+
+Inorder to use dev containers in VSCode, you need to install the extensions WSL and Dev Containers. Once you have these installed, you can create a dev container by creating a .devcontainer folder in your project and adding a devcontainer.json file. This file will contain the configuration for your dev container.
+
+# Podman Settings
+I have been using Podman as my container runtime and I have found it to be a great alternative to Docker. In order to use Podman with VSCode, you need to set the "docker.dockerPath" setting to the path of the Podman executable. This will allow VSCode to use Podman instead of Docker when running containers.
+
+
+# References
+* [VSCode](https://code.visualstudio.com/)
+* [VSCode Dev Containers](https://code.visualstudio.com/docs/remote/containers)

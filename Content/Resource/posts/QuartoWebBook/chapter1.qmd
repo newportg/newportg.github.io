@@ -1,0 +1,19 @@
+---
+layout: post
+title: Chapter1
+categories: "Quarto WebBook"
+author: "Gary Newport"
+date: "2025-11-10"
+
+sidebar: id-QuartoWebBook
+
+output:
+  html_document:
+    toc: true
+---
+
+# Chapter 1 Title
+
+Content for chapter 1 goes here. This can include code, images, etc.
+
+{{< include chapter1SubPage.qmd >}}

@@ -1,0 +1,173 @@
+[
+  {
+    "listing": "/Content/Current/index.html",
+    "items": [
+      "/Content/Current/todo.html",
+      "/Content/Current/posts/2025-12-10/index.html",
+      "/Content/Current/posts/2025-12-09/index.html",
+      "/Content/Current/posts/2025-11-24/index.html",
+      "/Content/Current/posts/2025-11-14/index.html",
+      "/Content/Current/posts/2025-11-11/index.html",
+      "/Content/Current/posts/2025-11-05/index.html",
+      "/Content/Current/posts/2025-11-04/index.html",
+      "/Content/Current/posts/2025-10-22/index.html",
+      "/Content/Current/posts/2025-10-21/index.html",
+      "/Content/Current/posts/2025-10-20/index.html",
+      "/Content/Current/posts/2025-10-16/index.html",
+      "/Content/Current/posts/2025-10-15/index.html",
+      "/Content/Current/posts/2025-10-14/index.html",
+      "/Content/Current/posts/2025-10-13/index.html",
+      "/Content/Current/posts/2025-10-10/index.html",
+      "/Content/Current/posts/2025-10-09/index.html",
+      "/Content/Current/posts/2025-10-08/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Books/index.html",
+    "items": [
+      "/Content/Books/Books/Book1/Page1.html",
+      "/Content/Books/Books/Book1/Page2.html",
+      "/Content/Books/Books/Book2/Page1.html",
+      "/Content/Books/Books/Book2/Page2.html",
+      "/Content/Books/Books/Book1/index.html",
+      "/Content/Books/Books/Book2/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Journal/index.html",
+    "items": [
+      "/Content/Journal/posts/AIDrivenCodeDevelopement/index.html",
+      "/Content/Journal/posts/DiagramFirstCoding/index.html",
+      "/Content/Journal/posts/QuartoWebBook/index.html",
+      "/Content/Journal/posts/PlantumlQuartoFilter/index.html",
+      "/Content/Journal/posts/APIFirst/index.html",
+      "/Content/Journal/posts/TestingAzureFunctions/index.html",
+      "/Content/Journal/posts/Frontify/index.html",
+      "/Content/Journal/posts/DataAnnotationVsFluentValidation/index.html",
+      "/Content/Journal/posts/SOLID/index.html",
+      "/Content/Journal/posts/VisualStudioSolutioTemplate/index.html",
+      "/Content/Journal/posts/CastToReflectedType/index.html",
+      "/Content/Journal/posts/WebUI/index.html",
+      "/Content/Journal/posts/PackageDevelopment/index.html",
+      "/Content/Journal/posts/EventNotification/index.html",
+      "/Content/Journal/posts/SQLChangeTracking/index.html",
+      "/Content/Journal/posts/UploadAVFileScanning/index.html",
+      "/Content/Journal/posts/ServiceApplicationDevelopment/index.html",
+      "/Content/Journal/posts/UserAssignManagedIdentities/index.html",
+      "/Content/Journal/posts/AdaptiveCard/index.html",
+      "/Content/Journal/posts/AzurePipelineGitCommit/index.html",
+      "/Content/Journal/posts/AzureFunctionsLogging/index.html",
+      "/Content/Journal/posts/FunctionMonkey/index.html",
+      "/Content/Journal/posts/Rules/index.html",
+      "/Content/Journal/posts/OnlineSpreadsheetDatabase/index.html",
+      "/Content/Journal/posts/gRPC/index.html",
+      "/Content/Journal/posts/EIP-ContentBasedRouting/index.html",
+      "/Content/Journal/posts/Loqate/index.html",
+      "/Content/Journal/posts/SAS-StorageAccountAccess/index.html",
+      "/Content/Journal/posts/Documentation/index.html",
+      "/Content/Journal/posts/AzureFunctionDI/index.html",
+      "/Content/Journal/posts/FluentAsserts/index.html",
+      "/Content/Journal/posts/IFrames/index.html",
+      "/Content/Journal/posts/MediatorPattern/index.html",
+      "/Content/Journal/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html",
+      "/Content/Journal/posts/StorageAccountEncryption/index.html",
+      "/Content/Journal/posts/StorageAccounts/index.html",
+      "/Content/Journal/posts/PfxBase64/index.html",
+      "/Content/Journal/posts/AzureC4/index.html",
+      "/Content/Journal/posts/KeyVault/index.html",
+      "/Content/Journal/posts/WOPI/index.html",
+      "/Content/Journal/posts/PlantUml/index.html",
+      "/Content/Journal/posts/ARMTemplateParameter-VariableSetup/index.html",
+      "/Content/Journal/posts/AzureFunctionManagedServiceIdentities/index.html",
+      "/Content/Journal/posts/AzureApplicationHosting/index.html",
+      "/Content/Journal/posts/AzureStaticWebsites/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/POCs/index.html",
+    "items": [
+      "/Content/POCs/posts/POC-DocumentationWiki/index.html",
+      "/Content/POCs/posts/POC-HubDecouple/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Research/index.html",
+    "items": [
+      "/Content/Research/articles/APIFirst/index.html",
+      "/Content/Research/articles/AzureApplicationHosting/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Archive/index.html",
+    "items": []
+  },
+  {
+    "listing": "/Content/Resource/index.html",
+    "items": [
+      "/Content/Resource/posts/AIDrivenCodeDevelopement/index.html",
+      "/Content/Resource/posts/DiagramFirstCoding/index.html",
+      "/Content/Resource/posts/QuartoWebBook/index.html",
+      "/Content/Resource/posts/PlantumlQuartoFilter/index.html",
+      "/Content/Resource/posts/APIFirst/index.html",
+      "/Content/Resource/posts/TestingAzureFunctions/index.html",
+      "/Content/Resource/posts/Frontify/index.html",
+      "/Content/Resource/posts/DataAnnotationVsFluentValidation/index.html",
+      "/Content/Resource/posts/SOLID/index.html",
+      "/Content/Resource/posts/VisualStudioSolutioTemplate/index.html",
+      "/Content/Resource/posts/CastToReflectedType/index.html",
+      "/Content/Resource/posts/WebUI/index.html",
+      "/Content/Resource/posts/PackageDevelopment/index.html",
+      "/Content/Resource/posts/EventNotification/index.html",
+      "/Content/Resource/posts/SQLChangeTracking/index.html",
+      "/Content/Resource/posts/UploadAVFileScanning/index.html",
+      "/Content/Resource/posts/ServiceApplicationDevelopment/index.html",
+      "/Content/Resource/posts/UserAssignManagedIdentities/index.html",
+      "/Content/Resource/posts/AdaptiveCard/index.html",
+      "/Content/Resource/posts/AzurePipelineGitCommit/index.html",
+      "/Content/Resource/posts/AzureFunctionsLogging/index.html",
+      "/Content/Resource/posts/FunctionMonkey/index.html",
+      "/Content/Resource/posts/Rules/index.html",
+      "/Content/Resource/posts/OnlineSpreadsheetDatabase/index.html",
+      "/Content/Resource/posts/gRPC/index.html",
+      "/Content/Resource/posts/EIP-ContentBasedRouting/index.html",
+      "/Content/Resource/posts/Loqate/index.html",
+      "/Content/Resource/posts/SAS-StorageAccountAccess/index.html",
+      "/Content/Resource/posts/Documentation/index.html",
+      "/Content/Resource/posts/AzureFunctionDI/index.html",
+      "/Content/Resource/posts/FluentAsserts/index.html",
+      "/Content/Resource/posts/IFrames/index.html",
+      "/Content/Resource/posts/MediatorPattern/index.html",
+      "/Content/Resource/posts/AccessingKeyVaultSecrectsFromAzFunc/index.html",
+      "/Content/Resource/posts/StorageAccountEncryption/index.html",
+      "/Content/Resource/posts/StorageAccounts/index.html",
+      "/Content/Resource/posts/PfxBase64/index.html",
+      "/Content/Resource/posts/AzureC4/index.html",
+      "/Content/Resource/posts/KeyVault/index.html",
+      "/Content/Resource/posts/WOPI/index.html",
+      "/Content/Resource/posts/PlantUml/index.html",
+      "/Content/Resource/posts/ARMTemplateParameter-VariableSetup/index.html",
+      "/Content/Resource/posts/AzureFunctionManagedServiceIdentities/index.html",
+      "/Content/Resource/posts/AzureApplicationHosting/index.html",
+      "/Content/Resource/posts/AzureStaticWebsites/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Projects/index.html",
+    "items": [
+      "/Content/Projects/posts/CalendarTemplate/index.html",
+      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
+      "/Content/Projects/posts/POC-HubDecouple/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Area/index.html",
+    "items": []
+  },
+  {
+    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
+    "items": [
+      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
+      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
+    ]
+  }
+]

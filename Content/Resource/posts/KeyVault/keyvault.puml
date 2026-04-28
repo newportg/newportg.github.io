@@ -1,0 +1,16 @@
+@startuml 
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Identity/all.puml
+!includeurl AzurePuml/Compute/all.puml
+!includeurl AzurePuml/Security/all.puml
+
+AzureActiveDirectory( aad, "Active Directory", "Provides valid Users and permissions")
+AzureFunction( azFunc, "Process", "Consumer of secrets")
+AzureKeyVault( azKv, "Serects and Config", "")
+
+azFunc --> aad : Register
+azKv --> aad : Register
+azKv --> azFunc : Uses
+
+@enduml

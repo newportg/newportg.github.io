@@ -1,0 +1,43 @@
+---
+foam_template:
+  filepath: "/content/Journal/posts/PlantUml/index.qmd"
+  description: PlantUml
+layout: post
+title: PlantUml
+categories: [Plantuml]
+image: /images/Plantuml.png
+author: "Gary Newport"
+date: "2019-02-08"
+
+output:
+  html_document:
+    toc: true
+---
+
+PlantUML is not directly supported by GitHub, but its still possible.
+Basically we pass your puml file to PlantUML to generate, and they return a PNG which gets included in the page
+
+* Generate you .puml file in the usual way using your favorite editor and confirm the diagram is as you want it.
+* Save the file to the assets directory
+* Then paste the following into you Markup. 
+
+PlantUML is a text descriptive language which gets converted into UML and other types of graphs
+So this :- 
+
+```{.plantuml}
+@startuml
+
+Bob->Alice : hello
+
+@enduml
+```
+
+would produce this :- 
+
+A more complex example :-
+
+```{.plantuml pumlfile="Mediatr"}
+```
+
+
+

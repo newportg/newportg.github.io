@@ -1,0 +1,23 @@
+# Component: Rules Engine (rules-engine.md)
+
+This sub-page defines the logic used by the business engine (e.g., Drools or NRule).
+Business Rules (Logic Engine)
+
+|Rule ID|	Name|	Condition|	Action|
+|-------|-------|-----------|-------|
+|BR-001|	High Value Review|	order.amount > 10000|	Set status = "manual_review"|
+|BR-002|	New Customer Discount|	customer.isNew == true|	Apply discount = 0.10|
+|BR-003|	Blacklist Check|	customer.id in blacklist|	Set status = "rejected"|
+
+## Rule Execution Workflow (DMN)
+Input: Order and Customer objects.
+
+*  Evaluation: Execute "Blacklist Check" first (Priority 1).
+*  Calculation: If not rejected, calculate discounts.
+*  Output: Return modified Order object to API Service.
+
+## Implementation Tools
+
+* Architecture Rendering: Use the Structurizr Visualizer to paste the script from index.md.
+* API Validation: Compile the TypeSpec code into OpenAPI using the TypeSpec Compiler.
+* Logic Testing: Import the Business Rules table into a Decision Model and Notation (DMN) tool for execution.

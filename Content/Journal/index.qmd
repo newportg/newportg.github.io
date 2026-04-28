@@ -6,7 +6,7 @@ listing:
   - id: posts
     contents: "posts/*/index.qmd"
     sort: "date desc"
-    template: ../../html/Journal/listing.ejs
+    template: ../../html/Resource/listing.ejs
     categories: false
 page-layout: full
 

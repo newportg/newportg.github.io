@@ -1,0 +1,20 @@
+---
+layout: post
+title: Function Monkey
+categories: [C#, Azure Functions]
+image: /images/Function-Apps.png
+author: "Gary Newport"
+date: "2020-02-17"
+---
+
+# Function Monkey Hello World
+
+```{.plantuml pumlfile="FMHelloWorld"}
+```
+
+# References
+
+* [Function Monkey](https://functionmonkey.azurefromthetrenches.com/)
+* [Jason Roberts](http://dontcodetired.com/blog/post/Creating-Azure-Functions-with-Function-Monkey-First-Look)
+
+

@@ -1,0 +1,33 @@
+
+# Main Architecture Page (index.md)
+This page contains the C4 model script. You can render this using the Structurizr CLI or the Structurizr Lite Docker container.
+
+```kroki-Structurizr
+workspace "System Workspace" "Architecture for API-driven services" {
+
+    model {
+        user = person "User" "A customer of the system"
+        
+        system = softwareSystem "Order Management System" {
+            apiService = container "API Service" "Handles incoming requests" "Node.js/TypeScript"
+            engineService = container "Rules Engine" "Processes business logic" "Java/Drools"
+            
+            user -> apiService "Makes API calls to" "JSON/HTTPS"
+            apiService -> engineService "Validates rules via" "gRPC"
+        }
+    }
+
+    views {
+        container system "SystemContext" {
+            include *
+            autolayout lr
+        }
+    }
+}
+```
+
+## Workflow
+*  Receive Request: Validate JSON schema against TypeSpec model.
+*  Auth Check: Verify JWT via Identity Provider.
+*  Rule Delegation: Forward payload to the Rules Engine.
+*  Persistence: Save result to the database.

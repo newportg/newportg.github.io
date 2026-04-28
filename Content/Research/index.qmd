@@ -4,7 +4,7 @@ listing:
   - id: articles
     contents: "articles/*/index.qmd"
     sort: "date desc"
-    template: ../../html/research/listing.ejs
+    template: ../../html/Resource/listing.ejs
     categories: false
 
 page-layout: full
