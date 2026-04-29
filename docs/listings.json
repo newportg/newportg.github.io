@@ -2,6 +2,7 @@
   {
     "listing": "/Content/Resource/index.html",
     "items": [
+      "/Content/Resource/posts/Addressing/index.html",
       "/Content/Resource/posts/AIDrivenCodeDevelopement/index.html",
       "/Content/Resource/posts/DiagramFirstCoding/index.html",
       "/Content/Resource/posts/QuartoWebBook/index.html",
