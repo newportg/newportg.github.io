@@ -50,6 +50,22 @@
     ]
   },
   {
+    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
+    "items": [
+      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
+      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Projects/index.html",
+    "items": [
+      "/Content/Projects/posts/CalendarTemplate/index.html",
+      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
+      "/Content/Projects/posts/POC-HubDecouple/index.html",
+      "/Content/Projects/posts/Frontify/index.html"
+    ]
+  },
+  {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
@@ -94,6 +110,7 @@
   {
     "listing": "/Content/Journal/index.html",
     "items": [
+      "/Content/Journal/posts/Addressing/index.html",
       "/Content/Journal/posts/AIDrivenCodeDevelopement/index.html",
       "/Content/Journal/posts/DiagramFirstCoding/index.html",
       "/Content/Journal/posts/QuartoWebBook/index.html",
@@ -139,21 +156,6 @@
       "/Content/Journal/posts/AzureFunctionManagedServiceIdentities/index.html",
       "/Content/Journal/posts/AzureApplicationHosting/index.html",
       "/Content/Journal/posts/AzureStaticWebsites/index.html"
-    ]
-  },
-  {
-    "listing": "/Content/Projects/index.html",
-    "items": [
-      "/Content/Projects/posts/CalendarTemplate/index.html",
-      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
-      "/Content/Projects/posts/POC-HubDecouple/index.html"
-    ]
-  },
-  {
-    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
-    "items": [
-      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
-      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
     ]
   },
   {
