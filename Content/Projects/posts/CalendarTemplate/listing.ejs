@@ -1,0 +1,548 @@
+````{=html}
+
+<% const events = []; %>
+<%     items.forEach( item => { %>
+<%         if (item.date) { %>
+<%             const d = new Date(item.date); %>
+<%             const year = d.getFullYear(); %>
+<%             const month = d.getMonth() + 1; %>
+<%             const day = d.getDate(); %>
+
+<%             var date = month+"-"+day+"-"+year; %>
+<%             var link = item.path; %>
+<%             var event = { "date": date, "month": month-1, "day": day, "name": item.title, "link": link }; %>
+
+<%             events.push(event); %>
+<%         } %>
+<%     }); %>
+<% const serverData = { events: events }; %>
+
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
+    <div id="calendar"></div>
+    <div id="data-container" data-config="<%- JSON.stringify(serverData) %>"></div>
+
+    <b>Day  : </b><input id="my-input-a"><br>
+    <b>Link : </b><a id="anchor">link</a><br>  
+
+    <div id="calendar1" ></div>
+    <div id="calendar2" ></div>
+
+    <pre id="calclick" />
+    <pre id="calmatch" />
+
+    <div id="post"></div>
+
+<style>
+:root {
+  --hue: 220;
+  --font-family: 'Work Sans', sans-serif;
+  --text-color: hsl(var(--hue), 100%, 24%);
+  --border-color: hsl(var(--hue), 40%, 30%);
+  --border: 2px solid var(--border-color);
+  --weekday-label-color: hsl(var(--hue), 30%, 44%);
+  --weekend-fill-color: hsl(var(--hue), 50%, 85%);
+  --weekend-text-color: var(--text-color);
+  --title-color: hsla(var(--hue), 30%, 50%, 0.5);
+  --month-label-color: hsl(var(--hue), 30%, 64%);
+  --today-bg-color: hsl(var(--hue), 30%, 40%);
+  --today-text-color: white;
+  --blog-bg-color: red;
+  --blog-text-color: white;
+  --event-bg-color: blue;
+  --event-text-color: white;         
+}
+
+/* html {
+ min-height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  background: hsl(var(--hue), 30%, 20%);
+} */
+
+.container {
+  margin: 0 10% 5em 11%;
+}
+
+.calendartitle {
+  font-size: 12vw;
+  color: var(--title-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  margin-top: -0.43em; 
+  position: relative;
+  top: 0.43em;
+  left: 10vw;
+  z-index: -1;
+}
+
+.calendar2 {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.cell {
+  position: relative;
+  padding: 0.55vw 0;
+  width: 1%;
+  border: var(--border);
+  text-align: center;
+  font-size: 1vw;
+}
+
+.cell.day {
+  background-color: white;
+}
+
+.cell.day.crossed::before {
+  content: '✗';
+  position: absolute;
+  font-size: 3.5em;
+  top: -0.3em;
+  left: 0.02em;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.cell:empty,
+.cell.header {
+  border: 0;
+}
+
+.cell.weekend {
+  background-color: var(--weekend-fill-color);
+  color: var(--weekend-text-color);
+}
+
+.cell.header {
+  font-weight: 600;
+  color: var(--weekday-label-color);
+}
+
+.month {
+  position: absolute;
+  right: 3em;
+  font-weight: 600;
+  color: var(--month-label-color);
+}
+
+.cell.today {
+  background-color: var(--today-bg-color);
+  color: var(--today-text-color);
+}
+
+.cell.blog {
+  background-color: var(--blog-bg-color);
+  color: var(--blog-text-color);
+}
+
+.cell.event {
+    background-color: var(--event-bg-color);
+    color: var(--event-text-color);
+}
+/*
+@media not print {
+  .cell.day {
+    box-shadow: inset -0.1em -0.1em 13px hsla(0,0%,0%,0.1);
+  }
+}
+*/
+
+</style>
+<script>
+    async function loadSpecificHtml( link) {
+        try {
+            const response = await fetch(link);
+            if (!response.ok) {
+                inputA.value = "eek";
+                throw new Error('Network response was not ok');
+            }
+            const htmlText = await response.text();
+
+            // 2. Parse the HTML string into a DOM object
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+
+            // 3. Select the specific element using querySelector
+            const specificElement = doc.querySelector('#quarto-document-content');
+
+            // 4. Insert the content into the target div in the main document
+            if (specificElement) {
+                document.getElementById('post').innerHTML = specificElement.innerHTML;
+            } else {
+                console.error('Specific element not found in the fetched HTML.');
+            }
+        } catch (error) {
+            console.error('Error fetching or processing HTML:', error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById("data-container");
+        const jsonString = container.getAttribute("data-config");
+        const data = JSON.parse(jsonString);
+        const calendarElement = document.getElementById("calendar");
+        const calendar = new jsCalendar(calendarElement);
+
+        data.events.forEach( item => {
+            var d = new Date(item.date);
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1; 
+            var day = d.getDate();     
+
+            // hightlight event date
+            calendar.select(day+"/"+month+"/"+year);
+
+            var inputA = document.getElementById("my-input-a");
+            var anchor = document.getElementById("anchor");
+
+            // Add events
+            calendar.onDateClick(function(event, date){
+                const container = document.getElementById("data-container");
+                const jsonString = container.getAttribute("data-config");
+                const data = JSON.parse(jsonString);       
+                
+                data.events.forEach( event => {
+                    var d = new Date(event.date);
+
+                    if( d.getTime() === date.getTime()) {
+                        inputA.value = date.toString();
+
+                        var link = event.link.replace("qmd", "html");
+                        anchor.href = link;
+
+                        // var post = document.getElementById("post");
+                        // post.innerHTML =  "<object type=\"text/html\" data=\""+link+"\"></object>";
+
+                        inputA.value = "<object type=\"text/html\" data=\""+link+"\"></object>";
+
+                        loadSpecificHtml(link);
+                    }
+                })
+            });
+        });
+
+        // Refresh layout
+	    calendar.refresh();
+    }); 
+
+// ---------------------------------
+
+    const time = {
+        constants: {
+            days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+    }
+
+    // create data structure
+    const thisYear = (new Date()).getFullYear();
+    const year = [];
+    var maxDays = 0;
+
+    const container = document.getElementById("data-container");
+    const jsonString = container.getAttribute("data-config");
+    const data = JSON.parse(jsonString);
+    const events = [
+        { month: 0, day: 1, name: "New Year's Day", link: "https://www.timeanddate.com/holidays/new-year-day" },
+        { month: 4, day: 27, name: "Memorial Day", link: "https://www.memorialday.org" },
+        { month: 6, day: 4, name: "Independence Day", link: "https://www.independence.com" },
+        { month: 11, day: 25, name: "Christmas Day", link: "https://www.xmasclock.com" },
+        { month: 11, day: 25, name: "Christmas Day2", link: "https://www.xmasclock.com" }
+    ];
+    data.events.forEach( item => {
+        var event = { "date": item.date, "month": item.month, "day": item.day, "name": item.name, "link": item.link };
+        events.push(event);        
+    });
+
+
+    time.constants.months.forEach((month, i) => {
+        const firstDate = new Date(thisYear, i, 1);
+        const lastDate = new Date(thisYear, i + 1, 0);
+        const totalDays = lastDate.getDate();
+        const weekends = [];
+        const offset = firstDate.getDay() - 1;
+        for (let date = 1; date <= totalDays; date++) {
+            if ((date + offset) % 7 === 0 || (date + offset) % 7 === 6) {
+                weekends.push(date);
+            }
+        }
+        const monthEvents = events.filter(event => event.month === i);
+
+        year.push({
+            name: time.constants.months[i],
+            number: i,
+            firstDay: firstDate.getDay(),
+            totalDays: totalDays,
+            weekends: weekends,
+            events: monthEvents
+        });
+
+        if( totalDays > maxDays) {
+            maxDays = totalDays;
+        } 
+    });
+
+    function isToday(year, month, day) {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const currentDayAsDate = new Date( year, month, day);
+        if (currentDayAsDate.getTime() == today.getTime()) {
+            return true;
+        }
+        return false;
+    }
+
+    function isWeekend(month, day) {
+        if ( month.weekends.includes(day)) {
+            return true;
+        }
+        return false;
+    }
+
+    function createDayHeadings(maxDays) {
+        // print days
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
+
+        const noOfDays =  time.constants.days.length -1;
+
+        for( let i = 1; i < maxDays+noOfDays; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(time.constants.days[i % 7]));                
+            row.appendChild(cell);
+        }                
+        return row;
+    }
+
+    function createWeekNoHeading(maxWeeks) {
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
+
+        for( let i = 1; i <= maxWeeks; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(i));                
+            row.appendChild(cell);
+        }                
+
+        return row;
+    }
+
+    function createMonthRow(month) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+        cell.appendChild(document.createTextNode(month.name));
+        row.appendChild(cell);
+
+        // Add Dates
+        const offset = month.firstDay-1;
+
+        for( let i = 1; i <= month.totalDays+offset ; i++) {
+            const cell = document.createElement('td');
+
+            if( i >= month.firstDay) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(i-offset));
+            }
+
+            if( isToday(thisYear, month.number, i-offset)) {
+                cell.classList.add('today');
+            }
+
+            if( isWeekend(month, i-offset)) {
+                cell.classList.add('weekend');
+            }
+
+            // Add Events
+            const dayEvents =  month.events.filter(event => event.day === i-offset) ;
+            if( dayEvents.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                dayEvents.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+            }
+
+            row.appendChild(cell);
+        }
+        return row;
+    }
+
+    function createDayRow(day) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+
+        cell.appendChild(document.createTextNode(day));               
+        row.appendChild(cell);
+        
+        return row;
+    }
+
+    function monthDays( month) {
+        return new Date( new Date().getFullYear(), month+1, 0)
+    }
+    // =================================
+
+    const calDiv = document.createElement('table');
+    calDiv.className = 'calendar';
+
+    // Day Headings
+    calDiv.appendChild(createDayHeadings(maxDays));
+
+    // Print Month Days
+    year.forEach( month => {
+        calDiv.appendChild(createMonthRow(month));
+    })
+
+    document.getElementById('calendar1').appendChild(calDiv); 
+
+    // =================================
+
+    const calDiv2 = document.createElement('table');
+    calDiv2.className = 'calendar';
+
+    // X = week
+    // Y = day 
+
+    // Week Heading
+    calDiv2.appendChild(createWeekNoHeading(53));
+
+    let days = [[], [], [], [], [], [], []];
+    year.forEach( month => {
+        for( let i = 1;  i <= month.totalDays ; i++) {
+
+            const date = new Date( thisYear, month.number, i);
+            const dayOfWeek = date.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+
+            if( dayOfWeek > 0 && i == 1 && month.number == 0) {
+                for( let j = 0; j <= dayOfWeek; j++) {
+                    if( j == dayOfWeek)
+                        days[j].push({number:1, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === 1)});
+                    else 
+                        days[j].push({number:0, dayofweek: 0, month: 0, events: []});
+                }
+            }
+            else {
+                days[dayOfWeek].push({number: i, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === i)});
+            }
+        }
+    });
+
+    var today = new Date();
+
+    for( let idx = 0; idx < days.length; idx++) {
+
+        // Day row
+        const row = createDayRow( time.constants.days[idx % 7]);
+
+        // day values
+        var lastno = 0;
+        days[idx].forEach( day => {
+            const cell = document.createElement('td');
+
+            if( day.number != 0) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(day.number));
+            }
+            
+            // Set Todays date.
+            if( day.number == today.getDate() && day.month == today.getMonth())
+            {
+                cell.classList.add('today');
+                cell.title = "Today";
+            }
+
+            // Set month Background
+            if( day.month % 2 == 0)
+            {
+                cell.classList.add('weekend');
+            }
+
+            if( day.events.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                day.events.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+
+                cell.addEventListener("click", function (event) {
+                    const inputA = document.getElementById("my-input-a");
+                    const anchor = document.getElementById("anchor");
+
+                    inputA.value = new Date(thisYear, month, day).toString();
+
+                    var link = event.link.replace("qmd", "html");
+                    anchor.href = link;
+
+                    loadSpecificHtml(link);
+
+                    alert( tooltip);
+                });
+            }
+
+            row.appendChild(cell);
+        });
+        calDiv2.appendChild(row);
+    };
+
+    document.getElementById('calendar2').appendChild(calDiv2);
+
+
+        const inputA = document.getElementById("my-input-a");
+        const anchor = document.getElementById("anchor");
+
+        // Add events
+        calDiv2.addEventListener("click", function(event){  
+            const target = event.target;
+
+            if( target.classList.contains('event')) {
+                const day = parseInt( target.textContent);
+                const monthCells = target.parentElement.children;
+                let month = -1;
+
+                // find month
+                for( let i = 0; i < monthCells.length; i++) {
+                    const cell = monthCells[i];
+                    if( cell.classList.contains('header')) {
+                        const monthName = cell.textContent;
+                        month = time.constants.months.indexOf(monthName);
+                        break;
+                    }
+                }
+
+                // find event
+                data.events.forEach( event => {
+                    if( event.month == month && event.day == day) {
+                        inputA.value = new Date(thisYear, month, day).toString();
+
+                        var link = event.link.replace("qmd", "html");
+                        anchor.href = link;
+
+                        loadSpecificHtml(link);
+                    }
+                });
+            }
+        });
+//    });
+</script>        
+
+````
+
+

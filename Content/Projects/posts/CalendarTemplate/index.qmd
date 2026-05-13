@@ -8,7 +8,7 @@ listing:
   - id: articles
     contents: "articles/*/index.qmd"
     sort: "date desc"
-    template: ../../../../html/resource/listing.ejs
+    template: ./listing.ejs
     categories: false
 
 page-layout: full
