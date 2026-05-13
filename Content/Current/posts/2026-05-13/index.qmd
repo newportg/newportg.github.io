@@ -1,0 +1,20 @@
+---
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2026-05-13"
+---
+
+# 2026-05-13
+
+- [ ] Interesting Enterprise Architecture tool https://github.com/ea-toolkit/architecture-catalog
+  * I like the idea of defining everything in Markdown and then generating a website for you. It seems like a good way to keep everything organized and easy to update.
+  * I also like the idea of being able to generate diagrams and other visualizations from the Markdown. It seems like a good way to make the information more accessible and easier to understand.
+  * I think I might give it a try and see how it works. It could be a good way to keep track of my architecture work and share it with others.
+  * It would be interesting to see if you could model an enterprise and also include all the neccessary documentation that goes along with a project in one place. It would be a good way to keep everything organized and easily accessible.
+- [ ] I need to start thinking about my next certification. I'm not sure what I want to do yet, but I'm leaning towards something in the cloud or maybe something in the data space. I need to do some research and figure out what would be the best fit for me.
+- [ ] I have been playing around with Obsidian, as a alternative Markdown editor to Visual Studio Code. I like the idea of having a dedicated Markdown editor that is designed for note-taking and organization. I also like the idea of being able to link notes together and create a network of information. However, I'm not sure if it's the right tool for me yet. I need to spend some more time exploring it and seeing if it fits my workflow.
+  * Must admit that at the moment I still think VS Code is better for me. The only drawback of VS Code is that its not available on mobile. :-(
+
+
