@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Visual Studio Solution Template – Zoomalong</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,15 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../../../">
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-e19f81c97bc45f6835df6be9cce9fdc9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/bootstrap/bootstrap-51fffea324cfa69557ac1c25e4a04e2f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
@@ -244,8 +246,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Add any new vstemplates</li>
 </ul></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">VSTemplate</span><span class="ot"> Version=</span><span class="st">"2.0.0"</span><span class="ot"> Type=</span><span class="st">"ProjectGroup"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    xmlns=</span><span class="st">"http://schemas.microsoft.com/developer/vstemplate/2005"</span>&gt;</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">VSTemplate</span> <span class="ot">Version=</span><span class="st">"2.0.0"</span> <span class="ot">Type=</span><span class="st">"ProjectGroup"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ot">xmlns=</span><span class="st">"http://schemas.microsoft.com/developer/vstemplate/2005"</span>&gt;</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">TemplateData</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Name</span>&gt;CSharp, Az Function, Blazor&lt;/<span class="kw">Name</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">Description</span>&gt;Blazor, Azure Function Template&lt;/<span class="kw">Description</span>&gt;</span>
@@ -254,28 +256,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">TemplateData</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">TemplateContent</span>&gt;</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">ProjectCollection</span>&gt;</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Build"</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Build"</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">SolutionFolder</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Deploy"</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ProjectTemplateLink</span><span class="ot"> ProjectName=</span><span class="st">"Deploy"</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Deploy"</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ProjectTemplateLink</span> <span class="ot">ProjectName=</span><span class="st">"Deploy"</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                    Deploy\MyTemplate.vstemplate</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">ProjectTemplateLink</span>&gt;          </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">SolutionFolder</span>&gt;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Src"</span>&gt;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"API"</span>&gt;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">ProjectTemplateLink</span><span class="ot"> ProjectName=</span><span class="st">"API"</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Src"</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"API"</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">ProjectTemplateLink</span> <span class="ot">ProjectName=</span><span class="st">"API"</span>&gt;</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                        Src\API\MyTemplate.vstemplate</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                    &lt;/<span class="kw">ProjectTemplateLink</span>&gt;                  </span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">SolutionFolder</span>&gt;   </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Client"</span>&gt;</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">ProjectTemplateLink</span><span class="ot"> ProjectName=</span><span class="st">"Client"</span>&gt;</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Client"</span>&gt;</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">ProjectTemplateLink</span> <span class="ot">ProjectName=</span><span class="st">"Client"</span>&gt;</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                        Src\Client\MyTemplate.vstemplate</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                    &lt;/<span class="kw">ProjectTemplateLink</span>&gt;                  </span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">SolutionFolder</span>&gt;                   </span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">SolutionFolder</span>&gt;</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Tests"</span>&gt;</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Tests"</span>&gt;</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">SolutionFolder</span>&gt;</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span><span class="ot"> Name=</span><span class="st">"Wiki"</span>&gt;</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">SolutionFolder</span> <span class="ot">Name=</span><span class="st">"Wiki"</span>&gt;</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">SolutionFolder</span>&gt;</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">ProjectCollection</span>&gt;</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">TemplateContent</span>&gt;</span>
