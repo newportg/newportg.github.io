@@ -20,14 +20,9 @@ website:
       #   text: Home
       - text: "Projects"
         href: Content/Projects/index.qmd
-      - text: "Area"
-        href: Content/Area/index.qmd
       - text: "Resource"
         href: Content/Resource/index.qmd
-      - text: "Archive"
-        href: Content/Archive/index.qmd
-
-      - text: "Now!"
+      - text: "Daily"
         href: Content/Current/index.qmd      
 
   
