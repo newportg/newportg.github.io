@@ -1,0 +1,197 @@
+---
+layout: post
+title: ADO Alternatives
+categories: [Git]
+author: "Gary Newport"
+date: "2026-05-14"
+
+---
+
+# Git
+
+A requirement has come in to move away from Microsoft ADO and move to a Git repo supplied by a different vendor.
+
+## ADO
+
+ADO is a Microsoft product that provides version control and collaboration features for software development projects. It allows teams to manage their code, track changes, and collaborate on projects using a centralized repository. ADO offers features such as branching, merging, pull requests, and issue tracking. It also integrates with other Microsoft tools and services, making it a popular choice for teams using the Microsoft ecosystem.
+
+So any alternative will need to have similar features to ADO, such GIT, Documentation, CI/CD pipelines, and Agile project management tools.
+
+## Cloud-Hosted (SaaS) Options:
+
+* GitHub - Largest platform, most ecosystem support, strong CI/CD (Actions), Microsoft-owned
+* GitLab - Full DevOps platform with built-in CI/CD, very comprehensive feature set
+* Bitbucket (Atlassian) - Integrates well with Jira, smaller community than GitHub
+* Gitea - Lightweight, can be cloud-hosted by third parties
+* Codeberg - Non-profit, privacy-focused Git hosting (uses Gitea)
+
+## Self-Hosted Options:
+
+* Gitea - Lightweight, simple, Go-based
+* GitLab Self-Managed - Enterprise-grade but more resource-intensive
+* Gogs - Simple, lightweight, fewer features than Gitea
+* Forgejo - Community fork of Gitea with more features
+* Gitbucket - GitHub-like interface, Java-based
+
+## Decentralized/P2P:
+
+* Radicle - Peer-to-peer, blockchain-inspired
+  
+
+## Conclusion:
+
+For most teams, the choice will come down to GitHub, GitLab, or Bitbucket based on their specific needs, existing tool integrations, and budget. GitHub offers the largest ecosystem and best developer experience, GitLab provides the most comprehensive built-in features, and Bitbucket is ideal for teams already invested in the Atlassian ecosystem (especially Jira). Self-hosted options like Gitea or GitLab Self-Managed can be considered for teams with strict data control requirements, but they require more maintenance overhead.
+
+Not recommending any On-premis options as they have a requirement of managed services and the overhead of managing the infrastructure is not something they want to take on.
+
+## Key Comparison Factors:
+
+* Cost - GitHub free tier vs GitLab community vs self-hosted
+* Features - CI/CD integration, issue tracking, documentation
+* Scalability - Team size, repository count
+* Integration - With existing tools (Slack, Teams, monitoring, etc.)
+* Security - Self-hosted vs SaaS compliance needs
+
+## Head-to-Head: GitHub vs GitLab vs Atlassian (Bitbucket)
+
+| Feature | GitHub | GitLab | Atlassian Bitbucket |
+|---------|--------|--------|-------------------|
+| **Hosting** | SaaS only | SaaS & Self-hosted | SaaS & Self-hosted |
+| **Cost (Small Team)** | Free-£182/mo | Free-£78/mo | Free-£12/mo |
+| **Git Repository** | ✅ | ✅ | ✅ |
+| **CI/CD (included)** | ✅ Actions | ✅ Pipelines | ✅ Pipelines |
+| **Issue Tracking** | ✅ Issues | ✅ Issues | ✅ Issues |
+| **Project Management** | ✅ Projects | ✅ Epics/Roadmaps | ✅ (via Jira link) |
+| **Wiki/Documentation** | ✅ Wiki | ✅ Wiki | ✅ Wiki |
+| **Pull Request Reviews** | ✅ (Advanced) | ✅ (Advanced) | ✅ (Advanced) |
+| **Branch Protection** | ✅ | ✅ | ✅ |
+| **Code Search** | ✅ (Advanced) | ✅ (Advanced) | ✅ |
+| **Advanced Analytics** | ⚠️ Limited | ✅ Insights/Analytics | ✅ (via Jira) |
+| **Security Scanning** | ✅ (Dependabot) | ✅ (SAST/DAST) | ✅ (Jira integration) |
+| **SAML/SSO** | ✅ | ✅ | ✅ |
+| **Container Registry** | ✅ GitHub Packages | ✅ Registry | ✅ Docker Hub link |
+| **Deployment Integration** | ✅ | ✅ | ✅ |
+| **Jira Integration** | ⚠️ Limited | ✅ Native | ✅ Native (best) |
+| **Enterprise Support** | ✅ | ✅ | ✅ |
+| **Community & Ecosystem** | 🥇 Very Large | 🥈 Large | 🥉 Medium |
+| **Learning Curve** | Low | Low-Medium | Low |
+
+## Winner by Category
+
+| Category | Winner | Runner-up | Notes |
+|----------|--------|-----------|-------|
+| **Best Overall** | **GitHub** | GitLab | Largest ecosystem, best developer experience |
+| **Best for DevOps** | **GitLab** | GitHub | Most complete platform, built-in deployment |
+| **Best for Jira Users** | **Atlassian** | GitLab | Native Jira integration is seamless |
+| **Best Enterprise** | **GitLab** | GitHub | Superior analytics, SAST/DAST included |
+| **Best Value** | **Atlassian** | GitLab | Lowest cost, integrates with Jira investment |
+| **Best for ADO Migration** | **GitHub** | GitLab | Closest user experience to ADO |
+  
+## Missing Features & Best-of-Breed Alternatives
+
+### **1. Advanced Project Management / Roadmapping**
+- **Gap:** None of the three excel at enterprise roadmapping beyond GitLab Epics
+- **Best-of-Breed Alternative:** **Jira** (Atlassian) - Continues to be superior for complex project management
+- **Recommendation:** Use Jira + Bitbucket for project/product management workflows
+
+### **2. Security & Compliance Dashboard**
+- **Gap:** GitHub has basic scanning; GitLab has better coverage; Bitbucket relies on Jira
+- **Best-of-Breed Alternative:** **Snyk** or **Dependabot** (GitHub only) - More comprehensive vulnerability management
+- **Recommendation:** Pair any platform with Snyk for advanced security scanning
+
+### **3. Detailed DevOps Insights & Metrics**
+- **Gap:** GitHub limited; GitLab good; Bitbucket minimal
+- **Best-of-Breed Alternative:** **Datadog** or **New Relic** - For comprehensive deployment metrics and monitoring
+- **Recommendation:** Integrate monitoring tool for production deployment insights
+
+### **4. Agile Work Planning (True Kanban/Scrum)**
+- **Gap:** All three have basic boards; none match Jira's depth
+- **Best-of-Breed Alternative:** **Jira** 
+- **Recommendation:** Use Jira alongside your chosen Git platform for work planning
+
+### **5. Knowledge Management / Wiki**
+- **Gap:** All three have wikis but lack advanced knowledge base features
+- **Best-of-Breed Alternative:** **Confluence** (Atlassian) or **Notion**
+- **Recommendation:** Use Confluence + Bitbucket for best-in-class documentation ecosystem (Atlassian Stack)
+
+## Recommended Stack by Organization Type
+
+### **Modern Cloud-Native Team:**
+- **Git Host:** GitHub
+- **Issue Tracking:** GitHub Issues
+- **Project Management:** GitHub Projects
+- **Supplementary Tools:** Snyk (security), Vercel/Netlify (deployment)
+
+### **Enterprise using Jira:**
+- **Git Host:** Atlassian Bitbucket
+- **Issue Tracking:** Jira
+- **Project Management:** Jira (roadmaps, epics)
+- **Knowledge Base:** Confluence
+- **Benefits:** Unified Atlassian ecosystem, single sign-on, deep integrations
+
+### **Enterprise DevOps-Heavy:**
+- **Git Host:** GitLab (Self-Managed for full control)
+- **Issue Tracking:** GitLab Issues
+- **Project Management:** GitLab Epics/Boards
+- **Monitoring:** Datadog or New Relic
+- **Benefits:** All-in-one platform, no tool switching
+
+## Migration Considerations
+
+| Aspect | Notes |
+|--------|-------|
+| **Repository Data** | Git repos migrate easily (git clone/push); history fully preserved |
+| **CI/CD Pipelines** | Need rewriting - ADO YAML → GitHub Actions or GitLab CI/CD |
+| **Wiki/Docs** | Manual migration recommended to ensure formatting |
+| **Issues/Work Items** | Most vendors have migration tools; consider archiving old ADO items |
+| **Permissions** | Map ADO groups to new vendor's team/group model |
+| **Integrations** | Audit existing ADO integrations and reconfigure for new platform |
+| **Timeline** | Plan 2-4 weeks for comprehensive migration |
+
+## Reliability and Security Risk (Last 2 Years)
+
+The table below summarizes observed operational and security risk signals from public status and security channels.
+
+| Platform | Outage Pattern | Security Response Pattern | User Sentiment Risk | Overall Risk |
+|----------|----------------|---------------------------|---------------------|--------------|
+| **GitHub** | Periodic high-visibility incidents (for example search and Actions delays) | Strong controls and trust posture; incident comms are good, but SaaS security incident detail is less centralized | Medium during broad Actions/search incidents | **Amber** |
+| **GitLab** | Frequent CI/CD and Git operation degradations, usually resolved quickly | Very transparent security patch cadence, CVE-level detail, clear upgrade guidance | Medium due to recurrence of pipeline delays | **Amber** |
+| **Bitbucket Cloud** | Mix of Bitbucket-specific and Atlassian-wide platform incidents | Regular security bulletin process; cloud fixes are often less detailed publicly | Medium to High when Atlassian account/login incidents impact multiple products | **Amber** |
+
+### Interpretation
+
+- **No clear evidence of long-unresolved major SaaS incidents** was identified across these three options in the reviewed period.
+- The practical difference is mostly in **incident frequency, blast radius, and transparency style**.
+
+### Practical Selection Guidance
+
+- Choose **GitHub** if you want the broadest ecosystem and strong developer experience.
+- Choose **GitLab** if you value detailed public security and patch transparency with deep built-in DevOps capabilities.
+- Choose **Bitbucket Cloud** if Jira/Atlassian integration is your main priority and you accept some dependency on Atlassian-wide platform events.
+
+## Weighted Decision Model
+
+The weighted model below provides a single comparative score using the following weighting:
+
+- Reliability: **30%**
+- Security posture and response: **30%**
+- Integration and ecosystem fit: **25%**
+- Cost: **15%**
+
+Scoring scale: **1 (low) to 5 (high)**.
+
+| Platform | Reliability (30%) | Security (30%) | Integration (25%) | Cost (15%) | Weighted Score (/5) |
+|----------|-------------------|----------------|-------------------|------------|---------------------|
+| **GitHub** | 4.0 | 4.0 | 5.0 | 3.0 | **4.10** |
+| **GitLab** | 3.5 | 4.5 | 4.0 | 4.0 | **3.98** |
+| **Bitbucket Cloud** | 3.5 | 3.8 | 4.5 | 4.5 | **4.02** |
+
+### Result
+
+Using this weighting, **GitHub** is the highest-scoring option overall.
+
+### Recommended Choice by Context
+
+- If you want the strongest all-round default: **GitHub**.
+- If your priority is security transparency and built-in DevSecOps depth: **GitLab**.
+- If your organization is already Jira/Confluence-centric and cost-sensitive: **Bitbucket Cloud**.

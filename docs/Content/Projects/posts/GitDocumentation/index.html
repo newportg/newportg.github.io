@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Gary Newport">
+<meta name="dcterms.date" content="2026-05-14">
 
-<title>Gary Newport MBCS – Zoomalong</title>
+<title>Documentation System for Software Architecture – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">Zoomalong</span>
     </a>
   </div>
@@ -92,15 +95,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Content/Projects/index.html"> 
+    <a class="nav-link" href="../../../../Content/Projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Content/Resource/index.html"> 
+    <a class="nav-link" href="../../../../Content/Resource/index.html"> 
 <span class="menu-text">Resource</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Content/Current/index.html"> 
+    <a class="nav-link" href="../../../../Content/Current/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
 </ul>
@@ -130,45 +133,131 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src=".\images\me.jpg" class="about-image
-  rectangle " style="width: 10em;">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gary Newport MBCS</h1>
-</div>
-<div class="quarto-title-meta">
+<h1 class="title">Documentation System for Software Architecture</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Git</div>
+    <div class="quarto-category">Wiki</div>
   </div>
-</header><main class="content" id="quarto-document-content">
-<div id="ppc">
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<img src=".\images\mbcs-badge.png" alt="MBCS" style="width:144px;height:144px;">
-<a href="https://www.credly.com/badges/68222207-ca3a-4371-b16c-55b99c48ba68/public_url"><img src=".\images\togaf.png" alt="TOGAF" style="width:144px;height:144px;"></a>
-<a href="https://www.credly.com/badges/69bce2fb-c685-4443-af98-0d4a148c8f18/public_url"><img src=".\images\microsoft-certified-azure-ai-fundamentals.png" alt="Azure Fundermentals" style="width:144px;height:144px;"></a>
-<a href="https://www.credly.com/badges/181a0e86-1e59-472c-aee6-4b361a3cc29b/public_url"><img src=".\images\microsoft-certified-azure-fundamentals.png" alt="Azure AI Fundermentals" style="width:144px;height:144px;"></a>
-</div>
+  </div>
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="mailto:gary.newport@zoomalong.co.uk" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="" class="about-link" rel="" target="">
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://uk.linkedin.com/in/garynewport" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gary Newport </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 14, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>There is a preference that all documentation is written in Markdown, as creators of documentation have there own preference in terms of editor. Once the document is checked in to a Git Repo it can be transformed so a viewer can easily read it. There are a number of tools that can be used to transform Markdown files into a more user-friendly format, such as HTML or PDF. Some popular tools for this purpose include:</p>
+<section id="the-options-are-evaluated-based-on-the-following-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="the-options-are-evaluated-based-on-the-following-criteria">The options are evaluated based on the following criteria:</h2>
+<ol type="1">
+<li><strong>Markdown Support</strong>: Native support for Markdown files.</li>
+<li><strong>Git Integration</strong>: Compatibility with Git workflows.</li>
+<li><strong>Ease of Use</strong>: Simplicity in setup and usage.</li>
+<li><strong>Customization</strong>: Flexibility in themes and extensions.</li>
+<li><strong>Deployment</strong>: Ease of hosting and deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Active community and plugin ecosystem.</li>
+</ol>
+<section id="recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations">Recommendations:</h3>
+<section id="mkdocs" class="level4">
+<h4 class="anchored" data-anchor-id="mkdocs">1.&nbsp;<strong>MKDocs</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, designed specifically for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Simple to set up with a single YAML configuration file.</li>
+<li><strong>Customization</strong>: Supports themes like Material for MKDocs and plugins.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or other static hosting platforms.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with many plugins. <strong>Best For</strong>: Lightweight documentation sites with a focus on simplicity and speed.</li>
+</ul>
+</section>
+<section id="quarto" class="level4">
+<h4 class="anchored" data-anchor-id="quarto">2.&nbsp;<strong>Quarto</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown and R Markdown.</li>
+<li><strong>Git Integration</strong>: Works well with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Slightly more complex than MKDocs but offers advanced features.</li>
+<li><strong>Customization</strong>: Highly customizable with support for extensions and Lua filters.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Quarto Pub.</li>
+<li><strong>Community and Ecosystem</strong>: Growing community with a focus on data science and technical documentation. <strong>Best For</strong>: Technical documentation, especially for users who need advanced features like code execution and data visualization.</li>
+</ul>
+</section>
+<section id="docusaurus" class="level4">
+<h4 class="anchored" data-anchor-id="docusaurus">3.&nbsp;<strong>Docusaurus</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Requires Node.js setup, slightly more complex than MKDocs.</li>
+<li><strong>Customization</strong>: Highly customizable with React-based components.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Vercel.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with a focus on developer documentation. <strong>Best For</strong>: Developer-focused documentation with React-based customization.</li>
+</ul>
+</section>
+<section id="confluence" class="level4">
+<h4 class="anchored" data-anchor-id="confluence">4.&nbsp;<strong>Confluence</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Limited, not natively designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Requires plugins or manual integration.</li>
+<li><strong>Ease of Use</strong>: Easy for non-technical users but less suited for Markdown workflows.</li>
+<li><strong>Customization</strong>: Limited compared to static site generators.</li>
+<li><strong>Deployment</strong>: Hosted solution, no need for manual deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Strong enterprise focus. <strong>Best For</strong>: Enterprise teams needing collaboration features over Markdown-first workflows.</li>
+</ul>
+</section>
+<section id="github-pages" class="level4">
+<h4 class="anchored" data-anchor-id="github-pages">5. <strong>GitHub Pages</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown natively and integrates well with Jekyll for additional features.</li>
+<li><strong>Git Integration</strong>: Seamlessly integrates with Git repositories hosted on GitHub.</li>
+<li><strong>Ease of Use</strong>: Very simple to set up, especially for users already familiar with GitHub.</li>
+<li><strong>Customization</strong>: Supports Jekyll themes and custom HTML/CSS for advanced customization.</li>
+<li><strong>Deployment</strong>: Native support for hosting directly from GitHub repositories.</li>
+<li><strong>Community and Ecosystem</strong>: Large community with extensive documentation and support.</li>
+</ul>
+<p><strong>Best For</strong>: Users already using GitHub who want a straightforward way to host and share documentation.</p>
+</section>
+</section>
+<section id="final-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="final-recommendation">Final Recommendation:</h3>
+<p>For Markdown-based Git repositories,&nbsp;<strong>MKDocs</strong>&nbsp;is the best choice for simplicity and speed, while&nbsp;<strong>Quarto</strong>&nbsp;is ideal for advanced technical documentation. If you need React-based customization,&nbsp;<strong>Docusaurus</strong>&nbsp;is a strong option. Confluence is the best option if you have chosen the rest of the Atlassian suite for collaboration and project management.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

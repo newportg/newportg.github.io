@@ -1,0 +1,13 @@
+---
+layout: post
+title: Daily Note
+categories: [Daily Note]
+author: "Gary Newport"
+date: "2026-05-14"
+---
+
+# 2026-05-14
+
+- [X]  ADO Alternatives
+- [X]  Documentation System for Software Architecture
+- Started looking at DDC  https://github.com/ea-toolkit/DDC

@@ -1,0 +1,76 @@
+---
+layout: post
+title: Documentation System for Software Architecture
+categories: [Git, Wiki]
+author: "Gary Newport"
+date: "2026-05-14"
+
+---
+
+There is a preference that all documentation is written in Markdown, as creators of documentation have there own preference in terms of editor.
+Once the document is checked in to a Git Repo it can be transformed so a viewer can easily read it. There are a number of tools that can be used to transform Markdown files into a more user-friendly format, such as HTML or PDF. Some popular tools for this purpose include:
+
+## The options are evaluated based on the following criteria:
+1.  **Markdown Support**: Native support for Markdown files.
+2.  **Git Integration**: Compatibility with Git workflows.
+3.  **Ease of Use**: Simplicity in setup and usage.
+4.  **Customization**: Flexibility in themes and extensions.
+5.  **Deployment**: Ease of hosting and deployment.
+6.  **Community and Ecosystem**: Active community and plugin ecosystem.
+
+### Recommendations:
+
+#### 1. **MKDocs**
+
+*   **Markdown Support**: Excellent, designed specifically for Markdown.
+*   **Git Integration**: Works seamlessly with Git repositories.
+*   **Ease of Use**: Simple to set up with a single YAML configuration file.
+*   **Customization**: Supports themes like Material for MKDocs and plugins.
+*   **Deployment**: Easily deployable to GitHub Pages, Netlify, or other static hosting platforms.
+*   **Community and Ecosystem**: Strong community with many plugins.
+**Best For**: Lightweight documentation sites with a focus on simplicity and speed.
+
+#### 2. **Quarto**
+
+*   **Markdown Support**: Excellent, supports Markdown and R Markdown.
+*   **Git Integration**: Works well with Git repositories.
+*   **Ease of Use**: Slightly more complex than MKDocs but offers advanced features.
+*   **Customization**: Highly customizable with support for extensions and Lua filters.
+*   **Deployment**: Easily deployable to GitHub Pages, Netlify, or Quarto Pub.
+*   **Community and Ecosystem**: Growing community with a focus on data science and technical documentation.
+**Best For**: Technical documentation, especially for users who need advanced features like code execution and data visualization.
+
+#### 3. **Docusaurus**
+
+*   **Markdown Support**: Excellent, designed for Markdown.
+*   **Git Integration**: Works seamlessly with Git repositories.
+*   **Ease of Use**: Requires Node.js setup, slightly more complex than MKDocs.
+*   **Customization**: Highly customizable with React-based components.
+*   **Deployment**: Easily deployable to GitHub Pages, Netlify, or Vercel.
+*   **Community and Ecosystem**: Strong community with a focus on developer documentation.
+**Best For**: Developer-focused documentation with React-based customization.
+
+#### 4. **Confluence**
+
+*   **Markdown Support**: Limited, not natively designed for Markdown.
+*   **Git Integration**: Requires plugins or manual integration.
+*   **Ease of Use**: Easy for non-technical users but less suited for Markdown workflows.
+*   **Customization**: Limited compared to static site generators.
+*   **Deployment**: Hosted solution, no need for manual deployment.
+*   **Community and Ecosystem**: Strong enterprise focus.
+**Best For**: Enterprise teams needing collaboration features over Markdown-first workflows.
+
+#### 5. **GitHub Pages**
+
+* **Markdown Support**: Excellent, supports Markdown natively and integrates well with Jekyll for additional features.
+* **Git Integration**: Seamlessly integrates with Git repositories hosted on GitHub.
+* **Ease of Use**: Very simple to set up, especially for users already familiar with GitHub.
+* **Customization**: Supports Jekyll themes and custom HTML/CSS for advanced customization.
+* **Deployment**: Native support for hosting directly from GitHub repositories.
+* **Community and Ecosystem**: Large community with extensive documentation and support.
+
+**Best For**: Users already using GitHub who want a straightforward way to host and share documentation.
+
+### Final Recommendation:
+
+For Markdown-based Git repositories, **MKDocs** is the best choice for simplicity and speed, while **Quarto** is ideal for advanced technical documentation. If you need React-based customization, **Docusaurus** is a strong option. Confluence is the best option if you have chosen the rest of the Atlassian suite for collaboration and project management.

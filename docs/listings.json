@@ -3,6 +3,7 @@
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
+      "/Content/Current/posts/2026-05-13/index.html",
       "/Content/Current/posts/2025-12-10/index.html",
       "/Content/Current/posts/2025-12-09/index.html",
       "/Content/Current/posts/2025-11-24/index.html",
@@ -36,6 +37,8 @@
   {
     "listing": "/Content/Projects/index.html",
     "items": [
+      "/Content/Projects/posts/GitDocumentation/index.html",
+      "/Content/Projects/posts/Git/index.html",
       "/Content/Projects/posts/CalendarTemplate/index.html",
       "/Content/Projects/posts/POC-DocumentationWiki/index.html",
       "/Content/Projects/posts/POC-HubDecouple/index.html",
