@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Gary Newport">
-<title>Books – Zoomalong</title>
+<meta name="dcterms.date" content="2026-05-14">
+
+<title>Documentation System for Software Architecture – Zoomalong</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -23,28 +24,29 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e19f81c97bc45f6835df6be9cce9fdc9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-51fffea324cfa69557ac1c25e4a04e2f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script><script id="quarto-search-options" type="application/json">{
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -70,67 +72,19 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script>
+}</script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-books .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-filters','listing-engines','listing-_quarto-vars','listing-language','listing-path','listing-outputHref','listing-author','listing-description','listing-filename','listing-file-modified','listing-layout','listing-title','listing-categories','listing-date','listing-output','listing-date-modified','listing-reading-time','listing-word-count','listing-sidebar',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-filters","listing-engines","listing-_quarto-vars","listing-language","listing-path","listing-outputHref","listing-author","listing-description","listing-filename","listing-file-modified","listing-layout","listing-title","listing-categories","listing-date","listing-output","listing-date-modified","listing-reading-time","listing-word-count","listing-sidebar"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-books'] = new List('listing-books', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 </head>
-<body class="nav-fixed quarto-light">
+
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
     <span class="navbar-title">Zoomalong</span>
     </a>
   </div>
@@ -140,21 +94,21 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
-    <a class="nav-link" href="../../Content/Projects/index.html"> 
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../Content/Projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Content/Resource/index.html"> 
+    <a class="nav-link" href="../../../../Content/Resource/index.html"> 
 <span class="menu-text">Resource</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Content/Current/index.html"> 
+    <a class="nav-link" href="../../../../Content/Current/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
 </ul>
-<ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
     <a class="nav-link" href="mailto:Gary.newport@zoomalong.co.uk"> 
 <span class="menu-text"><iconify-icon inline="" icon="bi:envelope" style="font-size: 1.1em;" aria-label="Icon envelope from bi Iconify.design set." title="E-mail"></iconify-icon></span></a>
   </li>  
@@ -167,23 +121,32 @@ window.Quarto = {
 <span class="menu-text"><iconify-icon inline="" icon="bi:linkedin" style="font-size: 1.1em;" aria-label="Icon linkedin from bi Iconify.design set." title="LinkedIn"></iconify-icon></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QVBJJTIwRmlyc3Q=">API First <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QXV0b1Jlc3Q=">AutoRest <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QXp1cmUlMjBGdW5jdGlvbnM=">Azure Functions <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QyUyMw==">C# <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TFVB">LUA <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UG93ZXJTaGVsbA==">PowerShell <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VHlwZVNwZWM=">TypeSpec <span class="quarto-category-count">(2)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Books</h1>
-</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Documentation System for Software Architecture</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Git</div>
+    <div class="quarto-category">Wiki</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -192,192 +155,98 @@ window.Quarto = {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 14, 2026</p>
+    </div>
+  </div>
   
     
   </div>
   
 
 
-</header><div class="cell">
-<style type="text/css">
-#title-block-header .description {
-    display: none;
-}
-</style>
-</div>
-<div id="listing-books" class="quarto-listing quarto-listing-container-custom">
-<div class="list blog">
-    
-    <div class="blog-entry" data-index="0" data-listing-file-modified-sort="1778767082878">
-        <div class="metadata">          
-            <p class="date listing-date"></p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book2/Page2.html"></a></p>
-
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-    <div class="blog-entry" data-index="1" data-listing-file-modified-sort="1778767082878">
-        <div class="metadata">          
-            <p class="date listing-date"></p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book2/Page1.html"></a></p>
-
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-    <div class="blog-entry" data-index="2" data-listing-file-modified-sort="1778767082877">
-        <div class="metadata">          
-            <p class="date listing-date"></p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book1/Page2.html"></a></p>
-
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-    <div class="blog-entry" data-index="3" data-listing-file-modified-sort="1778767082877">
-        <div class="metadata">          
-            <p class="date listing-date"></p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book1/Page1.html"></a></p>
-
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-    <div class="blog-entry" data-index="4" data-categories="QyUyMyUyQ0F6dXJlJTIwRnVuY3Rpb25zJTJDQVBJJTIwRmlyc3QlMkNUeXBlU3BlYyUyQ0F1dG9SZXN0JTJDUXVhcnRvJTJDTFVBJTJDUG93ZXJTaGVsbA==" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1778767082878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-        <div class="metadata">          
-            <p class="date listing-date">October 16, 2025</p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book2/index.html">Book2</a></p>
-
-            
-            <div class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('C#'); return false;">
-                    C#
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Azure Functions'); return false;">
-                    Azure Functions
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('API First'); return false;">
-                    API First
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('TypeSpec'); return false;">
-                    TypeSpec
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('AutoRest'); return false;">
-                    AutoRest
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-                    Quarto
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('LUA'); return false;">
-                    LUA
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('PowerShell'); return false;">
-                    PowerShell
-                </div>
-                
-            </div>
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-    <div class="blog-entry" data-index="5" data-categories="QyUyMyUyQ0F6dXJlJTIwRnVuY3Rpb25zJTJDQVBJJTIwRmlyc3QlMkNUeXBlU3BlYyUyQ0F1dG9SZXN0JTJDUXVhcnRvJTJDTFVBJTJDUG93ZXJTaGVsbA==" data-listing-date-sort="1760572800000" data-listing-file-modified-sort="1778767082878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-        <div class="metadata">          
-            <p class="date listing-date">October 16, 2025</p>
-        </div>
-        <div class="body">
-            <p class="title listing-title"><a href="../../Content/Books/Books/Book1/index.html">Book1</a></p>
-
-            
-            <div class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('C#'); return false;">
-                    C#
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Azure Functions'); return false;">
-                    Azure Functions
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('API First'); return false;">
-                    API First
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('TypeSpec'); return false;">
-                    TypeSpec
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('AutoRest'); return false;">
-                    AutoRest
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-                    Quarto
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('LUA'); return false;">
-                    LUA
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('PowerShell'); return false;">
-                    PowerShell
-                </div>
-                
-            </div>
-            
-
-            <p class="description listing-description"></p>
-            
-        </div>
-        
-    </div>
-    
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
+</header>
 
 
+<p>There is a preference that all documentation is written in Markdown, as creators of documentation have there own preference in terms of editor. Once the document is checked in to a Git Repo it can be transformed so a viewer can easily read it. There are a number of tools that can be used to transform Markdown files into a more user-friendly format, such as HTML or PDF. Some popular tools for this purpose include:</p>
+<ol type="1">
+<li><strong>Markdown Support</strong>: Native support for Markdown files.</li>
+<li><strong>Git Integration</strong>: Compatibility with Git workflows.</li>
+<li><strong>Ease of Use</strong>: Simplicity in setup and usage.</li>
+<li><strong>Customization</strong>: Flexibility in themes and extensions.</li>
+<li><strong>Deployment</strong>: Ease of hosting and deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Active community and plugin ecosystem.</li>
+</ol>
+<section id="recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations">Recommendations:</h3>
+<section id="mkdocs" class="level4">
+<h4 class="anchored" data-anchor-id="mkdocs">1.&nbsp;<strong>MKDocs</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, designed specifically for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Simple to set up with a single YAML configuration file.</li>
+<li><strong>Customization</strong>: Supports themes like Material for MKDocs and plugins.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or other static hosting platforms.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with many plugins. <strong>Best For</strong>: Lightweight documentation sites with a focus on simplicity and speed.</li>
+</ul>
+</section>
+<section id="quarto" class="level4">
+<h4 class="anchored" data-anchor-id="quarto">2.&nbsp;<strong>Quarto</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown and R Markdown.</li>
+<li><strong>Git Integration</strong>: Works well with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Slightly more complex than MKDocs but offers advanced features.</li>
+<li><strong>Customization</strong>: Highly customizable with support for extensions and Lua filters.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Quarto Pub.</li>
+<li><strong>Community and Ecosystem</strong>: Growing community with a focus on data science and technical documentation. <strong>Best For</strong>: Technical documentation, especially for users who need advanced features like code execution and data visualization.</li>
+</ul>
+</section>
+<section id="docusaurus" class="level4">
+<h4 class="anchored" data-anchor-id="docusaurus">3.&nbsp;<strong>Docusaurus</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Requires Node.js setup, slightly more complex than MKDocs.</li>
+<li><strong>Customization</strong>: Highly customizable with React-based components.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Vercel.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with a focus on developer documentation. <strong>Best For</strong>: Developer-focused documentation with React-based customization.</li>
+</ul>
+</section>
+<section id="confluence" class="level4">
+<h4 class="anchored" data-anchor-id="confluence">4.&nbsp;<strong>Confluence</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Limited, not natively designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Requires plugins or manual integration.</li>
+<li><strong>Ease of Use</strong>: Easy for non-technical users but less suited for Markdown workflows.</li>
+<li><strong>Customization</strong>: Limited compared to static site generators.</li>
+<li><strong>Deployment</strong>: Hosted solution, no need for manual deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Strong enterprise focus. <strong>Best For</strong>: Enterprise teams needing collaboration features over Markdown-first workflows.</li>
+</ul>
+</section>
+<section id="github-pages" class="level4">
+<h4 class="anchored" data-anchor-id="github-pages">5. <strong>GitHub Pages</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown natively and integrates well with Jekyll for additional features.</li>
+<li><strong>Git Integration</strong>: Seamlessly integrates with Git repositories hosted on GitHub.</li>
+<li><strong>Ease of Use</strong>: Very simple to set up, especially for users already familiar with GitHub.</li>
+<li><strong>Customization</strong>: Supports Jekyll themes and custom HTML/CSS for advanced customization.</li>
+<li><strong>Deployment</strong>: Native support for hosting directly from GitHub repositories.</li>
+<li><strong>Community and Ecosystem</strong>: Large community with extensive documentation and support.</li>
+</ul>
+<p><strong>Best For</strong>: Users already using GitHub who want a straightforward way to host and share documentation.</p>
+</section>
+</section>
+<section id="final-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="final-recommendation">Final Recommendation:</h3>
+<p>For Markdown-based Git repositories,&nbsp;<strong>MKDocs</strong>&nbsp;is the best choice for simplicity and speed, while&nbsp;<strong>Quarto</strong>&nbsp;is ideal for advanced technical documentation. If you need React-based customization,&nbsp;<strong>Docusaurus</strong>&nbsp;is a strong option. Confluence is the best option if you have chosen the rest of the Atlassian suite for collaboration and project management.</p>
 
 
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -450,7 +319,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -778,7 +647,8 @@ window.Quarto = {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2018–2026 Gary Newport</span> <span class="faux-block">All content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> Creative Commons CC BY 4.0</a></span></p>
 </div>   
@@ -790,6 +660,8 @@ window.Quarto = {
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

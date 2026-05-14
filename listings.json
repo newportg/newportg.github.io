@@ -11,10 +11,14 @@
     ]
   },
   {
-    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
+    "listing": "/Content/Projects/index.html",
     "items": [
-      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
-      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
+      "/Content/Projects/posts/Git/index.html",
+      "/Content/Projects/posts/GitDocumentation/index.html",
+      "/Content/Projects/posts/CalendarTemplate/index.html",
+      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
+      "/Content/Projects/posts/POC-HubDecouple/index.html",
+      "/Content/Projects/posts/Frontify/index.html"
     ]
   },
   {
@@ -69,18 +73,17 @@
     ]
   },
   {
-    "listing": "/Content/Projects/index.html",
+    "listing": "/Content/Projects/posts/CalendarTemplate/index.html",
     "items": [
-      "/Content/Projects/posts/CalendarTemplate/index.html",
-      "/Content/Projects/posts/POC-DocumentationWiki/index.html",
-      "/Content/Projects/posts/POC-HubDecouple/index.html",
-      "/Content/Projects/posts/Frontify/index.html"
+      "/Content/Projects/posts/CalendarTemplate/articles/APIFirst/index.html",
+      "/Content/Projects/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
     ]
   },
   {
     "listing": "/Content/Current/index.html",
     "items": [
       "/Content/Current/todo.html",
+      "/Content/Current/posts/2026-05-14/index.html",
       "/Content/Current/posts/2026-05-13/index.html",
       "/Content/Current/posts/2025-12-10/index.html",
       "/Content/Current/posts/2025-12-09/index.html",
