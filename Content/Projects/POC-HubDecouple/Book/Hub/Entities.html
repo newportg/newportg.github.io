@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-11-24">
 
-<title>POC-HubDecouple – Zoomalong</title>
+<title>entities – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,27 +23,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,6 +71,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">Zoomalong</span>
     </a>
   </div>
@@ -95,19 +96,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Proj/index.html"> 
+    <a class="nav-link" href="../../../../../Content/Proj/index.html"> 
 <span class="menu-text">Proj</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Projects/index.html"> 
+    <a class="nav-link" href="../../../../../Content/Projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Resource/index.html"> 
-<span class="menu-text">Resource</span></a>
+    <a class="nav-link" href="../../../../../Content/Resource/index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../../Content/Current/index.html"> 
+    <a class="nav-link" href="../../../../../Content/Current/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
 </ul>
@@ -137,48 +138,592 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">POC-HubDecouple</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Wiki</div>
-  </div>
-  </div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gary Newport </p>
-          </div>
-  </div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+%% =========================
+%% Core Capabilities
+%% =========================
+subgraph CRM[Client Relationship Management]
+    CRM1[Manage contacts]
+    CRM2[Manage companies]
+    CRM3[Search properties]
+end
+
+subgraph BDM[Business Development and Marketing]
+    BDM1[Build marketing lists]
+    BDM2[Manage events]
+    BDM3[Publish web listings]
+    BDM4[Publish deal listings]
+    BDM5[Manage lease events]
+    BDM6[Capture applicant requirements]
+    BDM7[Send applicant communications]
+    BDM8[Manage ConneXions activity]
+    BDM9[Support business generation]
+    BDM10[Manage MAs]
+    BDM11[Publish portal listings]
+    BDM12[Match requirements to activities]
+    BDM13[Manage web enquiries]
+end
+
+subgraph OPS[Transaction Management and Operations]
+    OPS1[Record KF activities]
+    OPS2[Record third-party activities]
+    OPS3[Search activities and create reports]
+    OPS4[Save and share reports]
+    OPS5[Produce development pipeline reports]
+    OPS6[Use personalised dashboards]
+    OPS7[Create tenancies]
+    OPS8[Manage viewings]
+    OPS9[Manage offers]
+    OPS10[Track activity progression]
+    OPS11[Track tenancy progression]
+    OPS12[Manage reletting and renewals]
+    OPS13[Export activities into templates]
+    OPS14[Create instructions and invoices]
+    OPS15[Manage fee splits]
+end
+
+subgraph COMP[Compliance]
+    COMP1[Manage CDDs]
+    COMP2[Support property management compliance]
+    COMP3[Record offers for compliance]
+    COMP4[Manage BFS]
+    COMP5[Produce conflict of interest reports]
+end
+
+%% =========================
+%% Supporting Entities
+%% =========================
+subgraph ENT[Supporting Entities]
+    ENT1[Contact]
+    ENT2[Company]
+    ENT3[Property]
+    ENT4[Listing]
+    ENT5[Deal]
+    ENT6[Event]
+    ENT7[Applicant]
+    ENT8[Requirement]
+    ENT9[Enquiry]
+    ENT10[Activity]
+    ENT11[Viewing]
+    ENT12[Offer]
+    ENT13[Tenancy]
+    ENT14[Instruction]
+    ENT15[Invoice]
+    ENT16[Report]
+    ENT17[Dashboard]
+    ENT18[Template]
+    ENT19[Fee Split]
+    ENT20[CDD Record]
+    ENT21[BFS Record]
+    ENT22[Conflict Report]
+    ENT23[Property Management Record]
+end
+
+%% =========================
+%% Capability to Entity Relationships
+%% =========================
+ENT1 --&gt; CRM1
+ENT2 --&gt; CRM2
+ENT3 --&gt; CRM3
+
+ENT1 --&gt; BDM1
+ENT2 --&gt; BDM1
+ENT6 --&gt; BDM2
+ENT3 --&gt; BDM3
+ENT4 --&gt; BDM3
+ENT5 --&gt; BDM4
+ENT6 --&gt; BDM5
+ENT7 --&gt; BDM6
+ENT8 --&gt; BDM6
+ENT7 --&gt; BDM7
+ENT6 --&gt; BDM8
+ENT1 --&gt; BDM9
+ENT2 --&gt; BDM9
+ENT3 --&gt; BDM10
+ENT4 --&gt; BDM11
+ENT8 --&gt; BDM12
+ENT10 --&gt; BDM12
+ENT9 --&gt; BDM13
+
+ENT10 --&gt; OPS1
+ENT10 --&gt; OPS2
+ENT10 --&gt; OPS3
+ENT16 --&gt; OPS3
+ENT16 --&gt; OPS4
+ENT16 --&gt; OPS5
+ENT17 --&gt; OPS6
+ENT13 --&gt; OPS7
+ENT11 --&gt; OPS8
+ENT12 --&gt; OPS9
+ENT10 --&gt; OPS10
+ENT13 --&gt; OPS11
+ENT13 --&gt; OPS12
+ENT18 --&gt; OPS13
+ENT14 --&gt; OPS14
+ENT15 --&gt; OPS14
+ENT19 --&gt; OPS15
+
+ENT20 --&gt; COMP1
+ENT23 --&gt; COMP2
+ENT12 --&gt; COMP3
+ENT21 --&gt; COMP4
+ENT22 --&gt; COMP5
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="suggested-integration-methods" class="level1">
+<h1>Suggested Integration Methods</h1>
+<p>The capability map above shows what the platform does. The section below suggests a primary integration method for each capability so you can demonstrate a mix of integration patterns across the landscape.</p>
+<p>These recommendations assume a modern application estate where:</p>
+<ul>
+<li>synchronous reads and transactional updates are best handled through APIs</li>
+<li>business notifications and process state changes are better distributed through events</li>
+<li>external channel updates are often best exposed through webhooks</li>
+<li>high-volume or scheduled exchanges are often best handled through batch file integration</li>
+</ul>
+<section id="integration-pattern-overview" class="level2">
+<h2 class="anchored" data-anchor-id="integration-pattern-overview">Integration Pattern Overview</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph SYNC[Synchronous Patterns]
+        API[REST API]
+        GQL[GraphQL API]
+    end
+
+    subgraph ASYNC[Asynchronous Patterns]
+        EVT[Event Bus]
+        WH[Webhook]
+        MQ[Message Queue]
+    end
+
+    subgraph BULK[Bulk and Scheduled Patterns]
+        BATCH[Batch File / SFTP]
+        CDC[Change Data Capture]
+    end
+
+    CRMX[Client Relationship Management] --&gt; API
+    CRMX --&gt; GQL
+
+    BDMX[Business Development and Marketing] --&gt; WH
+    BDMX --&gt; EVT
+    BDMX --&gt; BATCH
+
+    OPSX[Transaction Management and Operations] --&gt; API
+    OPSX --&gt; EVT
+    OPSX --&gt; MQ
+    OPSX --&gt; CDC
+
+    COMPX[Compliance] --&gt; API
+    COMPX --&gt; EVT
+    COMPX --&gt; BATCH
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">    flowchart LR
+        subgraph CLIENT[Client Patterns]
+            subgraph CLNSYNC[Synchronous Patterns]
+                API[REST API]
+                GQL[GraphQL API]
+            end
+
+            subgraph CLNASYNC[Asynchronous Patterns]
+                EVT[Event Bus]
+            end
+        end
+
+        subgraph SYSTEM[System Patterns]
+            subgraph SYSASYNC[Asynchronous Patterns]
+                WH[Webhook]
+                MQ[Message Queue]
+            end
+
+            subgraph SYSBULK[Bulk and Scheduled Patterns]
+                BATCH[Batch File / SFTP]
+                CDC[Change Data Capture]
+            end
+        end
+
+        API --&gt; CRMX[Client Relationship Management]
+        GQL--&gt; CRMX
+        EVT --&gt; CRMX
+
+        API --&gt; BDMX[Business Development and Marketing]
+        GQL --&gt; BDMX
+        EVT --&gt; BDMX
+        
+        API --&gt; OPSX[Transaction Management and Operations]
+        GQL --&gt; OPSX
+        EVT --&gt; OPSX
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 24, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
+        API --&gt; COMPX[Compliance]
+        GQL --&gt; COMPX
+        EVT --&gt; COMPX
+         
+        BDMX --&gt; CDC
+        BDMX --&gt; BATCH
+        BDMX --&gt; WH
+
+        OPSX --&gt; MQ
+        OPSX --&gt; CDC
+
+        COMPX --&gt; BATCH
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pattern-key" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-key">Pattern Key</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>REST API</td>
+<td>A consuming system needs synchronous create, update, or query behaviour.</td>
+</tr>
+<tr class="even">
+<td>GraphQL API</td>
+<td>A consuming experience needs flexible read access across related entities.</td>
+</tr>
+<tr class="odd">
+<td>Event Bus</td>
+<td>Multiple systems need to react to a business event without tight coupling.</td>
+</tr>
+<tr class="even">
+<td>Webhook</td>
+<td>An external platform needs to be notified immediately when something changes.</td>
+</tr>
+<tr class="odd">
+<td>Message Queue</td>
+<td>Work should be processed asynchronously and reliably, often with retries.</td>
+</tr>
+<tr class="even">
+<td>Batch File / SFTP</td>
+<td>Large scheduled data exchanges are acceptable and near-real-time is not required.</td>
+</tr>
+<tr class="odd">
+<td>Change Data Capture</td>
+<td>Downstream analytics or integration services need a stream of data changes.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="capability-by-capability-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="capability-by-capability-recommendations">Capability-by-Capability Recommendations</h2>
+<section id="client-relationship-management" class="level3">
+<h3 class="anchored" data-anchor-id="client-relationship-management">Client Relationship Management</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Suggested primary integration method</th>
+<th>Why this fits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Manage contacts</td>
+<td>REST API</td>
+<td>Contact create and update actions usually require synchronous validation and immediate response.</td>
+</tr>
+<tr class="even">
+<td>Manage companies</td>
+<td>REST API</td>
+<td>Company mastering is typically handled as a transactional system-of-record service.</td>
+</tr>
+<tr class="odd">
+<td>Search properties</td>
+<td>GraphQL API</td>
+<td>Property search often needs flexible filtering and shaped read models for multiple channels.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="business-development-and-marketing" class="level3">
+<h3 class="anchored" data-anchor-id="business-development-and-marketing">Business Development and Marketing</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Suggested primary integration method</th>
+<th>Why this fits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Build marketing lists</td>
+<td>Batch File / SFTP</td>
+<td>Marketing audiences are often assembled on a schedule and shared in bulk with campaign tools.</td>
+</tr>
+<tr class="even">
+<td>Manage events</td>
+<td>REST API</td>
+<td>Event creation and maintenance usually need direct operational control from upstream users or systems.</td>
+</tr>
+<tr class="odd">
+<td>Publish web listings</td>
+<td>Webhook</td>
+<td>Listing changes should trigger immediate push notifications to downstream web publishing platforms.</td>
+</tr>
+<tr class="even">
+<td>Publish deal listings</td>
+<td>Event Bus</td>
+<td>Deal publication is a business event that may need to notify multiple subscribers at once.</td>
+</tr>
+<tr class="odd">
+<td>Manage lease events</td>
+<td>Event Bus</td>
+<td>Lease milestones naturally emit state changes consumed by internal and partner systems.</td>
+</tr>
+<tr class="even">
+<td>Capture applicant requirements</td>
+<td>REST API</td>
+<td>Requirement capture is interactive and usually part of a guided user workflow.</td>
+</tr>
+<tr class="odd">
+<td>Send applicant communications</td>
+<td>Message Queue</td>
+<td>Communication jobs benefit from decoupling, retries, and throughput control.</td>
+</tr>
+<tr class="even">
+<td>Manage ConneXions activity</td>
+<td>Event Bus</td>
+<td>Relationship activity is typically useful to several interested systems without direct coupling.</td>
+</tr>
+<tr class="odd">
+<td>Support business generation</td>
+<td>Change Data Capture</td>
+<td>Pipeline and lead-generation analytics often depend on a steady feed of underlying record changes.</td>
+</tr>
+<tr class="even">
+<td>Manage MAs</td>
+<td>REST API</td>
+<td>MA maintenance appears operational and likely needs controlled synchronous updates.</td>
+</tr>
+<tr class="odd">
+<td>Publish portal listings</td>
+<td>Webhook</td>
+<td>External portals commonly consume push-based notifications when listing content changes.</td>
+</tr>
+<tr class="even">
+<td>Match requirements to activities</td>
+<td>Event Bus</td>
+<td>Matching outcomes can trigger several follow-on processes such as alerts, tasks, and recommendations.</td>
+</tr>
+<tr class="odd">
+<td>Manage web enquiries</td>
+<td>Webhook</td>
+<td>Enquiry capture from external digital channels is commonly delivered via inbound webhook.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="transaction-management-and-operations" class="level3">
+<h3 class="anchored" data-anchor-id="transaction-management-and-operations">Transaction Management and Operations</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Suggested primary integration method</th>
+<th>Why this fits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Record KF activities</td>
+<td>REST API</td>
+<td>Internal activity capture generally requires immediate validation and confirmation.</td>
+</tr>
+<tr class="even">
+<td>Record third-party activities</td>
+<td>Webhook</td>
+<td>External partners often push activity updates into the platform in near real time.</td>
+</tr>
+<tr class="odd">
+<td>Search activities and create reports</td>
+<td>GraphQL API</td>
+<td>Reporting consumers often need read-optimized access across several related operational entities.</td>
+</tr>
+<tr class="even">
+<td>Save and share reports</td>
+<td>Message Queue</td>
+<td>Report distribution can be processed asynchronously, especially where rendering and notifications are involved.</td>
+</tr>
+<tr class="odd">
+<td>Produce development pipeline reports</td>
+<td>Change Data Capture</td>
+<td>Pipeline reporting is well served by streaming operational changes into an analytical store.</td>
+</tr>
+<tr class="even">
+<td>Use personalised dashboards</td>
+<td>Change Data Capture</td>
+<td>Dashboards usually depend on continuously refreshed read models rather than direct transactional calls.</td>
+</tr>
+<tr class="odd">
+<td>Create tenancies</td>
+<td>REST API</td>
+<td>Tenancy creation is a high-control transactional workflow with strong validation requirements.</td>
+</tr>
+<tr class="even">
+<td>Manage viewings</td>
+<td>REST API</td>
+<td>Booking and updating viewings typically require immediate conflict checking and confirmation.</td>
+</tr>
+<tr class="odd">
+<td>Manage offers</td>
+<td>REST API</td>
+<td>Offer creation and amendment are core business transactions that need deterministic responses.</td>
+</tr>
+<tr class="even">
+<td>Track activity progression</td>
+<td>Event Bus</td>
+<td>Progression state changes are classic business events useful to several downstream listeners.</td>
+</tr>
+<tr class="odd">
+<td>Track tenancy progression</td>
+<td>Event Bus</td>
+<td>Tenancy status changes are important lifecycle events for billing, compliance, and customer communications.</td>
+</tr>
+<tr class="even">
+<td>Manage reletting and renewals</td>
+<td>Event Bus</td>
+<td>Renewal and reletting milestones often trigger tasks and notifications across multiple systems.</td>
+</tr>
+<tr class="odd">
+<td>Export activities into templates</td>
+<td>Batch File / SFTP</td>
+<td>Template-based export is often document-oriented and suitable for scheduled or bulk generation.</td>
+</tr>
+<tr class="even">
+<td>Create instructions and invoices</td>
+<td>Message Queue</td>
+<td>Document generation and invoice creation often benefit from asynchronous processing and retry handling.</td>
+</tr>
+<tr class="odd">
+<td>Manage fee splits</td>
+<td>REST API</td>
+<td>Fee split management usually needs synchronous maintenance of commercial rules and allocations.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="compliance" class="level3">
+<h3 class="anchored" data-anchor-id="compliance">Compliance</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Suggested primary integration method</th>
+<th>Why this fits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Manage CDDs</td>
+<td>REST API</td>
+<td>Due diligence checks usually sit inside guided workflows that need immediate responses from screening services.</td>
+</tr>
+<tr class="even">
+<td>Support property management compliance</td>
+<td>Batch File / SFTP</td>
+<td>Compliance evidence and periodic submissions are often exchanged in scheduled bulk files.</td>
+</tr>
+<tr class="odd">
+<td>Record offers for compliance</td>
+<td>Event Bus</td>
+<td>A recorded offer is a useful trigger for downstream compliance screening and governance processes.</td>
+</tr>
+<tr class="even">
+<td>Manage BFS</td>
+<td>REST API</td>
+<td>Compliance case handling usually requires controlled transactional updates with auditable outcomes.</td>
+</tr>
+<tr class="odd">
+<td>Produce conflict of interest reports</td>
+<td>Change Data Capture</td>
+<td>Conflict reporting is often analytics-driven and benefits from continuous change feeds into a reporting layer.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="example-end-to-end-demonstration-story" class="level2">
+<h2 class="anchored" data-anchor-id="example-end-to-end-demonstration-story">Example End-to-End Demonstration Story</h2>
+<p>If you want to show different integration methods working together in one scenario, a simple narrative would be:</p>
+<ol type="1">
+<li>A web channel submits a new enquiry through a webhook into Manage web enquiries.</li>
+<li>A user captures applicant requirements through a REST API.</li>
+<li>Matching logic publishes a match event on the event bus.</li>
+<li>Applicant communications are queued through a message queue.</li>
+<li>A portal listing is pushed to an external site through a webhook.</li>
+<li>Offer creation happens through a REST API, which emits an Offer Recorded event.</li>
+<li>Compliance and reporting consume that event, while dashboards update through change data capture.</li>
+</ol>
+</section>
+<section id="design-note" class="level2">
+<h2 class="anchored" data-anchor-id="design-note">Design Note</h2>
+<p>Each capability has a suggested primary method, not an exclusive one. In practice, the most robust architecture often combines methods, for example REST API for command, Event Bus for notification, and Change Data Capture for analytics.</p>
 
 
-</header>
-
-
-<script type="text/javascript">
-  window.location.replace("https://newportg.github.io/POC-HubDecouple");
-</script>
-<p>Redirect…</p>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

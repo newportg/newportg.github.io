@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-11-24">
 
-<title>POC-HubDecouple – Zoomalong</title>
+<title>detailed-design--implementation – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -77,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../../Content/Resource/index.html"> 
-<span class="menu-text">Resource</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../../Content/Current/index.html"> 
@@ -135,50 +168,269 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">POC-HubDecouple</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Wiki</div>
-  </div>
-  </div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gary Newport </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 24, 2025</p>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
-  </div>
-  
-    
-  </div>
-  
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-</header>
 
 
-<script type="text/javascript">
-  window.location.replace("https://newportg.github.io/POC-HubDecouple");
-</script>
-<p>Redirect…</p>
+<section id="detailed-design-implementation" class="level1 page-columns page-full">
+<h1>Detailed Design &amp; Implementation</h1>
+<section id="data-design-and-migration-strategy" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-design-and-migration-strategy">Data Design and Migration Strategy</h2>
+<section id="source-of-truth-and-ownership" class="level3">
+<h3 class="anchored" data-anchor-id="source-of-truth-and-ownership">Source of Truth and Ownership</h3>
+<p>During transition, Hub remains the authoritative source for core transactional domain data. Downstream systems maintain consumer-specific projections built from event notifications and query-driven retrieval.</p>
+</section>
+<section id="strategy" class="level3">
+<h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
+<p>The reason for this design is to limit the scope of changes that need to be made to hub, while still enabling downstream systems to have the data they need in a format that works for them. By using an event-driven approach, we can decouple the systems and allow for more flexibility in how downstream systems consume and use the data. This also allows us to preserve existing domain rule enforcement in hub, while still enabling downstream systems to evolve independently. Additionally, this approach can improve security posture by limiting the exposure of integration-facing interfaces and enabling incremental rollout with reversible steps.</p>
+</section>
+<section id="capability-entity-and-integration-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="capability-entity-and-integration-decomposition">Capability, Entity, and Integration Decomposition</h3>
+<p>The detailed design decomposes the Hub domain across three complementary views: capabilities, entities, and integration patterns. This provides a structured basis for implementation decisions by separating functional responsibility, data ownership, and cross-system interaction design.</p>
+<p>Capabilities describe what the platform does. In the Hub context, these include concerns such as identity and access, domain transaction processing, notification, reporting, audit, and consumer synchronization. Defining these capabilities makes it possible to assign clear ownership boundaries and determine which responsibilities remain within Hub versus which can be externalized over time.</p>
+<p>Entities describe the business objects managed by those capabilities. Examples include customer, account, policy, claim, billing profile, user credential, and event checkpoint. For each entity, the design should identify the authoritative source, lifecycle events, validation boundaries, and downstream consumers. This is essential for deciding which data can be projected externally and which data must continue to be governed within Hub.</p>
+<p>Integration patterns describe how capabilities and entities interact across system boundaries. In this target approach, interaction patterns are intentionally separated by purpose: event notifications signal that a change occurred, GraphQL queries retrieve consumer-specific read projections, and REST commands provide controlled write-back for approved use cases. Mapping these patterns clarifies where coupling exists today and how it is reduced in the target state through stable contracts, explicit ownership, and replayable synchronization flows.</p>
+<p>Taken together, this decomposition ensures the implementation is not treated as a generic interface modernization exercise. Instead, it establishes a traceable model from business capability, to entity ownership, to interaction mechanism, which supports phased delivery, clearer governance, and lower-risk decoupling.</p>
+</section>
+<section id="data-movement-patterns" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="data-movement-patterns">Data Movement Patterns</h3>
+<ul>
+<li>Event notification communicates that a change occurred.</li>
+<li>GraphQL retrieval provides consumer-specific field selection for synchronization.</li>
+<li>REST commands provide controlled write-back into Hub for approved use cases.</li>
+</ul>
+<p>Reference flow per domain transaction:</p>
+<ol type="1">
+<li>Domain write is committed in Hub.</li>
+<li>Event is published with identifiers and correlation metadata.</li>
+<li>Consumer receives event and requests a targeted GraphQL projection.</li>
+<li>Consumer stores its projection and records event processing checkpoint.</li>
+<li>Reconciliation jobs periodically compare authoritative and projection state.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="HubEvent.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">HubEvent</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-integrity-controls" class="level3">
+<h3 class="anchored" data-anchor-id="data-integrity-controls">Data Integrity Controls</h3>
+<ul>
+<li>Idempotent event consumption using event identifiers and deduplication checkpoints.</li>
+<li>Correlation IDs propagated across event, query, and command flows.</li>
+<li>Replay/reconciliation capability for failed or delayed synchronization.</li>
+<li>Validation-on-write in Hub to ensure domain invariants remain enforced.</li>
+</ul>
+</section>
+<section id="migration-approach" class="level3">
+<h3 class="anchored" data-anchor-id="migration-approach">Migration Approach</h3>
+<ul>
+<li>Baseline load: seed consumer stores from current state snapshots.</li>
+<li>Incremental sync: apply event-driven updates post-baseline.</li>
+<li>Reconciliation windows: scheduled consistency checks and automated drift reporting.</li>
+<li>Cutover readiness: objective criteria for each domain before switching system ownership.</li>
+</ul>
+<p>Suggested cutover readiness checklist per domain:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline load completion</td>
+<td>100% of in-scope entities loaded</td>
+</tr>
+<tr class="even">
+<td>Event processing reliability</td>
+<td>&gt;= 99.9% successful handling over agreed observation window</td>
+</tr>
+<tr class="odd">
+<td>Data drift</td>
+<td>0 critical drift defects and agreed non-critical threshold</td>
+</tr>
+<tr class="even">
+<td>Operational readiness</td>
+<td>Runbooks, alerts, and on-call ownership signed off</td>
+</tr>
+<tr class="odd">
+<td>Rollback readiness</td>
+<td>Rollback drill completed successfully</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="api-and-interface-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="api-and-interface-specifications">API and Interface Specifications</h2>
+<section id="event-contracts" class="level3">
+<h3 class="anchored" data-anchor-id="event-contracts">Event Contracts</h3>
+<p>Event envelope should include:</p>
+<ul>
+<li>Event ID, event type, version, and timestamp.</li>
+<li>Aggregate/entity identifier.</li>
+<li>Tenant/context metadata.</li>
+<li>Correlation and causation identifiers.</li>
+</ul>
+<p>Event payload should remain compact and stable, providing enough information for consumers to fetch enriched data as required.</p>
+<p>Example event envelope:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"eventId"</span><span class="fu">:</span> <span class="st">"7f3e5f6b-95b8-4f90-9d30-0f54af0b2a17"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"eventType"</span><span class="fu">:</span> <span class="st">"Hub.CustomerUpdated.v1"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"occurredAtUtc"</span><span class="fu">:</span> <span class="st">"2026-04-22T09:15:00Z"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"tenantId"</span><span class="fu">:</span> <span class="st">"tenant-a"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"aggregateType"</span><span class="fu">:</span> <span class="st">"Customer"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"aggregateId"</span><span class="fu">:</span> <span class="st">"C12345"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"correlationId"</span><span class="fu">:</span> <span class="st">"c4f0b3aa-0bde-4e6b-9f0e-8936a4f63f89"</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"causationId"</span><span class="fu">:</span> <span class="st">"9b6f5c5a-5f3a-4511-b2c9-c3c7d1c47ab8"</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"payload"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"changedFields"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"email"</span><span class="ot">,</span> <span class="st">"status"</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"version"</span><span class="fu">:</span> <span class="dv">18</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="graphql-query-surface" class="level3">
+<h3 class="anchored" data-anchor-id="graphql-query-surface">GraphQL Query Surface</h3>
+<p>Design goals:</p>
+<ul>
+<li>Consumer-selected fields to avoid over-fetching.</li>
+<li>Query authorization by role and tenant scope.</li>
+<li>Schema evolution with backward-compatible deprecations.</li>
+<li>Pagination and filtering for high-volume domains.</li>
+</ul>
+<p>Example consumer query:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode graphql code-with-copy"><code class="sourceCode graphql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">query</span> CustomerSyncProjection(<span class="va">$id</span>: <span class="dt">ID</span>!) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    customer(id: <span class="va">$id</span>) {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        id</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        status</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        email</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        updatedAtUtc</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        billingProfile {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            tier</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            isActive</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rest-command-surface" class="level3">
+<h3 class="anchored" data-anchor-id="rest-command-surface">REST Command Surface</h3>
+<p>Design goals:</p>
+<ul>
+<li>Explicit resource and command semantics for create/update/delete operations.</li>
+<li>Standardized error contract and validation response model.</li>
+<li>Idempotency support where retry behavior is expected.</li>
+<li>Contract versioning strategy with deprecation windows.</li>
+</ul>
+<p>Example command request:</p>
+<pre class="http"><code>PATCH /api/customers/C12345
+Authorization: Bearer &lt;token&gt;
+Idempotency-Key: 536f0ef5-b95e-4a2f-8d8b-f4f10d7aa2d6
+Content-Type: application/json
+
+{
+    "status": "Active",
+    "email": "new.email@example.com"
+}</code></pre>
+<p>Standard error payload shape:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"code"</span><span class="fu">:</span> <span class="st">"ValidationFailed"</span><span class="fu">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"message"</span><span class="fu">:</span> <span class="st">"Request contains invalid fields."</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"correlationId"</span><span class="fu">:</span> <span class="st">"c4f0b3aa-0bde-4e6b-9f0e-8936a4f63f89"</span><span class="fu">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"errors"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"field"</span><span class="fu">:</span> <span class="st">"email"</span><span class="fu">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"InvalidFormat"</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="security-and-compliance-controls" class="level2">
+<h2 class="anchored" data-anchor-id="security-and-compliance-controls">Security and Compliance Controls</h2>
+<section id="identity-and-access" class="level3">
+<h3 class="anchored" data-anchor-id="identity-and-access">Identity and Access</h3>
+<ul>
+<li>Modern authentication for all integration clients.</li>
+<li>Role- and scope-based authorization for query and command endpoints.</li>
+<li>Principle of least privilege for service identities.</li>
+</ul>
+</section>
+<section id="data-protection" class="level3">
+<h3 class="anchored" data-anchor-id="data-protection">Data Protection</h3>
+<ul>
+<li>Encryption in transit for all APIs and event transport channels.</li>
+<li>Encryption at rest for persisted operational and projection data.</li>
+<li>Controlled handling of sensitive data in logs and telemetry.</li>
+</ul>
+</section>
+<section id="audit-and-traceability" class="level3">
+<h3 class="anchored" data-anchor-id="audit-and-traceability">Audit and Traceability</h3>
+<ul>
+<li>Immutable audit trail for command operations.</li>
+<li>Event lineage traceability from producer through consumers.</li>
+<li>End-to-end request tracing with correlation IDs.</li>
+</ul>
+</section>
+<section id="compliance-readiness" class="level3">
+<h3 class="anchored" data-anchor-id="compliance-readiness">Compliance Readiness</h3>
+<ul>
+<li>Retention and deletion controls aligned with policy requirements.</li>
+<li>Data minimization in event payloads and API responses.</li>
+<li>Security review gates before production rollout milestones.</li>
+</ul>
+</section>
+</section>
+<section id="implementation-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-sequence">Implementation Sequence</h2>
+<ol type="1">
+<li>Establish cross-cutting foundations (identity, telemetry, correlation, contract governance).</li>
+<li>Introduce event publication for selected low-risk domains.</li>
+<li>Deliver GraphQL read models for consumer pull integration.</li>
+<li>Expose modernized REST command endpoints for controlled write-back.</li>
+<li>Expand domain coverage iteratively with domain-specific cutover criteria.</li>
+<li>Decommission legacy integration pathways as replacement coverage reaches target thresholds.</li>
+</ol>
+<p>Delivery governance at each step should include:</p>
+<ul>
+<li>Architecture sign-off for contract and compatibility implications.</li>
+<li>Security sign-off for identity, authorization, and data handling controls.</li>
+<li>Operations sign-off for monitoring, alerting, and rollback coverage.</li>
+</ul>
+</section>
+<section id="acceptance-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="acceptance-criteria">Acceptance Criteria</h2>
+<p>The implementation is considered complete when all of the following are true:</p>
+<ul>
+<li>Critical domain events are published with required metadata and schema validation.</li>
+<li>Consumer sync projections are demonstrably current within agreed freshness SLO.</li>
+<li>Command API contracts pass functional, security, and backward-compatibility tests.</li>
+<li>Reconciliation jobs report no unresolved critical drift defects.</li>
+<li>Production runbooks, dashboards, and alert routes are validated in drills.</li>
+</ul>
+</section>
+<section id="non-functional-expectations" class="level2">
+<h2 class="anchored" data-anchor-id="non-functional-expectations">Non-Functional Expectations</h2>
+<ul>
+<li>Reliability: graceful degradation and retry-safe integration patterns.</li>
+<li>Performance: bounded latency for event-to-consumer synchronization.</li>
+<li>Scalability: horizontal scale for query and event consumer workloads.</li>
+<li>Supportability: operational dashboards and alerts aligned to SLOs.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

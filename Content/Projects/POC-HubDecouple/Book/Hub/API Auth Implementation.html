@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.8.27">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="author" content="Gary Newport">
-<title>Projects – Zoomalong</title>
+
+
+<title>api-auth-implementation – Zoomalong</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -23,26 +22,29 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-9de9f6925d305bcf5b7eb9351f368d06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8dacdc5d95fea172555cd92aeff4472c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<script src="../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script><script id="quarto-search-options" type="application/json">{
+
+<script src="../../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../../">
+<script src="../../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,13 +71,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
-<body class="nav-fixed quarto-light">
+
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../../../index.html">
     <span class="navbar-title">Zoomalong</span>
     </a>
   </div>
@@ -85,25 +92,25 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-<li class="nav-item">
-    <a class="nav-link" href="../../Content/Proj/index.html"> 
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../../Content/Proj/index.html"> 
 <span class="menu-text">Proj</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../Content/Projects/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../../../Content/Projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Content/Resource/index.html"> 
+    <a class="nav-link" href="../../../../../Content/Resource/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Content/Current/index.html"> 
+    <a class="nav-link" href="../../../../../Content/Current/index.html"> 
 <span class="menu-text">Daily</span></a>
   </li>  
 </ul>
-<ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
     <a class="nav-link" href="mailto:Gary.newport@zoomalong.co.uk"> 
 <span class="menu-text"><iconify-icon inline="" icon="bi:envelope" style="font-size: 1.1em;" aria-label="Icon envelope from bi Iconify.design set." title="E-mail"></iconify-icon></span></a>
   </li>  
@@ -116,71 +123,133 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"><iconify-icon inline="" icon="bi:linkedin" style="font-size: 1.1em;" aria-label="Icon linkedin from bi Iconify.design set." title="LinkedIn"></iconify-icon></span></a>
   </li>  
 </ul>
-</div> <!-- /navcollapse -->
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta column-page">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gary Newport </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
+<section id="api-auth-implementation" class="level1">
+<h1>API Auth Implementation</h1>
+<p>Here is a safe dual-auth rollout you can execute in this repository.</p>
+<p><strong>Implementation Plan</strong></p>
+<ol type="1">
+<li>Add AD token validation in OWIN while keeping NTLM active.</li>
+<li>Update identity extraction to prefer bearer-token claims and fallback to existing Windows identity.</li>
+<li>Add feature flags so you can switch behavior without redeploying code.</li>
+<li>Update SignalR auth path to use the same identity resolver.</li>
+<li>Pilot and cut over, then disable NTLM.</li>
+</ol>
+<p><strong>Files To Change First</strong></p>
+<ol type="1">
+<li><strong>Startup.cs</strong><br>
+Add bearer-token middleware before WebApi middleware.</li>
+<li><strong>AppAuthorizationMessageHandler.cs</strong><br>
+Replace hard dependency on HttpContext Windows identity with a resolver that checks token claims first.</li>
+<li><strong>SignalrAuthorizationAttribute.cs</strong><br>
+Use the same resolver to read identity from SignalR token/cookies.</li>
+<li><strong>Web.config:630</strong> Add new auth flags and Entra settings; later switch auth mode after cutover.</li>
+</ol>
+<p><strong>Config You Should Add</strong><br>
+In appSettings:</p>
+<ol type="1">
+<li>Api.Settings.Auth.Mode = Dual | TokenOnly | WindowsOnly</li>
+<li>Api.Settings.Auth.Entra.TenantId</li>
+<li>Api.Settings.Auth.Entra.Audience</li>
+<li>Api.Settings.Auth.Entra.ValidIssuers</li>
+<li>Api.Settings.Auth.Claims.UsernamePriority = preferred_username;upn;email</li>
+<li>Api.Settings.Auth.EnableWindowsFallback = true initially</li>
+</ol>
+<p><strong>Identity Resolution Logic</strong><br>
+Create one resolver service and use it from both API handler and SignalR:</p>
+<ol type="1">
+<li>If bearer token exists and is valid:
+<ul>
+<li>Read username claim by priority: preferred_username, then upn, then email.</li>
+<li>Optionally map UPN to DOMAINif your PrincipalUserQuery expects that.</li>
+</ul></li>
+<li>Else if Windows principal exists:
+<ul>
+<li>Use existing HttpContext.Current.User.Identity.Name behavior.</li>
+</ul></li>
+<li>Else:
+<ul>
+<li>Return 401/403 as now.</li>
+</ul></li>
+</ol>
+<p>Then keep current PrincipalUserQuery path unchanged so authorization/business rules remain stable.</p>
+<p><strong>Middleware Order (important)</strong><br>
+In Startup:</p>
+<ol type="1">
+<li>Use token auth middleware first.</li>
+<li>Then UseWebApi.</li>
+<li>Keep your existing delegating handlers.<br>
+This ensures claims principal is available before AppAuthorizationMessageHandler runs.</li>
+</ol>
+<p><strong>SignalR Path</strong><br>
+For SignalR:</p>
+<ol type="1">
+<li>Accept access token in query/header (depending on client transport support).</li>
+<li>Resolve identity using same claim priority.</li>
+<li>Keep impersonation query parameter behavior unchanged.</li>
+</ol>
+<p><strong>Rollout Strategy</strong></p>
+<ol type="1">
+<li>Stage 1 (Dual mode):</li>
+</ol>
+<ul>
+<li>Windows auth remains on.</li>
+<li>Bearer accepted.</li>
+<li>Log identity source (Token vs Windows).</li>
+</ul>
+<ol type="1">
+<li>Stage 2 (Pilot users/departments):
+<ul>
+<li>Force selected front-end clients to send bearer tokens.</li>
+<li>Monitor 401/403 and user-mapping misses.</li>
+</ul></li>
+<li>Stage 3 (Token-only):
+<ul>
+<li>Switch Api.Settings.Auth.Mode to TokenOnly.</li>
+<li>Enable anonymous at IIS and disable Windows auth at host level.</li>
+</ul></li>
+<li>Stage 4 (Cleanup):
+<ul>
+<li>Remove NTLM-only branches after 2-4 weeks stable.</li>
+</ul></li>
+</ol>
+<p><strong>Validation Checklist</strong></p>
+<ol type="1">
+<li>Existing desktop domain user opens app and gets in with no login prompt.</li>
+<li>Token user maps to same PrincipalUser as old NTLM path.</li>
+<li>Impersonation header still works.</li>
+<li>Webhooks/system URLs continue to use system account path.</li>
+<li>SignalR hub authorization still succeeds.</li>
+<li>External app and certificate-protected endpoints still pass.</li>
+</ol>
+<p><strong>Risk Controls</strong></p>
+<ol type="1">
+<li>Keep EnableWindowsFallback true until mapping is proven.</li>
+<li>Add audit logs for username source and mapped principal id.</li>
+<li>Add feature flag kill switch to revert to WindowsOnly quickly.</li>
+</ol>
 
 
-</header><div class="cell">
-<style type="text/css">
-#title-block-header .description {
-    display: none;
-}
-</style>
-</div>
-<p><strong>Projects actively working on – short-term efforts with a certain goal in mind.</strong></p>
-<div class="list blog">
-<div class="blog-entry">
-<div class="body">
-<p class="title listing-title">
-<a href="https://newportg.github.io/POC-Frontify">POC-Frontify</a>
-</p>
-</div>
-</div>
-<div class="blog-entry">
-<div class="body">
-<p class="title listing-title">
-<a href="https://newportg.github.io/POC-HubDecouple">POC-HubDecouple</a>
-</p>
-</div>
-</div>
-<div class="blog-entry">
-<div class="body">
-<p class="title listing-title">
-<a href="https://newportg.github.io/POC-LandRegistry">POC-LandRegistry</a>
-</p>
-</div>
-</div>
-</div>
+</section>
 
-
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -253,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/newportg\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -581,7 +650,8 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2018–2026 Gary Newport</span> <span class="faux-block">All content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> Creative Commons CC BY 4.0</a></span></p>
 </div>   
@@ -593,6 +663,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
