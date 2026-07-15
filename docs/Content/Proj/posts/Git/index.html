@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gary Newport">
+<meta name="dcterms.date" content="2026-05-14">
+
+<title>ADO Alternatives – Zoomalong</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-9e15f8fb9e1f2f288bfbe28f6ca11029.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap-aa68fb9c33ba8365830bc81446079ad7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../../../site_libs/quarto-contrib/iconify-2.0.0/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Zoomalong</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../Content/Proj/index.html"> 
+<span class="menu-text">Proj</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../Content/Projects/index.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../Content/Resource/index.html"> 
+<span class="menu-text">Resource</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../Content/Current/index.html"> 
+<span class="menu-text">Daily</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:Gary.newport@zoomalong.co.uk"> 
+<span class="menu-text"><iconify-icon inline="" icon="bi:envelope" style="font-size: 1.1em;" aria-label="Icon envelope from bi Iconify.design set." title="E-mail"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/newportg" rel="me"> 
+<span class="menu-text"><iconify-icon inline="" icon="bi:github" style="font-size: 1.1em;" aria-label="Icon github from bi Iconify.design set." title="GitHub"></iconify-icon></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://uk.linkedin.com/in/garynewport" rel="me"> 
+<span class="menu-text"><iconify-icon inline="" icon="bi:linkedin" style="font-size: 1.1em;" aria-label="Icon linkedin from bi Iconify.design set." title="LinkedIn"></iconify-icon></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ADO Alternatives</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Git</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gary Newport </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 14, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="git" class="level1">
+<h1>Git</h1>
+<p>A requirement has come in to move away from Microsoft ADO and move to a Git repo supplied by a different vendor.</p>
+<section id="ado" class="level2">
+<h2 class="anchored" data-anchor-id="ado">ADO</h2>
+<p>ADO is a Microsoft product that provides version control and collaboration features for software development projects. It allows teams to manage their code, track changes, and collaborate on projects using a centralized repository. ADO offers features such as branching, merging, pull requests, and issue tracking. It also integrates with other Microsoft tools and services, making it a popular choice for teams using the Microsoft ecosystem.</p>
+<p>So any alternative will need to have similar features to ADO, such GIT, Documentation, CI/CD pipelines, and Agile project management tools.</p>
+</section>
+<section id="cloud-hosted-saas-options" class="level2">
+<h2 class="anchored" data-anchor-id="cloud-hosted-saas-options">Cloud-Hosted (SaaS) Options:</h2>
+<ul>
+<li>GitHub - Largest platform, most ecosystem support, strong CI/CD (Actions), Microsoft-owned</li>
+<li>GitLab - Full DevOps platform with built-in CI/CD, very comprehensive feature set</li>
+<li>Bitbucket (Atlassian) - Integrates well with Jira, smaller community than GitHub</li>
+<li>Gitea - Lightweight, can be cloud-hosted by third parties</li>
+<li>Codeberg - Non-profit, privacy-focused Git hosting (uses Gitea)</li>
+</ul>
+</section>
+<section id="self-hosted-options" class="level2">
+<h2 class="anchored" data-anchor-id="self-hosted-options">Self-Hosted Options:</h2>
+<ul>
+<li>Gitea - Lightweight, simple, Go-based</li>
+<li>GitLab Self-Managed - Enterprise-grade but more resource-intensive</li>
+<li>Gogs - Simple, lightweight, fewer features than Gitea</li>
+<li>Forgejo - Community fork of Gitea with more features</li>
+<li>Gitbucket - GitHub-like interface, Java-based</li>
+</ul>
+</section>
+<section id="decentralizedp2p" class="level2">
+<h2 class="anchored" data-anchor-id="decentralizedp2p">Decentralized/P2P:</h2>
+<ul>
+<li>Radicle - Peer-to-peer, blockchain-inspired</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
+<p>For most teams, the choice will come down to GitHub, GitLab, or Bitbucket based on their specific needs, existing tool integrations, and budget. GitHub offers the largest ecosystem and best developer experience, GitLab provides the most comprehensive built-in features, and Bitbucket is ideal for teams already invested in the Atlassian ecosystem (especially Jira). Self-hosted options like Gitea or GitLab Self-Managed can be considered for teams with strict data control requirements, but they require more maintenance overhead.</p>
+<p>Not recommending any On-premis options as they have a requirement of managed services and the overhead of managing the infrastructure is not something they want to take on.</p>
+</section>
+<section id="key-comparison-factors" class="level2">
+<h2 class="anchored" data-anchor-id="key-comparison-factors">Key Comparison Factors:</h2>
+<ul>
+<li>Cost - GitHub free tier vs GitLab community vs self-hosted</li>
+<li>Features - CI/CD integration, issue tracking, documentation</li>
+<li>Scalability - Team size, repository count</li>
+<li>Integration - With existing tools (Slack, Teams, monitoring, etc.)</li>
+<li>Security - Self-hosted vs SaaS compliance needs</li>
+</ul>
+</section>
+<section id="head-to-head-github-vs-gitlab-vs-atlassian-bitbucket" class="level2">
+<h2 class="anchored" data-anchor-id="head-to-head-github-vs-gitlab-vs-atlassian-bitbucket">Head-to-Head: GitHub vs GitLab vs Atlassian (Bitbucket)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>GitHub</th>
+<th>GitLab</th>
+<th>Atlassian Bitbucket</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Hosting</strong></td>
+<td>SaaS only</td>
+<td>SaaS &amp; Self-hosted</td>
+<td>SaaS &amp; Self-hosted</td>
+</tr>
+<tr class="even">
+<td><strong>Cost (Small Team)</strong></td>
+<td>Free-£182/mo</td>
+<td>Free-£78/mo</td>
+<td>Free-£12/mo</td>
+</tr>
+<tr class="odd">
+<td><strong>Git Repository</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>CI/CD (included)</strong></td>
+<td>✅ Actions</td>
+<td>✅ Pipelines</td>
+<td>✅ Pipelines</td>
+</tr>
+<tr class="odd">
+<td><strong>Issue Tracking</strong></td>
+<td>✅ Issues</td>
+<td>✅ Issues</td>
+<td>✅ Issues</td>
+</tr>
+<tr class="even">
+<td><strong>Project Management</strong></td>
+<td>✅ Projects</td>
+<td>✅ Epics/Roadmaps</td>
+<td>✅ (via Jira link)</td>
+</tr>
+<tr class="odd">
+<td><strong>Wiki/Documentation</strong></td>
+<td>✅ Wiki</td>
+<td>✅ Wiki</td>
+<td>✅ Wiki</td>
+</tr>
+<tr class="even">
+<td><strong>Pull Request Reviews</strong></td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+</tr>
+<tr class="odd">
+<td><strong>Branch Protection</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Code Search</strong></td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><strong>Advanced Analytics</strong></td>
+<td>⚠️ Limited</td>
+<td>✅ Insights/Analytics</td>
+<td>✅ (via Jira)</td>
+</tr>
+<tr class="even">
+<td><strong>Security Scanning</strong></td>
+<td>✅ (Dependabot)</td>
+<td>✅ (SAST/DAST)</td>
+<td>✅ (Jira integration)</td>
+</tr>
+<tr class="odd">
+<td><strong>SAML/SSO</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Container Registry</strong></td>
+<td>✅ GitHub Packages</td>
+<td>✅ Registry</td>
+<td>✅ Docker Hub link</td>
+</tr>
+<tr class="odd">
+<td><strong>Deployment Integration</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Jira Integration</strong></td>
+<td>⚠️ Limited</td>
+<td>✅ Native</td>
+<td>✅ Native (best)</td>
+</tr>
+<tr class="odd">
+<td><strong>Enterprise Support</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Community &amp; Ecosystem</strong></td>
+<td>🥇 Very Large</td>
+<td>🥈 Large</td>
+<td>🥉 Medium</td>
+</tr>
+<tr class="odd">
+<td><strong>Learning Curve</strong></td>
+<td>Low</td>
+<td>Low-Medium</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="winner-by-category" class="level2">
+<h2 class="anchored" data-anchor-id="winner-by-category">Winner by Category</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 30%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Winner</th>
+<th>Runner-up</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Best Overall</strong></td>
+<td><strong>GitHub</strong></td>
+<td>GitLab</td>
+<td>Largest ecosystem, best developer experience</td>
+</tr>
+<tr class="even">
+<td><strong>Best for DevOps</strong></td>
+<td><strong>GitLab</strong></td>
+<td>GitHub</td>
+<td>Most complete platform, built-in deployment</td>
+</tr>
+<tr class="odd">
+<td><strong>Best for Jira Users</strong></td>
+<td><strong>Atlassian</strong></td>
+<td>GitLab</td>
+<td>Native Jira integration is seamless</td>
+</tr>
+<tr class="even">
+<td><strong>Best Enterprise</strong></td>
+<td><strong>GitLab</strong></td>
+<td>GitHub</td>
+<td>Superior analytics, SAST/DAST included</td>
+</tr>
+<tr class="odd">
+<td><strong>Best Value</strong></td>
+<td><strong>Atlassian</strong></td>
+<td>GitLab</td>
+<td>Lowest cost, integrates with Jira investment</td>
+</tr>
+<tr class="even">
+<td><strong>Best for ADO Migration</strong></td>
+<td><strong>GitHub</strong></td>
+<td>GitLab</td>
+<td>Closest user experience to ADO</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="missing-features-best-of-breed-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="missing-features-best-of-breed-alternatives">Missing Features &amp; Best-of-Breed Alternatives</h2>
+<section id="advanced-project-management-roadmapping" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-project-management-roadmapping"><strong>1. Advanced Project Management / Roadmapping</strong></h3>
+<ul>
+<li><strong>Gap:</strong> None of the three excel at enterprise roadmapping beyond GitLab Epics</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Jira</strong> (Atlassian) - Continues to be superior for complex project management</li>
+<li><strong>Recommendation:</strong> Use Jira + Bitbucket for project/product management workflows</li>
+</ul>
+</section>
+<section id="security-compliance-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="security-compliance-dashboard"><strong>2. Security &amp; Compliance Dashboard</strong></h3>
+<ul>
+<li><strong>Gap:</strong> GitHub has basic scanning; GitLab has better coverage; Bitbucket relies on Jira</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Snyk</strong> or <strong>Dependabot</strong> (GitHub only) - More comprehensive vulnerability management</li>
+<li><strong>Recommendation:</strong> Pair any platform with Snyk for advanced security scanning</li>
+</ul>
+</section>
+<section id="detailed-devops-insights-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-devops-insights-metrics"><strong>3. Detailed DevOps Insights &amp; Metrics</strong></h3>
+<ul>
+<li><strong>Gap:</strong> GitHub limited; GitLab good; Bitbucket minimal</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Datadog</strong> or <strong>New Relic</strong> - For comprehensive deployment metrics and monitoring</li>
+<li><strong>Recommendation:</strong> Integrate monitoring tool for production deployment insights</li>
+</ul>
+</section>
+<section id="agile-work-planning-true-kanbanscrum" class="level3">
+<h3 class="anchored" data-anchor-id="agile-work-planning-true-kanbanscrum"><strong>4. Agile Work Planning (True Kanban/Scrum)</strong></h3>
+<ul>
+<li><strong>Gap:</strong> All three have basic boards; none match Jira’s depth</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Jira</strong></li>
+<li><strong>Recommendation:</strong> Use Jira alongside your chosen Git platform for work planning</li>
+</ul>
+</section>
+<section id="knowledge-management-wiki" class="level3">
+<h3 class="anchored" data-anchor-id="knowledge-management-wiki"><strong>5. Knowledge Management / Wiki</strong></h3>
+<ul>
+<li><strong>Gap:</strong> All three have wikis but lack advanced knowledge base features</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Confluence</strong> (Atlassian) or <strong>Notion</strong></li>
+<li><strong>Recommendation:</strong> Use Confluence + Bitbucket for best-in-class documentation ecosystem (Atlassian Stack)</li>
+</ul>
+</section>
+</section>
+<section id="recommended-stack-by-organization-type" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-stack-by-organization-type">Recommended Stack by Organization Type</h2>
+<section id="modern-cloud-native-team" class="level3">
+<h3 class="anchored" data-anchor-id="modern-cloud-native-team"><strong>Modern Cloud-Native Team:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> GitHub</li>
+<li><strong>Issue Tracking:</strong> GitHub Issues</li>
+<li><strong>Project Management:</strong> GitHub Projects</li>
+<li><strong>Supplementary Tools:</strong> Snyk (security), Vercel/Netlify (deployment)</li>
+</ul>
+</section>
+<section id="enterprise-using-jira" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-using-jira"><strong>Enterprise using Jira:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> Atlassian Bitbucket</li>
+<li><strong>Issue Tracking:</strong> Jira</li>
+<li><strong>Project Management:</strong> Jira (roadmaps, epics)</li>
+<li><strong>Knowledge Base:</strong> Confluence</li>
+<li><strong>Benefits:</strong> Unified Atlassian ecosystem, single sign-on, deep integrations</li>
+</ul>
+</section>
+<section id="enterprise-devops-heavy" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-devops-heavy"><strong>Enterprise DevOps-Heavy:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> GitLab (Self-Managed for full control)</li>
+<li><strong>Issue Tracking:</strong> GitLab Issues</li>
+<li><strong>Project Management:</strong> GitLab Epics/Boards</li>
+<li><strong>Monitoring:</strong> Datadog or New Relic</li>
+<li><strong>Benefits:</strong> All-in-one platform, no tool switching</li>
+</ul>
+</section>
+</section>
+<section id="migration-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="migration-considerations">Migration Considerations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Repository Data</strong></td>
+<td>Git repos migrate easily (git clone/push); history fully preserved</td>
+</tr>
+<tr class="even">
+<td><strong>CI/CD Pipelines</strong></td>
+<td>Need rewriting - ADO YAML → GitHub Actions or GitLab CI/CD</td>
+</tr>
+<tr class="odd">
+<td><strong>Wiki/Docs</strong></td>
+<td>Manual migration recommended to ensure formatting</td>
+</tr>
+<tr class="even">
+<td><strong>Issues/Work Items</strong></td>
+<td>Most vendors have migration tools; consider archiving old ADO items</td>
+</tr>
+<tr class="odd">
+<td><strong>Permissions</strong></td>
+<td>Map ADO groups to new vendor’s team/group model</td>
+</tr>
+<tr class="even">
+<td><strong>Integrations</strong></td>
+<td>Audit existing ADO integrations and reconfigure for new platform</td>
+</tr>
+<tr class="odd">
+<td><strong>Timeline</strong></td>
+<td>Plan 2-4 weeks for comprehensive migration</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reliability-and-security-risk-last-2-years" class="level2">
+<h2 class="anchored" data-anchor-id="reliability-and-security-risk-last-2-years">Reliability and Security Risk (Last 2 Years)</h2>
+<p>The table below summarizes observed operational and security risk signals from public status and security channels.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Outage Pattern</th>
+<th>Security Response Pattern</th>
+<th>User Sentiment Risk</th>
+<th>Overall Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub</strong></td>
+<td>Periodic high-visibility incidents (for example search and Actions delays)</td>
+<td>Strong controls and trust posture; incident comms are good, but SaaS security incident detail is less centralized</td>
+<td>Medium during broad Actions/search incidents</td>
+<td><strong>Amber</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GitLab</strong></td>
+<td>Frequent CI/CD and Git operation degradations, usually resolved quickly</td>
+<td>Very transparent security patch cadence, CVE-level detail, clear upgrade guidance</td>
+<td>Medium due to recurrence of pipeline delays</td>
+<td><strong>Amber</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Bitbucket Cloud</strong></td>
+<td>Mix of Bitbucket-specific and Atlassian-wide platform incidents</td>
+<td>Regular security bulletin process; cloud fixes are often less detailed publicly</td>
+<td>Medium to High when Atlassian account/login incidents impact multiple products</td>
+<td><strong>Amber</strong></td>
+</tr>
+</tbody>
+</table>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<ul>
+<li><strong>No clear evidence of long-unresolved major SaaS incidents</strong> was identified across these three options in the reviewed period.</li>
+<li>The practical difference is mostly in <strong>incident frequency, blast radius, and transparency style</strong>.</li>
+</ul>
+</section>
+<section id="practical-selection-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="practical-selection-guidance">Practical Selection Guidance</h3>
+<ul>
+<li>Choose <strong>GitHub</strong> if you want the broadest ecosystem and strong developer experience.</li>
+<li>Choose <strong>GitLab</strong> if you value detailed public security and patch transparency with deep built-in DevOps capabilities.</li>
+<li>Choose <strong>Bitbucket Cloud</strong> if Jira/Atlassian integration is your main priority and you accept some dependency on Atlassian-wide platform events.</li>
+</ul>
+</section>
+</section>
+<section id="weighted-decision-model" class="level2">
+<h2 class="anchored" data-anchor-id="weighted-decision-model">Weighted Decision Model</h2>
+<p>The weighted model below provides a single comparative score using the following weighting:</p>
+<ul>
+<li>Reliability: <strong>30%</strong></li>
+<li>Security posture and response: <strong>30%</strong></li>
+<li>Integration and ecosystem fit: <strong>25%</strong></li>
+<li>Cost: <strong>15%</strong></li>
+</ul>
+<p>Scoring scale: <strong>1 (low) to 5 (high)</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Reliability (30%)</th>
+<th>Security (30%)</th>
+<th>Integration (25%)</th>
+<th>Cost (15%)</th>
+<th>Weighted Score (/5)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub</strong></td>
+<td>4.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>3.0</td>
+<td><strong>4.10</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GitLab</strong></td>
+<td>3.5</td>
+<td>4.5</td>
+<td>4.0</td>
+<td>4.0</td>
+<td><strong>3.98</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Bitbucket Cloud</strong></td>
+<td>3.5</td>
+<td>3.8</td>
+<td>4.5</td>
+<td>4.5</td>
+<td><strong>4.02</strong></td>
+</tr>
+</tbody>
+</table>
+<section id="result" class="level3">
+<h3 class="anchored" data-anchor-id="result">Result</h3>
+<p>Using this weighting, <strong>GitHub</strong> is the highest-scoring option overall.</p>
+</section>
+<section id="recommended-choice-by-context" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-choice-by-context">Recommended Choice by Context</h3>
+<ul>
+<li>If you want the strongest all-round default: <strong>GitHub</strong>.</li>
+<li>If your priority is security transparency and built-in DevSecOps depth: <strong>GitLab</strong>.</li>
+<li>If your organization is already Jira/Confluence-centric and cost-sensitive: <strong>Bitbucket Cloud</strong>.</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2018–2026 Gary Newport</span> <span class="faux-block">All content licensed under<br><a href="https://creativecommons.org/licenses/by/4.0/"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by" aria-label="creative-commons-by"></i> Creative Commons CC BY 4.0</a></span></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p><span class="faux-block">Made with <i class="fa-brands fa-r-project" aria-label="r-project"></i> and <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"><a href="https://github.com/newportg/quarto">View the source at <i class="fa-brands fa-github" aria-label="github"></i> GitHub</a></span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

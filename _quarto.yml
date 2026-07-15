@@ -11,6 +11,10 @@ project:
   #   pgp:
   #     key: "https://zoomalong.co.uk/pgp-key.txt"
   #     fingerprint: "A2C1 3E8D 0F3B 1B8D 6D2E  9DDF 2C0D 7E1D 0F4B A3C6" # GPG key fingerprint for Gary Newport    
+  render:
+    - "*.qmd"
+    # - "./**/*.qmd"
+    - "!Content/Projects/POC-LandRegistry/"  # Ignores this folder during root render
 
 website:
   title: "Zoomalong"
@@ -18,9 +22,11 @@ website:
     left:
       # - href: index.qmd
       #   text: Home
+      - text: "Proj"
+        href: Content/Proj/index.qmd
       - text: "Projects"
         href: Content/Projects/index.qmd
-      - text: "Resource"
+      - text: "Blog"
         href: Content/Resource/index.qmd
       - text: "Daily"
         href: Content/Current/index.qmd      

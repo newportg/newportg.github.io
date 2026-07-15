@@ -1,6 +1,6 @@
 ---
 foam_template:
-  filepath: "/content/Journal/posts/${FOAM_TITLE}/index.qmd"
+  filepath: "/content/Resource/posts/${FOAM_TITLE}/index.qmd"
   description: ${FOAM_TITLE}
 layout: post
 title: ${FOAM_TITLE}

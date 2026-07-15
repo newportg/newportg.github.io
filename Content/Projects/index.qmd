@@ -2,13 +2,6 @@
 title: "Projects"
 author: "Gary Newport"
 description: ""
-id: posts
-listing:
-  - id: posts
-    contents: "posts/*/index.qmd"
-    sort: "date desc"
-    template: ../../html/Journal/listing.ejs
-    categories: false
 page-layout: full
 
 toc-location: right
@@ -27,6 +20,31 @@ freeze: false
 
 **Projects actively working on – short-term efforts with a certain goal in mind.**
 
-:::{#posts}
-:::
+```{r, echo=FALSE, results='asis'}
+project_dirs <- list.dirs(".", full.names = FALSE, recursive = FALSE)
+project_dirs <- project_dirs[!grepl("^(\\.|_)", project_dirs)]
+project_dirs <- project_dirs[tolower(project_dirs) != "index_files"]
+project_dirs <- sort(project_dirs)
+
+cat('<div class="list blog">\n')
+
+if (length(project_dirs) == 0) {
+  cat('<div class="blog-entry">\n')
+  cat('<div class="body">\n')
+  cat('<p class="title listing-title">No projects found.</p>\n')
+  cat('</div>\n')
+  cat('</div>\n')
+} else {
+  for (project_name in project_dirs) {
+    project_url <- paste0("https://newportg.github.io/", project_name)
+    cat('<div class="blog-entry">\n')
+    cat('<div class="body">\n')
+    cat(sprintf('<p class="title listing-title"><a href="%s">%s</a></p>\n', project_url, project_name))
+    cat('</div>\n')
+    cat('</div>\n')
+  }
+}
+
+cat('</div>\n')
+```
 
