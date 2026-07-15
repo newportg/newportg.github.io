@@ -1,0 +1,3 @@
+[submodule "Content/Projects/POC-LandRegistry"]
+	path = Content/Projects/POC-LandRegistry
+	url = https://github.com/newportg/POC-LandRegistry
