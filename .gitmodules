@@ -4,3 +4,6 @@
 [submodule "Content/Projects/POC-Frontify"]
 	path = Content/Projects/POC-Frontify
 	url = https://github.com/newportg/POC-Frontify.git
+[submodule "Content/Projects/POC-HubDecouple"]
+	path = Content/Projects/POC-HubDecouple
+	url = https://github.com/newportg/POC-HubDecouple.git
