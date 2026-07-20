@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-10-16">
+<meta name="dcterms.date" content="2025-11-24">
 
-<title>API First – Zoomalong</title>
+<title>Calendar Template – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -73,7 +75,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-articles .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-format','listing-filters','listing-_quarto-vars','listing-language','listing-layout','listing-title','listing-categories','listing-author','listing-date','listing-output','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-foam_template','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-filters","listing-_quarto-vars","listing-language","listing-layout","listing-title","listing-categories","listing-author","listing-date","listing-output","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-foam_template","listing-image"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-articles'] = new List('listing-articles', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -128,32 +188,24 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">API First</h1>
+<h1 class="title">Calendar Template</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">C#</div>
-    <div class="quarto-category">Azure Functions</div>
-    <div class="quarto-category">API First</div>
-    <div class="quarto-category">TypeSpec</div>
-    <div class="quarto-category">AutoRest</div>
-    <div class="quarto-category">Quarto</div>
-    <div class="quarto-category">LUA</div>
-    <div class="quarto-category">PowerShell</div>
+    <div class="quarto-category">Wiki</div>
   </div>
   </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -165,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2025</p>
+      <p class="date">November 24, 2025</p>
     </div>
   </div>
   
@@ -177,93 +229,562 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="./APIFirst-Process.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption"><strong>API First Process</strong></figcaption>
-</figure>
+<style>
+
+.outer {
+  width: 100%; 
+  display: table;
+}
+
+.row {
+  display: table-row
+}
+
+.left{
+  width: 600px; 
+  display: table-cell; 
+  background: yellow;
+}
+
+.right{
+  display: table-cell; 
+  background: deepskyblue;
+}
+</style>
+<div id="listing-articles" class="quarto-listing quarto-listing-container-custom">
+
+<script src="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.js" integrity="sha384-F3Wc9EgweCL3C58eDn9902kdEH6bTDL9iW2JgwQxJYUIeudwhm4Wu9JhTkKJUtIJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.5/source/jsCalendar.min.css" integrity="sha384-CTBW6RKuDwU/TWFl2qLavDqLuZtBzcGxBXY8WvQ0lShXglO/DsUvGkXza+6QTxs0" crossorigin="anonymous">
+
+    <div id="calendar"></div>
+    <div id="data-container" data-config="{&quot;events&quot;:[{&quot;date&quot;:&quot;11-16-2025&quot;,&quot;month&quot;:10,&quot;day&quot;:16,&quot;name&quot;:&quot;API First&quot;,&quot;link&quot;:&quot;/Content\\Resource\\posts\\CalendarTemplate\\articles\\APIFirst\\index.qmd&quot;},{&quot;date&quot;:&quot;11-14-2025&quot;,&quot;month&quot;:10,&quot;day&quot;:14,&quot;name&quot;:&quot;Azure Application Hosting&quot;,&quot;link&quot;:&quot;/Content\\Resource\\posts\\CalendarTemplate\\articles\\AzureApplicationHosting\\index.qmd&quot;}]}"></div>
+
+    <b>Day  : </b><input id="my-input-a"><br>
+    <b>Link : </b><a id="anchor">link</a><br>  
+
+    <div id="calendar1"></div>
+    <div id="calendar2"></div>
+
+    <pre id="calclick">    <pre id="calmatch">    <div id="post"></div>
+
+<style>
+:root {
+  --hue: 220;
+  --font-family: 'Work Sans', sans-serif;
+  --text-color: hsl(var(--hue), 100%, 24%);
+  --border-color: hsl(var(--hue), 40%, 30%);
+  --border: 2px solid var(--border-color);
+  --weekday-label-color: hsl(var(--hue), 30%, 44%);
+  --weekend-fill-color: hsl(var(--hue), 50%, 85%);
+  --weekend-text-color: var(--text-color);
+  --title-color: hsla(var(--hue), 30%, 50%, 0.5);
+  --month-label-color: hsl(var(--hue), 30%, 64%);
+  --today-bg-color: hsl(var(--hue), 30%, 40%);
+  --today-text-color: white;
+  --blog-bg-color: red;
+  --blog-text-color: white;
+  --event-bg-color: blue;
+  --event-text-color: white;         
+}
+
+/* html {
+ min-height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  background: hsl(var(--hue), 30%, 20%);
+} */
+
+.container {
+  margin: 0 10% 5em 11%;
+}
+
+.calendartitle {
+  font-size: 12vw;
+  color: var(--title-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  margin-top: -0.43em; 
+  position: relative;
+  top: 0.43em;
+  left: 10vw;
+  z-index: -1;
+}
+
+.calendar2 {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.cell {
+  position: relative;
+  padding: 0.55vw 0;
+  width: 1%;
+  border: var(--border);
+  text-align: center;
+  font-size: 1vw;
+}
+
+.cell.day {
+  background-color: white;
+}
+
+.cell.day.crossed::before {
+  content: '✗';
+  position: absolute;
+  font-size: 3.5em;
+  top: -0.3em;
+  left: 0.02em;
+  opacity: 0.7;
+  z-index: 10;
+}
+
+.cell:empty,
+.cell.header {
+  border: 0;
+}
+
+.cell.weekend {
+  background-color: var(--weekend-fill-color);
+  color: var(--weekend-text-color);
+}
+
+.cell.header {
+  font-weight: 600;
+  color: var(--weekday-label-color);
+}
+
+.month {
+  position: absolute;
+  right: 3em;
+  font-weight: 600;
+  color: var(--month-label-color);
+}
+
+.cell.today {
+  background-color: var(--today-bg-color);
+  color: var(--today-text-color);
+}
+
+.cell.blog {
+  background-color: var(--blog-bg-color);
+  color: var(--blog-text-color);
+}
+
+.cell.event {
+    background-color: var(--event-bg-color);
+    color: var(--event-text-color);
+}
+/*
+@media not print {
+  .cell.day {
+    box-shadow: inset -0.1em -0.1em 13px hsla(0,0%,0%,0.1);
+  }
+}
+*/
+
+</style>
+<script>
+    async function loadSpecificHtml( link) {
+        try {
+            const response = await fetch(link);
+            if (!response.ok) {
+                inputA.value = "eek";
+                throw new Error('Network response was not ok');
+            }
+            const htmlText = await response.text();
+
+            // 2. Parse the HTML string into a DOM object
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+
+            // 3. Select the specific element using querySelector
+            const specificElement = doc.querySelector('#quarto-document-content');
+
+            // 4. Insert the content into the target div in the main document
+            if (specificElement) {
+                document.getElementById('post').innerHTML = specificElement.innerHTML;
+            } else {
+                console.error('Specific element not found in the fetched HTML.');
+            }
+        } catch (error) {
+            console.error('Error fetching or processing HTML:', error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById("data-container");
+        const jsonString = container.getAttribute("data-config");
+        const data = JSON.parse(jsonString);
+        const calendarElement = document.getElementById("calendar");
+        const calendar = new jsCalendar(calendarElement);
+
+        data.events.forEach( item => {
+            var d = new Date(item.date);
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1; 
+            var day = d.getDate();     
+
+            // hightlight event date
+            calendar.select(day+"/"+month+"/"+year);
+
+            var inputA = document.getElementById("my-input-a");
+            var anchor = document.getElementById("anchor");
+
+            // Add events
+            calendar.onDateClick(function(event, date){
+                const container = document.getElementById("data-container");
+                const jsonString = container.getAttribute("data-config");
+                const data = JSON.parse(jsonString);       
+                
+                data.events.forEach( event => {
+                    var d = new Date(event.date);
+
+                    if( d.getTime() === date.getTime()) {
+                        inputA.value = date.toString();
+
+                        var link = event.link.replace("qmd", "html");
+                        anchor.href = link;
+
+                        // var post = document.getElementById("post");
+                        // post.innerHTML =  "<object type=\"text/html\" data=\""+link+"\"></object>";
+
+                        inputA.value = "<object type=\"text/html\" data=\""+link+"\"></object>";
+
+                        loadSpecificHtml(link);
+                    }
+                })
+            });
+        });
+
+        // Refresh layout
+        calendar.refresh();
+    }); 
+
+// ---------------------------------
+
+    const time = {
+        constants: {
+            days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+    }
+
+    // create data structure
+    const thisYear = (new Date()).getFullYear();
+    const year = [];
+    var maxDays = 0;
+
+    const container = document.getElementById("data-container");
+    const jsonString = container.getAttribute("data-config");
+    const data = JSON.parse(jsonString);
+    const events = [
+        { month: 0, day: 1, name: "New Year's Day", link: "https://www.timeanddate.com/holidays/new-year-day" },
+        { month: 4, day: 27, name: "Memorial Day", link: "https://www.memorialday.org" },
+        { month: 6, day: 4, name: "Independence Day", link: "https://www.independence.com" },
+        { month: 11, day: 25, name: "Christmas Day", link: "https://www.xmasclock.com" },
+        { month: 11, day: 25, name: "Christmas Day2", link: "https://www.xmasclock.com" }
+    ];
+    data.events.forEach( item => {
+        var event = { "date": item.date, "month": item.month, "day": item.day, "name": item.name, "link": item.link };
+        events.push(event);        
+    });
+
+    time.constants.months.forEach((month, i) => {
+        const firstDate = new Date(thisYear, i, 1);
+        const lastDate = new Date(thisYear, i + 1, 0);
+        const totalDays = lastDate.getDate();
+        const weekends = [];
+        const offset = firstDate.getDay() - 1;
+        for (let date = 1; date <= totalDays; date++) {
+            if ((date + offset) % 7 === 0 || (date + offset) % 7 === 6) {
+                weekends.push(date);
+            }
+        }
+        const monthEvents = events.filter(event => event.month === i);
+
+        year.push({
+            name: time.constants.months[i],
+            number: i,
+            firstDay: firstDate.getDay(),
+            totalDays: totalDays,
+            weekends: weekends,
+            events: monthEvents
+        });
+
+        if( totalDays > maxDays) {
+            maxDays = totalDays;
+        } 
+    });
+
+    function isToday(year, month, day) {
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const currentDayAsDate = new Date( year, month, day);
+        if (currentDayAsDate.getTime() == today.getTime()) {
+            return true;
+        }
+        return false;
+    }
+
+    function isWeekend(month, day) {
+        if ( month.weekends.includes(day)) {
+            return true;
+        }
+        return false;
+    }
+
+    function createDayHeadings(maxDays) {
+        // print days
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
+
+        const noOfDays =  time.constants.days.length -1;
+
+        for( let i = 1; i < maxDays+noOfDays; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(time.constants.days[i % 7]));                
+            row.appendChild(cell);
+        }                
+        return row;
+    }
+
+    function createWeekNoHeading(maxWeeks) {
+        const row = document.createElement('tr');
+        row.appendChild(document.createElement('th'));
+
+        for( let i = 1; i <= maxWeeks; i++) {
+            const cell = document.createElement('th');
+            cell.className = 'cell header';
+            cell.appendChild(document.createTextNode(i));                
+            row.appendChild(cell);
+        }                
+
+        return row;
+    }
+
+    function createMonthRow(month) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+        cell.appendChild(document.createTextNode(month.name));
+        row.appendChild(cell);
+
+        // Add Dates
+        const offset = month.firstDay-1;
+
+        for( let i = 1; i <= month.totalDays+offset ; i++) {
+            const cell = document.createElement('td');
+
+            if( i >= month.firstDay) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(i-offset));
+            }
+
+            if( isToday(thisYear, month.number, i-offset)) {
+                cell.classList.add('today');
+            }
+
+            if( isWeekend(month, i-offset)) {
+                cell.classList.add('weekend');
+            }
+
+            // Add Events
+            const dayEvents =  month.events.filter(event => event.day === i-offset) ;
+            if( dayEvents.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                dayEvents.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+            }
+
+            row.appendChild(cell);
+        }
+        return row;
+    }
+
+    function createDayRow(day) {
+        // Add month
+        const row = document.createElement('tr');
+        const cell = document.createElement('th');
+        cell.className = 'cell header';
+
+        cell.appendChild(document.createTextNode(day));               
+        row.appendChild(cell);
+        
+        return row;
+    }
+
+    function monthDays( month) {
+        return new Date( new Date().getFullYear(), month+1, 0)
+    }
+    // =================================
+
+    const calDiv = document.createElement('table');
+    calDiv.className = 'calendar';
+
+    // Day Headings
+    calDiv.appendChild(createDayHeadings(maxDays));
+
+    // Print Month Days
+    year.forEach( month => {
+        calDiv.appendChild(createMonthRow(month));
+    })
+
+    document.getElementById('calendar1').appendChild(calDiv); 
+
+    // =================================
+
+    const calDiv2 = document.createElement('table');
+    calDiv2.className = 'calendar';
+
+    // X = week
+    // Y = day 
+
+    // Week Heading
+    calDiv2.appendChild(createWeekNoHeading(53));
+
+    let days = [[], [], [], [], [], [], []];
+    year.forEach( month => {
+        for( let i = 1;  i <= month.totalDays ; i++) {
+
+            const date = new Date( thisYear, month.number, i);
+            const dayOfWeek = date.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+
+            if( dayOfWeek > 0 && i == 1 && month.number == 0) {
+                for( let j = 0; j <= dayOfWeek; j++) {
+                    if( j == dayOfWeek)
+                        days[j].push({number:1, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === 1)});
+                    else 
+                        days[j].push({number:0, dayofweek: 0, month: 0, events: []});
+                }
+            }
+            else {
+                days[dayOfWeek].push({number: i, dayofweek: dayOfWeek, month: date.getMonth(), events: month.events.filter(event => event.day === i)});
+            }
+        }
+    });
+
+    var today = new Date();
+
+    for( let idx = 0; idx < days.length; idx++) {
+
+        // Day row
+        const row = createDayRow( time.constants.days[idx % 7]);
+
+        // day values
+        var lastno = 0;
+        days[idx].forEach( day => {
+            const cell = document.createElement('td');
+
+            if( day.number != 0) {
+                cell.className = 'cell';
+                cell.appendChild(document.createTextNode(day.number));
+            }
+            
+            // Set Todays date.
+            if( day.number == today.getDate() && day.month == today.getMonth())
+            {
+                cell.classList.add('today');
+                cell.title = "Today";
+            }
+
+            // Set month Background
+            if( day.month % 2 == 0)
+            {
+                cell.classList.add('weekend');
+            }
+
+            if( day.events.length > 0) {
+                cell.classList.add('event');
+                var tooltip = '';
+                day.events.forEach( event => {
+                    tooltip += event.name + '\n';
+                });
+                cell.title = tooltip;
+
+                cell.addEventListener("click", function (event) {
+                    const inputA = document.getElementById("my-input-a");
+                    const anchor = document.getElementById("anchor");
+
+                    inputA.value = new Date(thisYear, month, day).toString();
+
+                    var link = event.link.replace("qmd", "html");
+                    anchor.href = link;
+
+                    loadSpecificHtml(link);
+
+                    alert( tooltip);
+                });
+            }
+
+            row.appendChild(cell);
+        });
+        calDiv2.appendChild(row);
+    };
+
+    document.getElementById('calendar2').appendChild(calDiv2);
+
+        const inputA = document.getElementById("my-input-a");
+        const anchor = document.getElementById("anchor");
+
+        // Add events
+        calDiv2.addEventListener("click", function(event){  
+            const target = event.target;
+
+            if( target.classList.contains('event')) {
+                const day = parseInt( target.textContent);
+                const monthCells = target.parentElement.children;
+                let month = -1;
+
+                // find month
+                for( let i = 0; i < monthCells.length; i++) {
+                    const cell = monthCells[i];
+                    if( cell.classList.contains('header')) {
+                        const monthName = cell.textContent;
+                        month = time.constants.months.indexOf(monthName);
+                        break;
+                    }
+                }
+
+                // find event
+                data.events.forEach( event => {
+                    if( event.month == month && event.day == day) {
+                        inputA.value = new Date(thisYear, month, day).toString();
+
+                        var link = event.link.replace("qmd", "html");
+                        anchor.href = link;
+
+                        loadSpecificHtml(link);
+                    }
+                });
+            }
+        });
+//    });
+</script>        
+
+<div class="listing-no-matching d-none">No matching items</div>
+</pre></pre></div>
+<div class="outer">
+<pre><code>&lt;div class="row"&gt;
+    &lt;div class="left"&gt; Left &lt;/div&gt;
+    &lt;div class="right"&gt; Right &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>API First is an approach to software development that prioritizes the design and implementation of APIs before building the underlying application or service. This approach emphasizes the importance of APIs as the primary means of communication between different components of a system, as well as between different systems.</p>
-<p>By designing APIs first, developers can ensure that the APIs are well-defined, consistent, and easy to use. This can lead to better collaboration between teams, faster development cycles, and more efficient integration with third-party services.</p>
-<p>The approach detailed here takes the responsibility for creating the API definition away from the developer and places it in the hands of a specialist tool. This ensures that the API definition is created in a consistent manner and adheres to best practices. The API definition is then used to generate the client and server code, which can be integrated into the application or service. This approach can help to reduce errors and inconsistencies in the code, as well as improve the overall quality of the API. The API First approach can be particularly beneficial in complex systems where multiple teams are working on different components. By defining the APIs first, teams can work independently while still ensuring that their components will integrate seamlessly with the rest of the system. The API First approach can also help to improve the overall user experience of the application or service. By designing APIs that are easy to use and understand, developers can create applications that are more intuitive and user-friendly. Overall, the API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs.</p>
-</section>
-<section id="tools" class="level2">
-<h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>The tools used in this process are:</p>
-<ul>
-<li><a href="https://typespec.io/">TypeSpec</a> - A tool for designing and generating APIs</li>
-<li><a href="https://github.com/Azure/autorest">AutoRest</a> - A tool for generating client and server code from API definitions</li>
-<li><a href="https://quarto.org/">Quarto</a> - A tool for creating and publishing documents</li>
-<li><a href="https://www.lua.org/">LUA</a> - A lightweight scripting language used for automation</li>
-<li><a href="https://learn.microsoft.com/en-us/powershell/">PowerShell</a> - A task automation and configuration management framework</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/">C#</a> - A programming language used for building applications and services</li>
-<li><a href="https://learn.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a> - A serverless compute service used for building and deploying applications and services</li>
-</ul>
-</section>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>The process for creating an API using the API First approach is as follows:</p>
-<ol type="1">
-<li><strong>Design the API</strong> - Use TypeSpec to design the API, including the endpoints, request and response formats, and any authentication or authorization requirements.</li>
-<li><strong>Generate the API definition</strong> - Use TypeSpec to generate the API definition in a standard format, such as OpenAPI or Swagger.</li>
-<li><strong>Generate the client and server code</strong> - Use AutoRest to generate the client and server code from the API definition.</li>
-<li><strong>Integrate the code</strong> - Integrate the generated code into the application or service.</li>
-<li><strong>Test the API</strong> - Test the API to ensure that it works as expected and meets the requirements.<br>
-</li>
-<li><strong>Document the API</strong> - Use Quarto to create documentation for the API, including usage examples and any relevant information for developers.</li>
-<li><strong>Automate the process</strong> - Use LUA and PowerShell to automate the process of generating the API definition, client and server code, and documentation.</li>
-</ol>
-</section>
-<section id="benefits" class="level2">
-<h2 class="anchored" data-anchor-id="benefits">Benefits</h2>
-<p>The benefits of using the API First approach include:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 47%">
-<col style="width: 52%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Qualities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🧑‍💻 <strong>Developer Experience &amp; Productivity</strong></td>
-<td>- Improved developer productivity and satisfaction <br> - Easier onboarding of new developers and teams <br> - Reduced errors and inconsistencies in the code <br> - Easier maintenance and updates to the API <br> - Improved versioning and backward compatibility of the API <br> - Better integration with DevOps and CI/CD processes</td>
-</tr>
-<tr class="even">
-<td>🚀 <strong>Development Efficiency &amp; Technical Excellence</strong></td>
-<td>- Faster development cycles <br> - More efficient integration with third-party services <br> - Consistent and well-defined APIs <br> - Better quality APIs <br> - Better support for multiple platforms and devices <br> - More effective monitoring and analytics of API usage <br> - More effective management of API lifecycle and governance</td>
-</tr>
-<tr class="odd">
-<td>🌐 <strong>Business Alignment &amp; Strategic Impact</strong></td>
-<td>- Better alignment with business goals and requirements <br> - Increased flexibility and scalability of the application or service <br> - Enhanced ability to adapt to changing market and customer needs <br> - Greater overall success and impact of the application or service in the market <br> - Increased revenue and business opportunities through the API <br> - Better alignment with industry trends and best practices in API development</td>
-</tr>
-<tr class="even">
-<td>🤝 <strong>Collaboration &amp; Communication</strong></td>
-<td>- Improved collaboration between teams <br> - Improved communication and transparency with stakeholders and customers</td>
-</tr>
-<tr class="odd">
-<td>🎨 <strong>Innovation &amp; Design</strong></td>
-<td>- Greater innovation and creativity in API design <br> - Improved user experience</td>
-</tr>
-<tr class="even">
-<td>🔒 <strong>Trust, Security &amp; Adoption</strong></td>
-<td>- Enhanced security and compliance with industry standards <br> - Greater adoption and usage of the API by developers and users <br> - Enhanced reputation and credibility of the organization providing the API</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs. By prioritizing the design and implementation of APIs, developers can ensure that their applications are more efficient, flexible, and user-friendly. The tools and processes outlined in this document can help to streamline the API First approach and make it easier for developers to create and maintain high-quality APIs.</p>
 
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -57,9 +57,13 @@
   {
     "listing": "/Content/Resource/index.html",
     "items": [
+      "/Content/Resource/posts/GitDocumentation/index.html",
+      "/Content/Resource/posts/Git/index.html",
       "/Content/Resource/posts/Addressing/index.html",
       "/Content/Resource/posts/AIDrivenCodeDevelopement/index.html",
       "/Content/Resource/posts/DiagramFirstCoding/index.html",
+      "/Content/Resource/posts/CalendarTemplate/index.html",
+      "/Content/Resource/posts/POC-DocumentationWiki/index.html",
       "/Content/Resource/posts/QuartoWebBook/index.html",
       "/Content/Resource/posts/PlantumlQuartoFilter/index.html",
       "/Content/Resource/posts/APIFirst/index.html",
@@ -103,6 +107,13 @@
       "/Content/Resource/posts/AzureFunctionManagedServiceIdentities/index.html",
       "/Content/Resource/posts/AzureApplicationHosting/index.html",
       "/Content/Resource/posts/AzureStaticWebsites/index.html"
+    ]
+  },
+  {
+    "listing": "/Content/Resource/posts/CalendarTemplate/index.html",
+    "items": [
+      "/Content/Resource/posts/CalendarTemplate/articles/APIFirst/index.html",
+      "/Content/Resource/posts/CalendarTemplate/articles/AzureApplicationHosting/index.html"
     ]
   }
 ]

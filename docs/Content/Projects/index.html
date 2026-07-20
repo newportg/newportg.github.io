@@ -84,20 +84,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../Content/Proj/index.html"> 
-<span class="menu-text">Proj</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../Content/Projects/index.html" aria-current="page"> 
-<span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../../Content/Current/index.html"> 
+<span class="menu-text">Daily</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../Content/Resource/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Content/Current/index.html"> 
-<span class="menu-text">Daily</span></a>
+    <a class="nav-link active" href="../../Content/Projects/index.html" aria-current="page"> 
+<span class="menu-text">Projects</span></a>
   </li>  
 </ul>
 <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -152,15 +148,50 @@ ul.task-list li input[type="checkbox"] {
 </style>
 </div>
 <p><strong>Projects actively working on – short-term efforts with a certain goal in mind.</strong></p>
-<div class="list blog">
-<div class="blog-entry">
-<div class="body">
-<p class="title listing-title">
-<a href="https://newportg.github.io/POC-LandRegistry">POC-LandRegistry</a>
-</p>
-</div>
-</div>
-</div>
+<!-- ```{r, echo=FALSE, results='asis'}
+project_dirs <- list.dirs(".", full.names = FALSE, recursive = FALSE)
+project_dirs <- project_dirs[!grepl("^(\\.|_)", project_dirs)]
+project_dirs <- project_dirs[tolower(project_dirs) != "index_files"]
+project_dirs <- sort(project_dirs)
+
+cat('<div class="list blog">\n')
+
+if (length(project_dirs) == 0) {
+  cat('<div class="blog-entry">\n')
+  cat('<div class="body">\n')
+  cat('<p class="title listing-title">No projects found.</p>\n')
+  cat('</div>\n')
+  cat('</div>\n')
+} else {
+  for (project_name in project_dirs) {
+    project_url <- paste0("https://newportg.github.io/", project_name)
+    cat('<div class="blog-entry">\n')
+    cat('<div class="body">\n')
+    cat(sprintf('<p class="title listing-title"><a href="%s">%s</a></p>\n', project_url, project_name))
+    cat('</div>\n')
+    cat('</div>\n')
+  }
+}
+
+cat('</div>\n')
+``` -->
+<pre><code>&lt;div class="list blog"&gt;
+    &lt;div class="blog-entry"&gt;
+      &lt;div class="body"&gt;
+        &lt;p class="title listing-title"&gt;&lt;a href="https://newportg.github.io/POC-Frontify"&gt;https://newportg.github.io/POC-Frontify&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="blog-entry"&gt;
+      &lt;div class="body"&gt;
+        &lt;p class="title listing-title"&gt;&lt;a href="https://newportg.github.io/POC-HubDecouple"&gt;https://newportg.github.io/POC-HubDecouple&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="blog-entry"&gt;
+      &lt;div class="body"&gt;
+        &lt;p class="title listing-title"&gt;&lt;a href="https://newportg.github.io/POC-LandRegistry"&gt;https://newportg.github.io/POC-LandRegistry&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
 
 

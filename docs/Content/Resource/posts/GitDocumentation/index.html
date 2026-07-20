@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-10-16">
+<meta name="dcterms.date" content="2026-05-14">
 
-<title>API First – Zoomalong</title>
+<title>Documentation System for Software Architecture – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -131,23 +131,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">API First</h1>
+<h1 class="title">Documentation System for Software Architecture</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">C#</div>
-    <div class="quarto-category">Azure Functions</div>
-    <div class="quarto-category">API First</div>
-    <div class="quarto-category">TypeSpec</div>
-    <div class="quarto-category">AutoRest</div>
-    <div class="quarto-category">Quarto</div>
-    <div class="quarto-category">LUA</div>
-    <div class="quarto-category">PowerShell</div>
+    <div class="quarto-category">Git</div>
+    <div class="quarto-category">Wiki</div>
   </div>
   </div>
 
@@ -165,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2025</p>
+      <p class="date">May 14, 2026</p>
     </div>
   </div>
   
@@ -177,92 +170,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="./APIFirst-Process.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption"><strong>API First Process</strong></figcaption>
-</figure>
-</div>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>API First is an approach to software development that prioritizes the design and implementation of APIs before building the underlying application or service. This approach emphasizes the importance of APIs as the primary means of communication between different components of a system, as well as between different systems.</p>
-<p>By designing APIs first, developers can ensure that the APIs are well-defined, consistent, and easy to use. This can lead to better collaboration between teams, faster development cycles, and more efficient integration with third-party services.</p>
-<p>The approach detailed here takes the responsibility for creating the API definition away from the developer and places it in the hands of a specialist tool. This ensures that the API definition is created in a consistent manner and adheres to best practices. The API definition is then used to generate the client and server code, which can be integrated into the application or service. This approach can help to reduce errors and inconsistencies in the code, as well as improve the overall quality of the API. The API First approach can be particularly beneficial in complex systems where multiple teams are working on different components. By defining the APIs first, teams can work independently while still ensuring that their components will integrate seamlessly with the rest of the system. The API First approach can also help to improve the overall user experience of the application or service. By designing APIs that are easy to use and understand, developers can create applications that are more intuitive and user-friendly. Overall, the API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs.</p>
-</section>
-<section id="tools" class="level2">
-<h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>The tools used in this process are:</p>
+<p>There is a preference that all documentation is written in Markdown, as creators of documentation have there own preference in terms of editor. Once the document is checked in to a Git Repo it can be transformed so a viewer can easily read it. There are a number of tools that can be used to transform Markdown files into a more user-friendly format, such as HTML or PDF. Some popular tools for this purpose include:</p>
+<section id="the-options-are-evaluated-based-on-the-following-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="the-options-are-evaluated-based-on-the-following-criteria">The options are evaluated based on the following criteria:</h2>
+<ol type="1">
+<li><strong>Markdown Support</strong>: Native support for Markdown files.</li>
+<li><strong>Git Integration</strong>: Compatibility with Git workflows.</li>
+<li><strong>Ease of Use</strong>: Simplicity in setup and usage.</li>
+<li><strong>Customization</strong>: Flexibility in themes and extensions.</li>
+<li><strong>Deployment</strong>: Ease of hosting and deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Active community and plugin ecosystem.</li>
+</ol>
+<section id="recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="recommendations">Recommendations:</h3>
+<section id="mkdocs" class="level4">
+<h4 class="anchored" data-anchor-id="mkdocs">1.&nbsp;<strong>MKDocs</strong></h4>
 <ul>
-<li><a href="https://typespec.io/">TypeSpec</a> - A tool for designing and generating APIs</li>
-<li><a href="https://github.com/Azure/autorest">AutoRest</a> - A tool for generating client and server code from API definitions</li>
-<li><a href="https://quarto.org/">Quarto</a> - A tool for creating and publishing documents</li>
-<li><a href="https://www.lua.org/">LUA</a> - A lightweight scripting language used for automation</li>
-<li><a href="https://learn.microsoft.com/en-us/powershell/">PowerShell</a> - A task automation and configuration management framework</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/">C#</a> - A programming language used for building applications and services</li>
-<li><a href="https://learn.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a> - A serverless compute service used for building and deploying applications and services</li>
+<li><strong>Markdown Support</strong>: Excellent, designed specifically for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Simple to set up with a single YAML configuration file.</li>
+<li><strong>Customization</strong>: Supports themes like Material for MKDocs and plugins.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or other static hosting platforms.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with many plugins. <strong>Best For</strong>: Lightweight documentation sites with a focus on simplicity and speed.</li>
 </ul>
 </section>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>The process for creating an API using the API First approach is as follows:</p>
-<ol type="1">
-<li><strong>Design the API</strong> - Use TypeSpec to design the API, including the endpoints, request and response formats, and any authentication or authorization requirements.</li>
-<li><strong>Generate the API definition</strong> - Use TypeSpec to generate the API definition in a standard format, such as OpenAPI or Swagger.</li>
-<li><strong>Generate the client and server code</strong> - Use AutoRest to generate the client and server code from the API definition.</li>
-<li><strong>Integrate the code</strong> - Integrate the generated code into the application or service.</li>
-<li><strong>Test the API</strong> - Test the API to ensure that it works as expected and meets the requirements.<br>
-</li>
-<li><strong>Document the API</strong> - Use Quarto to create documentation for the API, including usage examples and any relevant information for developers.</li>
-<li><strong>Automate the process</strong> - Use LUA and PowerShell to automate the process of generating the API definition, client and server code, and documentation.</li>
-</ol>
+<section id="quarto" class="level4">
+<h4 class="anchored" data-anchor-id="quarto">2.&nbsp;<strong>Quarto</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown and R Markdown.</li>
+<li><strong>Git Integration</strong>: Works well with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Slightly more complex than MKDocs but offers advanced features.</li>
+<li><strong>Customization</strong>: Highly customizable with support for extensions and Lua filters.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Quarto Pub.</li>
+<li><strong>Community and Ecosystem</strong>: Growing community with a focus on data science and technical documentation. <strong>Best For</strong>: Technical documentation, especially for users who need advanced features like code execution and data visualization.</li>
+</ul>
 </section>
-<section id="benefits" class="level2">
-<h2 class="anchored" data-anchor-id="benefits">Benefits</h2>
-<p>The benefits of using the API First approach include:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 47%">
-<col style="width: 52%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Qualities</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🧑‍💻 <strong>Developer Experience &amp; Productivity</strong></td>
-<td>- Improved developer productivity and satisfaction <br> - Easier onboarding of new developers and teams <br> - Reduced errors and inconsistencies in the code <br> - Easier maintenance and updates to the API <br> - Improved versioning and backward compatibility of the API <br> - Better integration with DevOps and CI/CD processes</td>
-</tr>
-<tr class="even">
-<td>🚀 <strong>Development Efficiency &amp; Technical Excellence</strong></td>
-<td>- Faster development cycles <br> - More efficient integration with third-party services <br> - Consistent and well-defined APIs <br> - Better quality APIs <br> - Better support for multiple platforms and devices <br> - More effective monitoring and analytics of API usage <br> - More effective management of API lifecycle and governance</td>
-</tr>
-<tr class="odd">
-<td>🌐 <strong>Business Alignment &amp; Strategic Impact</strong></td>
-<td>- Better alignment with business goals and requirements <br> - Increased flexibility and scalability of the application or service <br> - Enhanced ability to adapt to changing market and customer needs <br> - Greater overall success and impact of the application or service in the market <br> - Increased revenue and business opportunities through the API <br> - Better alignment with industry trends and best practices in API development</td>
-</tr>
-<tr class="even">
-<td>🤝 <strong>Collaboration &amp; Communication</strong></td>
-<td>- Improved collaboration between teams <br> - Improved communication and transparency with stakeholders and customers</td>
-</tr>
-<tr class="odd">
-<td>🎨 <strong>Innovation &amp; Design</strong></td>
-<td>- Greater innovation and creativity in API design <br> - Improved user experience</td>
-</tr>
-<tr class="even">
-<td>🔒 <strong>Trust, Security &amp; Adoption</strong></td>
-<td>- Enhanced security and compliance with industry standards <br> - Greater adoption and usage of the API by developers and users <br> - Enhanced reputation and credibility of the organization providing the API</td>
-</tr>
-</tbody>
-</table>
+<section id="docusaurus" class="level4">
+<h4 class="anchored" data-anchor-id="docusaurus">3.&nbsp;<strong>Docusaurus</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Works seamlessly with Git repositories.</li>
+<li><strong>Ease of Use</strong>: Requires Node.js setup, slightly more complex than MKDocs.</li>
+<li><strong>Customization</strong>: Highly customizable with React-based components.</li>
+<li><strong>Deployment</strong>: Easily deployable to GitHub Pages, Netlify, or Vercel.</li>
+<li><strong>Community and Ecosystem</strong>: Strong community with a focus on developer documentation. <strong>Best For</strong>: Developer-focused documentation with React-based customization.</li>
+</ul>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs. By prioritizing the design and implementation of APIs, developers can ensure that their applications are more efficient, flexible, and user-friendly. The tools and processes outlined in this document can help to streamline the API First approach and make it easier for developers to create and maintain high-quality APIs.</p>
+<section id="confluence" class="level4">
+<h4 class="anchored" data-anchor-id="confluence">4.&nbsp;<strong>Confluence</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Limited, not natively designed for Markdown.</li>
+<li><strong>Git Integration</strong>: Requires plugins or manual integration.</li>
+<li><strong>Ease of Use</strong>: Easy for non-technical users but less suited for Markdown workflows.</li>
+<li><strong>Customization</strong>: Limited compared to static site generators.</li>
+<li><strong>Deployment</strong>: Hosted solution, no need for manual deployment.</li>
+<li><strong>Community and Ecosystem</strong>: Strong enterprise focus. <strong>Best For</strong>: Enterprise teams needing collaboration features over Markdown-first workflows.</li>
+</ul>
+</section>
+<section id="github-pages" class="level4">
+<h4 class="anchored" data-anchor-id="github-pages">5. <strong>GitHub Pages</strong></h4>
+<ul>
+<li><strong>Markdown Support</strong>: Excellent, supports Markdown natively and integrates well with Jekyll for additional features.</li>
+<li><strong>Git Integration</strong>: Seamlessly integrates with Git repositories hosted on GitHub.</li>
+<li><strong>Ease of Use</strong>: Very simple to set up, especially for users already familiar with GitHub.</li>
+<li><strong>Customization</strong>: Supports Jekyll themes and custom HTML/CSS for advanced customization.</li>
+<li><strong>Deployment</strong>: Native support for hosting directly from GitHub repositories.</li>
+<li><strong>Community and Ecosystem</strong>: Large community with extensive documentation and support.</li>
+</ul>
+<p><strong>Best For</strong>: Users already using GitHub who want a straightforward way to host and share documentation.</p>
+</section>
+</section>
+<section id="final-recommendation" class="level3">
+<h3 class="anchored" data-anchor-id="final-recommendation">Final Recommendation:</h3>
+<p>For Markdown-based Git repositories,&nbsp;<strong>MKDocs</strong>&nbsp;is the best choice for simplicity and speed, while&nbsp;<strong>Quarto</strong>&nbsp;is ideal for advanced technical documentation. If you need React-based customization,&nbsp;<strong>Docusaurus</strong>&nbsp;is a strong option. Confluence is the best option if you have chosen the rest of the Atlassian suite for collaboration and project management.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

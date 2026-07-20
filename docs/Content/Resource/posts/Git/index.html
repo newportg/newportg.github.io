@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gary Newport">
-<meta name="dcterms.date" content="2025-10-16">
+<meta name="dcterms.date" content="2026-05-14">
 
-<title>API First – Zoomalong</title>
+<title>ADO Alternatives – Zoomalong</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -131,23 +131,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">API First</h1>
+<h1 class="title">ADO Alternatives</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">C#</div>
-    <div class="quarto-category">Azure Functions</div>
-    <div class="quarto-category">API First</div>
-    <div class="quarto-category">TypeSpec</div>
-    <div class="quarto-category">AutoRest</div>
-    <div class="quarto-category">Quarto</div>
-    <div class="quarto-category">LUA</div>
-    <div class="quarto-category">PowerShell</div>
+    <div class="quarto-category">Git</div>
   </div>
   </div>
 
@@ -165,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 16, 2025</p>
+      <p class="date">May 14, 2026</p>
     </div>
   </div>
   
@@ -177,92 +169,498 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="./APIFirst-Process.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption"><strong>API First Process</strong></figcaption>
-</figure>
-</div>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>API First is an approach to software development that prioritizes the design and implementation of APIs before building the underlying application or service. This approach emphasizes the importance of APIs as the primary means of communication between different components of a system, as well as between different systems.</p>
-<p>By designing APIs first, developers can ensure that the APIs are well-defined, consistent, and easy to use. This can lead to better collaboration between teams, faster development cycles, and more efficient integration with third-party services.</p>
-<p>The approach detailed here takes the responsibility for creating the API definition away from the developer and places it in the hands of a specialist tool. This ensures that the API definition is created in a consistent manner and adheres to best practices. The API definition is then used to generate the client and server code, which can be integrated into the application or service. This approach can help to reduce errors and inconsistencies in the code, as well as improve the overall quality of the API. The API First approach can be particularly beneficial in complex systems where multiple teams are working on different components. By defining the APIs first, teams can work independently while still ensuring that their components will integrate seamlessly with the rest of the system. The API First approach can also help to improve the overall user experience of the application or service. By designing APIs that are easy to use and understand, developers can create applications that are more intuitive and user-friendly. Overall, the API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs.</p>
+<section id="git" class="level1">
+<h1>Git</h1>
+<p>A requirement has come in to move away from Microsoft ADO and move to a Git repo supplied by a different vendor.</p>
+<section id="ado" class="level2">
+<h2 class="anchored" data-anchor-id="ado">ADO</h2>
+<p>ADO is a Microsoft product that provides version control and collaboration features for software development projects. It allows teams to manage their code, track changes, and collaborate on projects using a centralized repository. ADO offers features such as branching, merging, pull requests, and issue tracking. It also integrates with other Microsoft tools and services, making it a popular choice for teams using the Microsoft ecosystem.</p>
+<p>So any alternative will need to have similar features to ADO, such GIT, Documentation, CI/CD pipelines, and Agile project management tools.</p>
 </section>
-<section id="tools" class="level2">
-<h2 class="anchored" data-anchor-id="tools">Tools</h2>
-<p>The tools used in this process are:</p>
+<section id="cloud-hosted-saas-options" class="level2">
+<h2 class="anchored" data-anchor-id="cloud-hosted-saas-options">Cloud-Hosted (SaaS) Options:</h2>
 <ul>
-<li><a href="https://typespec.io/">TypeSpec</a> - A tool for designing and generating APIs</li>
-<li><a href="https://github.com/Azure/autorest">AutoRest</a> - A tool for generating client and server code from API definitions</li>
-<li><a href="https://quarto.org/">Quarto</a> - A tool for creating and publishing documents</li>
-<li><a href="https://www.lua.org/">LUA</a> - A lightweight scripting language used for automation</li>
-<li><a href="https://learn.microsoft.com/en-us/powershell/">PowerShell</a> - A task automation and configuration management framework</li>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/">C#</a> - A programming language used for building applications and services</li>
-<li><a href="https://learn.microsoft.com/en-us/azure/azure-functions/">Azure Functions</a> - A serverless compute service used for building and deploying applications and services</li>
+<li>GitHub - Largest platform, most ecosystem support, strong CI/CD (Actions), Microsoft-owned</li>
+<li>GitLab - Full DevOps platform with built-in CI/CD, very comprehensive feature set</li>
+<li>Bitbucket (Atlassian) - Integrates well with Jira, smaller community than GitHub</li>
+<li>Gitea - Lightweight, can be cloud-hosted by third parties</li>
+<li>Codeberg - Non-profit, privacy-focused Git hosting (uses Gitea)</li>
 </ul>
 </section>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>The process for creating an API using the API First approach is as follows:</p>
-<ol type="1">
-<li><strong>Design the API</strong> - Use TypeSpec to design the API, including the endpoints, request and response formats, and any authentication or authorization requirements.</li>
-<li><strong>Generate the API definition</strong> - Use TypeSpec to generate the API definition in a standard format, such as OpenAPI or Swagger.</li>
-<li><strong>Generate the client and server code</strong> - Use AutoRest to generate the client and server code from the API definition.</li>
-<li><strong>Integrate the code</strong> - Integrate the generated code into the application or service.</li>
-<li><strong>Test the API</strong> - Test the API to ensure that it works as expected and meets the requirements.<br>
-</li>
-<li><strong>Document the API</strong> - Use Quarto to create documentation for the API, including usage examples and any relevant information for developers.</li>
-<li><strong>Automate the process</strong> - Use LUA and PowerShell to automate the process of generating the API definition, client and server code, and documentation.</li>
-</ol>
+<section id="self-hosted-options" class="level2">
+<h2 class="anchored" data-anchor-id="self-hosted-options">Self-Hosted Options:</h2>
+<ul>
+<li>Gitea - Lightweight, simple, Go-based</li>
+<li>GitLab Self-Managed - Enterprise-grade but more resource-intensive</li>
+<li>Gogs - Simple, lightweight, fewer features than Gitea</li>
+<li>Forgejo - Community fork of Gitea with more features</li>
+<li>Gitbucket - GitHub-like interface, Java-based</li>
+</ul>
 </section>
-<section id="benefits" class="level2">
-<h2 class="anchored" data-anchor-id="benefits">Benefits</h2>
-<p>The benefits of using the API First approach include:</p>
+<section id="decentralizedp2p" class="level2">
+<h2 class="anchored" data-anchor-id="decentralizedp2p">Decentralized/P2P:</h2>
+<ul>
+<li>Radicle - Peer-to-peer, blockchain-inspired</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion:</h2>
+<p>For most teams, the choice will come down to GitHub, GitLab, or Bitbucket based on their specific needs, existing tool integrations, and budget. GitHub offers the largest ecosystem and best developer experience, GitLab provides the most comprehensive built-in features, and Bitbucket is ideal for teams already invested in the Atlassian ecosystem (especially Jira). Self-hosted options like Gitea or GitLab Self-Managed can be considered for teams with strict data control requirements, but they require more maintenance overhead.</p>
+<p>Not recommending any On-premis options as they have a requirement of managed services and the overhead of managing the infrastructure is not something they want to take on.</p>
+</section>
+<section id="key-comparison-factors" class="level2">
+<h2 class="anchored" data-anchor-id="key-comparison-factors">Key Comparison Factors:</h2>
+<ul>
+<li>Cost - GitHub free tier vs GitLab community vs self-hosted</li>
+<li>Features - CI/CD integration, issue tracking, documentation</li>
+<li>Scalability - Team size, repository count</li>
+<li>Integration - With existing tools (Slack, Teams, monitoring, etc.)</li>
+<li>Security - Self-hosted vs SaaS compliance needs</li>
+</ul>
+</section>
+<section id="head-to-head-github-vs-gitlab-vs-atlassian-bitbucket" class="level2">
+<h2 class="anchored" data-anchor-id="head-to-head-github-vs-gitlab-vs-atlassian-bitbucket">Head-to-Head: GitHub vs GitLab vs Atlassian (Bitbucket)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 47%">
-<col style="width: 52%">
+<col style="width: 20%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 43%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Category</th>
-<th>Qualities</th>
+<th>Feature</th>
+<th>GitHub</th>
+<th>GitLab</th>
+<th>Atlassian Bitbucket</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>🧑‍💻 <strong>Developer Experience &amp; Productivity</strong></td>
-<td>- Improved developer productivity and satisfaction <br> - Easier onboarding of new developers and teams <br> - Reduced errors and inconsistencies in the code <br> - Easier maintenance and updates to the API <br> - Improved versioning and backward compatibility of the API <br> - Better integration with DevOps and CI/CD processes</td>
+<td><strong>Hosting</strong></td>
+<td>SaaS only</td>
+<td>SaaS &amp; Self-hosted</td>
+<td>SaaS &amp; Self-hosted</td>
 </tr>
 <tr class="even">
-<td>🚀 <strong>Development Efficiency &amp; Technical Excellence</strong></td>
-<td>- Faster development cycles <br> - More efficient integration with third-party services <br> - Consistent and well-defined APIs <br> - Better quality APIs <br> - Better support for multiple platforms and devices <br> - More effective monitoring and analytics of API usage <br> - More effective management of API lifecycle and governance</td>
+<td><strong>Cost (Small Team)</strong></td>
+<td>Free-£182/mo</td>
+<td>Free-£78/mo</td>
+<td>Free-£12/mo</td>
 </tr>
 <tr class="odd">
-<td>🌐 <strong>Business Alignment &amp; Strategic Impact</strong></td>
-<td>- Better alignment with business goals and requirements <br> - Increased flexibility and scalability of the application or service <br> - Enhanced ability to adapt to changing market and customer needs <br> - Greater overall success and impact of the application or service in the market <br> - Increased revenue and business opportunities through the API <br> - Better alignment with industry trends and best practices in API development</td>
+<td><strong>Git Repository</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 <tr class="even">
-<td>🤝 <strong>Collaboration &amp; Communication</strong></td>
-<td>- Improved collaboration between teams <br> - Improved communication and transparency with stakeholders and customers</td>
+<td><strong>CI/CD (included)</strong></td>
+<td>✅ Actions</td>
+<td>✅ Pipelines</td>
+<td>✅ Pipelines</td>
 </tr>
 <tr class="odd">
-<td>🎨 <strong>Innovation &amp; Design</strong></td>
-<td>- Greater innovation and creativity in API design <br> - Improved user experience</td>
+<td><strong>Issue Tracking</strong></td>
+<td>✅ Issues</td>
+<td>✅ Issues</td>
+<td>✅ Issues</td>
 </tr>
 <tr class="even">
-<td>🔒 <strong>Trust, Security &amp; Adoption</strong></td>
-<td>- Enhanced security and compliance with industry standards <br> - Greater adoption and usage of the API by developers and users <br> - Enhanced reputation and credibility of the organization providing the API</td>
+<td><strong>Project Management</strong></td>
+<td>✅ Projects</td>
+<td>✅ Epics/Roadmaps</td>
+<td>✅ (via Jira link)</td>
+</tr>
+<tr class="odd">
+<td><strong>Wiki/Documentation</strong></td>
+<td>✅ Wiki</td>
+<td>✅ Wiki</td>
+<td>✅ Wiki</td>
+</tr>
+<tr class="even">
+<td><strong>Pull Request Reviews</strong></td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+</tr>
+<tr class="odd">
+<td><strong>Branch Protection</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Code Search</strong></td>
+<td>✅ (Advanced)</td>
+<td>✅ (Advanced)</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td><strong>Advanced Analytics</strong></td>
+<td>⚠️ Limited</td>
+<td>✅ Insights/Analytics</td>
+<td>✅ (via Jira)</td>
+</tr>
+<tr class="even">
+<td><strong>Security Scanning</strong></td>
+<td>✅ (Dependabot)</td>
+<td>✅ (SAST/DAST)</td>
+<td>✅ (Jira integration)</td>
+</tr>
+<tr class="odd">
+<td><strong>SAML/SSO</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Container Registry</strong></td>
+<td>✅ GitHub Packages</td>
+<td>✅ Registry</td>
+<td>✅ Docker Hub link</td>
+</tr>
+<tr class="odd">
+<td><strong>Deployment Integration</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Jira Integration</strong></td>
+<td>⚠️ Limited</td>
+<td>✅ Native</td>
+<td>✅ Native (best)</td>
+</tr>
+<tr class="odd">
+<td><strong>Enterprise Support</strong></td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td><strong>Community &amp; Ecosystem</strong></td>
+<td>🥇 Very Large</td>
+<td>🥈 Large</td>
+<td>🥉 Medium</td>
+</tr>
+<tr class="odd">
+<td><strong>Learning Curve</strong></td>
+<td>Low</td>
+<td>Low-Medium</td>
+<td>Low</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>The API First approach is a powerful way to improve the development process and create high-quality applications and services that are built around well-designed APIs. By prioritizing the design and implementation of APIs, developers can ensure that their applications are more efficient, flexible, and user-friendly. The tools and processes outlined in this document can help to streamline the API First approach and make it easier for developers to create and maintain high-quality APIs.</p>
+<section id="winner-by-category" class="level2">
+<h2 class="anchored" data-anchor-id="winner-by-category">Winner by Category</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 30%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Winner</th>
+<th>Runner-up</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Best Overall</strong></td>
+<td><strong>GitHub</strong></td>
+<td>GitLab</td>
+<td>Largest ecosystem, best developer experience</td>
+</tr>
+<tr class="even">
+<td><strong>Best for DevOps</strong></td>
+<td><strong>GitLab</strong></td>
+<td>GitHub</td>
+<td>Most complete platform, built-in deployment</td>
+</tr>
+<tr class="odd">
+<td><strong>Best for Jira Users</strong></td>
+<td><strong>Atlassian</strong></td>
+<td>GitLab</td>
+<td>Native Jira integration is seamless</td>
+</tr>
+<tr class="even">
+<td><strong>Best Enterprise</strong></td>
+<td><strong>GitLab</strong></td>
+<td>GitHub</td>
+<td>Superior analytics, SAST/DAST included</td>
+</tr>
+<tr class="odd">
+<td><strong>Best Value</strong></td>
+<td><strong>Atlassian</strong></td>
+<td>GitLab</td>
+<td>Lowest cost, integrates with Jira investment</td>
+</tr>
+<tr class="even">
+<td><strong>Best for ADO Migration</strong></td>
+<td><strong>GitHub</strong></td>
+<td>GitLab</td>
+<td>Closest user experience to ADO</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="missing-features-best-of-breed-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="missing-features-best-of-breed-alternatives">Missing Features &amp; Best-of-Breed Alternatives</h2>
+<section id="advanced-project-management-roadmapping" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-project-management-roadmapping"><strong>1. Advanced Project Management / Roadmapping</strong></h3>
+<ul>
+<li><strong>Gap:</strong> None of the three excel at enterprise roadmapping beyond GitLab Epics</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Jira</strong> (Atlassian) - Continues to be superior for complex project management</li>
+<li><strong>Recommendation:</strong> Use Jira + Bitbucket for project/product management workflows</li>
+</ul>
+</section>
+<section id="security-compliance-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="security-compliance-dashboard"><strong>2. Security &amp; Compliance Dashboard</strong></h3>
+<ul>
+<li><strong>Gap:</strong> GitHub has basic scanning; GitLab has better coverage; Bitbucket relies on Jira</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Snyk</strong> or <strong>Dependabot</strong> (GitHub only) - More comprehensive vulnerability management</li>
+<li><strong>Recommendation:</strong> Pair any platform with Snyk for advanced security scanning</li>
+</ul>
+</section>
+<section id="detailed-devops-insights-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-devops-insights-metrics"><strong>3. Detailed DevOps Insights &amp; Metrics</strong></h3>
+<ul>
+<li><strong>Gap:</strong> GitHub limited; GitLab good; Bitbucket minimal</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Datadog</strong> or <strong>New Relic</strong> - For comprehensive deployment metrics and monitoring</li>
+<li><strong>Recommendation:</strong> Integrate monitoring tool for production deployment insights</li>
+</ul>
+</section>
+<section id="agile-work-planning-true-kanbanscrum" class="level3">
+<h3 class="anchored" data-anchor-id="agile-work-planning-true-kanbanscrum"><strong>4. Agile Work Planning (True Kanban/Scrum)</strong></h3>
+<ul>
+<li><strong>Gap:</strong> All three have basic boards; none match Jira’s depth</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Jira</strong></li>
+<li><strong>Recommendation:</strong> Use Jira alongside your chosen Git platform for work planning</li>
+</ul>
+</section>
+<section id="knowledge-management-wiki" class="level3">
+<h3 class="anchored" data-anchor-id="knowledge-management-wiki"><strong>5. Knowledge Management / Wiki</strong></h3>
+<ul>
+<li><strong>Gap:</strong> All three have wikis but lack advanced knowledge base features</li>
+<li><strong>Best-of-Breed Alternative:</strong> <strong>Confluence</strong> (Atlassian) or <strong>Notion</strong></li>
+<li><strong>Recommendation:</strong> Use Confluence + Bitbucket for best-in-class documentation ecosystem (Atlassian Stack)</li>
+</ul>
+</section>
+</section>
+<section id="recommended-stack-by-organization-type" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-stack-by-organization-type">Recommended Stack by Organization Type</h2>
+<section id="modern-cloud-native-team" class="level3">
+<h3 class="anchored" data-anchor-id="modern-cloud-native-team"><strong>Modern Cloud-Native Team:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> GitHub</li>
+<li><strong>Issue Tracking:</strong> GitHub Issues</li>
+<li><strong>Project Management:</strong> GitHub Projects</li>
+<li><strong>Supplementary Tools:</strong> Snyk (security), Vercel/Netlify (deployment)</li>
+</ul>
+</section>
+<section id="enterprise-using-jira" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-using-jira"><strong>Enterprise using Jira:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> Atlassian Bitbucket</li>
+<li><strong>Issue Tracking:</strong> Jira</li>
+<li><strong>Project Management:</strong> Jira (roadmaps, epics)</li>
+<li><strong>Knowledge Base:</strong> Confluence</li>
+<li><strong>Benefits:</strong> Unified Atlassian ecosystem, single sign-on, deep integrations</li>
+</ul>
+</section>
+<section id="enterprise-devops-heavy" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-devops-heavy"><strong>Enterprise DevOps-Heavy:</strong></h3>
+<ul>
+<li><strong>Git Host:</strong> GitLab (Self-Managed for full control)</li>
+<li><strong>Issue Tracking:</strong> GitLab Issues</li>
+<li><strong>Project Management:</strong> GitLab Epics/Boards</li>
+<li><strong>Monitoring:</strong> Datadog or New Relic</li>
+<li><strong>Benefits:</strong> All-in-one platform, no tool switching</li>
+</ul>
+</section>
+</section>
+<section id="migration-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="migration-considerations">Migration Considerations</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Aspect</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Repository Data</strong></td>
+<td>Git repos migrate easily (git clone/push); history fully preserved</td>
+</tr>
+<tr class="even">
+<td><strong>CI/CD Pipelines</strong></td>
+<td>Need rewriting - ADO YAML → GitHub Actions or GitLab CI/CD</td>
+</tr>
+<tr class="odd">
+<td><strong>Wiki/Docs</strong></td>
+<td>Manual migration recommended to ensure formatting</td>
+</tr>
+<tr class="even">
+<td><strong>Issues/Work Items</strong></td>
+<td>Most vendors have migration tools; consider archiving old ADO items</td>
+</tr>
+<tr class="odd">
+<td><strong>Permissions</strong></td>
+<td>Map ADO groups to new vendor’s team/group model</td>
+</tr>
+<tr class="even">
+<td><strong>Integrations</strong></td>
+<td>Audit existing ADO integrations and reconfigure for new platform</td>
+</tr>
+<tr class="odd">
+<td><strong>Timeline</strong></td>
+<td>Plan 2-4 weeks for comprehensive migration</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reliability-and-security-risk-last-2-years" class="level2">
+<h2 class="anchored" data-anchor-id="reliability-and-security-risk-last-2-years">Reliability and Security Risk (Last 2 Years)</h2>
+<p>The table below summarizes observed operational and security risk signals from public status and security channels.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Outage Pattern</th>
+<th>Security Response Pattern</th>
+<th>User Sentiment Risk</th>
+<th>Overall Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub</strong></td>
+<td>Periodic high-visibility incidents (for example search and Actions delays)</td>
+<td>Strong controls and trust posture; incident comms are good, but SaaS security incident detail is less centralized</td>
+<td>Medium during broad Actions/search incidents</td>
+<td><strong>Amber</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GitLab</strong></td>
+<td>Frequent CI/CD and Git operation degradations, usually resolved quickly</td>
+<td>Very transparent security patch cadence, CVE-level detail, clear upgrade guidance</td>
+<td>Medium due to recurrence of pipeline delays</td>
+<td><strong>Amber</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Bitbucket Cloud</strong></td>
+<td>Mix of Bitbucket-specific and Atlassian-wide platform incidents</td>
+<td>Regular security bulletin process; cloud fixes are often less detailed publicly</td>
+<td>Medium to High when Atlassian account/login incidents impact multiple products</td>
+<td><strong>Amber</strong></td>
+</tr>
+</tbody>
+</table>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<ul>
+<li><strong>No clear evidence of long-unresolved major SaaS incidents</strong> was identified across these three options in the reviewed period.</li>
+<li>The practical difference is mostly in <strong>incident frequency, blast radius, and transparency style</strong>.</li>
+</ul>
+</section>
+<section id="practical-selection-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="practical-selection-guidance">Practical Selection Guidance</h3>
+<ul>
+<li>Choose <strong>GitHub</strong> if you want the broadest ecosystem and strong developer experience.</li>
+<li>Choose <strong>GitLab</strong> if you value detailed public security and patch transparency with deep built-in DevOps capabilities.</li>
+<li>Choose <strong>Bitbucket Cloud</strong> if Jira/Atlassian integration is your main priority and you accept some dependency on Atlassian-wide platform events.</li>
+</ul>
+</section>
+</section>
+<section id="weighted-decision-model" class="level2">
+<h2 class="anchored" data-anchor-id="weighted-decision-model">Weighted Decision Model</h2>
+<p>The weighted model below provides a single comparative score using the following weighting:</p>
+<ul>
+<li>Reliability: <strong>30%</strong></li>
+<li>Security posture and response: <strong>30%</strong></li>
+<li>Integration and ecosystem fit: <strong>25%</strong></li>
+<li>Cost: <strong>15%</strong></li>
+</ul>
+<p>Scoring scale: <strong>1 (low) to 5 (high)</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Reliability (30%)</th>
+<th>Security (30%)</th>
+<th>Integration (25%)</th>
+<th>Cost (15%)</th>
+<th>Weighted Score (/5)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub</strong></td>
+<td>4.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>3.0</td>
+<td><strong>4.10</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GitLab</strong></td>
+<td>3.5</td>
+<td>4.5</td>
+<td>4.0</td>
+<td>4.0</td>
+<td><strong>3.98</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Bitbucket Cloud</strong></td>
+<td>3.5</td>
+<td>3.8</td>
+<td>4.5</td>
+<td>4.5</td>
+<td><strong>4.02</strong></td>
+</tr>
+</tbody>
+</table>
+<section id="result" class="level3">
+<h3 class="anchored" data-anchor-id="result">Result</h3>
+<p>Using this weighting, <strong>GitHub</strong> is the highest-scoring option overall.</p>
+</section>
+<section id="recommended-choice-by-context" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-choice-by-context">Recommended Choice by Context</h3>
+<ul>
+<li>If you want the strongest all-round default: <strong>GitHub</strong>.</li>
+<li>If your priority is security transparency and built-in DevSecOps depth: <strong>GitLab</strong>.</li>
+<li>If your organization is already Jira/Confluence-centric and cost-sensitive: <strong>Bitbucket Cloud</strong>.</li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

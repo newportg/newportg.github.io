@@ -48,6 +48,7 @@ if (length(project_dirs) == 0) {
 cat('</div>\n')
 ``` -->
 
+```
 <div class="list blog">
     <div class="blog-entry">
       <div class="body">
@@ -65,4 +66,6 @@ cat('</div>\n')
       </div>
     </div>
 </div>
+```
+
 
