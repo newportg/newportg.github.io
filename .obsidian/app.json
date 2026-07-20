@@ -1,1 +1,8 @@
-{}
+{
+  "userIgnoreFilters": [
+    "*.cs",
+    "Contents\\Projects\\POC-LandRegistry\\Src"
+  ],
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true
+}

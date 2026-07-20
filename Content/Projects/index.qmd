@@ -20,7 +20,7 @@ freeze: false
 
 **Projects actively working on – short-term efforts with a certain goal in mind.**
 
-```{r, echo=FALSE, results='asis'}
+<!-- ```{r, echo=FALSE, results='asis'}
 project_dirs <- list.dirs(".", full.names = FALSE, recursive = FALSE)
 project_dirs <- project_dirs[!grepl("^(\\.|_)", project_dirs)]
 project_dirs <- project_dirs[tolower(project_dirs) != "index_files"]
@@ -46,5 +46,23 @@ if (length(project_dirs) == 0) {
 }
 
 cat('</div>\n')
-```
+``` -->
+
+<div class="list blog">
+    <div class="blog-entry">
+      <div class="body">
+        <p class="title listing-title"><a href="https://newportg.github.io/POC-Frontify">https://newportg.github.io/POC-Frontify</a></p>
+      </div>
+    </div>
+    <div class="blog-entry">
+      <div class="body">
+        <p class="title listing-title"><a href="https://newportg.github.io/POC-HubDecouple">https://newportg.github.io/POC-HubDecouple</a></p>
+      </div>
+    </div>
+    <div class="blog-entry">
+      <div class="body">
+        <p class="title listing-title"><a href="https://newportg.github.io/POC-LandRegistry">https://newportg.github.io/POC-LandRegistry</a></p>
+      </div>
+    </div>
+</div>
 

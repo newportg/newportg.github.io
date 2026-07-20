@@ -22,14 +22,12 @@ website:
     left:
       # - href: index.qmd
       #   text: Home
-      - text: "Proj"
-        href: Content/Proj/index.qmd
-      - text: "Projects"
-        href: Content/Projects/index.qmd
-      - text: "Blog"
-        href: Content/Resource/index.qmd
       - text: "Daily"
         href: Content/Current/index.qmd      
+      - text: "Blog"
+        href: Content/Resource/index.qmd
+      - text: "Projects"
+        href: Content/Projects/index.qmd
 
   
     right:

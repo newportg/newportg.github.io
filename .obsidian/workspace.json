@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "48596c887ca42097",
+        "id": "7958922e21b47eba",
         "type": "tabs",
         "children": [
           {
-            "id": "e983147ef2f6ee4c",
+            "id": "887096b9f37db205",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Content/Current/todo.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "todo"
+              "title": "New tab"
             }
           }
         ]
@@ -94,17 +90,16 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Content/Current/todo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
+                "showSearch": true,
+                "searchQuery": "hub",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for todo"
+              "title": "Backlinks"
             }
           },
           {
@@ -169,8 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,9 +174,58 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "qmd-as-md-obsidian:Toggle Quarto preview": false,
+      "qmd-as-md-obsidian:Render Quarto to PDF": false
     }
   },
-  "active": "bf357ebcb3eda446",
-  "lastOpenFiles": []
+  "active": "887096b9f37db205",
+  "lastOpenFiles": [
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetHost.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetApplicationId.md",
+    "Content/Projects/POC-LandRegistry/Wiki/1-introduction-and-goals.md",
+    "Content/Projects/POC-LandRegistry/Readme.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/nimbus-service-handler.md",
+    "Content/Projects/POC-LandRegistry/docs-src/wiki/5-building-block-view/landregistry-service-handler/Certificate-Creation.md",
+    "Content/Projects/POC-LandRegistry/docs-src/wiki/5-building-block-view/azure-function-detail/API/API-GetHost.md",
+    "Content/Resource/posts/Rules/index.qmd",
+    "Content/Resource/posts/SOLID/index.qmd",
+    "Content/Resource/posts/StorageAccounts/index.qmd",
+    "Content/Resource/posts/FunctionMonkey/index.qmd",
+    "Content/Resource/posts/FunctionMonkey/FMHelloWorld.svg",
+    "Content/Resource/posts/AzureC4/index.qmd",
+    "Content/Resource/posts/AzureC4/c4.svg",
+    "Content/Resource/posts/AzureC4/azure.svg",
+    "Content/Resource/posts/ARMTemplateParameter-VariableSetup/index.qmd",
+    "Content/Resource/posts/APIFirst/TypeSpec.qmd",
+    "Content/Resource/posts/APIFirst/index.qmd",
+    "Content/Resource/posts/APIFirst/Screenshot 2025-10-16 133926.png",
+    "Content/Resource/posts/APIFirst/APIFirst-Process.png",
+    "Content/Resource/posts/Addressing/index.qmd",
+    "Content/Resource/posts/AdaptiveCard/index.qmd",
+    "Content/Proj/posts/CalendarTemplate/articles/APIFirst/Screenshot 2025-10-16 133926.png",
+    "Content/Proj/posts/CalendarTemplate/articles/APIFirst/APIFirst-Process.png",
+    "Content/Projects/POC-HubDecouple/Book/HubEvent.png",
+    "Content/Projects/POC-HubDecouple/Book/Street.md",
+    "Content/Projects/POC-HubDecouple/README.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/Service-Bus-Interface.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/Address-Mapping.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetUser.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetTitleDetails.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetSourceApp.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetImpersonating.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/security-component.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/landregistry-service-handler.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/domain-logic-component.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/cosmos-db-component.md",
+    "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail.md",
+    "Content/Projects/POC-LandRegistry/Wiki/7-deployment-view.md",
+    "Content/Projects/POC-LandRegistry/Wiki/6-runtime-view.md",
+    "Content/Projects/POC-LandRegistry/Wiki/4-solution-strategy.md",
+    "Content/Projects/POC-LandRegistry/Wiki/3-system-scope-and-context.md",
+    "images/elastic.png",
+    "images/devops.jpg"
+  ]
 }
