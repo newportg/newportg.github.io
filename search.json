@@ -662,7 +662,7 @@
     "href": "Content/Projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Projects actively working on – short-term efforts with a certain goal in mind.\n\n&lt;div class=\"list blog\"&gt;\n    &lt;div class=\"blog-entry\"&gt;\n      &lt;div class=\"body\"&gt;\n        &lt;p class=\"title listing-title\"&gt;&lt;a href=\"https://newportg.github.io/POC-Frontify\"&gt;https://newportg.github.io/POC-Frontify&lt;/a&gt;&lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"blog-entry\"&gt;\n      &lt;div class=\"body\"&gt;\n        &lt;p class=\"title listing-title\"&gt;&lt;a href=\"https://newportg.github.io/POC-HubDecouple\"&gt;https://newportg.github.io/POC-HubDecouple&lt;/a&gt;&lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    &lt;div class=\"blog-entry\"&gt;\n      &lt;div class=\"body\"&gt;\n        &lt;p class=\"title listing-title\"&gt;&lt;a href=\"https://newportg.github.io/POC-LandRegistry\"&gt;https://newportg.github.io/POC-LandRegistry&lt;/a&gt;&lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;"
+    "text": "Projects actively working on – short-term efforts with a certain goal in mind.\n\n\nPOC-Frontify\nPOC-HubDecouple\nPOC-LandRegistry"
   },
   {
     "objectID": "Content/Current/posts/2026-05-13/index.html",
