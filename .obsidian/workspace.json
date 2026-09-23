@@ -11,10 +11,14 @@
             "id": "887096b9f37db205",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "404.qmd",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "404"
             }
           }
         ]
@@ -37,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -90,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "404.qmd",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,8 +186,16 @@
       "qmd-as-md-obsidian:Render Quarto to PDF": false
     }
   },
-  "active": "887096b9f37db205",
+  "active": "bf357ebcb3eda446",
   "lastOpenFiles": [
+    "cover.png",
+    "coverG.png",
+    "coverGB.png",
+    "fingers.jpeg",
+    "index.qmd",
+    "Json Response.md",
+    "Security Component.md",
+    "404.qmd",
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetHost.md",
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/API/API-GetApplicationId.md",
     "Content/Projects/POC-LandRegistry/Wiki/1-introduction-and-goals.md",
@@ -202,11 +217,7 @@
     "Content/Resource/posts/APIFirst/index.qmd",
     "Content/Resource/posts/APIFirst/Screenshot 2025-10-16 133926.png",
     "Content/Resource/posts/APIFirst/APIFirst-Process.png",
-    "Content/Resource/posts/Addressing/index.qmd",
-    "Content/Resource/posts/AdaptiveCard/index.qmd",
     "Content/Proj/posts/CalendarTemplate/articles/APIFirst/Screenshot 2025-10-16 133926.png",
-    "Content/Proj/posts/CalendarTemplate/articles/APIFirst/APIFirst-Process.png",
-    "Content/Projects/POC-HubDecouple/Book/HubEvent.png",
     "Content/Projects/POC-HubDecouple/Book/Street.md",
     "Content/Projects/POC-HubDecouple/README.md",
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail/Service-Bus-Interface.md",
@@ -221,11 +232,6 @@
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/domain-logic-component.md",
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/cosmos-db-component.md",
     "Content/Projects/POC-LandRegistry/Wiki/5-building-block-view/azure-function-detail.md",
-    "Content/Projects/POC-LandRegistry/Wiki/7-deployment-view.md",
-    "Content/Projects/POC-LandRegistry/Wiki/6-runtime-view.md",
-    "Content/Projects/POC-LandRegistry/Wiki/4-solution-strategy.md",
-    "Content/Projects/POC-LandRegistry/Wiki/3-system-scope-and-context.md",
-    "images/elastic.png",
-    "images/devops.jpg"
+    "Content/Projects/POC-LandRegistry/Wiki/7-deployment-view.md"
   ]
 }
